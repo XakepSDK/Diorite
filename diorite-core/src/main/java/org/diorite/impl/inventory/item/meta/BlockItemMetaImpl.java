@@ -29,7 +29,7 @@ import java.util.Set;
 
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.BlockItemMeta;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.nbt.NbtTagCompound;
 
 public class BlockItemMetaImpl extends SimpleItemMetaImpl implements BlockItemMeta

@@ -27,8 +27,8 @@ package org.diorite.impl.world.chunk;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.material.BlockMaterialData;
-import org.diorite.material.blocks.AirMat;
+import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material_old.blocks.AirMat;
 import org.diorite.world.Biome;
 import org.diorite.world.World;
 import org.diorite.world.chunk.Chunk;

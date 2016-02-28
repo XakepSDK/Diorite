@@ -28,7 +28,7 @@ import java.util.Optional;
 
 import org.diorite.BlockFace;
 import org.diorite.BlockLocation;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.scheduler.Synchronizable;
 import org.diorite.utils.math.geometry.BoundingBox;
 import org.diorite.world.chunk.Chunk;

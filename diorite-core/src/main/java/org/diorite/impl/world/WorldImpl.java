@@ -62,7 +62,7 @@ import org.diorite.Particle;
 import org.diorite.cfg.WorldsConfig.WorldConfig;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.nbt.NbtNamedTagContainer;
 import org.diorite.nbt.NbtOutputStream;
 import org.diorite.nbt.NbtTagCompound;

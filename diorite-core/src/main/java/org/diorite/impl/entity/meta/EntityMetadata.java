@@ -48,7 +48,7 @@ import org.diorite.impl.entity.meta.entry.EntityMetadataVector3FEntry;
 import org.diorite.BlockLocation;
 import org.diorite.chat.component.BaseComponent;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public class EntityMetadata
 {

@@ -26,7 +26,7 @@ package org.diorite.impl.entity.meta.entry;
 
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.entity.meta.EntityMetadataType;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public class EntityMetadataMaterialEntry extends EntityMetadataObjectEntry<Material>
 {

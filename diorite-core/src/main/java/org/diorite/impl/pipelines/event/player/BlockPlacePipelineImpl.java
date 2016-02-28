@@ -30,7 +30,7 @@ import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboun
 import org.diorite.event.pipelines.event.player.BlockPlacePipeline;
 import org.diorite.event.player.PlayerBlockPlaceEvent;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.utils.pipeline.SimpleEventPipeline;
 
 public class BlockPlacePipelineImpl extends SimpleEventPipeline<PlayerBlockPlaceEvent> implements BlockPlacePipeline

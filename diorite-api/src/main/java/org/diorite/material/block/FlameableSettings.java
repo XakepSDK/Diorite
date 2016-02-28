@@ -22,32 +22,45 @@
  * SOFTWARE.
  */
 
-package org.diorite.world.bag;
-
-import org.diorite.material_old.BlockMaterialData;
+package org.diorite.material.block;
 
 /**
- * Represent some kind of block changes.
+ * Represent block parameters related to fire.
  */
-public interface BlockBag
+public interface FlameableSettings
 {
     /**
-     * Get block material on given cords.
-     * @param x x cords of block.
-     * @param y y cords of block.
-     * @param z z cords of block.
-     * @return material.
+     * Returns true if this block can be set on fire. (by flint and steel etc)
+     *
+     * @return true if this block can be set on fire. (by flint and steel etc)
      */
-    BlockMaterialData getBlock(int x, int y, int z);
+    boolean canBeSetOnFire();
 
     /**
-     * Set block material on given cords.
-     * @param x x cords of block.
-     * @param y y cords of block.
-     * @param z z cords of block.
-     * @param material material of block.
+     * Returns true if this block can be naturally affected by fire.
+     *
+     * @return true if this block can be naturally affected by fire.
      */
-    void setBlock(int x, int y, int z, BlockMaterialData material);
+    boolean isFlameable();
 
-    // TODO: set/get tile entites etc.
+    /**
+     * Returns chances that block will be set on fire when block is next to fire. (checked every block tick)
+     *
+     * @return chances that block will be set on fire when block is next to fire. (checked every block tick)
+     */
+    double getFlameChances();
+
+    /**
+     * Returns chances that block will be burned/destroyed when block is on fire. (checked every block tick)
+     *
+     * @return chances that block will be burned/destroyed when block is on fire. (checked every block tick)
+     */
+    double getBurnChances();
+
+    /**
+     * Returns true if this block can be destroyed by fire.
+     *
+     * @return true if this block can be destroyed by fire.
+     */
+    boolean isBurnable();
 }

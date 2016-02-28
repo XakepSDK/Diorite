@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public interface ItemStack extends Cloneable
 {

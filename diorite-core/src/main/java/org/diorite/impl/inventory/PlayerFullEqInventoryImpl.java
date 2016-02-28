@@ -30,7 +30,7 @@ import org.diorite.entity.Human;
 import org.diorite.inventory.InventoryType;
 import org.diorite.inventory.PlayerFullEqInventory;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public class PlayerFullEqInventoryImpl extends PlayerInventoryPartImpl implements PlayerFullEqInventory
 {

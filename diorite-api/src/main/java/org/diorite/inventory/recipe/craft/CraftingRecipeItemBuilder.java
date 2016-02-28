@@ -33,7 +33,7 @@ import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.RecipeItemBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeBuilder.ShapedCraftingRecipeBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeBuilder.ShapelessCraftingRecipeBuilder;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public interface CraftingRecipeItemBuilder<T extends CraftingRecipeBuilder, B extends CraftingRecipeItemBuilder<T, B>> extends RecipeItemBuilder<T, B>
 {

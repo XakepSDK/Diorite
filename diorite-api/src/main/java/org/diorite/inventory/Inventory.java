@@ -36,7 +36,7 @@ import org.diorite.entity.Player;
 import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.slot.Slot;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 /**
  * Represent inventory, contains default implementation for most of methods.

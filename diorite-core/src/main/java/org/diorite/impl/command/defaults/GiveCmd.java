@@ -34,7 +34,7 @@ import org.diorite.command.sender.CommandSender;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public class GiveCmd extends SystemCommandImpl
 {

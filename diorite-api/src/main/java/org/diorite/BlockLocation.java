@@ -27,7 +27,7 @@ package org.diorite;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.utils.math.DioriteMathUtils;
 import org.diorite.world.Block;
 import org.diorite.world.World;

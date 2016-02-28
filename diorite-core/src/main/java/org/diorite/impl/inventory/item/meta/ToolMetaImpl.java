@@ -31,8 +31,8 @@ import java.util.stream.Collectors;
 
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ToolMeta;
-import org.diorite.material.BlockMaterialData;
-import org.diorite.material.Material;
+import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material_old.Material;
 import org.diorite.nbt.NbtTagCompound;
 import org.diorite.nbt.NbtTagList;
 import org.diorite.nbt.NbtTagString;

@@ -27,7 +27,7 @@ package org.diorite.inventory.item.meta;
 import java.util.Collection;
 import java.util.Set;
 
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 
 /**
  * Represent {@link ItemMeta} used by tool items, like pickaxes.

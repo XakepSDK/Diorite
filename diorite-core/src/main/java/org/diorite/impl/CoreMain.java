@@ -51,7 +51,7 @@ import org.diorite.entity.attrib.AttributeModifier;
 import org.diorite.entity.attrib.BasicAttributeModifier;
 import org.diorite.firework.FireworkEffect;
 import org.diorite.map.MapIcon;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 import org.diorite.nbt.NbtSerializable;
 import org.diorite.nbt.NbtSerialization;
 import org.diorite.utils.math.DioriteMathUtils;

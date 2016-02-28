@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.Set;
 
 import org.diorite.inventory.item.meta.ToolMeta;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 
 /**
  * Interface of builder of tool item meta data.

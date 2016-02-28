@@ -28,8 +28,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.FuelMat;
-import org.diorite.material.items.ArmorMat;
+import org.diorite.material_old.FuelMat;
+import org.diorite.material_old.items.ArmorMat;
 
 /**
  * Represent slot properties, multiple inventory slots may use this same instance of slot object as it don't

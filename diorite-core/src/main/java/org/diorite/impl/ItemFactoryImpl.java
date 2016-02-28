@@ -59,7 +59,7 @@ import org.diorite.inventory.item.meta.PotionMeta;
 import org.diorite.inventory.item.meta.RepairableMeta;
 import org.diorite.inventory.item.meta.SkullMeta;
 import org.diorite.inventory.item.meta.ToolMeta;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 import org.diorite.nbt.NbtTagCompound;
 
 public class ItemFactoryImpl implements ItemFactory

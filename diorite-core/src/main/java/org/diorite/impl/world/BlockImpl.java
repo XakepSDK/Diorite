@@ -32,7 +32,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.world.chunk.ChunkImpl;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.utils.lazy.LazyValue;
 import org.diorite.utils.math.geometry.BoundingBox;
 import org.diorite.world.Biome;

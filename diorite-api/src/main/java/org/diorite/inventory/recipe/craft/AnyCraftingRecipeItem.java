@@ -35,7 +35,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 /**
  * Represent recipe item that can be any item in grid, only validators must match for them.

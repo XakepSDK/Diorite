@@ -27,7 +27,7 @@ package org.diorite.inventory.item.builder;
 import java.util.Collection;
 
 import org.diorite.inventory.item.meta.BlockItemMeta;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 
 /**
  * Interface of builder of block item meta data.

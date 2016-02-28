@@ -33,12 +33,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.BlockLocation;
-import org.diorite.material.BlockMaterialData;
-import org.diorite.material.Material;
-import org.diorite.material.RotateAxisMat;
-import org.diorite.material.WoodType;
-import org.diorite.material.blocks.LeavesMat;
-import org.diorite.material.blocks.LogMat;
+import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material_old.Material;
+import org.diorite.material_old.RotateAxisMat;
+import org.diorite.material_old.WoodType;
+import org.diorite.material_old.blocks.LeavesMat;
+import org.diorite.material_old.blocks.LogMat;
 import org.diorite.world.chunk.ChunkPos;
 import org.diorite.world.generator.structures.Structure;
 

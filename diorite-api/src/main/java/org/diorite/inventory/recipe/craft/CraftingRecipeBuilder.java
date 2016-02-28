@@ -36,7 +36,7 @@ import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.RecipeBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeItemBuilder.ShapedCraftingRecipeItemBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeItemBuilder.ShapelessCraftingRecipeItemBuilder;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 /**
  * Advanced class for creating crafting recipes

@@ -22,49 +22,28 @@
  * SOFTWARE.
  */
 
-package org.diorite.world.bag;
+package org.diorite.material.block;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.world.World;
 
-import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
-import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.shorts.Short2ShortMap;
-import it.unimi.dsi.fastutil.shorts.Short2ShortOpenHashMap;
-
-public class SimpleBlockBag implements BlockBag
+/**
+ * Represent block parameters related to liquid.
+ */
+public interface LiquidSettings
 {
-    private final Long2ObjectMap<ChunkBag> changes; // TODO, ugh
+    /**
+     * Returns true if this block is liquid.
+     *
+     * @return true if this block is liquid.
+     */
+    boolean isLiquid();
 
-    public SimpleBlockBag(final int size)
-    {
-        this.changes = new Long2ObjectOpenHashMap<>(size);
-    }
-
-    @Override
-    public BlockMaterialData getBlock(final int x, final int y, final int z)
-    {
-        return null;
-    }
-
-    @Override
-    public void setBlock(final int x, final int y, final int z, final BlockMaterialData material)
-    {
-
-    }
-
-    private final class ChunkBag
-    {
-        private final Short2ShortMap changes;
-
-        ChunkBag(final int size)
-        {
-            this.changes = new Short2ShortOpenHashMap(size);
-        }
-
-        BlockMaterialData getBlock(int x, int y, int z)
-        {
-//            return changes.get()
-            return null;
-        }
-    }
+    /**
+     * Returns spill radius of this liquid for given world.
+     *
+     * @param world world to be checked.
+     *
+     * @return spill radius of this liquid for given world.
+     */
+    int getSpillRadius(World world);
 }

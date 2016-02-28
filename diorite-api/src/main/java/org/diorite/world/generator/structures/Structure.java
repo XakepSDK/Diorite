@@ -27,7 +27,7 @@ package org.diorite.world.generator.structures;
 import java.util.Random;
 
 import org.diorite.BlockLocation;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.world.Block;
 import org.diorite.world.chunk.ChunkPos;
 

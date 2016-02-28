@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.diorite.Diorite;
 import org.diorite.ItemFactory;
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 /**
  * Interface for item stack representation.

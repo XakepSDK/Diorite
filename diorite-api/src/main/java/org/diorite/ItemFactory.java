@@ -27,7 +27,7 @@ package org.diorite;
 import java.util.function.Function;
 
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 import org.diorite.nbt.NbtTagCompound;
 
 /**

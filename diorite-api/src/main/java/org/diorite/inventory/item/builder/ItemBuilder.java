@@ -30,7 +30,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 /**
  * Simple builder for item stack.

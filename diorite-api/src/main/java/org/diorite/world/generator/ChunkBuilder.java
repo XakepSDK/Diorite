@@ -24,7 +24,7 @@
 
 package org.diorite.world.generator;
 
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.generator.maplayer.MapLayer;
 

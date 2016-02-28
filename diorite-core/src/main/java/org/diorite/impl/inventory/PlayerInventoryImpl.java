@@ -46,7 +46,7 @@ import org.diorite.inventory.PlayerInventory;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.slot.Slot;
 import org.diorite.inventory.slot.SlotType;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements PlayerInventory
 {

@@ -25,8 +25,8 @@
 package org.diorite.impl.world.chunk.palette;
 
 import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.material.BlockMaterialData;
-import org.diorite.material.Material;
+import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material_old.Material;
 
 public class GlobalPaletteImpl implements PaletteData
 {

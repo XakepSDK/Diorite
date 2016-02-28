@@ -41,7 +41,7 @@ import org.diorite.entity.Human;
 import org.diorite.inventory.Inventory;
 import org.diorite.inventory.InventoryHolder;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 import org.diorite.utils.collections.arrays.DioriteArrayUtils;
 import org.diorite.utils.collections.sets.ConcurrentSet;
 

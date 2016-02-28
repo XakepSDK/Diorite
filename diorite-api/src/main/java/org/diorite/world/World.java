@@ -38,7 +38,7 @@ import org.diorite.Particle;
 import org.diorite.entity.Item;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.utils.math.DioriteRandom;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.chunk.ChunkManager;

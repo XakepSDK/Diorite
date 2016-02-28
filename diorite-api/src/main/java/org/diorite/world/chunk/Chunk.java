@@ -24,7 +24,7 @@
 
 package org.diorite.world.chunk;
 
-import org.diorite.material.BlockMaterialData;
+import org.diorite.material_old.BlockMaterialData;
 import org.diorite.scheduler.Synchronizable;
 import org.diorite.world.Biome;
 import org.diorite.world.Block;

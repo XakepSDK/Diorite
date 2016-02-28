@@ -35,8 +35,8 @@ import org.diorite.impl.connection.packets.PacketClass;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.connection.packets.play.PacketPlayClientboundListener;
 import org.diorite.BlockLocation;
-import org.diorite.material.BlockMaterialData;
-import org.diorite.material.Material;
+import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material_old.Material;
 
 @PacketClass(id = 0x0B, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 13)
 public class PacketPlayClientboundBlockChange extends PacketPlayClientbound

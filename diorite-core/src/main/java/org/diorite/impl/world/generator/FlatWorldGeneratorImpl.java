@@ -26,7 +26,7 @@ package org.diorite.impl.world.generator;
 
 import java.util.Map;
 
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 import org.diorite.utils.math.DioriteRandomUtils;
 import org.diorite.world.World;
 import org.diorite.world.chunk.Chunk;

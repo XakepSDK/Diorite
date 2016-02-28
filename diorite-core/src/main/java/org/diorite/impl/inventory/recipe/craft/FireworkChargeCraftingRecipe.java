@@ -32,7 +32,7 @@ import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.craft.CraftingRecipe;
 import org.diorite.inventory.recipe.craft.CraftingRecipeCheckResult;
-import org.diorite.material.Material;
+import org.diorite.material_old.Material;
 
 public class FireworkChargeCraftingRecipe implements CraftingRecipe
 {

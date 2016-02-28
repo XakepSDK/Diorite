@@ -31,8 +31,8 @@ import org.diorite.event.EventPriority;
 import org.diorite.event.pipelines.event.player.BlockDestroyPipeline;
 import org.diorite.event.player.PlayerBlockDestroyEvent;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.BlockMaterialData;
-import org.diorite.material.Material;
+import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material_old.Material;
 import org.diorite.utils.pipeline.SimpleEventPipeline;
 import org.diorite.world.Block;
 
