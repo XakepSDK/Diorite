@@ -32,7 +32,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.world.chunk.ChunkImpl;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.lazy.LazyValue;
 import org.diorite.utils.math.geometry.BoundingBox;
 import org.diorite.world.Biome;
@@ -46,16 +47,16 @@ public class BlockImpl implements Block
     private final int                    y;
     private final byte                   z; // z pos on chunk, not map
     private final ChunkImpl              chunk;
-    private       BlockMaterialData      type;
+    private       BlockSubtype           type;
     private final LazyValue<BoundingBox> lazyBox;
 
-    public BlockImpl(final int x, final int y, final int z, final ChunkImpl chunk, final BlockMaterialData type)
+    public BlockImpl(final int x, final int y, final int z, final ChunkImpl chunk, final BlockType type)
     {
         this.x = (byte) x;
         this.y = y;
         this.z = (byte) z;
         this.chunk = chunk;
-        this.type = type;
+        this.type = type.asSubtype();
         this.lazyBox = new LazyValue<>(() -> {
             final int x1 = this.x + (this.chunk.getX() << 4);
             final int x2 = (x1 >= 0) ? (x1 + 1) : (x1 - 1);
@@ -117,7 +118,7 @@ public class BlockImpl implements Block
     }
 
     @Override
-    public BlockMaterialData getType()
+    public BlockSubtype getType()
     {
         return this.type;
     }
@@ -129,9 +130,9 @@ public class BlockImpl implements Block
     }
 
     @Override
-    public void setType(final BlockMaterialData type)
+    public void setType(final BlockType type)
     {
-        this.type = type;
+        this.type = type.asSubtype();
         this.chunk.setBlock(this.x, this.y, this.z, this.type);
 
 //        final PacketPlayOutBlockChange packet = new PacketPlayOutBlockChange(new BlockLocation(this.getX(), this.y, this.getZ(), this.getWorld()), type);
@@ -192,6 +193,6 @@ public class BlockImpl implements Block
     @Override
     public String toString()
     {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("x", this.getX()).append("y", this.y).append("z", this.getZ()).append("type", this.type.name() + ":" + this.type.getTypeName()).toString();
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("x", this.getX()).append("y", this.y).append("z", this.getZ()).append("type", this.type).toString();
     }
 }

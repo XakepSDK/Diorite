@@ -25,8 +25,9 @@
 package org.diorite.impl.world.chunk.palette;
 
 import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 
 public class GlobalPaletteImpl implements PaletteData
 {
@@ -73,24 +74,18 @@ public class GlobalPaletteImpl implements PaletteData
     }
 
     @Override
-    public int put(final BlockMaterialData data)
-    {
-        return (data.getId() << 4) | data.getType();
-    }
-
-    @Override
     public int getAsInt(final int sectionID)
     {
         return sectionID;
     }
 
     @Override
-    public BlockMaterialData get(final int sectionID)
+    public BlockSubtype get(final int sectionID)
     {
-        final BlockMaterialData data = (BlockMaterialData) BlockMaterialData.getByID(sectionID >> 4, sectionID & 15);
+        final BlockSubtype data = Blocks.getBlockSubtype(sectionID >> 4, sectionID & 15);
         if (data == null)
         {
-            return Material.AIR;
+            return BlockType.AIR.asSubtype();
         }
         return data;
     }
@@ -98,7 +93,7 @@ public class GlobalPaletteImpl implements PaletteData
     @Override
     public int size()
     {
-        return Material.getAllItemMaterialsCount();
+        return -1;
     }
 
     @Override

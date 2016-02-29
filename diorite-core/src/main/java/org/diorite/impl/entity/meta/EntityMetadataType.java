@@ -27,6 +27,7 @@ package org.diorite.impl.entity.meta;
 import org.diorite.impl.CoreMain;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.entity.meta.entry.EntityMetadataBlockLocationEntry;
+import org.diorite.impl.entity.meta.entry.EntityMetadataBlockTypeEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataBooleanEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataByteEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataChatEntry;
@@ -34,12 +35,11 @@ import org.diorite.impl.entity.meta.entry.EntityMetadataEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataFloatEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataIntEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataItemStackEntry;
-import org.diorite.impl.entity.meta.entry.EntityMetadataMaterialEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataStringEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataUUIDEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataVector3FEntry;
 import org.diorite.BlockLocation;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.Blocks;
 
 public enum EntityMetadataType
 {
@@ -170,7 +170,7 @@ public enum EntityMetadataType
                 @Override
                 public EntityMetadataIntEntry read(final int index, final PacketDataSerializer data)
                 {
-                    CoreMain.debug("TODO: " + this + ", " + index);
+                    CoreMain.debug("TODO: " + this + ", " + index); // TODO
                     return new EntityMetadataIntEntry(index, data.readVarInt());
                 }
             },
@@ -191,15 +191,15 @@ public enum EntityMetadataType
                 }
             },
     /**
-     * Block id value type, {@link EntityMetadataMaterialEntry}
+     * Block id value type, {@link EntityMetadataBlockTypeEntry}
      */
-    MATERIAL(12, EntityMetadataMaterialEntry.class)
+    BLOCK_TYPE(12, EntityMetadataBlockTypeEntry.class)
             {
                 @Override
-                public EntityMetadataMaterialEntry read(final int index, final PacketDataSerializer data)
+                public EntityMetadataBlockTypeEntry read(final int index, final PacketDataSerializer data)
                 {
                     final int k = data.readVarInt();
-                    return new EntityMetadataMaterialEntry(index, Material.getByID(k >> 4, k & 15));
+                    return new EntityMetadataBlockTypeEntry(index, Blocks.getBlockSubtypeByIdAndMeta(k));
                 }
             };
 

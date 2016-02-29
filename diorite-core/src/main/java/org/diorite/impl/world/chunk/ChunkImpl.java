@@ -38,8 +38,9 @@ import org.diorite.impl.world.WorldImpl;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
 import org.diorite.event.EventType;
 import org.diorite.event.chunk.ChunkUnloadEvent;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.nbt.NbtTag;
 import org.diorite.nbt.NbtTagCompound;
 import org.diorite.utils.collections.arrays.NibbleArray;
@@ -265,12 +266,12 @@ public class ChunkImpl implements Chunk
         }
     }
 
-    public BlockMaterialData setBlock(final int x, final int y, final int z, final BlockMaterialData materialData)
+    public BlockSubtype setBlock(final int x, final int y, final int z, final BlockType materialData)
     {
         final short sy = (short) y;
 
         final ChunkPartImpl chunkPart = this.getPart(sy);
-        final BlockMaterialData prev = chunkPart.setBlock(x, sy % Chunk.CHUNK_PART_HEIGHT, z, materialData);
+        final BlockSubtype prev = chunkPart.setBlock(x, sy % Chunk.CHUNK_PART_HEIGHT, z, materialData);
 
         final short hy = this.heightMap[((z << 4) | x)];
         if (sy >= hy)
@@ -297,24 +298,24 @@ public class ChunkImpl implements Chunk
         return prev;
     }
 
-    public BlockMaterialData setBlock(final int x, final int y, final int z, final int id, final int meta)
+    public BlockSubtype setBlock(final int x, final int y, final int z, final int id, final int meta)
     {
-        return this.setBlock(x, y, z, (BlockMaterialData) Material.getByID(id, meta));
+        return this.setBlock(x, y, z, Blocks.getBlockSubtype(id, meta));
     }
 
     @Override
-    public BlockMaterialData getBlockType(final int x, final int y, final int z)
+    public BlockSubtype getBlockType(final int x, final int y, final int z)
     {
         final ChunkPartImpl chunkPart = this.chunkParts[(y >> 4)];
         if (chunkPart == null)
         {
-            return Material.AIR;
+            return BlockType.AIR.asSubtype();
         }
         return chunkPart.getBlockType(x, y % Chunk.CHUNK_PART_HEIGHT, z);
     }
 
     @Override
-    public BlockMaterialData getHighestBlockType(final int x, final int z)
+    public BlockSubtype getHighestBlockType(final int x, final int z)
     {
         return this.getBlockType(x, ((z << 4) | x), z);
     }
@@ -421,10 +422,10 @@ public class ChunkImpl implements Chunk
             for (int i = 0; i < rawTypes.length; i++)
             {
                 int k = ((((extTypes == null) ? 0 : extTypes.get(i)) << 12) | ((rawTypes[i] & 0xff) << 4) | data.get(i));
-                if (Material.getByID(k >> 4, k & 15) == null)
+                if (Blocks.getBlockSubtype(k >> 4, k & 15) == null)
                 {
-                    final Material material = Material.getByID(k >> 4);
-                    k = (material == null) ? 0 : material.getIdAndMeta();
+                    final BlockSubtype subtype = Blocks.getBlockSubtype(k >> 4);
+                    k = (subtype == null) ? 0 : ((subtype.getId() << 4) | subtype.getSubtypeId());
 //                    throw new IllegalArgumentException("Unknown material: " + k + " (" + (k >> 4) + ":" + (k & 15) + ")");
                 }
                 loading[i] = k;

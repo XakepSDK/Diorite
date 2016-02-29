@@ -29,36 +29,43 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.CoreMain;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.utils.math.DioriteMathUtils;
 
 public class ArrayPaletteImpl implements PaletteData
 {
     private static final int SIZE = 16;
 
-    protected final BlockMaterialData[] pattern;
+    protected final BlockSubtype[] pattern;
     protected int lastIndex = 1;
 
     public ArrayPaletteImpl()
     {
-        this.pattern = new BlockMaterialData[SIZE];
-        this.pattern[0] = Material.AIR;
+        this.pattern = new BlockSubtype[SIZE];
+        this.pattern[0] = BlockType.AIR.asSubtype();
     }
 
-    private ArrayPaletteImpl(final BlockMaterialData[] pattern)
+    private ArrayPaletteImpl(final BlockSubtype[] pattern)
     {
         this.pattern = pattern;
     }
 
-    @Override
-    public int put(final BlockMaterialData data)
+    protected static int getIdAndMeta(final BlockSubtype subtype)
     {
-        final BlockMaterialData[] pattern = this.pattern;
+        return ((subtype.getId() << 4) | subtype.getSubtypeId());
+    }
+
+    @Override
+    public int put(final BlockType d)
+    {
+        final BlockSubtype data = d.asSubtype();
+        final BlockSubtype[] pattern = this.pattern;
         for (int i = 0; i < this.lastIndex; i++)
         {
-            final BlockMaterialData materialData = pattern[i];
-            if (materialData.getIdAndMeta() == data.getIdAndMeta())
+            final BlockSubtype materialData = pattern[i];
+            if (getIdAndMeta(materialData) == getIdAndMeta(data))
             {
                 return i;
             }
@@ -75,11 +82,11 @@ public class ArrayPaletteImpl implements PaletteData
     @Override
     public int put(final int minecraftIDandData)
     {
-        final BlockMaterialData[] pattern = this.pattern;
+        final BlockSubtype[] pattern = this.pattern;
         for (int i = 0; i < this.lastIndex; i++)
         {
-            final BlockMaterialData materialData = pattern[i];
-            if (materialData.getIdAndMeta() == minecraftIDandData)
+            final BlockSubtype materialData = pattern[i];
+            if (getIdAndMeta(materialData) == minecraftIDandData)
             {
                 return i;
             }
@@ -88,39 +95,39 @@ public class ArrayPaletteImpl implements PaletteData
         {
             return - 1;
         }
-        Material mat = Material.getByID(minecraftIDandData >> 4, minecraftIDandData & 15);
-        if (! (mat instanceof BlockMaterialData))
+        BlockSubtype mat = Blocks.getBlockSubtype(minecraftIDandData >> 4, minecraftIDandData & 15);
+        if (mat == null)
         {
-            mat = Material.getByID(minecraftIDandData >> 4);
-            if (! (mat instanceof BlockMaterialData))
+            mat = Blocks.getBlockSubtype(minecraftIDandData >> 4);
+            if (mat == null)
             {
-                mat = Material.AIR;
+                mat = BlockType.AIR.asSubtype();
 //                throw new IllegalArgumentException("Unknown material: " + minecraftIDandData + " (" + (minecraftIDandData >> 4) + ":" + (minecraftIDandData & 15) + ")");
             }
         }
         final int index = this.lastIndex++;
-        pattern[index] = (BlockMaterialData) mat;
+        pattern[index] = mat;
         return index;
     }
 
     @Override
     public int getAsInt(final int sectionID)
     {
-        final BlockMaterialData mat = this.pattern[sectionID];
+        final BlockSubtype mat = this.pattern[sectionID];
         if (mat == null)
         {
             return 0;
         }
-        return mat.getIdAndMeta();
+        return getIdAndMeta(mat);
     }
 
     @Override
-    public BlockMaterialData get(final int sectionID)
+    public BlockSubtype get(final int sectionID)
     {
-        final BlockMaterialData mat = this.pattern[sectionID];
+        final BlockSubtype mat = this.pattern[sectionID];
         if (mat == null)
         {
-            return BlockMaterialData.AIR;
+            return BlockType.AIR.asSubtype();
         }
         return mat;
     }
@@ -143,7 +150,7 @@ public class ArrayPaletteImpl implements PaletteData
         int bytes = DioriteMathUtils.varintSize(this.lastIndex);
         for (int var2 = 0; var2 < this.lastIndex; ++ var2)
         {
-            bytes += DioriteMathUtils.varintSize(this.pattern[var2].getIdAndMeta());
+            bytes += DioriteMathUtils.varintSize(getIdAndMeta(this.pattern[var2]));
         }
         return bytes;
     }
@@ -155,14 +162,14 @@ public class ArrayPaletteImpl implements PaletteData
         {
             int i = 0;
             data.writeVarInt(this.lastIndex);
-            for (final BlockMaterialData materialData : this.pattern)
+            for (final BlockSubtype materialData : this.pattern)
             {
                 if (materialData == null)
                 {
                     break;
                 }
                 i++;
-                data.writeVarInt(materialData.getIdAndMeta());
+                data.writeVarInt(getIdAndMeta(materialData));
             }
             if (this.lastIndex != i)
             {
@@ -171,13 +178,13 @@ public class ArrayPaletteImpl implements PaletteData
             return;
         }
         data.writeVarInt(this.lastIndex);
-        for (final BlockMaterialData materialData : this.pattern)
+        for (final BlockSubtype materialData : this.pattern)
         {
             if (materialData == null)
             {
                 break;
             }
-            data.writeVarInt(materialData.getIdAndMeta());
+            data.writeVarInt(getIdAndMeta(materialData));
         }
     }
 
@@ -188,12 +195,12 @@ public class ArrayPaletteImpl implements PaletteData
         for (int i = 0; i < size; i++)
         {
             final int id = data.readVarInt();
-            final Material mat = Material.getByID(id >> 4, id & 15);
-            if (! (mat instanceof BlockMaterialData))
+            final BlockSubtype mat = Blocks.getBlockSubtype(id >> 4, id & 15);
+            if (mat == null)
             {
                 throw new IllegalArgumentException("Unknown material: " + id + " (" + (id >> 4) + ":" + (id & 15) + ")");
             }
-            this.pattern[i] = (BlockMaterialData) mat;
+            this.pattern[i] = mat;
         }
     }
 

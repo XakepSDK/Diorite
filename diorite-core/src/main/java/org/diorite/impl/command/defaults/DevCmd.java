@@ -48,8 +48,8 @@ import org.diorite.impl.entity.IEntityFactory;
 import org.diorite.impl.entity.ILivingEntity;
 import org.diorite.impl.entity.IPlayer;
 import org.diorite.impl.entity.IZombie;
+import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.impl.inventory.item.meta.ItemMetaImpl;
-import org.diorite.impl.inventory.item.meta.PotionMetaImpl;
 import org.diorite.Location;
 import org.diorite.Particle;
 import org.diorite.Sound;
@@ -62,22 +62,16 @@ import org.diorite.chat.component.ComponentBuilder;
 import org.diorite.chat.component.TextComponent;
 import org.diorite.chat.component.serialize.ComponentSerializer;
 import org.diorite.command.CommandPriority;
-import org.diorite.effect.StatusEffect;
-import org.diorite.effect.StatusEffectType;
 import org.diorite.enchantments.EnchantmentType;
 import org.diorite.entity.EntityType;
 import org.diorite.entity.attrib.AttributeModifier;
 import org.diorite.entity.attrib.AttributeType;
 import org.diorite.inventory.InventoryHolder;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.BookMeta;
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.inventory.item.meta.PotionMeta;
 import org.diorite.inventory.item.meta.SkullMeta;
-import org.diorite.material_old.Material;
-import org.diorite.material_old.items.PotionMat;
-import org.diorite.material_old.items.SkullMat;
+import org.diorite.material.item.ItemType;
 import org.diorite.permissions.PermissionLevel;
 import org.diorite.permissions.PermissionsGroup;
 import org.diorite.permissions.PermissionsManager;
@@ -254,8 +248,8 @@ public class DevCmd extends SystemCommandImpl
                     break;
                 }
                 case "bookmeta":
-                {
-                    final ItemStack item = new BaseItemStack(Material.WRITTEN_BOOK);
+                {//TODO: test with new system
+                    final ItemStack item = new ItemStackImpl(ItemType.WRITTEN_BOOK);
                     final BookMeta meta = (BookMeta) item.getItemMeta();
                     meta.setAuthor("Lel");
                     meta.setPages("ugh");
@@ -263,26 +257,26 @@ public class DevCmd extends SystemCommandImpl
                     break;
                 }
                 case "gib":
-                {
-                    final ItemStack item = new BaseItemStack(Material.APPLE);
+                {//TODO: test with new system
+                    final ItemStack item = new ItemStackImpl(ItemType.APPLE);
                     item.setAmount(args.has(0) ? args.asInt(0, 1) : 1);
                     final ItemMeta meta = item.getItemMeta();
                     meta.setDisplayName("Diorite");
                     p.getInventory().add(item);
                     break;
                 }
-                case "potionmeta":
-                {
-                    final ItemStack item = new BaseItemStack(new PotionMat("POTION", 373, "minecraft:potion", 1, "POTION", (short) 8193, 5, 6)
-                    {
-                    });
-                    final PotionMeta meta = new PotionMetaImpl(null);
-                    meta.addCustomEffect(new StatusEffect(StatusEffectType.INVISIBILITY, 3, 300, false, true), false);
-                    meta.addCustomEffect(new StatusEffect(StatusEffectType.INVISIBILITY, 3, 30000, false, true), false);
-                    item.setItemMeta(meta);
-                    p.getInventory().add(item);
-                    break;
-                }
+//                case "potionmeta": TODO: test with new system
+//                {
+//                    final ItemStack item = new ItemStackImpl(new PotionMat("POTION", 373, "minecraft:potion", 1, "POTION", (short) 8193, 5, 6)
+//                    {
+//                    });
+//                    final PotionMeta meta = new PotionMetaImpl(null);
+//                    meta.addCustomEffect(new StatusEffect(StatusEffectType.INVISIBILITY, 3, 300, false, true), false);
+//                    meta.addCustomEffect(new StatusEffect(StatusEffectType.INVISIBILITY, 3, 30000, false, true), false);
+//                    item.setItemMeta(meta);
+//                    p.getInventory().add(item);
+//                    break;
+//                }
                 case "m2":
                 {
                     final ItemMeta meta = p.getInventory().getItemInHand().getItemMeta();
@@ -296,8 +290,8 @@ public class DevCmd extends SystemCommandImpl
                     break;
                 }
                 case "skullmeta":
-                {
-                    final ItemStack item = new BaseItemStack(SkullMat.SKULL_PLAYER);
+                {//TODO: test with new system
+                    final ItemStack item = new ItemStackImpl(ItemType.SKULL);
                     System.out.println(item.getItemMeta());
                     final SkullMeta meta = (SkullMeta) item.getItemMeta();
                     meta.setOwner(args.asString(0));
@@ -306,8 +300,8 @@ public class DevCmd extends SystemCommandImpl
                     break;
                 }
                 case "itemmeta":
-                {
-                    final ItemStack item = new BaseItemStack(Material.STONE);
+                {//TODO: test with new system
+                    final ItemStack item = new ItemStackImpl(ItemType.STONE);
                     final ItemMeta meta = item.getItemMeta();
                     meta.setDisplayName("Custom name!");
                     meta.setLore(Arrays.asList("North to", "gupi nup"));

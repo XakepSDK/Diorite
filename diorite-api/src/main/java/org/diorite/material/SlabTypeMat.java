@@ -22,28 +22,52 @@
  * SOFTWARE.
  */
 
-package org.diorite.impl.entity.meta.entry;
+package org.diorite.material;
 
-import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.impl.entity.meta.EntityMetadataType;
-import org.diorite.material_old.Material;
-
-public class EntityMetadataMaterialEntry extends EntityMetadataObjectEntry<Material>
+/**
+ * enum with all slab types.
+ */
+public enum SlabTypeMat
 {
-    public EntityMetadataMaterialEntry(final int index, final Material material)
+    /**
+     * Single slab on bottom half of block.
+     */
+    BOTTOM(false, 0x00),
+    /**
+     * Single slab on upper half of block.
+     */
+    UPPER(false, 0x08),
+    /**
+     * Double slab, full block.
+     */
+    FULL(true, 0x00),
+    /**
+     * Double slab, full block, only few slab blocks have this type.
+     */
+    SMOOTH_FULL(true, 0x08);
+
+    private final boolean fullBlock;
+    private final byte    flag;
+
+    SlabTypeMat(final boolean fullBlock, final int flag)
     {
-        super(index, material);
+        this.fullBlock = fullBlock;
+        this.flag = (byte) flag;
     }
 
-    @Override
-    public EntityMetadataType getDataType()
+    /**
+     * @return if this is one of full block types. {@link #FULL} {@link #SMOOTH_FULL}
+     */
+    public boolean isFullBlock()
     {
-        return EntityMetadataType.MATERIAL;
+        return this.fullBlock;
     }
 
-    @Override
-    public void write(final PacketDataSerializer data)
+    /**
+     * @return sub-id flag used by all slab blocks.
+     */
+    public byte getFlag()
     {
-        data.writeVarInt(this.data.getIdAndMeta());
+        return this.flag;
     }
 }

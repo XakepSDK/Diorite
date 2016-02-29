@@ -34,7 +34,7 @@ import org.diorite.impl.connection.EnumProtocolDirection;
 import org.diorite.impl.connection.packets.PacketClass;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.connection.packets.play.PacketPlayClientboundListener;
-import org.diorite.impl.inventory.item.ItemStackImpl;
+import org.diorite.impl.inventory.item.IItemStack;
 import org.diorite.impl.inventory.item.ItemStackImplArray;
 
 @PacketClass(id = 0x14, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 512)
@@ -53,7 +53,7 @@ public class PacketPlayClientboundWindowItems extends PacketPlayClientbound
         this.items = items;
     }
 
-    public PacketPlayClientboundWindowItems(final int windowId, final ItemStackImpl... items)
+    public PacketPlayClientboundWindowItems(final int windowId, final IItemStack... items)
     {
         this.items = ItemStackImplArray.create(items);
         if (this.items.length() == 0)

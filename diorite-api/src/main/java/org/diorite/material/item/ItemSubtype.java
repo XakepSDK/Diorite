@@ -56,4 +56,11 @@ public interface ItemSubtype extends ItemType, AnySubtype
      */
     @Override
     String getSubtypeStringId();
+
+    /**
+     * Returns normal/full type of this item subtype.
+     *
+     * @return normal/full type of this item subtype.
+     */
+    ItemType getFullType();
 }

@@ -29,7 +29,7 @@ import org.diorite.utils.concurrent.atomic.AtomicArray;
 /**
  * Atomic itemstack array.
  */
-public interface ItemStackImplArray extends AtomicArray<ItemStackImpl>
+public interface ItemStackImplArray extends AtomicArray<IItemStack>
 {
     @Override
     ItemStackImplArray getSubArray(int offset, int length);
@@ -40,7 +40,7 @@ public interface ItemStackImplArray extends AtomicArray<ItemStackImpl>
         return this.getSubArray(offset, this.length() - offset);
     }
 
-    default ItemStackImpl getOrNull(final int index)
+    default IItemStack getOrNull(final int index)
     {
         if (index >= this.length())
         {
@@ -49,7 +49,7 @@ public interface ItemStackImplArray extends AtomicArray<ItemStackImpl>
         return this.get(index);
     }
 
-    static ItemStackImplArray create(final ItemStackImpl[] items)
+    static ItemStackImplArray create(final IItemStack[] items)
     {
         return new ItemStackImplArrayBase(items);
     }

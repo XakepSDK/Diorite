@@ -33,28 +33,26 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.BlockLocation;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
-import org.diorite.material_old.RotateAxisMat;
-import org.diorite.material_old.WoodType;
-import org.diorite.material_old.blocks.LeavesMat;
-import org.diorite.material_old.blocks.LogMat;
+import org.diorite.material.WoodType;
+import org.diorite.material.block.BlockType;
 import org.diorite.world.chunk.ChunkPos;
 import org.diorite.world.generator.structures.Structure;
 
 public abstract class TreeStructure implements Structure
 {
-    protected static final Set<Material> FLOOR_MATS = Sets.newHashSet(Material.GRASS, Material.DIRT);
+    protected static final Set<BlockType> FLOOR_MATS = Sets.newHashSet(BlockType.GRASS, BlockType.DIRT);
 
-    protected final BlockMaterialData logMat;
-    protected final BlockMaterialData leavesMat;
+    protected final BlockType logMat;
+    protected final BlockType leavesMat;
 
     public TreeStructure(final WoodType type)
     {
-        this(LogMat.getLog(type, RotateAxisMat.UP_DOWN), LeavesMat.getLeaves(type, false, true));
+        this.logMat = BlockType.LOG;
+        this.leavesMat = BlockType.LEAVES;
+//        this(LogMat.getLog(type, RotateAxisMat.UP_DOWN), LeavesMat.getLeaves(type, false, true)); TODO
     }
 
-    public TreeStructure(final BlockMaterialData logMat, final BlockMaterialData leavesMat)
+    public TreeStructure(final BlockType logMat, final BlockType leavesMat)
     {
         this.logMat = logMat;
         this.leavesMat = leavesMat;

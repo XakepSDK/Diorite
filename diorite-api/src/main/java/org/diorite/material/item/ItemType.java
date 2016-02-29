@@ -26,6 +26,7 @@ package org.diorite.material.item;
 
 import java.util.Collection;
 
+import org.diorite.inventory.item.meta.ItemMeta;
 import org.diorite.material.AnyType;
 
 /**
@@ -33,6 +34,11 @@ import org.diorite.material.AnyType;
  */
 public interface ItemType extends AnyType
 {
+    /**
+     * Default max stack size.
+     */
+    int DEFAULT_STACK_SIZE = 64;
+
     ItemType STONE                    = Items.getItemType("minecraft:stone");
     ItemType GRASS                    = Items.getItemType("minecraft:grass");
     ItemType DIRT                     = Items.getItemType("minecraft:dirt");
@@ -424,6 +430,14 @@ public interface ItemType extends AnyType
     int getMaxStack();
 
     /**
+     * Returns display name of item.
+     *
+     * @return display name of item.
+     */
+    @Override
+    String getDisplayNameKey();
+
+    /**
      * Returns subtype by given id.
      *
      * @param id id of subtype.
@@ -452,11 +466,17 @@ public interface ItemType extends AnyType
     Collection<? extends ItemSubtype> getSubtypes();
 
     /**
-     * Returns display name of item.
+     * Returns default subtype of item.
      *
-     * @return display name of item.
+     * @return default subtype of item.
      */
-    @Override
-    String getDisplayNameKey();
+    ItemSubtype asSubtype();
+
+    /**
+     * Returns type of ItemMeta used by this material.
+     *
+     * @return type of ItemMeta used by this material.
+     */
+    Class<? extends ItemMeta> getMetaType();
 
 }

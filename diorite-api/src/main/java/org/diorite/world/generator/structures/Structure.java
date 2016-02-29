@@ -27,7 +27,7 @@ package org.diorite.world.generator.structures;
 import java.util.Random;
 
 import org.diorite.BlockLocation;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.world.Block;
 import org.diorite.world.chunk.ChunkPos;
 
@@ -65,7 +65,7 @@ public interface Structure
 
     /**
      * Should return true if this block can be replaced to structure one. <br>
-     * Default implementation allows all non-solid blocks to be changed. {@link BlockMaterialData#isSolid()}
+     * Default implementation allows all non-solid blocks to be changed. {@link BlockType#isSolid()}
      *
      * @param block block to check.
      *
@@ -85,7 +85,7 @@ public interface Structure
      * @param z     blocks to move from center in z coords.
      * @param block new material to set.
      */
-    default void setBlockForce(final BlockLocation loc, final int x, final int y, final int z, final BlockMaterialData block)
+    default void setBlockForce(final BlockLocation loc, final int x, final int y, final int z, final BlockType block)
     {
         loc.add(x, y, z).setBlock(block);
     }
@@ -97,7 +97,7 @@ public interface Structure
      * @param rel   blocks to move from center.
      * @param block new material to set.
      */
-    default void setBlockForce(final BlockLocation loc, final BlockLocation rel, final BlockMaterialData block)
+    default void setBlockForce(final BlockLocation loc, final BlockLocation rel, final BlockType block)
     {
         loc.add(rel).setBlock(block);
     }
@@ -108,7 +108,7 @@ public interface Structure
      * @param loc   center location.
      * @param block new material to set.
      */
-    default void setBlockForce(final BlockLocation loc, final BlockMaterialData block)
+    default void setBlockForce(final BlockLocation loc, final BlockType block)
     {
         loc.setBlock(block);
     }
@@ -125,7 +125,7 @@ public interface Structure
      *
      * @return true if black was set.
      */
-    default boolean setBlock(final BlockLocation loc, final int x, final int y, final int z, final BlockMaterialData block)
+    default boolean setBlock(final BlockLocation loc, final int x, final int y, final int z, final BlockType block)
     {
         final Block b = loc.add(x, y, z).getBlock();
         if (! this.canBeReplaced(b))
@@ -146,7 +146,7 @@ public interface Structure
      *
      * @return true if black was set.
      */
-    default boolean setBlock(final BlockLocation loc, final BlockLocation rel, final BlockMaterialData block)
+    default boolean setBlock(final BlockLocation loc, final BlockLocation rel, final BlockType block)
     {
         final Block b = loc.add(rel).getBlock();
         if (! this.canBeReplaced(b))
@@ -166,7 +166,7 @@ public interface Structure
      *
      * @return true if black was set.
      */
-    default boolean setBlock(final BlockLocation loc, final BlockMaterialData block)
+    default boolean setBlock(final BlockLocation loc, final BlockType block)
     {
         final Block b = loc.getBlock();
         if (! this.canBeReplaced(b))

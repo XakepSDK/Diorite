@@ -38,7 +38,7 @@ import org.diorite.Particle;
 import org.diorite.entity.Item;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.math.DioriteRandom;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.chunk.ChunkManager;
@@ -146,9 +146,9 @@ public interface World
 
     Block getHighestBlock(int x, int z);
 
-    void setBlock(int x, int y, int z, BlockMaterialData material);
+    void setBlock(int x, int y, int z, BlockType type);
 
-    void setBlock(BlockLocation location, BlockMaterialData material);
+    void setBlock(BlockLocation location, BlockType type);
 
     int getMaxHeight();
 

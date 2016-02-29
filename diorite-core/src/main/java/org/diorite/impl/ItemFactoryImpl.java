@@ -59,7 +59,7 @@ import org.diorite.inventory.item.meta.PotionMeta;
 import org.diorite.inventory.item.meta.RepairableMeta;
 import org.diorite.inventory.item.meta.SkullMeta;
 import org.diorite.inventory.item.meta.ToolMeta;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 import org.diorite.nbt.NbtTagCompound;
 
 public class ItemFactoryImpl implements ItemFactory
@@ -99,7 +99,7 @@ public class ItemFactoryImpl implements ItemFactory
     }
 
     @Override
-    public ItemMeta construct(final Material material, final NbtTagCompound nbt)
+    public ItemMeta construct(final ItemType material, final NbtTagCompound nbt)
     {
         final Function<NbtTagCompound, ? extends ItemMeta> constructor = this.metaTypes.get(material.getMetaType());
         if (constructor == null)

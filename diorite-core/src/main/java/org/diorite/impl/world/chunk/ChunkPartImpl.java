@@ -30,8 +30,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.world.chunk.palette.Palette;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.collections.arrays.NibbleArray;
 import org.diorite.world.chunk.Chunk;
 
@@ -124,10 +124,10 @@ public class ChunkPartImpl // part of chunk 16x16x16
         return new ChunkPartImpl(this.chunkBlockData.clone(), this.palette.clone(), this.skyLight.snapshot(), this.blockLight.snapshot(), this.yPos);
     }
 
-    public BlockMaterialData setBlock(final int x, final int y, final int z, final int id, final int meta)
+    public BlockSubtype setBlock(final int x, final int y, final int z, final int id, final int meta)
     {
-        final BlockMaterialData old = this.getBlockType(x, y, z);
-        if ((id == old.ordinal()) && (meta == old.getType()))
+        final BlockSubtype old = this.getBlockType(x, y, z);
+        if ((id == old.getId()) && (meta == old.getSubtypeId()))
         {
             return old;
         }
@@ -145,21 +145,22 @@ public class ChunkPartImpl // part of chunk 16x16x16
         return old;
     }
 
-    public BlockMaterialData rawSetBlock(final int x, final int y, final int z, final int id, final int meta)
+    public BlockSubtype rawSetBlock(final int x, final int y, final int z, final int id, final int meta)
     {
-        final BlockMaterialData type = this.chunkBlockData.getAndSet(toArrayIndex(x, y, z), this.palette.put(id, (byte) meta), this.palette);
-        return (type == null) ? Material.AIR : type;
+        final BlockSubtype type = this.chunkBlockData.getAndSet(toArrayIndex(x, y, z), this.palette.put(id, (byte) meta), this.palette);
+        return (type == null) ? BlockType.AIR.asSubtype() : type;
     }
 
-    public BlockMaterialData setBlock(final int x, final int y, final int z, final BlockMaterialData material)
+    public BlockSubtype setBlock(final int x, final int y, final int z, final BlockType type)
     {
-        return this.setBlock(x, y, z, material.ordinal(), material.getType());
+        final BlockSubtype blockSubtype = type.asSubtype();
+        return this.setBlock(x, y, z, blockSubtype.getId(), blockSubtype.getSubtypeId());
     }
 
-    public BlockMaterialData getBlockType(final int x, final int y, final int z)
+    public BlockSubtype getBlockType(final int x, final int y, final int z)
     {
-        final BlockMaterialData type = this.chunkBlockData.get(toArrayIndex(x, y, z), this.palette);
-        return (type == null) ? Material.AIR : type;
+        final BlockSubtype type = this.chunkBlockData.get(toArrayIndex(x, y, z), this.palette);
+        return (type == null) ? BlockType.AIR.asSubtype() : type;
     }
 //
 //    public AtomicShortArray getBlocks()
@@ -178,8 +179,8 @@ public class ChunkPartImpl // part of chunk 16x16x16
 
         for (int i = 0; i < CHUNK_DATA_SIZE; i++)
         {
-            final BlockMaterialData type = this.chunkBlockData.get(i, this.palette);
-            if ((type != null) && ! type.isThisSameID(Material.AIR))
+            final BlockSubtype type = this.chunkBlockData.get(i, this.palette);
+            if ((type != null) && ! type.isThisSameType(BlockType.AIR))
             {
                 this.nonEmptyBlockCount++;
             }

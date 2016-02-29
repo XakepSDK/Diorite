@@ -27,7 +27,7 @@ package org.diorite;
 import java.util.function.Function;
 
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 import org.diorite.nbt.NbtTagCompound;
 
 /**
@@ -52,14 +52,14 @@ public interface ItemFactory
     void unregisterMetaType(Class<? extends ItemMeta> clazz);
 
     /**
-     * Construct new ItemMeta instance for given material, {@link Material#getMetaType()} is used to get type of meta data.
+     * Construct new ItemMeta instance for given material, {@link ItemType#getMetaType()} is used to get type of meta data.
      *
      * @param material material to be used.
      * @param nbt      nbt data to be used, null value allowed.
      *
      * @return constructed ItemMeta instance.
      */
-    ItemMeta construct(Material material, NbtTagCompound nbt);
+    ItemMeta construct(ItemType type, NbtTagCompound nbt);
 
     /**
      * Construct new ItemMeta instance for given item meta class, api class must be used.
@@ -73,15 +73,15 @@ public interface ItemFactory
     <T extends ItemMeta> T construct(Class<T> clazz, NbtTagCompound nbt);
 
     /**
-     * Construct new ItemMeta instance for given material, {@link Material#getMetaType()} is used to get type of meta data.
+     * Construct new ItemMeta instance for given material, {@link ItemType#getMetaType()} is used to get type of meta data.
      *
      * @param material material to be used.
      *
      * @return constructed ItemMeta instance.
      */
-    default ItemMeta construct(final Material material)
+    default ItemMeta construct(final ItemType type)
     {
-        return this.construct(material, null);
+        return this.construct(type, null);
     }
 
     /**

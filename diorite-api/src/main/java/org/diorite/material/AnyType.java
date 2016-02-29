@@ -31,6 +31,7 @@ import java.util.Collection;
  */
 public interface AnyType
 {
+
     /**
      * Returns numeric id used (not always, sometimes {@link #getMinecraftId()} is used) in save files, packets, etc.
      *
@@ -98,6 +99,13 @@ public interface AnyType
      * @return display name of type.
      */
     String getDisplayNameKey();
+
+    /**
+     * Returns default subtype.
+     *
+     * @return default subtype.
+     */
+    AnySubtype asSubtype();
 
     /**
      * Returns true if given type is this same type as this type. (this method ignore subtypes)

@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.diorite.inventory.item.meta.ItemMeta;
+import org.diorite.material.item.ItemSubtype;
 import org.diorite.material.item.ItemType;
 
 public interface ItemStack extends Cloneable
@@ -40,14 +41,14 @@ public interface ItemStack extends Cloneable
     /**
      * @return material of itemstack.
      */
-    ItemType getMaterial();
+    ItemSubtype getType();
 
     /**
      * Change material of itemstack.
      *
      * @param material new material.
      */
-    void setMaterial(ItemType material);
+    void setType(ItemType material);
 
     /**
      * ItemMeta contains data like name, lore, enchantments of item.
@@ -90,7 +91,7 @@ public interface ItemStack extends Cloneable
     /**
      * @return true if this is air itemstack.
      */
-    boolean isAir();
+    boolean isEmpty();
 
     /**
      * Check if this itemstack have valid amout of items in it.
@@ -169,7 +170,7 @@ public interface ItemStack extends Cloneable
         for (int i = 0, itemsLength = items.length; i < itemsLength; i++)
         {
             final ItemStack item = items[i];
-            if ((item == null) || item.isAir())
+            if ((item == null) || item.isEmpty())
             {
                 continue;
             }
@@ -180,7 +181,7 @@ public interface ItemStack extends Cloneable
                 {
                     if (respectStackSize)
                     {
-                        final int space = item.getMaterial().getMaxStack() - item.getAmount();
+                        final int space = item.getType().getMaxStack() - item.getAmount();
                         if (space > 0)
                         {
                             final int toAdd = item2.getAmount();
@@ -208,7 +209,7 @@ public interface ItemStack extends Cloneable
         final List<ItemStack> result = new ArrayList<>(items.length);
         for (final ItemStack item : items)
         {
-            if ((item == null) || item.isAir())
+            if ((item == null) || item.isEmpty())
             {
                 continue;
             }

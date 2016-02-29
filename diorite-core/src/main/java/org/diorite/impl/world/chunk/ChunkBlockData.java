@@ -29,7 +29,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.world.chunk.palette.Palette;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockSubtype;
 
 public class ChunkBlockData
 {
@@ -86,7 +86,7 @@ public class ChunkBlockData
         return palette.getAsInt(this.getAndSet(index, patternID));
     }
 
-    public BlockMaterialData getAndSet(final int index, final int patternID, final Palette palette)
+    public BlockSubtype getAndSet(final int index, final int patternID, final Palette palette)
     {
         return palette.get(this.getAndSet(index, patternID));
     }
@@ -143,7 +143,7 @@ public class ChunkBlockData
         return palette.getAsInt(this.get(index));
     }
 
-    public BlockMaterialData get(final int index, final Palette palette)
+    public BlockSubtype get(final int index, final Palette palette)
     {
         return palette.get(this.get(index));
     }

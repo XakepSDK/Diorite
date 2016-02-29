@@ -22,59 +22,75 @@
  * SOFTWARE.
  */
 
-package org.diorite.impl.inventory.recipe.craft;
-
-import java.util.Collections;
-import java.util.List;
+package org.diorite.impl.material.block;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.impl.inventory.item.ItemStackImpl;
-import org.diorite.inventory.GridInventory;
-import org.diorite.inventory.item.ItemStack;
-import org.diorite.inventory.recipe.craft.CraftingRecipe;
-import org.diorite.inventory.recipe.craft.CraftingRecipeCheckResult;
-import org.diorite.material.item.ItemType;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 
-public class FireworkChargeCraftingRecipe implements CraftingRecipe
+public class SimpleBlockType extends BlockTypeImpl implements BlockSubtype
 {
-    protected final long priority;
-    protected final List<ItemStack> result = Collections.singletonList(new ItemStackImpl(ItemType.FIREWORK_CHARGE));
+    private String subtypeStringId;
+    private int subtypeId      = 0;
+    private int proxySubtypeId = 0;
 
-    public FireworkChargeCraftingRecipe(final long priority)
+    public SimpleBlockType(final int id, final String minecraftId)
     {
-        this.priority = priority;
+        super(id, minecraftId);
+        final int i = minecraftId.indexOf(':');
+        this.subtypeStringId = (i == - 1) ? minecraftId : minecraftId.substring(i + 1, minecraftId.length());
     }
 
     @Override
-    public CraftingRecipeCheckResult isMatching(final GridInventory inventory)
+    public BlockSubtype asSubtype()
     {
-        return null;
+        return this;
     }
 
     @Override
-    public List<ItemStack> getResult()
+    public int getSubtypeId()
     {
-        return this.result;
+        return this.subtypeId;
+    }
+
+    public void setSubtypeId(final int subtypeId)
+    {
+        this.subtypeId = subtypeId;
     }
 
     @Override
-    public long getPriority()
+    public int getProxySubtypeId()
     {
-        return this.priority;
+        return this.proxySubtypeId;
     }
 
+    public void setProxySubtypeId(final int proxySubtypeId)
+    {
+        this.proxySubtypeId = proxySubtypeId;
+    }
 
     @Override
-    public boolean isVanilla()
+    public String getSubtypeStringId()
     {
-        return true;
+        return this.subtypeStringId;
+    }
+
+    public void setSubtypeStringId(final String subtypeStringId)
+    {
+        this.subtypeStringId = subtypeStringId;
+    }
+
+    @Override
+    public BlockType getFullType()
+    {
+        return this;
     }
 
     @Override
     public String toString()
     {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("priority", this.priority).append("result", this.result).toString();
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("subtypeStringId", this.subtypeStringId).toString();
     }
 }

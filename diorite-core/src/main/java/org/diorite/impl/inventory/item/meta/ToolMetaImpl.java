@@ -31,8 +31,8 @@ import java.util.stream.Collectors;
 
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ToolMeta;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.nbt.NbtTagCompound;
 import org.diorite.nbt.NbtTagList;
 import org.diorite.nbt.NbtTagString;
@@ -64,11 +64,11 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
         {
             return;
         }
-        this.setCanDestoryMaterials(new ArrayList<>(1));
+        this.setCanDestoryBlocks(new ArrayList<>(1));
     }
 
     @Override
-    public Set<BlockMaterialData> getCanDestoryMaterials()
+    public Set<BlockType> getCanDestoryBlocks()
     {
         if (this.tag == null)
         {
@@ -79,11 +79,11 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
         {
             return null;
         }
-        return list.getTags(NbtTagString.class).stream().map(s -> Material.getByMinecraftId(s.getValue())).filter(m -> m instanceof BlockMaterialData).map(m -> (BlockMaterialData) m).collect(Collectors.toSet());
+        return list.getTags(NbtTagString.class).stream().map(s -> Blocks.getBlockType(s.getValue())).filter(m -> m != null).map(m -> m).collect(Collectors.toSet());
     }
 
     @Override
-    public void setCanDestoryMaterials(final Collection<BlockMaterialData> materials)
+    public void setCanDestoryBlocks(final Collection<BlockType> materials)
     {
         if (this.removeIfNeeded(CAN_DESTROY, materials))
         {
@@ -97,7 +97,7 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
     }
 
     @Override
-    public void addCanDestoryMaterial(final BlockMaterialData material)
+    public void addCanDestoryBlock(final BlockType material)
     {
         this.checkTag(true);
         NbtTagList list = this.tag.getTag(CAN_DESTROY, NbtTagList.class);
@@ -111,7 +111,7 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
     }
 
     @Override
-    public boolean containsCanDestoryMaterial(final BlockMaterialData material)
+    public boolean containsCanDestoryBlock(final BlockType material)
     {
         if (this.tag == null)
         {
@@ -122,7 +122,7 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
     }
 
     @Override
-    public void removeCanDestoryMaterial(final BlockMaterialData material)
+    public void removeCanDestoryBlock(final BlockType material)
     {
         if (this.tag == null)
         {
@@ -138,7 +138,7 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
     }
 
     @Override
-    public void removeCanDestoryMaterials()
+    public void removeCanDestoryBlocks()
     {
         if (this.tag == null)
         {

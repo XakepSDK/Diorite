@@ -28,8 +28,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.FuelMat;
-import org.diorite.material_old.items.ArmorMat;
 
 /**
  * Represent slot properties, multiple inventory slots may use this same instance of slot object as it don't
@@ -62,7 +60,8 @@ public abstract class Slot
             {
                 return null;
             }
-            return (item.getMaterial() instanceof ArmorMat) ? item : null;
+            return item; // TODO: fix
+//            return (item.getType() instanceof ArmorMat) ? item : null;
         }
     };
     public static final Slot BASE_SECOND_HAND_SLOT = new Slot(SlotType.SECOND_HAND)
@@ -90,7 +89,8 @@ public abstract class Slot
             {
                 return null;
             } // TODO: add special handle for recipe-enabled fuel items
-            return (item.getMaterial() instanceof FuelMat) ? item : null;
+            return item;
+//            return (item.getType() instanceof FuelMat) ? item : null; TODO: fix
         }
     };
     public static final Slot BASE_RESULT_SLOT      = new Slot(SlotType.RESULT)

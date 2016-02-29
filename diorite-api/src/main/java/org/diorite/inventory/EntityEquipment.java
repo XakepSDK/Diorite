@@ -26,7 +26,7 @@ package org.diorite.inventory;
 
 import org.diorite.entity.ArmoredEntity;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.ArmorType;
+import org.diorite.material.ArmorType;
 
 public interface EntityEquipment
 {

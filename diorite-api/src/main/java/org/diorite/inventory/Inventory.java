@@ -31,13 +31,12 @@ import java.util.Map;
 
 import org.apache.commons.lang3.Validate;
 
+import org.diorite.Diorite;
 import org.diorite.entity.Human;
 import org.diorite.entity.Player;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.slot.Slot;
 import org.diorite.material.item.ItemType;
-import org.diorite.material_old.Material;
 
 /**
  * Represent inventory, contains default implementation for most of methods.
@@ -89,48 +88,48 @@ public interface Inventory extends Iterable<ItemStack>
     int[] removeAll(ItemStack itemStack);
 
     /**
-     * Remove first found item matching given material.
+     * Remove first found item matching given type.
      *
-     * @param material material to remove.
-     *
-     * @return slot id of removed item, or -1 if no item was removed.
-     */
-    default int remove(final Material material)
-    {
-        return this.remove(material, false);
-    }
-
-    /**
-     * Remove all items matching given material.
-     *
-     * @param material material to remove.
-     *
-     * @return array of slot ids of removed items, empty if no item was removed.
-     */
-    default int[] removeAll(final Material material)
-    {
-        return this.removeAll(material, false);
-    }
-
-    /**
-     * Remove first found item matching given material.
-     *
-     * @param material   material to remove.
-     * @param ignoreType if true, then sub-type of given material will be ignored
+     * @param type type to remove.
      *
      * @return slot id of removed item, or -1 if no item was removed.
      */
-    int remove(Material material, boolean ignoreType);
+    default int remove(final ItemType type)
+    {
+        return this.remove(type, false);
+    }
 
     /**
-     * Remove all items matching given material.
+     * Remove all items matching given type.
      *
-     * @param material   material to remove.
-     * @param ignoreType if true, then sub-type of given material will be ignored
+     * @param type type to remove.
      *
      * @return array of slot ids of removed items, empty if no item was removed.
      */
-    int[] removeAll(Material material, boolean ignoreType);
+    default int[] removeAll(final ItemType type)
+    {
+        return this.removeAll(type, false);
+    }
+
+    /**
+     * Remove first found item matching given type.
+     *
+     * @param type   type to remove.
+     * @param ignoreType if true, then sub-type of given type will be ignored
+     *
+     * @return slot id of removed item, or -1 if no item was removed.
+     */
+    int remove(ItemType type, boolean ignoreType);
+
+    /**
+     * Remove all items matching given type.
+     *
+     * @param type   type to remove.
+     * @param ignoreType if true, then sub-type of given type will be ignored
+     *
+     * @return array of slot ids of removed items, empty if no item was removed.
+     */
+    int[] removeAll(ItemType type, boolean ignoreType);
 
     /**
      * Remove last found item matching given one.
@@ -151,48 +150,48 @@ public interface Inventory extends Iterable<ItemStack>
     int[] removeAllFromEnd(ItemStack itemStack);
 
     /**
-     * Remove last found item matching given material.
+     * Remove last found item matching given type.
      *
-     * @param material material to remove.
-     *
-     * @return slot id of removed item, or -1 if no item was removed.
-     */
-    default int removeFromEnd(final Material material)
-    {
-        return this.remove(material, false);
-    }
-
-    /**
-     * Remove all items matching given material.
-     *
-     * @param material material to remove.
-     *
-     * @return array of slot ids of removed items, empty if no item was removed.
-     */
-    default int[] removeAllFromEnd(final Material material)
-    {
-        return this.removeAll(material, false);
-    }
-
-    /**
-     * Remove last found item matching given material.
-     *
-     * @param material   material to remove.
-     * @param ignoreType if true, then sub-type of given material will be ignored
+     * @param type type to remove.
      *
      * @return slot id of removed item, or -1 if no item was removed.
      */
-    int removeFromEnd(Material material, boolean ignoreType);
+    default int removeFromEnd(final ItemType type)
+    {
+        return this.remove(type, false);
+    }
 
     /**
-     * Remove all items matching given material.
+     * Remove all items matching given type.
      *
-     * @param material   material to remove.
-     * @param ignoreType if true, then sub-type of given material will be ignored
+     * @param type type to remove.
      *
      * @return array of slot ids of removed items, empty if no item was removed.
      */
-    int[] removeAllFromEnd(Material material, boolean ignoreType);
+    default int[] removeAllFromEnd(final ItemType type)
+    {
+        return this.removeAll(type, false);
+    }
+
+    /**
+     * Remove last found item matching given type.
+     *
+     * @param type   type to remove.
+     * @param ignoreType if true, then sub-type of given type will be ignored
+     *
+     * @return slot id of removed item, or -1 if no item was removed.
+     */
+    int removeFromEnd(ItemType type, boolean ignoreType);
+
+    /**
+     * Remove all items matching given type.
+     *
+     * @param type   type to remove.
+     * @param ignoreType if true, then sub-type of given type will be ignored
+     *
+     * @return array of slot ids of removed items, empty if no item was removed.
+     */
+    int[] removeAllFromEnd(ItemType type, boolean ignoreType);
 
     /**
      * Replace first found item matching (==) given one.
@@ -414,35 +413,35 @@ public interface Inventory extends Iterable<ItemStack>
 
     /**
      * Returns a HashMap with all slots and ItemStacks in the inventory with
-     * the given Material.
+     * the given ItemType.
      * <br>
      * The HashMap contains entries where, the key is the slot index, and the
      * value is the ItemStack in that slot. If no matching ItemStack with the
-     * given Material is found, an empty map is returned.
+     * given ItemType is found, an empty map is returned.
      *
-     * @param material The material to look for
+     * @param type The type to look for
      *
      * @return A HashMap containing the slot index, ItemStack pairs
      */
-    default Map<Integer, ? extends ItemStack> all(final Material material)
+    default Map<Integer, ? extends ItemStack> all(final ItemType type)
     {
-        return this.all(material, false);
+        return this.all(type, false);
     }
 
     /**
      * Returns a HashMap with all slots and ItemStacks in the inventory with
-     * the given Material.
+     * the given ItemType.
      * <br>
      * The HashMap contains entries where, the key is the slot index, and the
      * value is the ItemStack in that slot. If no matching ItemStack with the
-     * given Material is found, an empty map is returned.
+     * given ItemType is found, an empty map is returned.
      *
-     * @param material   The material to look for
-     * @param ignoreType if true, then sub-type of given material will be ignored
+     * @param type   The type to look for
+     * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return A HashMap containing the slot index, ItemStack pairs
      */
-    Map<Integer, ? extends ItemStack> all(Material material, boolean ignoreType);
+    Map<Integer, ? extends ItemStack> all(ItemType type, boolean ignoreType);
 
     /**
      * Finds all slots in the inventory containing any ItemStacks with the
@@ -451,7 +450,7 @@ public interface Inventory extends Iterable<ItemStack>
      * <br>
      * The HashMap contains entries where, the key is the slot index, and the
      * value is the ItemStack in that slot. If no matching ItemStack with the
-     * given Material is found, an empty map is returned.
+     * given type is found, an empty map is returned.
      *
      * @param item The ItemStack to match against
      *
@@ -461,45 +460,45 @@ public interface Inventory extends Iterable<ItemStack>
 
     /**
      * Finds the first slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material The material to look for
+     * @param type The type to look for
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int first(final Material material);
+    int first(final ItemType type);
 
     /**
      * Finds the first slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material   The material to look for
+     * @param type   The type to look for
      * @param startIndex index to start from.
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int first(Material material, int startIndex);
+    int first(ItemType type, int startIndex);
 
     /**
      * Finds the first not full slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material The material to look for
+     * @param type The type to look for
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int firstNotFull(Material material);
+    int firstNotFull(ItemType type);
 
     /**
      * Finds the first not full slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material   The material to look for
+     * @param type   The type to look for
      * @param startIndex index to start from.
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int firstNotFull(Material material, int startIndex);
+    int firstNotFull(ItemType type, int startIndex);
 
     /**
      * Returns the first slot in the inventory containing an ItemStack with
@@ -614,45 +613,45 @@ public interface Inventory extends Iterable<ItemStack>
 
     /**
      * Finds the last slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material The material to look for
+     * @param type The type to look for
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int last(final Material material);
+    int last(final ItemType type);
 
     /**
      * Finds the last slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material   The material to look for
+     * @param type   The type to look for
      * @param startIndex index to start from.
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int last(Material material, int startIndex);
+    int last(ItemType type, int startIndex);
 
     /**
      * Finds the last not full slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material The material to look for
+     * @param type The type to look for
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int lastNotFull(Material material);
+    int lastNotFull(ItemType type);
 
     /**
      * Finds the last not full slot in the inventory containing an ItemStack with the
-     * given material
+     * given type
      *
-     * @param material   The material to look for
+     * @param type   The type to look for
      * @param startIndex index to start from.
      *
-     * @return The slot index of the given Material or -1 if not found
+     * @return The slot index of the given ItemType or -1 if not found
      */
-    int lastNotFull(Material material, int startIndex);
+    int lastNotFull(ItemType type, int startIndex);
 
     /**
      * Returns the last slot in the inventory containing an ItemStack with
@@ -767,27 +766,27 @@ public interface Inventory extends Iterable<ItemStack>
 
     /**
      * Checks if the inventory contains any ItemStacks with the given
-     * material.
+     * type.
      *
-     * @param material The material to check for
+     * @param type The type to check for
      *
-     * @return true if an ItemStack is found with the given Material
+     * @return true if an ItemStack is found with the given ItemType
      */
-    default boolean contains(final ItemType material)
+    default boolean contains(final ItemType type)
     {
-        return this.contains(material, false);
+        return this.contains(type, false);
     }
 
     /**
      * Checks if the inventory contains any ItemStacks with the given
-     * material.
+     * type.
      *
-     * @param material   The material to check for
-     * @param ignoreType if true, then sub-type of given material will be ignored
+     * @param type   The type to check for
+     * @param ignoreType if true, then sub-type of given type will be ignored
      *
-     * @return true if an ItemStack is found with the given Material
+     * @return true if an ItemStack is found with the given ItemType
      */
-    default boolean contains(final ItemType material, final boolean ignoreType)
+    default boolean contains(final ItemType type, final boolean ignoreType)
     {
         for (final ItemStack item : this)
         {
@@ -795,12 +794,12 @@ public interface Inventory extends Iterable<ItemStack>
             {
                 if (ignoreType)
                 {
-                    if (item.getMaterial().isThisSameType(material))
+                    if (item.getType().isThisSameType(type))
                     {
                         return true;
                     }
                 }
-                else if (item.getMaterial().equals(material))
+                else if (item.getType().equals(type))
                 {
                     return true;
                 }
@@ -839,15 +838,15 @@ public interface Inventory extends Iterable<ItemStack>
 
     /**
      * Checks if the inventory contains any ItemStacks with the given
-     * material, adding to at least the minimum amount specified.
+     * type, adding to at least the minimum amount specified.
      *
-     * @param material The material to check for
+     * @param type The type to check for
      * @param amount   The minimum amount
      *
      * @return true if amount is less than 1, true if enough ItemStacks were
      * found to add to the given amount
      */
-    default boolean contains(final ItemType material, int amount)
+    default boolean contains(final ItemType type, int amount)
     {
         if (amount <= 0)
         {
@@ -855,7 +854,7 @@ public interface Inventory extends Iterable<ItemStack>
         }
         for (final ItemStack item : this)
         {
-            if ((item != null) && (item.getMaterial().equals(material)) && ((amount -= item.getAmount()) <= 0))
+            if ((item != null) && (item.getType().equals(type)) && ((amount -= item.getAmount()) <= 0))
             {
                 return true;
             }
@@ -981,13 +980,13 @@ public interface Inventory extends Iterable<ItemStack>
                         fully = false;
                         break;
                     }
-                    if (item.getAmount() > item.getMaterial().getMaxStack())
+                    if (item.getAmount() > item.getType().getMaxStack())
                     {
 
-                        final ItemStack stack = new BaseItemStack(item);
-                        stack.setAmount(item.getMaterial().getMaxStack());
+                        final ItemStack stack = Diorite.newItem(item);
+                        stack.setAmount(item.getType().getMaxStack());
                         this.setItem(firstFree, stack);
-                        item.setAmount(item.getAmount() - item.getMaterial().getMaxStack());
+                        item.setAmount(item.getAmount() - item.getType().getMaxStack());
                     }
                     else
                     {
@@ -999,14 +998,14 @@ public interface Inventory extends Iterable<ItemStack>
                 {
                     final ItemStack itemStack = this.getItem(firstPartial);
 
-                    if (itemStack.getAmount() >= itemStack.getMaterial().getMaxStack())
+                    if (itemStack.getAmount() >= itemStack.getType().getMaxStack())
                     {
                         continue;
                     }
 
                     final int amount = item.getAmount();
                     final int partialAmount = itemStack.getAmount();
-                    final int maxAmount = itemStack.getMaterial().getMaxStack();
+                    final int maxAmount = itemStack.getType().getMaxStack();
                     if ((amount + partialAmount) <= maxAmount)
                     {
                         itemStack.setAmount(amount + partialAmount);
@@ -1055,13 +1054,13 @@ public interface Inventory extends Iterable<ItemStack>
                         fully = false;
                         break;
                     }
-                    if (item.getAmount() > item.getMaterial().getMaxStack())
+                    if (item.getAmount() > item.getType().getMaxStack())
                     {
 
-                        final ItemStack stack = new BaseItemStack(item);
-                        stack.setAmount(item.getMaterial().getMaxStack());
+                        final ItemStack stack = Diorite.newItem(item);
+                        stack.setAmount(item.getType().getMaxStack());
                         this.setItem(lastFree, stack);
-                        item.setAmount(item.getAmount() - item.getMaterial().getMaxStack());
+                        item.setAmount(item.getAmount() - item.getType().getMaxStack());
                     }
                     else
                     {
@@ -1073,14 +1072,14 @@ public interface Inventory extends Iterable<ItemStack>
                 {
                     final ItemStack itemStack = this.getItem(lastPartial);
 
-                    if (itemStack.getAmount() >= itemStack.getMaterial().getMaxStack())
+                    if (itemStack.getAmount() >= itemStack.getType().getMaxStack())
                     {
                         continue;
                     }
 
                     final int amount = item.getAmount();
                     final int partialAmount = itemStack.getAmount();
-                    final int maxAmount = itemStack.getMaterial().getMaxStack();
+                    final int maxAmount = itemStack.getType().getMaxStack();
                     if ((amount + partialAmount) <= maxAmount)
                     {
                         itemStack.setAmount(amount + partialAmount);

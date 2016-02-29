@@ -35,8 +35,7 @@ import org.diorite.impl.connection.packets.PacketClass;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.connection.packets.play.PacketPlayClientboundListener;
 import org.diorite.BlockLocation;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
 
 @PacketClass(id = 0x0B, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 13)
 public class PacketPlayClientboundBlockChange extends PacketPlayClientbound
@@ -44,20 +43,22 @@ public class PacketPlayClientboundBlockChange extends PacketPlayClientbound
     private BlockLocation location; // 8 bytes
     private int           rawID; // ~5 bytes with rawType.
     private byte          rawType; // ~5 bytes with rawID.
+    private BlockSubtype copy;
 
     public PacketPlayClientboundBlockChange()
     {
     }
 
-    public PacketPlayClientboundBlockChange(final BlockLocation location, final BlockMaterialData material)
+    public PacketPlayClientboundBlockChange(final BlockLocation location, final BlockSubtype type)
     {
         this.location = location;
-        this.rawID = material.ordinal();
-        this.rawType = (byte) material.getType();
+        this.rawID = type.getProxyId();
+        this.rawType = (byte) type.getProxySubtypeId();
+        this.copy = type;
     }
 
     public PacketPlayClientboundBlockChange(final BlockLocation location, final int rawID, final byte rawType)
-    {
+    { // TODO: check usages
         this.location = location;
         this.rawID = rawID;
         this.rawType = rawType;
@@ -90,16 +91,16 @@ public class PacketPlayClientboundBlockChange extends PacketPlayClientbound
         this.location = location;
     }
 
-    public BlockMaterialData getMaterial()
+    public BlockSubtype getType()
     {
-        final Material mat = Material.getByID(this.rawID, this.rawType);
-        return (mat instanceof BlockMaterialData) ? (BlockMaterialData) mat : null;
+        return this.copy;
     }
 
-    public void setMaterial(final BlockMaterialData material)
+    public void setType(final BlockSubtype type)
     {
-        this.rawID = material.ordinal();
-        this.rawType = (byte) material.getType();
+        this.rawID = type.getProxyId();
+        this.rawType = (byte) type.getProxySubtypeId();
+        this.copy = type;
     }
 
     public int getRawID()

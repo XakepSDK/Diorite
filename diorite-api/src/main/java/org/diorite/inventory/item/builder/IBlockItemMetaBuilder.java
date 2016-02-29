@@ -27,7 +27,7 @@ package org.diorite.inventory.item.builder;
 import java.util.Collection;
 
 import org.diorite.inventory.item.meta.BlockItemMeta;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 
 /**
  * Interface of builder of block item meta data.
@@ -76,9 +76,9 @@ public interface IBlockItemMetaBuilder<B extends IBlockItemMetaBuilder<B, M>, M 
      *
      * @return builder for method chains.
      */
-    default B setCanPlaceOnMaterials(final Collection<BlockMaterialData> materials)
+    default B setCanPlaceOnMaterials(final Collection<BlockType> materials)
     {
-        this.meta().setCanPlaceOnMaterials(materials);
+        this.meta().setCanPlaceOnBlocks(materials);
         return this.getBuilder();
     }
 
@@ -93,7 +93,7 @@ public interface IBlockItemMetaBuilder<B extends IBlockItemMetaBuilder<B, M>, M 
      */
     default B setCanPlaceOnMaterials(final BlockItemMeta src)
     {
-        this.meta().setCanPlaceOnMaterials(src.getCanPlaceOnMaterials());
+        this.meta().setCanPlaceOnBlocks(src.getCanPlaceOnBlocks());
         return this.getBuilder();
     }
 
@@ -107,9 +107,9 @@ public interface IBlockItemMetaBuilder<B extends IBlockItemMetaBuilder<B, M>, M 
      *
      * @return builder for method chains.
      */
-    default B addCanPlaceOnMaterial(final BlockMaterialData material)
+    default B addCanPlaceOnMaterial(final BlockType material)
     {
-        this.meta().addCanPlaceOnMaterial(material);
+        this.meta().addCanPlaceOnBlock(material);
         return this.getBuilder();
     }
 
@@ -123,9 +123,9 @@ public interface IBlockItemMetaBuilder<B extends IBlockItemMetaBuilder<B, M>, M 
      *
      * @return builder for method chains.
      */
-    default B addCanPlaceOnMaterials(final Collection<BlockMaterialData> materials)
+    default B addCanPlaceOnMaterials(final Collection<BlockType> materials)
     {
-        this.meta().addCanPlaceOnMaterials(materials);
+        this.meta().addCanPlaceOnBlocks(materials);
         return this.getBuilder();
     }
 
@@ -141,12 +141,12 @@ public interface IBlockItemMetaBuilder<B extends IBlockItemMetaBuilder<B, M>, M 
      */
     default B addCanPlaceOnMaterials(final BlockItemMeta src)
     {
-        final Collection<BlockMaterialData> mats = src.getCanPlaceOnMaterials();
+        final Collection<BlockType> mats = src.getCanPlaceOnBlocks();
         if ((mats == null) || mats.isEmpty())
         {
             return this.getBuilder();
         }
-        this.meta().addCanPlaceOnMaterials(mats);
+        this.meta().addCanPlaceOnBlocks(mats);
         return this.getBuilder();
     }
 
@@ -159,7 +159,7 @@ public interface IBlockItemMetaBuilder<B extends IBlockItemMetaBuilder<B, M>, M 
      */
     default B removeCanPlaceOnMaterials()
     {
-        this.meta().removeCanPlaceOnMaterials();
+        this.meta().removeCanPlaceOnBlocks();
         return this.getBuilder();
     }
 }

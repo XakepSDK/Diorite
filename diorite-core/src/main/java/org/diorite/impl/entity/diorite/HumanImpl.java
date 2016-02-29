@@ -31,11 +31,11 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.DioriteCore;
-import org.diorite.impl.connection.packets.play.serverbound.PacketPlayServerboundAbilities;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientbound;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundAbilities;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundNamedEntitySpawn;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundPlayerInfo;
+import org.diorite.impl.connection.packets.play.serverbound.PacketPlayServerboundAbilities;
 import org.diorite.impl.entity.IEntity;
 import org.diorite.impl.entity.IHuman;
 import org.diorite.impl.entity.IItem;
@@ -46,10 +46,10 @@ import org.diorite.impl.entity.meta.entry.EntityMetadataFloatEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataIntEntry;
 import org.diorite.impl.inventory.PlayerCraftingInventoryImpl;
 import org.diorite.impl.inventory.PlayerInventoryImpl;
+import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.Diorite;
 import org.diorite.GameMode;
 import org.diorite.ImmutableLocation;
-import org.diorite.utils.math.geometry.LookupShape;
 import org.diorite.auth.GameProfile;
 import org.diorite.cfg.magic.MagicNumbers;
 import org.diorite.command.sender.MessageOutput;
@@ -63,12 +63,12 @@ import org.diorite.entity.attrib.ModifierOperation;
 import org.diorite.entity.data.HandSide;
 import org.diorite.entity.data.HandType;
 import org.diorite.inventory.EntityEquipment;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.permissions.GroupablePermissionsContainer;
 import org.diorite.permissions.PlayerPermissionsContainer;
 import org.diorite.utils.math.DioriteMathUtils;
 import org.diorite.utils.math.geometry.ImmutableEntityBoundingBox;
+import org.diorite.utils.math.geometry.LookupShape;
 import org.diorite.utils.others.NamedUUID;
 
 class HumanImpl extends LivingEntityImpl implements IHuman
@@ -396,13 +396,13 @@ class HumanImpl extends LivingEntityImpl implements IHuman
             final ItemStack itemStack = ci.setItem(i, null);
             if (itemStack != null)
             {
-                this.dropItem(new BaseItemStack(itemStack.getMaterial(), itemStack.getAmount()));
+                this.dropItem(new ItemStackImpl(itemStack.getType(), itemStack.getAmount()));
             }
         }
         final ItemStack cur = this.inventory.setCursorItem(null);
         if (cur != null)
         {
-            this.dropItem(new BaseItemStack(cur.getMaterial(), cur.getAmount()));
+            this.dropItem(new ItemStackImpl(cur.getType(), cur.getAmount()));
         }
     }
 

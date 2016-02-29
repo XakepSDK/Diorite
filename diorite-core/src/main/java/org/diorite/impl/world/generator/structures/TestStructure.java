@@ -24,37 +24,34 @@
 
 package org.diorite.impl.world.generator.structures;
 
+import java.util.Collection;
 import java.util.Random;
 
 import org.diorite.BlockLocation;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.Blocks;
 import org.diorite.world.chunk.ChunkPos;
 import org.diorite.world.generator.structures.Structure;
 
-@SuppressWarnings("MagicNumber")
+@SuppressWarnings({"MagicNumber", "ClassHasNoToStringMethod"})
 public class TestStructure implements Structure
 {
+    private final BlockSubtype[] values;
+
+    {
+        final Collection<? extends BlockSubtype> blockTypes = Blocks.getAllBlockSubtypes();
+        this.values = blockTypes.toArray(new BlockSubtype[blockTypes.size()]);
+    }
+
     @Override
     public boolean generate(final ChunkPos pos, final Random random, final BlockLocation location)
     {
-        BlockMaterialData wool1;
-        BlockMaterialData wool2;
-        final Material[] values = BlockMaterialData.values();
+        BlockSubtype wool1;
+        BlockSubtype wool2;
         do
         {
-            wool1 = (BlockMaterialData) values[random.nextInt(values.length)];
-            wool2 = (BlockMaterialData) values[random.nextInt(values.length)];
-            final BlockMaterialData[] w1t = wool1.types();
-            final BlockMaterialData[] w2t = wool2.types();
-            if (w1t.length > 1)
-            {
-                wool1 = w1t[random.nextInt(w1t.length)];
-            }
-            if (w2t.length > 1)
-            {
-                wool2 = w2t[random.nextInt(w2t.length)];
-            }
+            wool1 = this.values[random.nextInt(this.values.length)];
+            wool2 = this.values[random.nextInt(this.values.length)];
         } while ((wool1 == null) || (wool2 == null) || ! wool1.isSolid() || ! wool2.isSolid() || wool1.equals(wool2));
         boolean s = false;
         for (int x = - 1; x <= 16; x++)

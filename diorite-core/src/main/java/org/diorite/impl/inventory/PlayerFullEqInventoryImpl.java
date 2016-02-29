@@ -24,13 +24,13 @@
 
 package org.diorite.impl.inventory;
 
-import org.diorite.impl.inventory.item.ItemStackImpl;
+import org.diorite.impl.inventory.item.IItemStack;
 import org.diorite.impl.inventory.item.ItemStackImplArray;
 import org.diorite.entity.Human;
 import org.diorite.inventory.InventoryType;
 import org.diorite.inventory.PlayerFullEqInventory;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 public class PlayerFullEqInventoryImpl extends PlayerInventoryPartImpl implements PlayerFullEqInventory
 {
@@ -51,9 +51,9 @@ public class PlayerFullEqInventoryImpl extends PlayerInventoryPartImpl implement
     }
 
     @Override
-    public int first(final Material material)
+    public int first(final ItemType type)
     {
-        return this.playerInventory.first(material);
+        return this.playerInventory.first(type);
     }
 
     @Override
@@ -93,14 +93,14 @@ public class PlayerFullEqInventoryImpl extends PlayerInventoryPartImpl implement
         {
             return null;
         }
-        return this.content.getAndSet(holder.getHeldItemSlot(), ItemStackImpl.wrap(stack));
+        return this.content.getAndSet(holder.getHeldItemSlot(), IItemStack.wrap(stack));
     }
 
     @Override
     public boolean replaceItemInHand(final ItemStack excepted, final ItemStack stack) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
+        IItemStack.validate(excepted);
         final Human holder = this.getHolder();
-        return (holder != null) && this.content.compareAndSet(holder.getHeldItemSlot(), (ItemStackImpl) excepted, ItemStackImpl.wrap(stack));
+        return (holder != null) && this.content.compareAndSet(holder.getHeldItemSlot(), (IItemStack) excepted, IItemStack.wrap(stack));
     }
 }

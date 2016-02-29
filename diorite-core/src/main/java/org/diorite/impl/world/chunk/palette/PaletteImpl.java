@@ -28,7 +28,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 
 public class PaletteImpl implements Palette
 {
@@ -65,13 +66,13 @@ public class PaletteImpl implements Palette
     }
 
     @Override
-    public int put(final BlockMaterialData data)
+    public int put(final BlockType data)
     {
         return this.palette.put(data);
     }
 
     @Override
-    public BlockMaterialData get(final int sectionID)
+    public BlockSubtype get(final int sectionID)
     {
         return this.palette.get(sectionID);
     }

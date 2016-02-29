@@ -29,7 +29,7 @@ import java.util.Set;
 
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.BlockItemMeta;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.nbt.NbtTagCompound;
 
 public class BlockItemMetaImpl extends SimpleItemMetaImpl implements BlockItemMeta
@@ -63,37 +63,37 @@ public class BlockItemMetaImpl extends SimpleItemMetaImpl implements BlockItemMe
     }
 
     @Override
-    public Set<BlockMaterialData> getCanPlaceOnMaterials()
+    public Set<BlockType> getCanPlaceOnBlocks()
     {
         return null;
     }
 
     @Override
-    public void setCanPlaceOnMaterials(final Collection<BlockMaterialData> materials)
+    public void setCanPlaceOnBlocks(final Collection<BlockType> type)
     {
 
     }
 
     @Override
-    public void addCanPlaceOnMaterial(final BlockMaterialData material)
+    public void addCanPlaceOnBlock(final BlockType type)
     {
 
     }
 
     @Override
-    public void addCanPlaceOnMaterials(final Collection<BlockMaterialData> materials)
+    public void addCanPlaceOnBlocks(final Collection<BlockType> type)
     {
 
     }
 
     @Override
-    public void removeCanPlaceOnMaterial(final BlockMaterialData material)
+    public void removeCanPlaceOnBlock(final BlockType type)
     {
 
     }
 
     @Override
-    public void removeCanPlaceOnMaterials()
+    public void removeCanPlaceOnBlocks()
     {
 
     }

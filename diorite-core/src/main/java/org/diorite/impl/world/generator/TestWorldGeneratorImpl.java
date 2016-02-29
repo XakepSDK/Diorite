@@ -30,9 +30,8 @@ import java.util.Random;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.material_old.Material;
-import org.diorite.material_old.WoodType;
-import org.diorite.material_old.blocks.StoneMat;
+import org.diorite.material.WoodType;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.math.DioriteRandomUtils;
 import org.diorite.utils.math.noise.NoiseGenerator;
 import org.diorite.utils.math.noise.SimplexNoiseGenerator;
@@ -95,37 +94,37 @@ public class TestWorldGeneratorImpl extends WorldGenerator
 
                         if (density > threshold)
                         {
-                            builder.setBlock(x, y, z, StoneMat.getByID(DioriteRandomUtils.getRandomInt(3, 4)));
+                            builder.setBlock(x, y, z, BlockType.STONE.getSubtype(DioriteRandomUtils.getRandomInt(3, 4)));
                         }
 
                     }
                     else
                     {
-                        builder.setBlock(x, y, z, StoneMat.getByID(DioriteRandomUtils.getRandomInt(3, 4)));
+                        builder.setBlock(x, y, z, BlockType.STONE.getSubtype(DioriteRandomUtils.getRandomInt(3, 4)));
                     }
                 }
 
                 //turn the tops into grass
 
-                builder.setBlock(x, bottomHeight, z, Material.GRASS);
-                builder.setBlock(x, bottomHeight - 1, z, Material.DIRT);
-                builder.setBlock(x, bottomHeight - 2, z, Material.DIRT);
+                builder.setBlock(x, bottomHeight, z, BlockType.GRASS);
+                builder.setBlock(x, bottomHeight - 1, z, BlockType.DIRT);
+                builder.setBlock(x, bottomHeight - 2, z, BlockType.DIRT);
 
                 for (int y = bottomHeight + 1; (y > bottomHeight) && (y < maxHeight); y++)
                 { //the overhang
-                    final int thisblock = builder.getBlockType(x, y, z).ordinal();
-                    final int blockabove = builder.getBlockType(x, y + 1, z).ordinal();
+                    final int thisblock = builder.getBlockType(x, y, z).getId();
+                    final int blockabove = builder.getBlockType(x, y + 1, z).getId();
 
-                    if ((thisblock != Material.AIR.ordinal()) && (blockabove == Material.AIR.ordinal()))
+                    if ((thisblock != BlockType.AIR.getId()) && (blockabove == BlockType.AIR.getId()))
                     {
-                        builder.setBlock(x, y, z, Material.GRASS);
-                        if (builder.getBlockType(x, y - 1, z).getType() != Material.AIR.ordinal())
+                        builder.setBlock(x, y, z, BlockType.GRASS);
+                        if (! builder.getBlockType(x, y - 1, z).isThisSameType(BlockType.AIR))
                         {
-                            builder.setBlock(x, y - 1, z, Material.DIRT);
+                            builder.setBlock(x, y - 1, z, BlockType.DIRT);
                         }
-                        if (builder.getBlockType(x, y - 2, z).getType() != Material.AIR.ordinal())
+                        if (! builder.getBlockType(x, y - 2, z).isThisSameType(BlockType.AIR))
                         {
-                            builder.setBlock(x, y - 2, z, Material.DIRT);
+                            builder.setBlock(x, y - 2, z, BlockType.DIRT);
                         }
                     }
                 }

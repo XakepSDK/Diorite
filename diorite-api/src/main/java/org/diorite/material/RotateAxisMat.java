@@ -22,35 +22,43 @@
  * SOFTWARE.
  */
 
-package org.diorite.impl.material.item;
+package org.diorite.material;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
-import org.diorite.material.block.BlockType;
-
-public class BlockItemTypeImpl extends SimpleItemType // TODO
+/**
+ * Enum with possible rotate axis.
+ */
+public enum RotateAxisMat
 {
-    private BlockType blockType;
+    /**
+     * Y axis
+     */
+    UP_DOWN(0b0000),
+    /**
+     * X axis
+     */
+    EAST_WEST(0b0100),
+    /**
+     * Z axis
+     */
+    NORTH_SOUTH(0b1000),
+    /**
+     * No axis
+     */
+    NONE(0b1100);
 
-    public BlockItemTypeImpl(final BlockType type)
+    private final byte flag;
+
+    RotateAxisMat(final int flag)
     {
-        super(type.getId(), type.getMinecraftId());
+        this.flag = (byte) flag;
     }
 
-    public BlockType getBlockType()
+    /**
+     * @return byte flag used by some blocks to get sub-type of it.
+     */
+    public byte getFlag()
     {
-        return this.blockType;
+        return this.flag;
     }
 
-    public void setBlockType(final BlockType blockType)
-    {
-        this.blockType = blockType;
-    }
-
-    @Override
-    public String toString()
-    {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("blockType", this.blockType).toString();
-    }
 }

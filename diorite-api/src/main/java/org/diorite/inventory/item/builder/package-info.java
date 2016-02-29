@@ -25,7 +25,7 @@
 /**
  * Builder classes for item stack.
  *
- * @see org.diorite.inventory.item.builder.ItemBuilder#start(org.diorite.material_old.Material)
  * @see org.diorite.inventory.item.builder.ItemBuilder#start(org.diorite.inventory.item.ItemStack)
+ * @see org.diorite.inventory.item.builder.ItemBuilder#start(org.diorite.material.item.ItemType)
  */
 package org.diorite.inventory.item.builder;

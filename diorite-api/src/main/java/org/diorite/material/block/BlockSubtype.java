@@ -69,4 +69,11 @@ public interface BlockSubtype extends BlockType, AnySubtype
     {
         return (this.getId() << 4) | this.getSubtypeId();
     }
+
+    /**
+     * Returns normal/full type of this block subtype.
+     *
+     * @return normal/full type of this block subtype.
+     */
+    BlockType getFullType();
 }

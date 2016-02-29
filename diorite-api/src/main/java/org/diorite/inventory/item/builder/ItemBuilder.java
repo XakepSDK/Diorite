@@ -27,10 +27,10 @@ package org.diorite.inventory.item.builder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.inventory.item.BaseItemStack;
+import org.diorite.Diorite;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 /**
  * Simple builder for item stack.
@@ -43,13 +43,13 @@ public class ItemBuilder
     protected ItemStack itemStack;
 
     /**
-     * Construct new item builder for given material.
+     * Construct new item builder for given type.
      *
-     * @param material material of new item.
+     * @param type type of new item.
      */
-    protected ItemBuilder(final Material material)
+    protected ItemBuilder(final ItemType type)
     {
-        this.itemStack = new BaseItemStack(material);
+        this.itemStack = Diorite.newItem(type);
     }
 
     /**
@@ -63,33 +63,33 @@ public class ItemBuilder
     }
 
     /**
-     * Set material of builder.
+     * Set type of builder.
      *
-     * @param material new material of item.
+     * @param type new type of item.
      *
      * @return builder for method chains.
      */
-    public ItemBuilder material(final Material material)
+    public ItemBuilder type(final ItemType type)
     {
-        this.itemStack.setMaterial(material);
+        this.itemStack.setType(type);
         return this;
     }
 
     /**
-     * Set material of item.
+     * Set type of item.
      *
-     * @param src source item to copy material from it.
+     * @param src source item to copy type from it.
      *
      * @return builder for method chains.
      */
-    public ItemBuilder material(final ItemStack src)
+    public ItemBuilder type(final ItemStack src)
     {
-        this.itemStack.setMaterial(src.getMaterial());
+        this.itemStack.setType(src.getType());
         return this;
     }
 
     /**
-     * Set amount of material of item.
+     * Set amount of type of item.
      *
      * @param amount new amount of item.
      *
@@ -102,7 +102,7 @@ public class ItemBuilder
     }
 
     /**
-     * Set amount of material of item.
+     * Set amount of type of item.
      *
      * @param src source item to copy amount from it.
      *
@@ -151,15 +151,15 @@ public class ItemBuilder
     }
 
     /**
-     * Start builder of itemstack of given material.
+     * Start builder of itemstack of given type.
      *
-     * @param material material of item stack to build.
+     * @param type type of item stack to build.
      *
      * @return created item builder.
      */
-    public static ItemBuilder start(final Material material)
+    public static ItemBuilder start(final ItemType type)
     {
-        return new ItemBuilder(material);
+        return new ItemBuilder(type);
     }
 
     /**

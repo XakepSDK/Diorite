@@ -29,7 +29,7 @@ import org.diorite.enchantments.EnchantmentType;
 import it.unimi.dsi.fastutil.objects.Object2ShortMap;
 
 /**
- * EnchantmentStorageMeta is specific to items that can store enchantments, as opposed to being enchanted. {@link org.diorite.material_old.Material#ENCHANTED_BOOK} is an example of an item with enchantment storage.
+ * EnchantmentStorageMeta is specific to items that can store enchantments, as opposed to being enchanted. {@link org.diorite.material.item.#ENCHANTED_BOOK} is an example of an item with enchantment storage.
  */
 
 public interface EnchantmentStorageMeta extends ItemMeta

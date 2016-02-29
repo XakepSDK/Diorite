@@ -24,7 +24,7 @@
 
 package org.diorite.world.chunk;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.world.Biome;
 
 public interface ChunkSnapshot
@@ -43,7 +43,7 @@ public interface ChunkSnapshot
 
     int getBlockData(int x, int y, int z);
 
-    BlockMaterialData getBlockType(int x, int y, int z);
+    BlockType getBlockType(int x, int y, int z);
 
     int getBlockSkyLight(int x, int y, int z);
 

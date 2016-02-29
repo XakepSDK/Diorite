@@ -28,7 +28,8 @@ import java.util.Optional;
 
 import org.diorite.BlockFace;
 import org.diorite.BlockLocation;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 import org.diorite.scheduler.Synchronizable;
 import org.diorite.utils.math.geometry.BoundingBox;
 import org.diorite.world.chunk.Chunk;
@@ -65,7 +66,7 @@ public interface Block
     /**
      * @return type (id and sub-id) of block
      */
-    BlockMaterialData getType();
+    BlockSubtype getType();
 
     /**
      * Returns tile entity of this block if exist.
@@ -80,7 +81,7 @@ public interface Block
      *
      * @param type new type (id and sub-id) of block
      */
-    void setType(BlockMaterialData type);
+    void setType(BlockType type);
 
     Biome getBiome();
 

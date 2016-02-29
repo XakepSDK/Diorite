@@ -34,6 +34,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.entity.meta.entry.EntityMetadataBlockLocationEntry;
+import org.diorite.impl.entity.meta.entry.EntityMetadataBlockTypeEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataBooleanEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataByteEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataChatEntry;
@@ -41,14 +42,13 @@ import org.diorite.impl.entity.meta.entry.EntityMetadataEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataFloatEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataIntEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataItemStackEntry;
-import org.diorite.impl.entity.meta.entry.EntityMetadataMaterialEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataStringEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataUUIDEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataVector3FEntry;
 import org.diorite.BlockLocation;
 import org.diorite.chat.component.BaseComponent;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
 
 public class EntityMetadata
 {
@@ -273,15 +273,15 @@ public class EntityMetadata
         entry.setDirty();
     }
 
-    public void setMaterial(final byte index, final Material value)
+    public void setBlockType(final byte index, final BlockSubtype value)
     {
         final EntityMetadataEntry<?> entry = this.data[index];
-        if (! (entry instanceof EntityMetadataMaterialEntry))
+        if (! (entry instanceof EntityMetadataBlockTypeEntry))
         {
-            throw new IllegalArgumentException("Metadata type mismatch excepted Material but found: " + entry);
+            throw new IllegalArgumentException("Metadata type mismatch excepted BlockType but found: " + entry);
         }
         //noinspection OverlyStrongTypeCast instanceof will block it anyway.
-        ((EntityMetadataMaterialEntry) entry).setData(value);
+        ((EntityMetadataBlockTypeEntry) entry).setData(value);
         entry.setDirty();
     }
 
@@ -383,9 +383,9 @@ public class EntityMetadata
         this.setChatComponent((byte) index, value);
     }
 
-    public void setMaterial(final int index, final Material value)
+    public void setBlockType(final int index, final BlockSubtype value)
     {
-        this.setMaterial((byte) index, value);
+        this.setBlockType((byte) index, value);
     }
 
     public void setVector3F(final int index, final Vector3f value)
@@ -540,19 +540,19 @@ public class EntityMetadata
         return ((EntityMetadataBlockLocationEntry) entry).getData();
     }
 
-    public Material getMaterial(final byte index)
+    public BlockSubtype getBlockType(final byte index)
     {
         final EntityMetadataEntry<?> entry = this.data[index];
         if (entry == null)
         {
             return null;
         }
-        if (! (entry instanceof EntityMetadataMaterialEntry))
+        if (! (entry instanceof EntityMetadataBlockTypeEntry))
         {
-            throw new IllegalArgumentException("Metadata type mismatch excepted Material but found: " + entry);
+            throw new IllegalArgumentException("Metadata type mismatch excepted BlockType but found: " + entry);
         }
         //noinspection OverlyStrongTypeCast instanceof will block it anyway.
-        return ((EntityMetadataMaterialEntry) entry).getData();
+        return ((EntityMetadataBlockTypeEntry) entry).getData();
     }
 
     public UUID getUUID(final byte index)
@@ -659,9 +659,9 @@ public class EntityMetadata
         return this.getChatComponent((byte) index);
     }
 
-    public Material getMaterial(final int index)
+    public BlockSubtype getBlockType(final int index)
     {
-        return this.getMaterial((byte) index);
+        return this.getBlockType((byte) index);
     }
 
     public Vector3f getVector3F(final int index)

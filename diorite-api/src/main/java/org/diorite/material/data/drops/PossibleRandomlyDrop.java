@@ -77,7 +77,7 @@ public class PossibleRandomlyDrop extends AbstractPossibleDrop
             return;
         }
         final ItemStack item = this.getItemStack();
-        if ((this.itemStack.getMaterial().getId() == 0) || (this.itemStack.getAmount() == 0))
+        if ((this.itemStack.getType().getId() == 0) || (this.itemStack.getAmount() == 0))
         {
             return;
         }

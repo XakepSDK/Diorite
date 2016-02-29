@@ -24,7 +24,7 @@
 
 package org.diorite.world.chunk;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.scheduler.Synchronizable;
 import org.diorite.world.Biome;
 import org.diorite.world.Block;
@@ -38,8 +38,7 @@ public interface Chunk extends Synchronizable
     int CHUNK_FULL_HEIGHT = 256;
     int CHUNK_BIOMES_SIZE = CHUNK_SIZE * CHUNK_SIZE;
 
-    Biome getBiome(int x, int y, int z) // y is ignored, added for future possible changes.
-    ;
+    Biome getBiome(int x, int y, int z); // y is ignored, added for future possible changes.
 
     boolean isLoaded();
 
@@ -63,9 +62,9 @@ public interface Chunk extends Synchronizable
 //
 //    BlockMaterialData setBlock(int x, int y, int z, int id, int meta);
 
-    BlockMaterialData getBlockType(int x, int y, int z);
+    BlockType getBlockType(int x, int y, int z);
 
-    BlockMaterialData getHighestBlockType(int x, int z);
+    BlockType getHighestBlockType(int x, int z);
 
     Block getBlock(int x, int y, int z);
 

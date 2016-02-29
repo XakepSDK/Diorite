@@ -122,7 +122,7 @@ public class MultiCraftingRecipeItem implements CraftingRecipeItem
         {
             final ItemStack patItem = entry.getKey();
             final boolean ignoreData = entry.getBooleanValue();
-            final boolean valid = (ignoreData ? patItem.getMaterial().isThisSameID(item.getMaterial()) : patItem.getMaterial().equals(item.getMaterial())) && (patItem.getAmount() <= item.getAmount());
+            final boolean valid = (ignoreData ? patItem.getType().isThisSameType(item.getType()) : patItem.getType().equals(item.getType())) && (patItem.getAmount() <= item.getAmount());
             if (! valid)
             {
                 continue;

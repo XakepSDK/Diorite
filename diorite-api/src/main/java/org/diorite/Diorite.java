@@ -410,6 +410,11 @@ public final class Diorite
         core.removeTitle(player);
     }
 
+    public static ItemStack newItem(final ItemStack itemStack)
+    {
+        return core.newItem(itemStack);
+    }
+
     public static ItemStack newItem(final ItemType type)
     {
         return core.newItem(type);

@@ -27,7 +27,7 @@ package org.diorite.inventory.item.meta;
 import java.util.Collection;
 import java.util.Set;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 
 /**
  * Represent block item that contains saved block state.
@@ -74,67 +74,67 @@ public interface BlockItemMeta extends ItemMeta
 
     /**
      * Set if this tool is using CanPlaceOn tag,
-     * when you set it to false, add saved materials will be removed.
+     * when you set it to false, add saved types will be removed.
      *
      * @param useCanPlaceOnTag if this tool should use CanPlaceOn tag.
      */
     void setUseCanPlaceOnTag(boolean useCanPlaceOnTag);
 
     /**
-     * Returns set of {@link BlockMaterialData}, materials where this block can be placed on. <br>
+     * Returns set of {@link BlockType}, blocks where this block can be placed on. <br>
      * Minecraft don't support subtypes here. <br>
      * If set is empty and {@link #useCanPlaceOnTag()} is true, then this block can't be placed on any block. <br>
      * If set is empty and {@link #useCanPlaceOnTag()} is false, then this block can be placed on every block.
      *
-     * @return set of {@link BlockMaterialData}, materials where this block can be placed on if CanPlaceOn tag is used.
+     * @return set of {@link BlockType}, types where this block can be placed on if CanPlaceOn tag is used.
      */
-    Set<BlockMaterialData> getCanPlaceOnMaterials();
+    Set<BlockType> getCanPlaceOnBlocks();
 
     /**
-     * Set materials where this block can be placed on. <br>
+     * Set blocks where this block can be placed on. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
-     * @param materials new collection of materials.
+     * @param blocks new collection of blocks.
      */
-    void setCanPlaceOnMaterials(Collection<BlockMaterialData> materials);
+    void setCanPlaceOnBlocks(Collection<BlockType> blocks);
 
     /**
-     * Add new material where this block can be placed on,
+     * Add new blocks where this block can be placed on,
      * this method will automatically enable CanPlaceOn tag if needed. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
-     * @param material material to add.
+     * @param blocks blocks to add.
      */
-    void addCanPlaceOnMaterial(BlockMaterialData material);
+    void addCanPlaceOnBlock(BlockType blocks);
 
     /**
-     * Add new materials where this block can be placed on,
+     * Add new blocks where this block can be placed on,
      * this method will automatically enable CanPlaceOn tag if needed. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
-     * @param materials materials to add.
+     * @param blocks blocks to add.
      */
-    void addCanPlaceOnMaterials(Collection<BlockMaterialData> materials);
+    void addCanPlaceOnBlocks(Collection<BlockType> blocks);
 
     /**
-     * Remove material where this block can be placed on,
+     * Remove blocks where this block can be placed on,
      * this method will automatically enable CanPlaceOn tag if needed. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
-     * @param material material to add.
+     * @param blocks blocks to add.
      */
-    void removeCanPlaceOnMaterial(BlockMaterialData material);
+    void removeCanPlaceOnBlock(BlockType blocks);
 
     /**
-     * Clear list of materials where this block can be placed on,
+     * Clear list of blocks where this block can be placed on,
      * this method will automatically enable CanPlaceOn tag if needed. <br>
      * Use {@link #setUseCanPlaceOnTag(boolean)} if you want disable CanPlaceOn tag.
      */
-    void removeCanPlaceOnMaterials();
+    void removeCanPlaceOnBlocks();
 
     @Override
     BlockItemMeta clone();

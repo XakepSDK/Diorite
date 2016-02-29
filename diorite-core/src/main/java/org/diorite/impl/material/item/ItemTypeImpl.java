@@ -29,17 +29,19 @@ import java.util.Collection;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import org.diorite.inventory.item.meta.ItemMeta;
 import org.diorite.material.item.ItemSubtype;
 import org.diorite.material.item.ItemType;
 
-public class ItemTypeImpl implements ItemType
+public abstract class ItemTypeImpl implements ItemType
 {
     private int    id;
     private String minecraftId;
     private int    fakeId;
     private String fakeMinecraftId;
     private String displayNameKey;
-    private int maxStack = 64;
+    private int                       maxStack = 64;
+    private Class<? extends ItemMeta> metaType = ItemMeta.class;
 
     public ItemTypeImpl(final int id, final String minecraftId, final int maxStack)
     {
@@ -143,6 +145,22 @@ public class ItemTypeImpl implements ItemType
     public Collection<? extends ItemSubtype> getSubtypes()
     {
         return null;
+    }
+
+    @Override
+    public Class<? extends ItemMeta> getMetaType()
+    {
+        return this.metaType;
+    }
+
+    /**
+     * Set meta type of this material, can be changed at runtime.
+     *
+     * @param metaType new meta type of this material.
+     */
+    public void setMetaType(final Class<? extends ItemMeta> metaType)
+    {
+        this.metaType = metaType;
     }
 
     @Override

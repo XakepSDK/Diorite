@@ -35,13 +35,13 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundSetSlot;
 import org.diorite.impl.entity.IPlayer;
-import org.diorite.impl.inventory.item.ItemStackImpl;
+import org.diorite.impl.inventory.item.IItemStack;
 import org.diorite.impl.inventory.item.ItemStackImplArray;
 import org.diorite.entity.Human;
 import org.diorite.inventory.Inventory;
 import org.diorite.inventory.InventoryHolder;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 import org.diorite.utils.collections.arrays.DioriteArrayUtils;
 import org.diorite.utils.collections.sets.ConcurrentSet;
 
@@ -80,15 +80,15 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
 
     public boolean softUpdate()
     {
-        final ItemStackImpl[] items = this.getArray().toArray(new ItemStackImpl[this.getArray().length()]);
+        final IItemStack[] items = this.getArray().toArray(new IItemStack[this.getArray().length()]);
         final Set<PacketPlayClientboundSetSlot> packets = new HashSet<>(items.length);
         for (short i = 0, itemsLength = (short) items.length; i < itemsLength; i++)
         {
-            final ItemStackImpl item = items[i];
+            final IItemStack item = items[i];
 
             if (item != null)
             {
-                if ((item.getAmount() == 0) || (Material.AIR.simpleEquals(item.getMaterial())))
+                if (item.isEmpty())
                 {
                     this.replace(i, item, null);
                     packets.add(new PacketPlayClientboundSetSlot(this.getWindowId(), i, null));
@@ -133,7 +133,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
         }
     }
 
-    public void setContent(final ItemStackImpl[] items)
+    public void setContent(final IItemStack[] items)
     {
         final ItemStackImplArray content = this.getArray();
         for (int i = 0, size = content.length(); i < size; i++)
@@ -148,7 +148,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
         final ItemStackImplArray content = this.getArray();
         for (int i = 0, size = content.length(); i < size; i++)
         {
-            content.set(i, (i >= items.length) ? null : ItemStackImpl.wrap(items[i]));
+            content.set(i, (i >= items.length) ? null : IItemStack.wrap(items[i]));
         }
     }
 
@@ -166,7 +166,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             final ItemStack item = content.get(i);
             if (Objects.equals(item, itemStack))
             {
-                content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+                content.compareAndSet(i, IItemStack.wrap(item), null);
                 return i;
             }
         }
@@ -187,7 +187,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             final ItemStack item = content.get(i);
             if (Objects.equals(item, itemStack))
             {
-                content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+                content.compareAndSet(i, IItemStack.wrap(item), null);
                 list.add(i);
             }
         }
@@ -199,11 +199,11 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     }
 
     @Override
-    public int remove(final Material material, final boolean ignoreType)
+    public int remove(final ItemType type, final boolean ignoreType)
     {
         final ItemStackImplArray content = this.getArray();
 
-        if (material == null)
+        if (type == null)
         {
             return - 1;
         }
@@ -214,30 +214,30 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 continue;
             }
-            final Material mat = item.getMaterial();
+            final ItemType mat = item.getType();
             if (ignoreType)
             {
-                if ((material.ordinal() != mat.ordinal()))
+                if (! type.isThisSameType(mat))
                 {
                     continue;
                 }
             }
-            else if (! Objects.equals(mat, material))
+            else if (! Objects.equals(mat, type))
             {
                 continue;
             }
-            content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+            content.compareAndSet(i, IItemStack.wrap(item), null);
             return i;
         }
         return - 1;
     }
 
     @Override
-    public int[] removeAll(final Material material, final boolean ignoreType)
+    public int[] removeAll(final ItemType type, final boolean ignoreType)
     {
         final ItemStackImplArray content = this.getArray();
 
-        if (material == null)
+        if (type == null)
         {
             return DioriteArrayUtils.EMPTY_INTS;
         }
@@ -249,19 +249,19 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 continue;
             }
-            final Material mat = item.getMaterial();
+            final ItemType mat = item.getType();
             if (ignoreType)
             {
-                if ((material.ordinal() != mat.ordinal()))
+                if (! type.isThisSameType(mat))
                 {
                     continue;
                 }
             }
-            else if (! Objects.equals(mat, material))
+            else if (! Objects.equals(mat, type))
             {
                 continue;
             }
-            content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+            content.compareAndSet(i, IItemStack.wrap(item), null);
             list.add(i);
         }
         if (list.isEmpty())
@@ -285,7 +285,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             final ItemStack item = content.get(i);
             if (Objects.equals(item, itemStack))
             {
-                content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+                content.compareAndSet(i, IItemStack.wrap(item), null);
                 return i;
             }
         }
@@ -306,7 +306,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             final ItemStack item = content.get(i);
             if (Objects.equals(item, itemStack))
             {
-                content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+                content.compareAndSet(i, IItemStack.wrap(item), null);
                 list.add(i);
             }
         }
@@ -318,11 +318,11 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     }
 
     @Override
-    public int removeFromEnd(final Material material, final boolean ignoreType)
+    public int removeFromEnd(final ItemType type, final boolean ignoreType)
     {
         final ItemStackImplArray content = this.getArray();
 
-        if (material == null)
+        if (type == null)
         {
             return - 1;
         }
@@ -333,30 +333,30 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 continue;
             }
-            final Material mat = item.getMaterial();
+            final ItemType mat = item.getType();
             if (ignoreType)
             {
-                if ((material.ordinal() != mat.ordinal()))
+                if (! type.isThisSameType(mat))
                 {
                     continue;
                 }
             }
-            else if (! Objects.equals(mat, material))
+            else if (! Objects.equals(mat, type))
             {
                 continue;
             }
-            content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+            content.compareAndSet(i, IItemStack.wrap(item), null);
             return i;
         }
         return - 1;
     }
 
     @Override
-    public int[] removeAllFromEnd(final Material material, final boolean ignoreType)
+    public int[] removeAllFromEnd(final ItemType type, final boolean ignoreType)
     {
         final ItemStackImplArray content = this.getArray();
 
-        if (material == null)
+        if (type == null)
         {
             return DioriteArrayUtils.EMPTY_INTS;
         }
@@ -368,19 +368,19 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 continue;
             }
-            final Material mat = item.getMaterial();
+            final ItemType mat = item.getType();
             if (ignoreType)
             {
-                if ((material.ordinal() != mat.ordinal()))
+                if (! type.isThisSameType(mat))
                 {
                     continue;
                 }
             }
-            else if (! Objects.equals(mat, material))
+            else if (! Objects.equals(mat, type))
             {
                 continue;
             }
-            content.compareAndSet(i, ItemStackImpl.wrap(item), null);
+            content.compareAndSet(i, IItemStack.wrap(item), null);
             list.add(i);
         }
         if (list.isEmpty())
@@ -393,11 +393,11 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     @Override
     public int replace(final ItemStack excepted, final ItemStack newItem) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
+        IItemStack.validate(excepted);
         final ItemStackImplArray content = this.getArray();
         for (int i = 0, size = content.length(); i < size; i++)
         {
-            if (content.compareAndSet(i, (ItemStackImpl) excepted, ItemStackImpl.wrap(newItem)))
+            if (content.compareAndSet(i, (IItemStack) excepted, IItemStack.wrap(newItem)))
             {
                 return i;
             }
@@ -408,11 +408,11 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     @Override
     public int replaceFromEnd(final ItemStack excepted, final ItemStack newItem) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
+        IItemStack.validate(excepted);
         final ItemStackImplArray content = this.getArray();
         for (int i = content.length() - 1; i >= 0; i--)
         {
-            if (content.compareAndSet(i, (ItemStackImpl) excepted, ItemStackImpl.wrap(newItem)))
+            if (content.compareAndSet(i, (IItemStack) excepted, IItemStack.wrap(newItem)))
             {
                 return i;
             }
@@ -423,24 +423,24 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     @Override
     public boolean replace(final int slot, final ItemStack excepted, final ItemStack newItem) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return this.getArray().compareAndSet(slot, (ItemStackImpl) excepted, ItemStackImpl.wrap(newItem));
+        IItemStack.validate(excepted);
+        return this.getArray().compareAndSet(slot, (IItemStack) excepted, IItemStack.wrap(newItem));
     }
 
     @Override
-    public ItemStackImpl getItem(final int index)
+    public IItemStack getItem(final int index)
     {
         return this.getArray().get(index);
     }
 
     @Override
-    public ItemStackImpl setItem(final int index, final ItemStack item)
+    public IItemStack setItem(final int index, final ItemStack item)
     {
-        return this.getArray().getAndSet(index, ItemStackImpl.wrap(item));
+        return this.getArray().getAndSet(index, IItemStack.wrap(item));
     }
 
     @Override
-    public Map<Integer, ? extends ItemStack> all(final Material material, final boolean ignoreType)
+    public Map<Integer, ? extends ItemStack> all(final ItemType type, final boolean ignoreType)
     {
         final ItemStackImplArray content = this.getArray();
         final Map<Integer, ItemStack> slots = new HashMap<>(10);
@@ -451,12 +451,12 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 if (ignoreType)
                 {
-                    if (item.getMaterial().isThisSameID(material))
+                    if (item.getType().isThisSameType(type))
                     {
                         slots.put(i, item);
                     }
                 }
-                else if (item.getMaterial().equals(material))
+                else if (item.getType().equals(type))
                 {
                     slots.put(i, item);
                 }
@@ -487,20 +487,20 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     }
 
     @Override
-    public int first(final Material material)
+    public int first(final ItemType type)
     {
-        return this.first(material, 0);
+        return this.first(type, 0);
     }
 
     @Override
-    public int first(final Material material, final int startIndex)
+    public int first(final ItemType type, final int startIndex)
     {
         final ItemStackImplArray content = this.getArray();
 
         for (int i = startIndex, size = content.length(); i < size; i++)
         {
             final ItemStack item = content.get(i);
-            if ((item != null) && (item.getMaterial().equals(material)))
+            if ((item != null) && (item.getType().equals(type)))
             {
                 return i;
             }
@@ -543,20 +543,20 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     }
 
     @Override
-    public int firstNotFull(final Material material)
+    public int firstNotFull(final ItemType type)
     {
-        return this.firstNotFull(material, 0);
+        return this.firstNotFull(type, 0);
     }
 
     @Override
-    public int firstNotFull(final Material material, final int startIndex)
+    public int firstNotFull(final ItemType type, final int startIndex)
     {
         final ItemStackImplArray content = this.getArray();
 
         for (int i = startIndex, size = content.length(); i < size; i++)
         {
             final ItemStack item = content.get(i);
-            if ((item != null) && (item.getMaterial().equals(material)) && (item.getAmount() < material.getMaxStack()))
+            if ((item != null) && (item.getType().equals(type)) && (item.getAmount() < type.getMaxStack()))
             {
                 return i;
             }
@@ -591,7 +591,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 if (withAmount)
                 {
-                    if (item.equals(itemStack) && ((item.getAmount() + itemStack.getAmount()) < itemStack.getMaterial().getMaxStack()))
+                    if (item.equals(itemStack) && ((item.getAmount() + itemStack.getAmount()) < itemStack.getType().getMaxStack()))
                     {
                         return i;
                     }
@@ -622,19 +622,19 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     }
 
     @Override
-    public int last(final Material material)
+    public int last(final ItemType type)
     {
-        return this.last(material, this.size() - 1);
+        return this.last(type, this.size() - 1);
     }
 
     @Override
-    public int last(final Material material, final int startIndex)
+    public int last(final ItemType type, final int startIndex)
     {
         final ItemStackImplArray content = this.getArray();
         for (int i = startIndex; i >= 0; i--)
         {
             final ItemStack item = content.get(i);
-            if ((item != null) && (item.getMaterial().equals(material)))
+            if ((item != null) && (item.getType().equals(type)))
             {
                 return i;
             }
@@ -673,20 +673,20 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
     }
 
     @Override
-    public int lastNotFull(final Material material)
+    public int lastNotFull(final ItemType type)
     {
-        return this.lastNotFull(material, this.size() - 1);
+        return this.lastNotFull(type, this.size() - 1);
     }
 
     @Override
-    public int lastNotFull(final Material material, final int startIndex)
+    public int lastNotFull(final ItemType type, final int startIndex)
     {
         final ItemStackImplArray content = this.getArray();
 
         for (int i = startIndex; i >= 0; i--)
         {
             final ItemStack item = content.get(i);
-            if ((item != null) && (item.getMaterial().equals(material)) && (item.getAmount() < material.getMaxStack()))
+            if ((item != null) && (item.getType().equals(type)) && (item.getAmount() < type.getMaxStack()))
             {
                 return i;
             }
@@ -717,7 +717,7 @@ public abstract class InventoryImpl<T extends InventoryHolder> implements Invent
             {
                 if (withAmount)
                 {
-                    if (item.equals(itemStack) && ((item.getAmount() + itemStack.getAmount()) < itemStack.getMaterial().getMaxStack()))
+                    if (item.equals(itemStack) && ((item.getAmount() + itemStack.getAmount()) < itemStack.getType().getMaxStack()))
                     {
                         return i;
                     }

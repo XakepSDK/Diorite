@@ -29,14 +29,14 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
+import org.diorite.Diorite;
 import org.diorite.entity.Player;
 import org.diorite.inventory.GridInventory;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.RecipeBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeItemBuilder.ShapedCraftingRecipeItemBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeItemBuilder.ShapelessCraftingRecipeItemBuilder;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 /**
  * Advanced class for creating crafting recipes
@@ -55,26 +55,26 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
     /**
      * Set result itemstack for this recipe.
      *
-     * @param material result itemstack material.
+     * @param type result itemstack type.
      *
      * @return this same builder for method chains.
      */
-    default CraftingRecipeBuilder result(final Material material)
+    default CraftingRecipeBuilder result(final ItemType type)
     {
-        return this.result(new BaseItemStack(material));
+        return this.result(Diorite.newItem(type));
     }
 
     /**
      * Set result itemstack for this recipe.
      *
-     * @param material result itemstack material.
-     * @param amount   amount of material.
+     * @param type   result itemstack type.
+     * @param amount amount of type.
      *
      * @return this same builder for method chains.
      */
-    default CraftingRecipeBuilder result(final Material material, final int amount)
+    default CraftingRecipeBuilder result(final ItemType type, final int amount)
     {
-        return this.result(new BaseItemStack(material, amount));
+        return this.result(Diorite.newItem(type, amount));
     }
 
     /**
@@ -192,15 +192,15 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
         SemiShapedCraftingRecipeBuilder result(ItemStack itemStack);
 
         @Override
-        default SemiShapedCraftingRecipeBuilder result(final Material material)
+        default SemiShapedCraftingRecipeBuilder result(final ItemType type)
         {
-            return this.result(new BaseItemStack(material));
+            return this.result(Diorite.newItem(type));
         }
 
         @Override
-        default SemiShapedCraftingRecipeBuilder result(final Material material, final int amount)
+        default SemiShapedCraftingRecipeBuilder result(final ItemType type, final int amount)
         {
-            return this.result(new BaseItemStack(material, amount));
+            return this.result(Diorite.newItem(type, amount));
         }
 
         @Override
@@ -327,15 +327,15 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
         GroupCraftingRecipeBuilder result(ItemStack itemStack);
 
         @Override
-        default GroupCraftingRecipeBuilder result(final Material material)
+        default GroupCraftingRecipeBuilder result(final ItemType type)
         {
-            return this.result(new BaseItemStack(material));
+            return this.result(Diorite.newItem(type));
         }
 
         @Override
-        default GroupCraftingRecipeBuilder result(final Material material, final int amount)
+        default GroupCraftingRecipeBuilder result(final ItemType type, final int amount)
         {
-            return this.result(new BaseItemStack(material, amount));
+            return this.result(Diorite.newItem(type, amount));
         }
 
         @Override
@@ -519,15 +519,15 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
         ShapelessCraftingRecipeBuilder result(ItemStack itemStack);
 
         @Override
-        default ShapelessCraftingRecipeBuilder result(final Material material)
+        default ShapelessCraftingRecipeBuilder result(final ItemType type)
         {
-            return this.result(new BaseItemStack(material));
+            return this.result(Diorite.newItem(type));
         }
 
         @Override
-        default ShapelessCraftingRecipeBuilder result(final Material material, final int amount)
+        default ShapelessCraftingRecipeBuilder result(final ItemType type, final int amount)
         {
-            return this.result(new BaseItemStack(material, amount));
+            return this.result(Diorite.newItem(type, amount));
         }
 
         @Override
@@ -607,7 +607,7 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
          * Add more ingredients to this recipe.
          *
          * @param itemStack  ingredient to be added.
-         * @param ignoreType if subtype of ingredient material should be ignored.
+         * @param ignoreType if subtype of ingredient type should be ignored.
          *
          * @return this same builder for method chains.
          */
@@ -648,15 +648,15 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
         ShapedCraftingRecipeBuilder result(ItemStack itemStack);
 
         @Override
-        default ShapedCraftingRecipeBuilder result(final Material material)
+        default ShapedCraftingRecipeBuilder result(final ItemType type)
         {
-            return this.result(new BaseItemStack(material));
+            return this.result(Diorite.newItem(type));
         }
 
         @Override
-        default ShapedCraftingRecipeBuilder result(final Material material, final int amount)
+        default ShapedCraftingRecipeBuilder result(final ItemType type, final int amount)
         {
-            return this.result(new BaseItemStack(material, amount));
+            return this.result(Diorite.newItem(type, amount));
         }
 
         @Override
@@ -759,7 +759,7 @@ public interface CraftingRecipeBuilder extends RecipeBuilder
         /**
          * @param c          pattern key of this recipe item.
          * @param itemStack  ingredient to be added.
-         * @param ignoreType if subtype of ingredient material should be ignored.
+         * @param ignoreType if subtype of ingredient type should be ignored.
          *
          * @return this same builder for method chains.
          */

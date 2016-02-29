@@ -27,7 +27,7 @@ package org.diorite;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.math.DioriteMathUtils;
 import org.diorite.world.Block;
 import org.diorite.world.World;
@@ -98,7 +98,7 @@ public class BlockLocation
         return new BlockLocation(this.x, this.y, this.z, world);
     }
 
-    public void setBlock(final BlockMaterialData mat)
+    public void setBlock(final BlockType mat)
     {
         this.world.setBlock(this.x, this.y, this.z, mat);
     }

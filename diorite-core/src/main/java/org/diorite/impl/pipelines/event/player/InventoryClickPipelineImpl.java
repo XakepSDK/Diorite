@@ -30,17 +30,16 @@ import java.util.Objects;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundTransaction;
 import org.diorite.impl.entity.IPlayer;
 import org.diorite.impl.inventory.PlayerInventoryImpl;
+import org.diorite.impl.inventory.item.IItemStack;
 import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.GameMode;
 import org.diorite.event.pipelines.event.player.InventoryClickPipeline;
 import org.diorite.event.player.PlayerInventoryClickEvent;
 import org.diorite.inventory.ClickType;
 import org.diorite.inventory.Inventory;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.slot.Slot;
 import org.diorite.inventory.slot.SlotType;
-import org.diorite.material_old.items.ArmorMat;
 import org.diorite.utils.pipeline.SimpleEventPipeline;
 
 @SuppressWarnings("ObjectEquality")
@@ -73,12 +72,12 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
     {
         final IPlayer player = (IPlayer) e.getPlayer();
         final ClickType ct = e.getClickType();
-        ItemStackImpl.validate(e.getCursorItem());
-        final ItemStackImpl cursor = (ItemStackImpl) e.getCursorItem();
+        IItemStack.validate(e.getCursorItem());
+        final IItemStack cursor = (IItemStack) e.getCursorItem();
         final int slot = e.getClickedSlot();
         final PlayerInventoryImpl inv = player.getInventory(); // TODO inventory view etc
 
-        final ItemStackImpl clicked = ItemStackImpl.wrap(e.getClickedItem());
+        final IItemStack clicked = IItemStack.wrap(e.getClickedItem());
 
         final Slot slotProp = inv.getSlot(slot);
         try
@@ -183,12 +182,12 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                     {
                         if (clicked.isSimilar(cursor))
                         {
-                            if (clicked.getAmount() >= clicked.getMaterial().getMaxStack())
+                            if (clicked.getAmount() >= clicked.getType().getMaxStack())
                             {
                                 return true; // no place to add more items.
                             }
 
-                            final ItemStack temp = new BaseItemStack(clicked);
+                            final ItemStack temp = new ItemStackImpl(clicked);
                             temp.setAmount(temp.getAmount() + 1);
                             final ItemStack item = slotProp.canHoldItem(temp);
                             if (temp != item) // this slot can't hold more items as canHold returned other stack than given when used bigger stack.
@@ -240,10 +239,12 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
 
                 final ItemStack[] rest;
 
-                if ((slotProp.getSlotType().equals(SlotType.CONTAINER) || slotProp.getSlotType().equals(SlotType.HOTBAR)) && (clicked.getMaterial() instanceof ArmorMat))
-                {
-                    return ! ((ArmorMat) clicked.getMaterial()).getArmorType().setItem(inv, clicked) || inv.replace(slot, clicked, null);
-                }
+                // TODO: fix
+//                if ((slotProp.getSlotType().equals(SlotType.CONTAINER) || slotProp.getSlotType().equals(SlotType.HOTBAR)) && (clicked.getType() instanceof ArmorMat))
+//                {
+//                    return ! ((ArmorMat) clicked.getType()).getArmorType().setItem(inv, clicked) || inv.replace(slot, clicked, null);
+//                }
+
                 if (slotProp.getSlotType().equals(SlotType.CONTAINER))
                 {
                     // clicked on other slot
@@ -279,13 +280,13 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                         return false;
                     }
 
-                    player.dropItem(new BaseItemStack(clicked));
+                    player.dropItem(new ItemStackImpl(clicked));
                 }
                 else
                 {
                     final ItemStack toDrop = clicked.split(1);
 
-                    player.dropItem(new BaseItemStack(toDrop));
+                    player.dropItem(new ItemStackImpl(toDrop));
                 }
             }
             else if (Objects.equals(ct, ClickType.CTRL_DROP_KEY))
@@ -294,7 +295,7 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                 {
                     return false;
                 }
-                player.dropItem(new BaseItemStack(clicked));
+                player.dropItem(new ItemStackImpl(clicked));
             }
             else if (ct.getMode() == 2) // 2 -> hot bar action
             {
@@ -316,7 +317,7 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                 {
                     return false;
                 }
-                player.dropItem(new BaseItemStack(cursor));
+                player.dropItem(new ItemStackImpl(cursor));
                 return true;
             }
             else if (Objects.equals(ct, ClickType.MOUSE_RIGHT_OUTSIDE))
@@ -326,7 +327,7 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                     inv.setCursorItem(null);
                     return true;
                 }
-                final ItemStack it = new BaseItemStack(cursor.getMaterial(), 1);
+                final ItemStack it = new ItemStackImpl(cursor.getType(), 1);
                 it.setItemMeta(cursor.getItemMeta().clone());
                 if (cursor.getAmount() == 1)
                 {
@@ -353,8 +354,8 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                     return true;
                 }
 
-                final ItemStack newCursor = new BaseItemStack(clicked);
-                newCursor.setAmount(newCursor.getMaterial().getMaxStack());
+                final ItemStack newCursor = new ItemStackImpl(clicked);
+                newCursor.setAmount(newCursor.getType().getMaxStack());
                 return inv.replaceCursorItem(null, newCursor);
             }
             else if (Objects.equals(ct, ClickType.MOUSE_LEFT_DRAG_START) || Objects.equals(ct, ClickType.MOUSE_RIGHT_DRAG_START))
@@ -374,28 +375,28 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                     return false;
                 }
 
-                ItemStack newCursor = new BaseItemStack(cursor);
+                ItemStack newCursor = new ItemStackImpl(cursor);
 
                 final int perSlot = isRightClick ? 1 : (cursor.getAmount() / result.size());
                 for (final int dragSlot : result)
                 {
-                    final ItemStackImpl oldItem = inv.getItem(dragSlot);
+                    final IItemStack oldItem = inv.getItem(dragSlot);
                     if ((oldItem == null) || cursor.isSimilar(oldItem))
                     {
-                        final ItemStack itemStackToCombine = new BaseItemStack(cursor);
+                        final ItemStack itemStackToCombine = new ItemStackImpl(cursor);
                         itemStackToCombine.setAmount(perSlot);
 
                         final int combined;
 
                         if (oldItem != null)
                         {
-                            final ItemStackImpl uncomb = oldItem.combine(itemStackToCombine);
+                            final IItemStack uncomb = oldItem.combine(itemStackToCombine);
                             combined = perSlot - ((uncomb == null) ? 0 : uncomb.getAmount());
                         }
                         else
                         {
                             combined = perSlot;
-                            final ItemStack it = new BaseItemStack(newCursor.getMaterial(), combined);
+                            final ItemStack it = new ItemStackImpl(newCursor.getType(), combined);
                             it.setItemMeta(newCursor.getItemMeta().clone());
                             inv.setItem(dragSlot, it);
                         }
@@ -421,14 +422,14 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                 final int slots = 44;
 
                 int firstFullSlot = - 1; // minecraft skip full stacks and use them only if there is no smaller ones
-                for (int i = 0; (i < slots) && (cursor.getAmount() < cursor.getMaterial().getMaxStack()); i++)
+                for (int i = 0; (i < slots) && (cursor.getAmount() < cursor.getType().getMaxStack()); i++)
                 {
                     final ItemStack item = inv.getItem(i);
                     if ((item == null) || ! cursor.isSimilar(item) /* || slot type == RESULT */)
                     {
                         continue;
                     }
-                    if (item.getAmount() >= item.getMaterial().getMaxStack())
+                    if (item.getAmount() >= item.getType().getMaxStack())
                     {
                         if (firstFullSlot == - 1)
                         {
@@ -442,7 +443,7 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
                         return false;
                     }
                 }
-                if ((firstFullSlot != - 1) && (cursor.getAmount() < cursor.getMaterial().getMaxStack()))
+                if ((firstFullSlot != - 1) && (cursor.getAmount() < cursor.getType().getMaxStack()))
                 {
                     if (! doubleClick(inv, firstFullSlot, cursor))
                     {
@@ -472,7 +473,7 @@ public class InventoryClickPipelineImpl extends SimpleEventPipeline<PlayerInvent
     private static boolean doubleClick(final Inventory inv, final int slot, final ItemStack cursor)
     {
         final ItemStack item = inv.getItem(slot);
-        final int newCursor = cursor.getAmount() + Math.min(item.getAmount(), cursor.getMaterial().getMaxStack() - cursor.getAmount());
+        final int newCursor = cursor.getAmount() + Math.min(item.getAmount(), cursor.getType().getMaxStack() - cursor.getAmount());
         final int newItem = item.getAmount() - (newCursor - cursor.getAmount());
         cursor.setAmount(newCursor);
         if (newItem <= 0)

@@ -25,8 +25,9 @@
 package org.diorite.impl.world.chunk.palette;
 
 import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 
 public interface Palette
 {
@@ -41,20 +42,21 @@ public interface Palette
         return this.put(((minecraftID << 4) | minecafrData));
     }
 
-    default int put(final BlockMaterialData data)
+    default int put(final BlockType data)
     {
-        return this.put(((data.getId() << 4) | data.getType()));
+        final BlockSubtype blockSubtype = data.asSubtype();
+        return this.put(((blockSubtype.getId() << 4) | blockSubtype.getSubtypeId()));
     }
 
     int getAsInt(int sectionID);
 
-    default BlockMaterialData get(final int sectionID)
+    default BlockSubtype get(final int sectionID)
     {
         final int data = this.getAsInt(sectionID);
-        final BlockMaterialData mat = (BlockMaterialData) BlockMaterialData.getByID(data >> 4, data & 15);
+        final BlockSubtype mat = Blocks.getBlockSubtype(data >> 4, data & 15);
         if (mat == null)
         {
-            return Material.AIR;
+            return BlockType.AIR.asSubtype();
         }
         return mat;
     }

@@ -31,8 +31,8 @@ import org.diorite.event.EventPriority;
 import org.diorite.event.pipelines.event.player.BlockDestroyPipeline;
 import org.diorite.event.player.PlayerBlockDestroyEvent;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.pipeline.SimpleEventPipeline;
 import org.diorite.world.Block;
 
@@ -47,8 +47,8 @@ public class BlockDestroyPipelineImpl extends SimpleEventPipeline<PlayerBlockDes
             {
                 return;
             }
-            evt.getWorld().setBlock(evt.getLocation(), Material.AIR);
-            DioriteCore.getInstance().getPlayersManager().forEach(p -> p.getWorld().equals(evt.getWorld()), new PacketPlayClientboundBlockChange(evt.getLocation(), Material.AIR));
+            evt.getWorld().setBlock(evt.getLocation(), BlockType.AIR);
+            DioriteCore.getInstance().getPlayersManager().forEach(p -> p.getWorld().equals(evt.getWorld()), new PacketPlayClientboundBlockChange(evt.getLocation(), BlockType.AIR.asSubtype()));
         });
 
         /*this.addAfter(EventPriority.NORMAL, "Diorite|AddToEq", (evt, pipeline) ->
@@ -68,8 +68,8 @@ public class BlockDestroyPipelineImpl extends SimpleEventPipeline<PlayerBlockDes
             }
             // TODO Drop naturally
             final Block block = evt.getBlock();
-            final BlockMaterialData type = block.getType();
-            for (final ItemStack itemStack : type.getPossibleDrops().simulateDrop(evt.getPlayer(), evt.getPlayer().getRandom(), evt.getItemInHand(), block))
+            final BlockSubtype type = block.getType();
+            for (final ItemStack itemStack : type.getDrops().simulateDrop(evt.getPlayer(), evt.getPlayer().getRandom(), evt.getItemInHand(), block))
             {
                 block.getWorld().dropItemNaturally(block.getLocation(), itemStack);
             }

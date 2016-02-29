@@ -27,14 +27,15 @@ package org.diorite.impl.command.defaults;
 import java.util.regex.Pattern;
 
 import org.diorite.impl.command.SystemCommandImpl;
+import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.cfg.messages.DioriteMessages;
 import org.diorite.command.Arguments;
 import org.diorite.command.CommandPriority;
 import org.diorite.command.sender.CommandSender;
 import org.diorite.entity.Player;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemSubtype;
+import org.diorite.material.item.Items;
 
 public class GiveCmd extends SystemCommandImpl
 {
@@ -55,8 +56,8 @@ public class GiveCmd extends SystemCommandImpl
             DioriteMessages.sendMessage(DioriteMessages.MSG_CMD_NO_TARGET, sender);
             return;
         }
-        final Material mat;
-        if (! args.has(param) || ((((mat = Material.matchValidInventoryMaterial(args.asString(param++), true)))) == null))
+        final ItemSubtype mat;
+        if (! args.has(param) || ((((mat = Items.matchItemType(args.asString(param++))))) == null))
         {
             DioriteMessages.sendMessage(DioriteMessages.MSG_CMD_NO_MATERIAL, sender);
             return;
@@ -73,8 +74,8 @@ public class GiveCmd extends SystemCommandImpl
             DioriteMessages.sendMessage(DioriteMessages.MSG_CMD_NUMBER_NOT_POSITIVE, sender);
         }
         // TODO: nbt, or other shit
-        final ItemStack[] notAdded = target.getInventory().add(new BaseItemStack(mat, amount));
+        final ItemStack[] notAdded = target.getInventory().add(new ItemStackImpl(mat, amount));
         final int notAddedAmount = (notAdded.length == 0) ? 0 : notAdded[0].getAmount();
-        sender.sendSimpleColoredMessage("Added &9" + (amount - notAddedAmount) + "x&r of &3" + mat.getMinecraftId() + "&9:&3" + mat.getType()); // TODO: change message and add it to config.
+        sender.sendSimpleColoredMessage("Added &9" + (amount - notAddedAmount) + "x&r of &3" + mat.getMinecraftId() + "&9:&3" + mat.getSubtypeStringId()); // TODO: change message and add it to config.
     }
 }

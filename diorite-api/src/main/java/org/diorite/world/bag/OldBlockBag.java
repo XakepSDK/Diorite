@@ -32,7 +32,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.BlockLocation;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.world.World;
 import org.diorite.world.chunk.Chunk;
 
@@ -41,21 +41,21 @@ import org.diorite.world.chunk.Chunk;
  */
 public class OldBlockBag
 {
-    private final Map<Long, BlockMaterialData[/* X */][/* Z */][/* Y */]> data;
+    private final Map<Long, BlockType[/* X */][/* Z */][/* Y */]> data;
 
-    public OldBlockBag(final Map<Long, BlockMaterialData[][][]> data)
+    public OldBlockBag(final Map<Long, BlockType[][][]> data)
     {
         this.data = data;
     }
 
-    public Map<Long, BlockMaterialData[][][]> getData()
+    public Map<Long, BlockType[][][]> getData()
     {
         return this.data;
     }
 
     public static class Builder
     {
-        private final Map<BlockLocation, BlockMaterialData> data = new HashMap<>(100, .5f);
+        private final Map<BlockLocation, BlockType> data = new HashMap<>(100, .5f);
         private final World world;
 
         private Builder(final World world)
@@ -74,7 +74,7 @@ public class OldBlockBag
             return this;
         }
 
-        public Builder add(final BlockLocation loc, final BlockMaterialData mat)
+        public Builder add(final BlockLocation loc, final BlockType mat)
         {
             if (mat == null)
             {
@@ -87,21 +87,21 @@ public class OldBlockBag
             return this;
         }
 
-        public Builder add(final int x, final int y, final int z, final BlockMaterialData mat)
+        public Builder add(final int x, final int y, final int z, final BlockType mat)
         {
             return this.add(new BlockLocation(x, y, z, this.world), mat);
         }
 
         public OldBlockBag build()
         {
-            final Map<Long, BlockMaterialData[][][]> data = new HashMap<>(25);
-            for (final Entry<BlockLocation, BlockMaterialData> entry : this.data.entrySet())
+            final Map<Long, BlockType[][][]> data = new HashMap<>(25);
+            for (final Entry<BlockLocation, BlockType> entry : this.data.entrySet())
             {
                 final BlockLocation loc = entry.getKey();
-                BlockMaterialData[][][] blocks = data.get(loc.getChunkPos().asLong());
+                BlockType[][][] blocks = data.get(loc.getChunkPos().asLong());
                 if (blocks == null)
                 {
-                    blocks = new BlockMaterialData[Chunk.CHUNK_SIZE][Chunk.CHUNK_FULL_HEIGHT][Chunk.CHUNK_SIZE];
+                    blocks = new BlockType[Chunk.CHUNK_SIZE][Chunk.CHUNK_FULL_HEIGHT][Chunk.CHUNK_SIZE];
                     data.put(loc.getChunkPos().asLong(), blocks);
                 }
                 blocks[loc.getX() & (Chunk.CHUNK_SIZE - 1)][loc.getZ() & (Chunk.CHUNK_SIZE - 1)][loc.getY()] = entry.getValue();

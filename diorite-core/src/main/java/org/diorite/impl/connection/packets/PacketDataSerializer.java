@@ -46,9 +46,11 @@ import org.diorite.impl.entity.attrib.AttributePropertyImpl;
 import org.diorite.impl.entity.attrib.SimpleAttributeModifier;
 import org.diorite.impl.entity.meta.EntityMetadata;
 import org.diorite.impl.entity.meta.entry.EntityMetadataEntry;
+import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.impl.inventory.item.meta.ItemMetaImpl;
 import org.diorite.BlockLocation;
 import org.diorite.Core;
+import org.diorite.Diorite;
 import org.diorite.chat.component.BaseComponent;
 import org.diorite.chat.component.TextComponent;
 import org.diorite.chat.component.serialize.ComponentSerializer;
@@ -56,10 +58,11 @@ import org.diorite.entity.attrib.AttributeModifier;
 import org.diorite.entity.attrib.AttributeProperty;
 import org.diorite.entity.attrib.AttributeType;
 import org.diorite.entity.attrib.ModifierOperation;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material_old.Material;
+import org.diorite.material.AnySubtype;
+import org.diorite.material.item.ItemType;
+import org.diorite.material.item.Items;
 import org.diorite.nbt.NbtInputStream;
 import org.diorite.nbt.NbtLimiter;
 import org.diorite.nbt.NbtOutputStream;
@@ -108,8 +111,19 @@ public class PacketDataSerializer extends ByteBuf
         {
             final byte amount = this.readByte();
             final short damage = this.readShort();
-            final Material mat = Material.getByID(id, damage);
-            itemstack = new BaseItemStack((mat == null) ? Material.AIR : mat, amount);
+            ItemType mat = Items.getItemType(id);
+            if (mat != null)
+            {
+                final ItemType cpy = mat;
+                mat = mat.getSubtype(damage);
+                if (mat == null)
+                {
+                    mat = cpy;
+                    Diorite.getLogger().warn("Unknown item subtype: " + id + ":" + damage + ", " + mat);
+                    // TODO remove
+                }
+            }
+            itemstack = new ItemStackImpl((mat == null) ? ItemType.STONE : mat, amount);
             itemstack.getItemMeta().setNbtData(this.readNbtTagCompound());
         }
         return itemstack;
@@ -140,12 +154,12 @@ public class PacketDataSerializer extends ByteBuf
             this.writeShort(- 1);
             return;
         }
-        final Material mat = itemStack.getMaterial();
-        this.writeShort(mat.ordinal());
+        final ItemType mat = itemStack.getType();
+        this.writeShort(mat.getProxyId());
         this.writeByte(itemStack.getAmount());
-        this.writeShort(mat.getType());
+        this.writeShort((mat instanceof AnySubtype) ? ((AnySubtype) mat).getProxySubtypeId() : 0);
         final ItemMeta meta = itemStack.getItemMeta();
-        this.writeNbtTagCompound((meta == null) ? null : ((meta instanceof ItemMetaImpl) ? ((ItemMetaImpl) meta).getRawNbtData() : meta.getNbtData()));
+        this.writeNbtTagCompound((meta == null) ? null : ((meta instanceof ItemMetaImpl) ? meta.getRawNbtData() : meta.getNbtData()));
     }
 
     public void writeNbtTagCompound(final NbtTag nbt)

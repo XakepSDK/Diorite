@@ -24,7 +24,7 @@
 
 package org.diorite.world.bag;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
@@ -41,13 +41,13 @@ public class SimpleBlockBag implements BlockBag
     }
 
     @Override
-    public BlockMaterialData getBlock(final int x, final int y, final int z)
+    public BlockType getBlock(final int x, final int y, final int z)
     {
         return null;
     }
 
     @Override
-    public void setBlock(final int x, final int y, final int z, final BlockMaterialData material)
+    public void setBlock(final int x, final int y, final int z, final BlockType type)
     {
 
     }
@@ -61,7 +61,7 @@ public class SimpleBlockBag implements BlockBag
             this.changes = new Short2ShortOpenHashMap(size);
         }
 
-        BlockMaterialData getBlock(int x, int y, int z)
+        BlockType getBlock(int x, int y, int z)
         {
 //            return changes.get()
             return null;

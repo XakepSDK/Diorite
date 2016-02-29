@@ -27,13 +27,13 @@ package org.diorite.inventory.recipe.craft;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
+import org.diorite.Diorite;
 import org.diorite.entity.Player;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.RecipeItemBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeBuilder.ShapedCraftingRecipeBuilder;
 import org.diorite.inventory.recipe.craft.CraftingRecipeBuilder.ShapelessCraftingRecipeBuilder;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 public interface CraftingRecipeItemBuilder<T extends CraftingRecipeBuilder, B extends CraftingRecipeItemBuilder<T, B>> extends RecipeItemBuilder<T, B>
 {
@@ -55,9 +55,9 @@ public interface CraftingRecipeItemBuilder<T extends CraftingRecipeBuilder, B ex
      *
      * @return this same builder for method chains.
      */
-    default B replacement(final Material basicReplacement, final BiFunction<Player, CraftingGrid, ItemStack> replacement)
+    default B replacement(final ItemType basicReplacement, final BiFunction<Player, CraftingGrid, ItemStack> replacement)
     {
-        return this.replacement(new BaseItemStack(basicReplacement), replacement);
+        return this.replacement(Diorite.newItem(basicReplacement), replacement);
     }
 
     /**
@@ -69,9 +69,9 @@ public interface CraftingRecipeItemBuilder<T extends CraftingRecipeBuilder, B ex
      *
      * @return this same builder for method chains.
      */
-    default B replacement(final Material basicReplacement, final int amount, final BiFunction<Player, CraftingGrid, ItemStack> replacement)
+    default B replacement(final ItemType basicReplacement, final int amount, final BiFunction<Player, CraftingGrid, ItemStack> replacement)
     {
-        return this.replacement(new BaseItemStack(basicReplacement, amount), replacement);
+        return this.replacement(Diorite.newItem(basicReplacement, amount), replacement);
     }
 
 
@@ -96,9 +96,9 @@ public interface CraftingRecipeItemBuilder<T extends CraftingRecipeBuilder, B ex
      *
      * @return this same builder for method chains.
      */
-    default B replacement(final Material basicReplacement, final Function<CraftingGrid, ItemStack> replacement)
+    default B replacement(final ItemType basicReplacement, final Function<CraftingGrid, ItemStack> replacement)
     {
-        return this.replacement(new BaseItemStack(basicReplacement), (p, c) -> replacement.apply(c));
+        return this.replacement(Diorite.newItem(basicReplacement), (p, c) -> replacement.apply(c));
     }
 
     /**
@@ -110,9 +110,9 @@ public interface CraftingRecipeItemBuilder<T extends CraftingRecipeBuilder, B ex
      *
      * @return this same builder for method chains.
      */
-    default B replacement(final Material basicReplacement, final int amount, final Function<CraftingGrid, ItemStack> replacement)
+    default B replacement(final ItemType basicReplacement, final int amount, final Function<CraftingGrid, ItemStack> replacement)
     {
-        return this.replacement(new BaseItemStack(basicReplacement, amount), (p, c) -> replacement.apply(c));
+        return this.replacement(Diorite.newItem(basicReplacement, amount), (p, c) -> replacement.apply(c));
     }
 
     interface ShapelessCraftingRecipeItemBuilder extends CraftingRecipeItemBuilder<ShapelessCraftingRecipeBuilder, ShapelessCraftingRecipeItemBuilder>, RepeatableRecipeItemBuilder<ShapelessCraftingRecipeBuilder, ShapelessCraftingRecipeItemBuilder>

@@ -164,7 +164,7 @@ class ItemImpl extends EntityImpl implements IItem, EntityObject
         }
         ItemStack oi = item.getItemStack();
         final ItemStack i = this.getItemStack();
-        if ((oi == null) || (i == null) || ! oi.getMaterial().equals(i.getMaterial()))
+        if ((oi == null) || (i == null) || ! oi.getType().equals(i.getType()))
         {
             return;
         }

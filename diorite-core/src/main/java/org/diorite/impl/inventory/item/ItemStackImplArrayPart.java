@@ -29,9 +29,9 @@ import org.apache.commons.lang3.Validate;
 import org.diorite.utils.concurrent.atomic.AtomicArray;
 import org.diorite.utils.concurrent.atomic.AtomicArrayPart;
 
-class ItemStackImplArrayPart extends AtomicArrayPart<ItemStackImpl> implements ItemStackImplArray
+class ItemStackImplArrayPart extends AtomicArrayPart<IItemStack> implements ItemStackImplArray
 {
-    protected ItemStackImplArrayPart(final AtomicArray<ItemStackImpl> base, final int offset, final int length)
+    protected ItemStackImplArrayPart(final AtomicArray<IItemStack> base, final int offset, final int length)
     {
         super(base, offset, length);
     }

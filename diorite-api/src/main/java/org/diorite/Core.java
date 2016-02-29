@@ -182,6 +182,15 @@ public interface Core extends Synchronizable
     ItemStack newItem(ItemType type, int amount);
 
     /**
+     * Create instance of itemstack as clone of given item.
+     *
+     * @param itemStack itemStack to clone.
+     *
+     * @return created instance of itemstack.
+     */
+    ItemStack newItem(ItemStack itemStack);
+
+    /**
      * Returns list of player nicknames that starts with given prefix.
      *
      * @param prefix prefix to find.

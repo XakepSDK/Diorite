@@ -62,7 +62,8 @@ import org.diorite.Particle;
 import org.diorite.cfg.WorldsConfig.WorldConfig;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 import org.diorite.nbt.NbtNamedTagContainer;
 import org.diorite.nbt.NbtOutputStream;
 import org.diorite.nbt.NbtTagCompound;
@@ -100,14 +101,14 @@ public class WorldImpl implements World, Tickable
     protected final Dimension        dimension;
     protected final WorldType        worldType;
     protected final EntityTrackers   entityTrackers;
-    protected final WorldBorderImpl  worldBorder = new WorldBorderImpl(this);
-    protected     boolean          vanillaCompatible = false;
-    protected     Difficulty       difficulty        = Difficulty.NORMAL;
-    protected     HardcoreSettings hardcore          = new HardcoreSettings(false);
-    protected     GameMode         defaultGameMode   = GameMode.SURVIVAL;
-    protected     int              maxHeight         = Chunk.CHUNK_FULL_HEIGHT - 1;
-    protected     byte             forceLoadedRadius = 5;
-    private final LongCollection   activeChunks      = new LongOpenHashSet(1000);
+    protected final WorldBorderImpl  worldBorder       = new WorldBorderImpl(this);
+    protected       boolean          vanillaCompatible = false;
+    protected       Difficulty       difficulty        = Difficulty.NORMAL;
+    protected       HardcoreSettings hardcore          = new HardcoreSettings(false);
+    protected       GameMode         defaultGameMode   = GameMode.SURVIVAL;
+    protected       int              maxHeight         = Chunk.CHUNK_FULL_HEIGHT - 1;
+    protected       byte             forceLoadedRadius = 5;
+    private final   LongCollection   activeChunks      = new LongOpenHashSet(1000);
     protected       long           seed;
     protected       boolean        raining;
     protected       boolean        thundering;
@@ -315,8 +316,8 @@ public class WorldImpl implements World, Tickable
         this.worldBorder.setSize(tag.getDouble("BorderSize", WorldBorderImpl.DEFAULT_BORDER_SIZE));
         this.worldBorder.setDamageAmount(tag.getDouble("BorderDamagePerBlock", 0.2));
         this.worldBorder.setDamageBuffer(tag.getDouble("BorderSafeZone", 5));
-        this.worldBorder.setWarningDistance((int)tag.getDouble("BorderWarningBlocks", 5));
-        this.worldBorder.setWarningTime((int)tag.getDouble("BorderWarningTime", 15));
+        this.worldBorder.setWarningDistance((int) tag.getDouble("BorderWarningBlocks", 5));
+        this.worldBorder.setWarningTime((int) tag.getDouble("BorderWarningTime", 15));
         this.worldBorder.setTargetSize(tag.getDouble("BorderSizeLerpTarget", this.worldBorder.getSize()));
         this.worldBorder.setTargetReachTime(tag.getLong("BorderSizeLerpTime", 0));
     }
@@ -699,17 +700,18 @@ public class WorldImpl implements World, Tickable
     }
 
     @Override
-    public void setBlock(final int x, final int y, final int z, final BlockMaterialData material)
+    public void setBlock(final int x, final int y, final int z, final BlockType material)
     {
         if (y > this.maxHeight)
         {
             return;
         }
-        this.getChunkAt(x >> 4, z >> 4).setBlock((x & CHUNK_FLAG), y, (z & CHUNK_FLAG), material.ordinal(), material.getType());
+        final BlockSubtype subtype = material.asSubtype();
+        this.getChunkAt(x >> 4, z >> 4).setBlock((x & CHUNK_FLAG), y, (z & CHUNK_FLAG), subtype.getId(), subtype.getSubtypeId());
     }
 
     @Override
-    public void setBlock(final BlockLocation location, final BlockMaterialData material)
+    public void setBlock(final BlockLocation location, final BlockType material)
     {
         this.setBlock(location.getX(), location.getY(), location.getZ(), material);
     }

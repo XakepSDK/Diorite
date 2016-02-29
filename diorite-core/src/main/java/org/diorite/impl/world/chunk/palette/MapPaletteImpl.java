@@ -30,7 +30,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.connection.packets.PacketDataSerializer;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockSubtype;
 import org.diorite.utils.math.DioriteMathUtils;
 
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
@@ -60,15 +60,20 @@ public class MapPaletteImpl implements PaletteData
         this.lastUsed = lastUsed;
     }
 
+    protected static int getIdAndMeta(final BlockSubtype subtype)
+    {
+        return ((subtype.getId() << 4) | subtype.getSubtypeId());
+    }
+
     public MapPaletteImpl(final ArrayPaletteImpl old)
     {
         this.pattern = new Int2IntOpenHashMap(64, .5F);
         this.pattern.defaultReturnValue(0);
         this.mirror = new Int2IntOpenHashMap(64, .5F);
         this.mirror.defaultReturnValue(- 1);
-        for (final BlockMaterialData mat : old.pattern)
+        for (final BlockSubtype mat : old.pattern)
         {
-            final int mcID = mat.getIdAndMeta();
+            final int mcID = getIdAndMeta(mat);
             this.pattern.put(this.lastUsed, mcID);
             this.mirror.put(mcID, this.lastUsed++);
         }

@@ -276,6 +276,14 @@ public interface BlockType extends AnyType
     }
 
     /**
+     * Returns display name of block.
+     *
+     * @return display name of block.
+     */
+    @Override
+    String getDisplayNameKey();
+
+    /**
      * Returns subtype by given id.
      *
      * @param id id of subtype.
@@ -304,12 +312,11 @@ public interface BlockType extends AnyType
     Collection<? extends BlockSubtype> getSubtypes();
 
     /**
-     * Returns display name of block.
+     * Returns default subtype of block.
      *
-     * @return display name of block.
+     * @return default subtype of block.
      */
-    @Override
-    String getDisplayNameKey();
+    BlockSubtype asSubtype();
 
     /**
      * Returns hardness of block.
@@ -324,6 +331,13 @@ public interface BlockType extends AnyType
      * @return hardness of block.
      */
     double getBlastResistance();
+
+    /**
+     * Returns true if this block is solid.
+     *
+     * @return true if this block is solid.
+     */
+    boolean isSolid();
 
     /**
      * Returns sounds pack for this block.

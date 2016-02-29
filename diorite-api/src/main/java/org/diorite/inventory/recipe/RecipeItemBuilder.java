@@ -29,11 +29,11 @@ import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
+import org.diorite.Diorite;
 import org.diorite.entity.Player;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.craft.CraftingGrid;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 /**
  * Represent basic recipe item builder.
@@ -67,9 +67,9 @@ public interface RecipeItemBuilder<T extends RecipeBuilder, B extends RecipeItem
      *
      * @return this same builder for method chains.
      */
-    default B replacement(final Material material)
+    default B replacement(final ItemType material)
     {
-        return this.replacement(new BaseItemStack(material));
+        return this.replacement(Diorite.newItem(material));
     }
 
     /**
@@ -80,9 +80,9 @@ public interface RecipeItemBuilder<T extends RecipeBuilder, B extends RecipeItem
      *
      * @return this same builder for method chains.
      */
-    default B replacement(final Material material, final int amount)
+    default B replacement(final ItemType material, final int amount)
     {
-        return this.replacement(new BaseItemStack(material, amount));
+        return this.replacement(Diorite.newItem(material, amount));
     }
 
     /**
@@ -92,9 +92,9 @@ public interface RecipeItemBuilder<T extends RecipeBuilder, B extends RecipeItem
      *
      * @return this same builder for method chains.
      */
-    default B item(final Material pattern)
+    default B item(final ItemType pattern)
     {
-        return this.item(new BaseItemStack(pattern, 1), false);
+        return this.item(Diorite.newItem(pattern, 1), false);
     }
 
     /**
@@ -106,9 +106,9 @@ public interface RecipeItemBuilder<T extends RecipeBuilder, B extends RecipeItem
      *
      * @return this same builder for method chains.
      */
-    default B item(final Material pattern, final boolean ignoreType)
+    default B item(final ItemType pattern, final boolean ignoreType)
     {
-        return this.item(new BaseItemStack(pattern, 1), ignoreType);
+        return this.item(Diorite.newItem(pattern, 1), ignoreType);
     }
 
     /**
@@ -120,9 +120,9 @@ public interface RecipeItemBuilder<T extends RecipeBuilder, B extends RecipeItem
      *
      * @return this same builder for method chains.
      */
-    default B item(final Material pattern, final int amount)
+    default B item(final ItemType pattern, final int amount)
     {
-        return this.item(new BaseItemStack(pattern, amount), false);
+        return this.item(Diorite.newItem(pattern, amount), false);
     }
 
     /**
@@ -135,9 +135,9 @@ public interface RecipeItemBuilder<T extends RecipeBuilder, B extends RecipeItem
      *
      * @return this same builder for method chains.
      */
-    default B item(final Material pattern, final int amount, final boolean ignoreType)
+    default B item(final ItemType pattern, final int amount, final boolean ignoreType)
     {
-        return this.item(new BaseItemStack(pattern, amount), ignoreType);
+        return this.item(Diorite.newItem(pattern, amount), ignoreType);
     }
 
     /**

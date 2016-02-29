@@ -51,7 +51,6 @@ import org.diorite.entity.attrib.AttributeModifier;
 import org.diorite.entity.attrib.BasicAttributeModifier;
 import org.diorite.firework.FireworkEffect;
 import org.diorite.map.MapIcon;
-import org.diorite.material_old.Material;
 import org.diorite.nbt.NbtSerializable;
 import org.diorite.nbt.NbtSerialization;
 import org.diorite.utils.math.DioriteMathUtils;
@@ -161,14 +160,6 @@ public final class CoreMain
             registerNbt();
             // register all packet classes.
             RegisterPackets.init();
-
-            // TODO: load "magic values"
-            // never remove this line (Material.values), it's needed even if it don't do anything for you.
-            // it will force load all material classes, loading class of one material before "Material" is loaded will throw error.
-            Material.values();
-            System.out.println("Registered " + Material.getBlockMaterialsCount() + " (" + Material.getAllBlockMaterialsCount() + " with sub-types) diorite blocks.");
-            System.out.println("Registered " + Material.getItemMaterialsCount() + " (" + Material.getAllItemMaterialsCount() + " with sub-types) diorite items.");
-            System.out.println("Registered " + Material.getMaterialsCount() + " (" + Material.getAllMaterialsCount() + " with sub-types) diorite blocks and items.");
         } catch (final Throwable t)
         {
             t.printStackTrace();

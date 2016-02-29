@@ -31,8 +31,9 @@ import org.diorite.impl.world.chunk.ChunkBlockData;
 import org.diorite.impl.world.chunk.ChunkImpl;
 import org.diorite.impl.world.chunk.ChunkPartImpl;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.generator.BiomeGrid;
 import org.diorite.world.generator.ChunkBuilder;
@@ -79,7 +80,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
     }
 
     @Override
-    public void setBlock(final int x, final int y, final int z, final BlockMaterialData materialData)
+    public void setBlock(final int x, final int y, final int z, final BlockType materialData)
     {
         final byte chunkPosY = (byte) (y >> 4);
         ChunkPartBuilder chunkPart = this.chunkParts[chunkPosY];
@@ -105,13 +106,13 @@ public class ChunkBuilderImpl implements ChunkBuilder
     }
 
     @Override
-    public BlockMaterialData getBlockType(final int x, final int y, final int z)
+    public BlockSubtype getBlockType(final int x, final int y, final int z)
     {
         final byte chunkPosY = (byte) (y >> 4);
         final ChunkPartBuilder chunkPart = this.chunkParts[chunkPosY];
         if (chunkPart == null)
         {
-            return Material.AIR;
+            return BlockType.AIR.asSubtype();
         }
         return chunkPart.getBlockType(x, y % Chunk.CHUNK_PART_HEIGHT, z);
     }
@@ -157,7 +158,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
 
         private void setBlock(final int x, final int y, final int z, final int id, final int meta)
         {
-            final BlockMaterialData old = this.blockData.getAndSet(this.toArrayIndex(x, y, z), this.palette.put(id, (byte) meta), this.palette);
+            final BlockSubtype old = this.blockData.getAndSet(this.toArrayIndex(x, y, z), this.palette.put(id, (byte) meta), this.palette);
             if ((old.getId() == 0) && (id != 0))
             {
                 this.nonEmptyBlockCount++;
@@ -168,20 +169,22 @@ public class ChunkBuilderImpl implements ChunkBuilder
             }
         }
 
-        private void setBlock(final int x, final int y, final int z, final BlockMaterialData material)
+        private void setBlock(final int x, final int y, final int z, final BlockType material)
         {
-            this.setBlock(x, y, z, material.ordinal(), material.getType());
+            final BlockSubtype subtype = material.asSubtype();
+            this.setBlock(x, y, z, material.getId(), subtype.getSubtypeId());
         }
 
         @SuppressWarnings("MagicNumber")
-        private BlockMaterialData getBlockType(final int x, final int y, final int z)
+        private BlockSubtype getBlockType(final int x, final int y, final int z)
         {
             final int data = this.blockData.getAsInt(this.toArrayIndex(x, y, z), this.palette);
-            if (Material.getByID(data >> 4, data & 15) == null)
+            final BlockSubtype blockSubtype = Blocks.getBlockSubtype(data >> 4, data & 15);
+            if (blockSubtype == null)
             {
-                return Material.AIR;
+                return BlockType.AIR.asSubtype();
             }
-            return (BlockMaterialData) Material.getByID(data >> 4, data & 15);
+            return blockSubtype;
         }
 
         @SuppressWarnings("MagicNumber")
@@ -202,8 +205,8 @@ public class ChunkBuilderImpl implements ChunkBuilder
 
             for (int i = 0; i < CHUNK_DATA_SIZE; i++)
             {
-                final BlockMaterialData type = this.blockData.get(i, this.palette);
-                if ((type != null) && ! type.isThisSameID(Material.AIR))
+                final BlockSubtype type = this.blockData.get(i, this.palette);
+                if ((type != null) && ! type.isThisSameType(BlockType.AIR))
                 {
                     this.nonEmptyBlockCount++;
                 }

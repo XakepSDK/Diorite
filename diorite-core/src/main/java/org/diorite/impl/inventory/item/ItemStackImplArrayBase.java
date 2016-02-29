@@ -27,7 +27,7 @@ package org.diorite.impl.inventory.item;
 
 import org.diorite.utils.concurrent.atomic.AtomicArrayBase;
 
-class ItemStackImplArrayBase extends AtomicArrayBase<ItemStackImpl> implements ItemStackImplArray
+class ItemStackImplArrayBase extends AtomicArrayBase<IItemStack> implements ItemStackImplArray
 {
     private static final long serialVersionUID = 0;
 
@@ -36,7 +36,7 @@ class ItemStackImplArrayBase extends AtomicArrayBase<ItemStackImpl> implements I
         super(length);
     }
 
-    ItemStackImplArrayBase(final ItemStackImpl[] array)
+    ItemStackImplArrayBase(final IItemStack[] array)
     {
         super(array);
     }

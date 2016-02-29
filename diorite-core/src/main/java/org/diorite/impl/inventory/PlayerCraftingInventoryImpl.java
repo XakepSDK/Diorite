@@ -27,13 +27,13 @@ package org.diorite.impl.inventory;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundSetSlot;
 import org.diorite.impl.entity.IHuman;
 import org.diorite.impl.entity.IPlayer;
+import org.diorite.impl.inventory.item.IItemStack;
 import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.impl.inventory.item.ItemStackImplArray;
 import org.diorite.Diorite;
 import org.diorite.entity.Human;
 import org.diorite.inventory.InventoryType;
 import org.diorite.inventory.PlayerCraftingInventory;
-import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.craft.CraftingGrid;
 import org.diorite.inventory.recipe.craft.CraftingRecipe;
@@ -67,14 +67,14 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
     @Override
     public ItemStack setResult(final ItemStack result)
     {
-        return this.content.getAndSet(0, ItemStackImpl.wrap(result));
+        return this.content.getAndSet(0, IItemStack.wrap(result));
     }
 
     @Override
     public boolean replaceResult(final ItemStack excepted, final ItemStack result)
     {
-        ItemStackImpl.validate(excepted);
-        return this.content.compareAndSet(0, (ItemStackImpl) excepted, ItemStackImpl.wrap(result));
+        IItemStack.validate(excepted);
+        return this.content.compareAndSet(0, (IItemStack) excepted, IItemStack.wrap(result));
     }
 
     @Override
@@ -106,7 +106,7 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
             short startIndex = - 1;
             do
             {
-                bugSlot = (short) this.playerInventory.firstNotFull(items[k].getMaterial());
+                bugSlot = (short) this.playerInventory.firstNotFull(items[k].getType());
                 if (bugSlot != - 1)
                 {
                     short bugSlot2 = (short) this.playerInventory.firstNotFull(items[k]);
@@ -181,7 +181,7 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
         else
         {
             final ItemStack cursor = this.getPlayerInventory().getCursorItem();
-            if ((cursor != null) && (! cursor.isSimilar(this.recipe.getResult()) || ((this.recipe.getResult().getAmount() + cursor.getAmount()) > this.recipe.getResult().getMaterial().getMaxStack())))
+            if ((cursor != null) && (! cursor.isSimilar(this.recipe.getResult()) || ((this.recipe.getResult().getAmount() + cursor.getAmount()) > this.recipe.getResult().getType().getMaxStack())))
             {
                 return; // can't craft more.
             }
@@ -204,7 +204,7 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
             for (final ShortIterator it = possibleBugs.iterator(); it.hasNext(); )
             {
                 final short slot = it.next();
-                final ItemStackImpl item = this.playerInventory.getItem(slot);
+                final IItemStack item = this.playerInventory.getItem(slot);
                 packets[i++] = new PacketPlayClientboundSetSlot(this.playerInventory.getWindowId(), slot, item);
             }
             ((IPlayer) holder).getNetworkManager().sendPackets(packets);
@@ -248,7 +248,7 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
         {
             for (final ItemStack itemStack : rest)
             {
-                holder.dropItem(new BaseItemStack(itemStack));
+                holder.dropItem(new ItemStackImpl(itemStack));
             }
         }
     }
@@ -258,10 +258,10 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
         final ItemStack item = this.getItem(a);
         if (item == null)
         {
-            if (b.getAmount() > b.getMaterial().getMaxStack())
+            if (b.getAmount() > b.getType().getMaxStack())
             {
                 final ItemStack fullB = b.clone();
-                fullB.setAmount(b.getMaterial().getMaxStack());
+                fullB.setAmount(b.getType().getMaxStack());
                 this.setItem(a, fullB);
                 b.setAmount(b.getAmount() - fullB.getAmount());
                 this.dropArray(this.playerInventory.addFromEnd(b), this.playerInventory.getHolder());
@@ -274,11 +274,11 @@ public class PlayerCraftingInventoryImpl extends PlayerInventoryPartImpl impleme
         else if (item.isSimilar(b))
         {
             int newAmount = item.getAmount() + b.getAmount();
-            if (newAmount > item.getMaterial().getMaxStack())
+            if (newAmount > item.getType().getMaxStack())
             {
-                item.setAmount(item.getMaterial().getMaxStack());
+                item.setAmount(item.getType().getMaxStack());
                 this.setItem(a, item);
-                newAmount -= item.getMaterial().getMaxStack();
+                newAmount -= item.getType().getMaxStack();
                 final ItemStack item2 = item.clone();
                 item2.setAmount(newAmount);
                 this.dropArray(this.playerInventory.addFromEnd(item2), this.playerInventory.getHolder());

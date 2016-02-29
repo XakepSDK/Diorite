@@ -26,7 +26,7 @@ package org.diorite.impl.world.generator;
 
 import java.util.Map;
 
-import org.diorite.material_old.Material;
+import org.diorite.material.block.BlockType;
 import org.diorite.utils.math.DioriteRandomUtils;
 import org.diorite.world.World;
 import org.diorite.world.chunk.Chunk;
@@ -53,15 +53,15 @@ public class FlatWorldGeneratorImpl extends WorldGenerator
                 {
                     if (y == 3)
                     {
-                        builder.setBlock(x, y, z, Material.GRASS);
+                        builder.setBlock(x, y, z, BlockType.GRASS);
                     }
                     else if ((y == 2) || (y == 1))
                     {
-                        builder.setBlock(x, y, z, Material.STONE.getType(DioriteRandomUtils.getRandomInt(3, 4)));
+                        builder.setBlock(x, y, z, BlockType.STONE.getSubtype(DioriteRandomUtils.getRandomInt(3, 4)));
                     }
                     else
                     {
-                        builder.setBlock(x, y, z, Material.BEDROCK);
+                        builder.setBlock(x, y, z, BlockType.BEDROCK);
                     }
                 }
             }

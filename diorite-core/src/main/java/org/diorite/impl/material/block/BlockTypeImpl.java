@@ -41,7 +41,7 @@ import org.diorite.material.block.LiquidSettings;
 import org.diorite.material.data.drops.PossibleDrops;
 import org.diorite.material.item.ItemType;
 
-public class BlockTypeImpl implements BlockType
+public abstract class BlockTypeImpl implements BlockType
 {
     private int    id;
     private String minecraftId;
@@ -155,6 +155,9 @@ public class BlockTypeImpl implements BlockType
     {
         return Collections.emptyList();
     }
+
+    @Override
+    public abstract BlockSubtype asSubtype();
 
     @Override
     public double getHardness()

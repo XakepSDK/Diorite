@@ -31,7 +31,7 @@ import org.diorite.effect.StatusEffect;
 import org.diorite.effect.StatusEffectType;
 
 /**
- * Represents a potion ({@link org.diorite.material_old.Material#POTION}) that can have custom potion effects.
+ * Represents a potion ({@link org.diorite.material.item.ItemType#POTION}) that can have custom potion effects.
  */
 public interface PotionMeta extends ItemMeta
 {

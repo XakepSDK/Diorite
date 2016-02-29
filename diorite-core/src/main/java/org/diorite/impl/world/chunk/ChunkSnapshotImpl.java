@@ -27,8 +27,8 @@ package org.diorite.impl.world.chunk;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.material_old.BlockMaterialData;
-import org.diorite.material_old.blocks.AirMat;
+import org.diorite.material.block.BlockSubtype;
+import org.diorite.material.block.BlockType;
 import org.diorite.world.Biome;
 import org.diorite.world.World;
 import org.diorite.world.chunk.Chunk;
@@ -157,18 +157,18 @@ public class ChunkSnapshotImpl implements ChunkSnapshot
     public int getBlockTypeId(final int x, final int y, final int z)
     {
         final ChunkPartImpl section = this.getSection(y);
-        return (section == null) ? 0 : section.getBlockType(x, y, z).ordinal();
+        return (section == null) ? 0 : section.getBlockType(x, y, z).getId();
     }
 
     @Override
     public int getBlockData(final int x, final int y, final int z)
     {
         final ChunkPartImpl section = this.getSection(y);
-        return (section == null) ? 0 : section.getBlockType(x, y, z).getType();
+        return (section == null) ? 0 : section.getBlockType(x, y, z).getSubtypeId();
     }
 
     @Override
-    public BlockMaterialData getBlockType(final int x, final int y, final int z)
+    public BlockSubtype getBlockType(final int x, final int y, final int z)
     {
         final ChunkPartImpl section = this.getSection(y);
         return (section == null) ? null : section.getBlockType(x, y, z);
@@ -261,9 +261,9 @@ public class ChunkSnapshotImpl implements ChunkSnapshot
         }
 
         @Override
-        public BlockMaterialData getBlockType(final int x, final int y, final int z)
+        public BlockSubtype getBlockType(final int x, final int y, final int z)
         {
-            return AirMat.AIR;
+            return BlockType.AIR.asSubtype();
         }
     }
 

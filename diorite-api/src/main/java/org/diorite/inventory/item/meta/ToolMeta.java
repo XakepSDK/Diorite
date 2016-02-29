@@ -27,7 +27,7 @@ package org.diorite.inventory.item.meta;
 import java.util.Collection;
 import java.util.Set;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 
 /**
  * Represent {@link ItemMeta} used by tool items, like pickaxes.
@@ -50,65 +50,56 @@ public interface ToolMeta extends RepairableMeta
     void setUseCanDestoryTag(boolean useCanDestoryTag);
 
     /**
-     * Returns set of {@link BlockMaterialData}, materials that can be destroyed by this tool. <br>
+     * Returns set of {@link BlockType}, block types that can be destroyed by this tool. <br>
      * Minecraft don't support subtypes here. <br>
      * Will return null if tag isn't used.
      *
-     * @return set of {@link BlockMaterialData}, materials that can be destroyed by this tool if CanDestory tag is used.
+     * @return set of {@link BlockType}, block types that can be destroyed by this tool if CanDestory tag is used.
      */
-    Set<BlockMaterialData> getCanDestoryMaterials();
+    Set<BlockType> getCanDestoryBlocks();
 
     /**
-     * Set materials that can be destroyed by this tool. <br>
+     * Set blocks that can be destroyed by this tool. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
-     * @param materials new collection of materials.
+     * @param blocks new collection of blocks.
      */
-    void setCanDestoryMaterials(Collection<BlockMaterialData> materials);
-
-//    /**
-//     * Add new material that can be destroyed by this tool,
-//     * this method will automatically enable CanDestory tag if needed. <br>
-//     * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
-//     * (Vanilla client can't see them)
-//     *
-//     * @param material material to add.
-//     */
+    void setCanDestoryBlocks(Collection<BlockType> blocks);
 
     /**
-     * Add new material that can be destroyed by this tool,
+     * Add new block that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Minecraft don't support subtypes here.
      *
-     * @param material material to add.
+     * @param block block to add.
      */
-    void addCanDestoryMaterial(BlockMaterialData material);
+    void addCanDestoryBlock(BlockType block);
 
     /**
-     * Check if given material is already in CanDestory tag.
+     * Check if given block is already in CanDestory tag.
      *
-     * @param material material to be checked.
+     * @param block block to be checked.
      *
-     * @return true if given material is in CanDestory tag.
+     * @return true if given block is in CanDestory tag.
      */
-    boolean containsCanDestoryMaterial(BlockMaterialData material);
+    boolean containsCanDestoryBlock(BlockType block);
 
     /**
-     * Remove material that can be destroyed by this tool,
+     * Remove block that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Minecraft don't support subtypes here.
      *
-     * @param material material to add.
+     * @param block block to add.
      */
-    void removeCanDestoryMaterial(BlockMaterialData material);
+    void removeCanDestoryBlock(BlockType block);
 
     /**
-     * Clear list of materials that can be destroyed by this tool,
+     * Clear list of blcoks that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Use {@link #setUseCanDestoryTag(boolean)} if you want disable CanDestory tag.
      */
-    void removeCanDestoryMaterials();
+    void removeCanDestoryBlocks();
 
     @Override
     ToolMeta clone();

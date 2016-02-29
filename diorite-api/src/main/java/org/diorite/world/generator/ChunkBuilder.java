@@ -24,7 +24,7 @@
 
 package org.diorite.world.generator;
 
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.generator.maplayer.MapLayer;
 
@@ -38,11 +38,11 @@ public interface ChunkBuilder
 
     void setBiomeGrid(BiomeGrid biomeGrid);
 
-    void setBlock(int x, int y, int z, BlockMaterialData materialData);
+    void setBlock(int x, int y, int z, BlockType type);
 
     void setBlock(int x, int y, int z, int id, int meta);
 
-    BlockMaterialData getBlockType(int x, int y, int z);
+    BlockType getBlockType(int x, int y, int z);
 
     void init(Chunk chunk);
 }

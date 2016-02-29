@@ -32,12 +32,12 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.impl.connection.packets.play.serverbound.PacketPlayServerboundWindowClick;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundSetSlot;
 import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboundWindowItems;
+import org.diorite.impl.connection.packets.play.serverbound.PacketPlayServerboundWindowClick;
 import org.diorite.impl.entity.IHuman;
 import org.diorite.impl.entity.IPlayer;
-import org.diorite.impl.inventory.item.ItemStackImpl;
+import org.diorite.impl.inventory.item.IItemStack;
 import org.diorite.impl.inventory.item.ItemStackImplArray;
 import org.diorite.entity.Human;
 import org.diorite.entity.Player;
@@ -46,7 +46,7 @@ import org.diorite.inventory.PlayerInventory;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.slot.Slot;
 import org.diorite.inventory.slot.SlotType;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements PlayerInventory
 {
@@ -65,7 +65,7 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     private static class VirtualSlot
     {
         private final int slot;
-        private final AtomicReference<ItemStackImpl> item = new AtomicReference<>();
+        private final AtomicReference<IItemStack> item = new AtomicReference<>();
         private boolean wasNotNull; // used only by softUpdate
 
         private VirtualSlot(final int slot)
@@ -129,13 +129,13 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public int first(final Material material)
+    public int first(final ItemType type)
     {
-        int i = this.hotbar.first(material);
+        int i = this.hotbar.first(type);
         int offset = this.hotbar.getSlotOffset();
         if (i == - 1)
         {
-            i = this.eq.first(material);
+            i = this.eq.first(type);
             if (i == - 1)
             {
                 return - 1;
@@ -184,13 +184,13 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public int firstNotFull(final Material material)
+    public int firstNotFull(final ItemType type)
     {
-        int i = this.hotbar.firstNotFull(material);
+        int i = this.hotbar.firstNotFull(type);
         int offset = this.hotbar.getSlotOffset();
         if (i == - 1)
         {
-            i = this.eq.firstNotFull(material);
+            i = this.eq.firstNotFull(type);
             if (i == - 1)
             {
                 return - 1;
@@ -201,16 +201,16 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public int firstNotFull(final Material material, final int startIndex)
+    public int firstNotFull(final ItemType type, final int startIndex)
     {
         int offset = this.hotbar.getSlotOffset();
         int start = (startIndex >= offset) ? (startIndex - offset) : startIndex;
-        int i = (start >= this.hotbar.size()) ? - 1 : this.hotbar.firstNotFull(material, start);
+        int i = (start >= this.hotbar.size()) ? - 1 : this.hotbar.firstNotFull(type, start);
         if (i == - 1)
         {
             offset += this.eq.getSlotOffset();
             start = (startIndex >= offset) ? (startIndex - offset) : (startIndex);
-            i = (start >= offset) ? - 1 : this.eq.firstNotFull(material, start - this.eq.getSlotOffset());
+            i = (start >= offset) ? - 1 : this.eq.firstNotFull(type, start - this.eq.getSlotOffset());
             if ((i >= this.eq.size()) || (i == - 1))
             {
                 return - 1;
@@ -266,13 +266,13 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public int last(final Material material)
+    public int last(final ItemType type)
     {
-        int i = this.hotbar.last(material);
+        int i = this.hotbar.last(type);
         int offset = this.hotbar.getSlotOffset();
         if (i == - 1)
         {
-            i = this.eq.last(material);
+            i = this.eq.last(type);
             if (i == - 1)
             {
                 return - 1;
@@ -321,13 +321,13 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public int lastNotFull(final Material material)
+    public int lastNotFull(final ItemType type)
     {
-        int i = this.hotbar.lastNotFull(material);
+        int i = this.hotbar.lastNotFull(type);
         int offset = this.hotbar.getSlotOffset();
         if (i == - 1)
         {
-            i = this.eq.lastNotFull(material);
+            i = this.eq.lastNotFull(type);
             if (i == - 1)
             {
                 return - 1;
@@ -338,16 +338,16 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public int lastNotFull(final Material material, final int startIndex)
+    public int lastNotFull(final ItemType type, final int startIndex)
     {
         int offset = this.hotbar.getSlotOffset();
         int start = (startIndex >= offset) ? (startIndex - offset) : startIndex;
-        int i = (start >= this.hotbar.size()) ? - 1 : this.hotbar.lastNotFull(material, start);
+        int i = (start >= this.hotbar.size()) ? - 1 : this.hotbar.lastNotFull(type, start);
         if (i == - 1)
         {
             offset += this.eq.getSlotOffset();
             start = (startIndex >= offset) ? (startIndex - offset) : (startIndex);
-            i = (start >= offset) ? - 1 : this.eq.lastNotFull(material, start - this.eq.getSlotOffset());
+            i = (start >= offset) ? - 1 : this.eq.lastNotFull(type, start - this.eq.getSlotOffset());
             if ((i >= this.eq.size()) || (i == - 1))
             {
                 return - 1;
@@ -406,9 +406,9 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     }
 
     @Override
-    public ItemStackImpl setCursorItem(final ItemStack cursorItem)
+    public IItemStack setCursorItem(final ItemStack cursorItem)
     {
-        return this.cursorItem.item.getAndSet(ItemStackImpl.wrap(cursorItem));
+        return this.cursorItem.item.getAndSet(IItemStack.wrap(cursorItem));
     }
 
     @Override
@@ -420,8 +420,8 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     @Override
     public boolean replaceCursorItem(final ItemStack excepted, final ItemStack cursorItem) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return this.cursorItem.item.compareAndSet((ItemStackImpl) excepted, ItemStackImpl.wrap(cursorItem));
+        IItemStack.validate(excepted);
+        return this.cursorItem.item.compareAndSet((IItemStack) excepted, IItemStack.wrap(cursorItem));
     }
 
     @Override
@@ -433,14 +433,14 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     @Override
     public ItemStack setOffHandItem(final ItemStack offHandItem)
     {
-        return this.secondHand.item.getAndSet(ItemStackImpl.wrap(offHandItem));
+        return this.secondHand.item.getAndSet(IItemStack.wrap(offHandItem));
     }
 
     @Override
     public boolean replaceOffHandItem(final ItemStack excepted, final ItemStack offHandItem)
     {
-        ItemStackImpl.validate(excepted);
-        return this.secondHand.item.compareAndSet((ItemStackImpl) excepted, ItemStackImpl.wrap(offHandItem));
+        IItemStack.validate(excepted);
+        return this.secondHand.item.compareAndSet((IItemStack) excepted, IItemStack.wrap(offHandItem));
     }
 
     @Override
@@ -470,53 +470,53 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     @Override
     public ItemStack setHelmet(final ItemStack helmet)
     {
-        return this.content.getAndSet(5, ItemStackImpl.wrap(helmet));
+        return this.content.getAndSet(5, IItemStack.wrap(helmet));
     }
 
     @Override
     public ItemStack setChestplate(final ItemStack chestplate)
     {
-        return this.content.getAndSet(6, ItemStackImpl.wrap(chestplate));
+        return this.content.getAndSet(6, IItemStack.wrap(chestplate));
     }
 
     @Override
     public ItemStack setLeggings(final ItemStack leggings)
     {
-        return this.content.getAndSet(7, ItemStackImpl.wrap(leggings));
+        return this.content.getAndSet(7, IItemStack.wrap(leggings));
     }
 
     @Override
     public ItemStack setBoots(final ItemStack boots)
     {
-        return this.content.getAndSet(8, ItemStackImpl.wrap(boots));
+        return this.content.getAndSet(8, IItemStack.wrap(boots));
     }
 
     @Override
     public boolean replaceHelmet(final ItemStack excepted, final ItemStack helmet) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return this.content.compareAndSet(5, (ItemStackImpl) excepted, ItemStackImpl.wrap(helmet));
+        IItemStack.validate(excepted);
+        return this.content.compareAndSet(5, (IItemStack) excepted, IItemStack.wrap(helmet));
     }
 
     @Override
     public boolean replaceChestplate(final ItemStack excepted, final ItemStack chestplate) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return this.content.compareAndSet(6, (ItemStackImpl) excepted, ItemStackImpl.wrap(chestplate));
+        IItemStack.validate(excepted);
+        return this.content.compareAndSet(6, (IItemStack) excepted, IItemStack.wrap(chestplate));
     }
 
     @Override
     public boolean replaceLeggings(final ItemStack excepted, final ItemStack leggings) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return this.content.compareAndSet(7, (ItemStackImpl) excepted, ItemStackImpl.wrap(leggings));
+        IItemStack.validate(excepted);
+        return this.content.compareAndSet(7, (IItemStack) excepted, IItemStack.wrap(leggings));
     }
 
     @Override
     public boolean replaceBoots(final ItemStack excepted, final ItemStack boots) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return this.content.compareAndSet(8, (ItemStackImpl) excepted, ItemStackImpl.wrap(boots));
+        IItemStack.validate(excepted);
+        return this.content.compareAndSet(8, (IItemStack) excepted, IItemStack.wrap(boots));
     }
 
     @Override
@@ -537,14 +537,14 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
             return null;
         }
         final int i = this.holder.getHeldItemSlot();
-        return this.content.getAndSet(i, ItemStackImpl.wrap(stack));
+        return this.content.getAndSet(i, IItemStack.wrap(stack));
     }
 
     @Override
     public boolean replaceItemInHand(final ItemStack excepted, final ItemStack stack) throws IllegalArgumentException
     {
-        ItemStackImpl.validate(excepted);
-        return (this.holder != null) && this.content.compareAndSet(this.holder.getHeldItemSlot(), (ItemStackImpl) excepted, ItemStackImpl.wrap(stack));
+        IItemStack.validate(excepted);
+        return (this.holder != null) && this.content.compareAndSet(this.holder.getHeldItemSlot(), (IItemStack) excepted, IItemStack.wrap(stack));
     }
 
     @Override
@@ -576,14 +576,14 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
     @Override
     public ItemStack setResult(final ItemStack result)
     {
-        return this.content.getAndSet(0, ItemStackImpl.wrap(result));
+        return this.content.getAndSet(0, IItemStack.wrap(result));
     }
 
     @Override
     public boolean replaceResult(final ItemStack excepted, final ItemStack result)
     {
-        ItemStackImpl.validate(excepted);
-        return this.content.compareAndSet(0, (ItemStackImpl) excepted, ItemStackImpl.wrap(result));
+        IItemStack.validate(excepted);
+        return this.content.compareAndSet(0, (IItemStack) excepted, IItemStack.wrap(result));
     }
 
     @Override
@@ -628,11 +628,11 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
         final Map<Short, PacketPlayClientboundSetSlot> packets = new LinkedHashMap<>(itemsLength);
         for (short i = 0; i < itemsLength; i++)
         {
-            final ItemStackImpl item = this.content.get(i);
+            final IItemStack item = this.content.get(i);
 
             if (item != null)
             {
-                if ((item.getAmount() == 0) || (Material.AIR.simpleEquals(item.getMaterial())))
+                if (item.isEmpty())
                 {
                     this.replace(i, item, null);
                     packets.remove(i);
@@ -680,12 +680,12 @@ public class PlayerInventoryImpl extends InventoryImpl<IHuman> implements Player
         }
         // cursor
         {
-            ItemStackImpl cursor = this.cursorItem.item.get();
+            IItemStack cursor = this.cursorItem.item.get();
             if ((this.cursorItem.wasNotNull && (cursor == null)) || ((cursor != null) && cursor.isDirty()))
             {
                 if (cursor != null)
                 {
-                    if ((cursor.getAmount() == 0) || (Material.AIR.simpleEquals(cursor.getMaterial())))
+                    if (cursor.isEmpty())
                     {
                         this.replaceCursorItem(cursor, null);
                         cursor = null;

@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.Set;
 
 import org.diorite.inventory.item.meta.ToolMeta;
-import org.diorite.material_old.BlockMaterialData;
+import org.diorite.material.block.BlockType;
 
 /**
  * Interface of builder of tool item meta data.
@@ -40,7 +40,7 @@ public interface IToolMetaBuilder<B extends IToolMetaBuilder<B, M>, M extends To
 {
     /**
      * Set if this tool is using CanDestory tag,
-     * when you set it to false, add saved materials will be removed.
+     * when you set it to false, add saved blocks will be removed.
      *
      * @param useCanDestoryTag if this tool should use CanDestory tag.
      *
@@ -54,7 +54,7 @@ public interface IToolMetaBuilder<B extends IToolMetaBuilder<B, M>, M extends To
 
     /**
      * Set if this tool is using CanDestory tag,
-     * when you set it to false, add saved materials will be removed.
+     * when you set it to false, add saved blocks will be removed.
      *
      * @param src source item meta to copy state from it.
      *
@@ -67,22 +67,22 @@ public interface IToolMetaBuilder<B extends IToolMetaBuilder<B, M>, M extends To
     }
 
     /**
-     * Set materials that can be destroyed by this tool. <br>
+     * Set blocks that can be destroyed by this tool. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
-     * @param materials new collection of materials.
+     * @param blocks new collection of blocks.
      *
      * @return builder for method chains.
      */
-    default B setCanDestoryMaterials(final Collection<BlockMaterialData> materials)
+    default B setCanDestoryBlocks(final Collection<BlockType> blocks)
     {
-        this.meta().setCanDestoryMaterials(materials);
+        this.meta().setCanDestoryBlocks(blocks);
         return this.getBuilder();
     }
 
     /**
-     * Set materials that can be destroyed by this tool. <br>
+     * Set blocks that can be destroyed by this tool. <br>
      * Minecraft don't support subtypes here, but diorite will save subtypes in separate tag.
      * (Vanilla client can't see them)
      *
@@ -90,34 +90,34 @@ public interface IToolMetaBuilder<B extends IToolMetaBuilder<B, M>, M extends To
      *
      * @return builder for method chains.
      */
-    default B setCanDestoryMaterials(final ToolMeta src)
+    default B setCanDestoryBlocks(final ToolMeta src)
     {
-        final Set<BlockMaterialData> data = src.getCanDestoryMaterials();
+        final Set<BlockType> data = src.getCanDestoryBlocks();
         if (data == null)
         {
             return this.getBuilder();
         }
-        this.meta().setCanDestoryMaterials(data);
+        this.meta().setCanDestoryBlocks(data);
         return this.getBuilder();
     }
 
     /**
-     * Add new material that can be destroyed by this tool,
+     * Add new block that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Minecraft don't support subtypes here.
      *
-     * @param material material to add.
+     * @param block block to add.
      *
      * @return builder for method chains.
      */
-    default B addCanDestoryMaterial(final BlockMaterialData material)
+    default B addCanDestoryBlock(final BlockType block)
     {
-        this.meta().addCanDestoryMaterial(material);
+        this.meta().addCanDestoryBlock(block);
         return this.getBuilder();
     }
 
     /**
-     * Add new material that can be destroyed by this tool,
+     * Add new block that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Minecraft don't support subtypes here.
      *
@@ -125,43 +125,43 @@ public interface IToolMetaBuilder<B extends IToolMetaBuilder<B, M>, M extends To
      *
      * @return builder for method chains.
      */
-    default B addCanDestoryMaterial(final ToolMeta src)
+    default B addCanDestoryBlocks(final ToolMeta src)
     {
-        final Set<BlockMaterialData> data = src.getCanDestoryMaterials();
+        final Set<BlockType> data = src.getCanDestoryBlocks();
         if ((data == null) || data.isEmpty())
         {
             return this.getBuilder();
         }
         final M meta = this.meta();
-        data.forEach(meta::addCanDestoryMaterial);
+        data.forEach(meta::addCanDestoryBlock);
         return this.getBuilder();
     }
 
     /**
-     * Remove material that can be destroyed by this tool,
+     * Remove block that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Minecraft don't support subtypes here.
      *
-     * @param material material to add.
+     * @param block block to add.
      *
      * @return builder for method chains.
      */
-    default B removeCanDestoryMaterial(final BlockMaterialData material)
+    default B removeCanDestoryBlock(final BlockType block)
     {
-        this.meta().removeCanDestoryMaterial(material);
+        this.meta().removeCanDestoryBlock(block);
         return this.getBuilder();
     }
 
     /**
-     * Clear list of materials that can be destroyed by this tool,
+     * Clear list of blocks that can be destroyed by this tool,
      * this method will automatically enable CanDestory tag if needed. <br>
      * Use {@link #setUseCanDestoryTag(boolean)} if you want disable CanDestory tag.
      *
      * @return builder for method chains.
      */
-    default B removeCanDestoryMaterials()
+    default B removeCanDestoryBlocks()
     {
-        this.meta().removeCanDestoryMaterials();
+        this.meta().removeCanDestoryBlocks();
         return this.getBuilder();
     }
 }

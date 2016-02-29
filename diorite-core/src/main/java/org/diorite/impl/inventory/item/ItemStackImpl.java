@@ -24,23 +24,38 @@
 
 package org.diorite.impl.inventory.item;
 
+import static org.diorite.Diorite.getItemFactory;
+
+
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.entity.Item;
+import org.diorite.Diorite;
+import org.diorite.ItemFactory;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
 import org.diorite.material.item.ItemType;
-import org.diorite.material_old.Material;
-import org.diorite.utils.others.Dirtable;
 
-public class ItemStackImpl implements Dirtable, ItemStack
+public class ItemStackImpl implements IItemStack
 {
     protected ItemType material;
     protected int      amount;
     protected ItemMeta itemMeta;
-    private       boolean   dirty;
+    private   boolean  dirty;
+
+    public ItemStackImpl(final ItemStack toCpy)
+    {
+        this.material = toCpy.getType();
+        this.amount = toCpy.getAmount();
+        this.itemMeta = toCpy.getItemMeta().clone();
+        this.setDirty();
+    }
+
+    public ItemStackImpl(final ItemType material)
+    {
+        this(material, 1);
+    }
 
     public ItemStackImpl(final ItemType material, final int amount)
     {
@@ -54,9 +69,9 @@ public class ItemStackImpl implements Dirtable, ItemStack
     {
         if (b == null)
         {
-            return amount == 0;
+            return this.amount == 0;
         }
-        if (! this.material.equals(b.getMaterial()))
+        if (! this.material.equals(b.getType()))
         {
             return false;
         }
@@ -68,9 +83,9 @@ public class ItemStackImpl implements Dirtable, ItemStack
     }
 
     @Override
-    public boolean isAir()
+    public boolean isEmpty()
     {
-        return (this.material == null) || this.material.simpleEquals(Material.AIR);
+        return (this.amount == 0) || (this.material == null);
     }
 
     @Override
@@ -79,87 +94,143 @@ public class ItemStackImpl implements Dirtable, ItemStack
         return this.amount <= this.material.getMaxStack();
     }
 
-//    @Override
-//    public void update()
-//    {
-//        this.wrapped.update();
-//    }
-
     @Override
     public int getAmount()
     {
-        return this.wrapped.getAmount();
+        return this.amount;
     }
 
     @Override
     public ItemMeta getItemMeta()
     {
-        return this.wrapped.getItemMeta();
+        final ItemFactory fac = getItemFactory();
+        if (this.itemMeta == null)
+        {
+            fac.construct(this.material).apply(this);
+        }
+        if (! this.itemMeta.getClass().equals(fac.construct(this.material.getMetaType()).getClass()))
+        {
+            fac.construct(this.material, this.itemMeta.getNbtData()).apply(this);
+        }
+        return this.itemMeta;
     }
 
     @Override
     public boolean hasItemMeta()
     {
-        return this.wrapped.hasItemMeta();
+        return this.itemMeta == null;
     }
 
     @Override
-    public Material getMaterial()
+    public ItemType getType()
     {
-        return this.wrapped.getMaterial();
+        return this.material;
     }
 
     @Override
-    public void setMaterial(final Material material)
+    public void setType(final ItemType material)
     {
-        this.wrapped.setMaterial(material);
+        Validate.notNull(material, "Material can't be null.");
+        this.material = material;
         this.setDirty();
     }
 
     @Override
     public void setItemMeta(final ItemMeta itemMeta)
     {
-        this.wrapped.setItemMeta(itemMeta);
+        if (itemMeta != null)
+        {
+            final ItemFactory fac = Diorite.getItemFactory();
+            if (! itemMeta.getClass().equals(fac.construct(this.material.getMetaType()).getClass()))
+            {
+                fac.construct(this.material, itemMeta.getNbtData()).apply(this);
+            }
+        }
+        this.itemMeta = itemMeta;
         this.setDirty();
     }
 
     @Override
     public void setAmount(final int amount)
     {
-        this.wrapped.setAmount(amount);
+        this.amount = amount;
         this.setDirty();
     }
 
     @Override
-    public ItemStackImpl combine(final ItemStack other)
+    public IItemStack combine(final ItemStack other)
     {
+        if (! this.isSimilar(other))
+        {
+            throw new IllegalArgumentException("Items must be similar to combine them.");
+        }
         this.setDirty();
-        final ItemStack combined = this.wrapped.combine(other);
-        return (combined == null) ? null : new ItemStackImpl(combined);
+
+        final int maxStack = this.material.getMaxStack();
+        if ((this.amount + other.getAmount()) > maxStack)
+        {
+            final int pendingItems = (this.amount + other.getAmount()) - maxStack;
+            this.amount = maxStack;
+
+            final IItemStack temp = new ItemStackImpl(this);
+            temp.setAmount(pendingItems);
+            return temp;
+        }
+        else
+        {
+            this.amount += other.getAmount();
+            return null;
+        }
     }
 
     @Override
-    public ItemStack addFrom(final ItemStack other, final int amount)
+    public IItemStack addFrom(final ItemStack other, final int amount)
     {
         this.setDirty();
-        return this.wrapped.addFrom(other, amount);
+        if (amount > other.getAmount())
+        {
+            throw new IllegalArgumentException("amount to conbine can't be bigger than amount of items in stack.");
+        }
+        if (! this.isSimilar(other))
+        {
+            throw new IllegalArgumentException("Items must be similar to combine them.");
+        }
+
+        final int maxStack = this.material.getMaxStack();
+        if ((this.amount + amount) > maxStack)
+        {
+            final int pendingItems = (this.amount + amount) - maxStack;
+            this.amount = maxStack;
+
+            final IItemStack temp = new ItemStackImpl(this);
+            temp.setAmount(pendingItems);
+            return temp;
+        }
+        else
+        {
+            this.amount += amount;
+
+            other.setAmount(other.getAmount() - amount);
+            return null;
+        }
     }
 
     @Override
-    public ItemStack split(final int size)
+    public IItemStack split(final int size)
     {
-        if (size > this.getAmount())
+        if (size > this.amount)
         {
             throw new IllegalArgumentException();
         }
 
-        final ItemStack temp = new ItemStackImpl(this);
-
-        this.wrapped.setAmount(this.wrapped.getAmount() - size);
-        if (this.getAmount() == 0)
+        if (this.amount == 1)
         {
-            this.wrapped.setItemMeta(null);
+            return null;
         }
+
+        final IItemStack temp = new ItemStackImpl(this);
+
+        this.amount -= size;
         this.setDirty();
         temp.setAmount(size);
 
@@ -168,7 +239,7 @@ public class ItemStackImpl implements Dirtable, ItemStack
 
     private boolean isMetaDirty()
     {
-        return ((this.wrapped != null) && this.wrapped.hasItemMeta() && this.wrapped.getItemMeta().isDirty());
+        return ((this.itemMeta != null) && this.itemMeta.isDirty());
     }
 
     @Override
@@ -182,23 +253,58 @@ public class ItemStackImpl implements Dirtable, ItemStack
     {
         final boolean b = this.dirty || this.isMetaDirty();
         this.dirty = dirty;
-        if ((this.wrapped != null) && this.wrapped.hasItemMeta())
+        if (this.itemMeta != null)
         {
-            this.wrapped.getItemMeta().setDirty(dirty);
+            this.itemMeta.setDirty(dirty);
         }
         return b;
     }
 
     @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override
-    public ItemStackImpl clone()
+    public IItemStack clone()
     {
-        return new ItemStackImpl(this.wrapped.clone());
+        return new ItemStackImpl(this);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int result = (this.material != null) ? this.material.hashCode() : 0;
+        result = (31 * result) + this.amount;
+        result = (31 * result) + ((this.itemMeta != null) ? this.itemMeta.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (! (o instanceof ItemStack))
+        {
+            return false;
+        }
+
+        if (o instanceof IItemStack)
+        {
+            final ItemStackImpl itemStack = (ItemStackImpl) o;
+
+            return (this.amount == itemStack.amount) && ! ((this.material != null) ? ! this.material.equals(itemStack.material) : (itemStack.material != null)) && ((this.itemMeta == null) || this.itemMeta.equals(itemStack.itemMeta));
+        }
+        else
+        {
+            final ItemStack itemStack = (ItemStack) o;
+            return (this.amount == itemStack.getAmount()) && ! ((this.material != null) ? ! this.material.equals(itemStack.getType()) : (itemStack.getType() != null)) && ((this.itemMeta == null) || this.itemMeta.equals(itemStack.getItemMeta()));
+        }
     }
 
     @Override
     public String toString()
     {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).append("wrapped", this.wrapped).append("dirty", this.dirty).toString();
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("material", this.material).append("amount", this.amount).append("itemMeta", this.itemMeta).toString();
     }
+
 }

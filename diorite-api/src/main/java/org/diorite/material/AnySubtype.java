@@ -54,4 +54,11 @@ public interface AnySubtype extends AnyType
      * @return string id for this subtype, like "diorite" for "minecraft:stone:diorite" (not supported by vanilla clients, used by diorite commands etc.)
      */
     String getSubtypeStringId();
+
+    /**
+     * Returns normal type of this subtype.
+     *
+     * @return normal type of this subtype.
+     */
+    AnyType getFullType();
 }

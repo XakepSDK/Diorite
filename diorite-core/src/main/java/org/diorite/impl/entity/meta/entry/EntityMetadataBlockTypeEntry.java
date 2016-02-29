@@ -22,35 +22,28 @@
  * SOFTWARE.
  */
 
-package org.diorite.impl.material.item;
+package org.diorite.impl.entity.meta.entry;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import org.diorite.impl.connection.packets.PacketDataSerializer;
+import org.diorite.impl.entity.meta.EntityMetadataType;
+import org.diorite.material.block.BlockSubtype;
 
-import org.diorite.material.block.BlockType;
-
-public class BlockItemTypeImpl extends SimpleItemType // TODO
+public class EntityMetadataBlockTypeEntry extends EntityMetadataObjectEntry<BlockSubtype>
 {
-    private BlockType blockType;
-
-    public BlockItemTypeImpl(final BlockType type)
+    public EntityMetadataBlockTypeEntry(final int index, final BlockSubtype material)
     {
-        super(type.getId(), type.getMinecraftId());
-    }
-
-    public BlockType getBlockType()
-    {
-        return this.blockType;
-    }
-
-    public void setBlockType(final BlockType blockType)
-    {
-        this.blockType = blockType;
+        super(index, material);
     }
 
     @Override
-    public String toString()
+    public EntityMetadataType getDataType()
     {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("blockType", this.blockType).toString();
+        return EntityMetadataType.BLOCK_TYPE;
+    }
+
+    @Override
+    public void write(final PacketDataSerializer data)
+    {
+        data.writeVarInt((this.data.getProxyId() << 4) | this.data.getProxySubtypeId());
     }
 }
