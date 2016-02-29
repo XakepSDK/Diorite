@@ -54,7 +54,7 @@ public class BlockPlacePipelineImpl extends SimpleEventPipeline<PlayerBlockPlace
             // TODO: block place handler
 
             final BlockSubtype blockSubtype = Blocks.getBlockSubtype(item.getType().getId(), item.getType().getSubtypeId());
-            if (blockSubtype == null) // TODO check if material can be placed
+            if (blockSubtype == null) // TODO check if itemSubtype can be placed
             {
                 return;
             }

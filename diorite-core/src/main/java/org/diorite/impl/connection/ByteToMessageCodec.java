@@ -222,19 +222,6 @@ public abstract class ByteToMessageCodec<I> extends ChannelHandlerAdapter
         }
     }
 
-    /**
-     * Is called one last time when the {@link ChannelHandlerContext} goes in-active. Which means the
-     * {@link #channelInactive(ChannelHandlerContext)} was triggered.
-     * <br>
-     * By default this will just call {@link #decode(ChannelHandlerContext, ByteBuf, List)} but sub-classes may
-     * override this for some special cleanup operation.
-     *
-     * @param ctx the {@link ChannelHandlerContext} which this {@link ByteToMessageDecoder} belongs to
-     * @param in  the {@link ByteBuf} from which to read data
-     * @param out the {@link List} to which decoded messages should be added
-     *
-     * @throws Exception if decode fail.
-     */
     protected void decodeLast(final ChannelHandlerContext ctx, final ByteBuf in, final List<Object> out) throws Exception
     {
         this.decode(ctx, in, out);

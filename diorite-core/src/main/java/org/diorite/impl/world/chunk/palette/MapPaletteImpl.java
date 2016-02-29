@@ -207,13 +207,13 @@ public class MapPaletteImpl implements PaletteData
 //        synchronized (mapping)
 //        {
 //            int i = 0;
-//            for (final Material material : Material.values())
+//            for (final Material itemSubtype : Material.values())
 //            {
-//                if (! (material instanceof BlockMaterialData))
+//                if (! (itemSubtype instanceof BlockMaterialData))
 //                {
 //                    continue;
 //                }
-//                final BlockMaterialData blockMat = (BlockMaterialData) material;
+//                final BlockMaterialData blockMat = (BlockMaterialData) itemSubtype;
 //                for (final BlockMaterialData data : blockMat.types())
 //                {
 //                    mapping[i++] = ((data.getId() << 4) | data.getType());

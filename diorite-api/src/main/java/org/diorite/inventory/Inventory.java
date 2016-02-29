@@ -114,7 +114,7 @@ public interface Inventory extends Iterable<ItemStack>
     /**
      * Remove first found item matching given type.
      *
-     * @param type   type to remove.
+     * @param type       type to remove.
      * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return slot id of removed item, or -1 if no item was removed.
@@ -124,7 +124,7 @@ public interface Inventory extends Iterable<ItemStack>
     /**
      * Remove all items matching given type.
      *
-     * @param type   type to remove.
+     * @param type       type to remove.
      * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return array of slot ids of removed items, empty if no item was removed.
@@ -176,7 +176,7 @@ public interface Inventory extends Iterable<ItemStack>
     /**
      * Remove last found item matching given type.
      *
-     * @param type   type to remove.
+     * @param type       type to remove.
      * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return slot id of removed item, or -1 if no item was removed.
@@ -186,7 +186,7 @@ public interface Inventory extends Iterable<ItemStack>
     /**
      * Remove all items matching given type.
      *
-     * @param type   type to remove.
+     * @param type       type to remove.
      * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return array of slot ids of removed items, empty if no item was removed.
@@ -436,7 +436,7 @@ public interface Inventory extends Iterable<ItemStack>
      * value is the ItemStack in that slot. If no matching ItemStack with the
      * given ItemType is found, an empty map is returned.
      *
-     * @param type   The type to look for
+     * @param type       The type to look for
      * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return A HashMap containing the slot index, ItemStack pairs
@@ -472,7 +472,7 @@ public interface Inventory extends Iterable<ItemStack>
      * Finds the first slot in the inventory containing an ItemStack with the
      * given type
      *
-     * @param type   The type to look for
+     * @param type       The type to look for
      * @param startIndex index to start from.
      *
      * @return The slot index of the given ItemType or -1 if not found
@@ -493,7 +493,7 @@ public interface Inventory extends Iterable<ItemStack>
      * Finds the first not full slot in the inventory containing an ItemStack with the
      * given type
      *
-     * @param type   The type to look for
+     * @param type       The type to look for
      * @param startIndex index to start from.
      *
      * @return The slot index of the given ItemType or -1 if not found
@@ -625,7 +625,7 @@ public interface Inventory extends Iterable<ItemStack>
      * Finds the last slot in the inventory containing an ItemStack with the
      * given type
      *
-     * @param type   The type to look for
+     * @param type       The type to look for
      * @param startIndex index to start from.
      *
      * @return The slot index of the given ItemType or -1 if not found
@@ -646,7 +646,7 @@ public interface Inventory extends Iterable<ItemStack>
      * Finds the last not full slot in the inventory containing an ItemStack with the
      * given type
      *
-     * @param type   The type to look for
+     * @param type       The type to look for
      * @param startIndex index to start from.
      *
      * @return The slot index of the given ItemType or -1 if not found
@@ -781,7 +781,7 @@ public interface Inventory extends Iterable<ItemStack>
      * Checks if the inventory contains any ItemStacks with the given
      * type.
      *
-     * @param type   The type to check for
+     * @param type       The type to check for
      * @param ignoreType if true, then sub-type of given type will be ignored
      *
      * @return true if an ItemStack is found with the given ItemType
@@ -840,8 +840,8 @@ public interface Inventory extends Iterable<ItemStack>
      * Checks if the inventory contains any ItemStacks with the given
      * type, adding to at least the minimum amount specified.
      *
-     * @param type The type to check for
-     * @param amount   The minimum amount
+     * @param type   The type to check for
+     * @param amount The minimum amount
      *
      * @return true if amount is less than 1, true if enough ItemStacks were
      * found to add to the given amount

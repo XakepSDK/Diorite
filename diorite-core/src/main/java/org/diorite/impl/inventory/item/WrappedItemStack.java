@@ -30,6 +30,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
+import org.diorite.material.item.ItemSubtype;
 import org.diorite.material.item.ItemType;
 
 public class WrappedItemStack implements IItemStack
@@ -92,7 +93,7 @@ public class WrappedItemStack implements IItemStack
     }
 
     @Override
-    public ItemType getType()
+    public ItemSubtype getType()
     {
         return this.wrapped.getType();
     }

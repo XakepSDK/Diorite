@@ -426,7 +426,7 @@ public class ChunkImpl implements Chunk
                 {
                     final BlockSubtype subtype = Blocks.getBlockSubtype(k >> 4);
                     k = (subtype == null) ? 0 : ((subtype.getId() << 4) | subtype.getSubtypeId());
-//                    throw new IllegalArgumentException("Unknown material: " + k + " (" + (k >> 4) + ":" + (k & 15) + ")");
+//                    throw new IllegalArgumentException("Unknown itemSubtype: " + k + " (" + (k >> 4) + ":" + (k & 15) + ")");
                 }
                 loading[i] = k;
             }

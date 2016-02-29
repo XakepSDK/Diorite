@@ -154,9 +154,9 @@ public abstract class ItemTypeImpl implements ItemType
     }
 
     /**
-     * Set meta type of this material, can be changed at runtime.
+     * Set meta type of this itemSubtype, can be changed at runtime.
      *
-     * @param metaType new meta type of this material.
+     * @param metaType new meta type of this itemSubtype.
      */
     public void setMetaType(final Class<? extends ItemMeta> metaType)
     {

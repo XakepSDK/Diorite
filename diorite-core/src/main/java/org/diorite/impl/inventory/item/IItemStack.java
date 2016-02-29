@@ -26,6 +26,7 @@ package org.diorite.impl.inventory.item;
 
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
+import org.diorite.material.item.ItemSubtype;
 import org.diorite.material.item.ItemType;
 import org.diorite.utils.others.Dirtable;
 
@@ -50,7 +51,7 @@ public interface IItemStack extends Dirtable, ItemStack, Cloneable
     boolean hasItemMeta();
 
     @Override
-    ItemType getType();
+    ItemSubtype getType();
 
     @Override
     void setType(ItemType material);

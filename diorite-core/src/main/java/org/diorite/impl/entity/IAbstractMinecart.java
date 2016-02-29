@@ -48,7 +48,7 @@ public interface IAbstractMinecart extends IEntity, Minecart, EntityObject
      */
     byte META_KEY_MINECART_SHAKING_MULTIPLIER = 7;
     /**
-     * int, id and meta of material.
+     * int, id and meta of itemSubtype.
      */
     byte META_KEY_MINECART_BLOCK              = 8;
     /**

@@ -54,8 +54,8 @@ public interface ItemFactory
     /**
      * Construct new ItemMeta instance for given material, {@link ItemType#getMetaType()} is used to get type of meta data.
      *
-     * @param material material to be used.
-     * @param nbt      nbt data to be used, null value allowed.
+     * @param type material to be used.
+     * @param nbt  nbt data to be used, null value allowed.
      *
      * @return constructed ItemMeta instance.
      */
@@ -75,7 +75,7 @@ public interface ItemFactory
     /**
      * Construct new ItemMeta instance for given material, {@link ItemType#getMetaType()} is used to get type of meta data.
      *
-     * @param material material to be used.
+     * @param type material to be used.
      *
      * @return constructed ItemMeta instance.
      */

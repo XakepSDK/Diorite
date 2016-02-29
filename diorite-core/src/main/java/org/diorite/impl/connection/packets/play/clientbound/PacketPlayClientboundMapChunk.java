@@ -36,7 +36,6 @@ import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.impl.connection.packets.play.PacketPlayClientboundListener;
 import org.diorite.impl.world.chunk.ChunkImpl;
 import org.diorite.impl.world.chunk.ChunkPartImpl;
-
 import org.diorite.utils.math.DioriteMathUtils;
 
 import io.netty.buffer.Unpooled;

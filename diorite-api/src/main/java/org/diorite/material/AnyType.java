@@ -110,6 +110,8 @@ public interface AnyType
     /**
      * Returns true if given type is this same type as this type. (this method ignore subtypes)
      *
+     * @param type type to compare.
+     *
      * @return true if given type is this same type as this type. (this method ignore subtypes)
      */
     default boolean isThisSameType(final AnyType type)

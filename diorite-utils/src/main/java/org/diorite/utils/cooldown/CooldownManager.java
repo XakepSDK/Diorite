@@ -53,6 +53,8 @@ public interface CooldownManager<K>
      * @param key          key to be added.
      * @param cooldownTime time of cooldown.
      * @param from         time to use as current time. (in milliseconds)
+     *
+     * @return added entry.
      */
     CooldownEntry<K> add(K key, long cooldownTime, long from);
 

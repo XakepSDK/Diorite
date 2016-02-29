@@ -43,7 +43,7 @@ public class PacketPlayClientboundBlockChange extends PacketPlayClientbound
     private BlockLocation location; // 8 bytes
     private int           rawID; // ~5 bytes with rawType.
     private byte          rawType; // ~5 bytes with rawID.
-    private BlockSubtype copy;
+    private BlockSubtype  copy;
 
     public PacketPlayClientboundBlockChange()
     {

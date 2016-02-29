@@ -102,7 +102,7 @@ public class ArrayPaletteImpl implements PaletteData
             if (mat == null)
             {
                 mat = BlockType.AIR.asSubtype();
-//                throw new IllegalArgumentException("Unknown material: " + minecraftIDandData + " (" + (minecraftIDandData >> 4) + ":" + (minecraftIDandData & 15) + ")");
+//                throw new IllegalArgumentException("Unknown itemSubtype: " + minecraftIDandData + " (" + (minecraftIDandData >> 4) + ":" + (minecraftIDandData & 15) + ")");
             }
         }
         final int index = this.lastIndex++;
@@ -198,7 +198,7 @@ public class ArrayPaletteImpl implements PaletteData
             final BlockSubtype mat = Blocks.getBlockSubtype(id >> 4, id & 15);
             if (mat == null)
             {
-                throw new IllegalArgumentException("Unknown material: " + id + " (" + (id >> 4) + ":" + (id & 15) + ")");
+                throw new IllegalArgumentException("Unknown itemSubtype: " + id + " (" + (id >> 4) + ":" + (id & 15) + ")");
             }
             this.pattern[i] = mat;
         }

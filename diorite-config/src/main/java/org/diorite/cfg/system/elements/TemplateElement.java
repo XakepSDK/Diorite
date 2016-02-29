@@ -144,7 +144,7 @@ public abstract class TemplateElement<T>
      *
      * @return true if class can be used in this template.
      */
-    protected abstract boolean canBeConverted0(final Class<?> c);
+    protected abstract boolean canBeConverted0(final Class<?> clazz);
 //    {
 //        return false;
 //    }

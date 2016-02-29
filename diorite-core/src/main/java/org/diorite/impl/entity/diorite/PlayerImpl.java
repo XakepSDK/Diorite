@@ -50,7 +50,6 @@ import org.diorite.impl.world.chunk.ChunkImpl;
 import org.diorite.impl.world.chunk.PlayerChunksImpl;
 import org.diorite.GameMode;
 import org.diorite.ImmutableLocation;
-import org.diorite.utils.math.geometry.LookupShape;
 import org.diorite.Particle;
 import org.diorite.auth.GameProfile;
 import org.diorite.chat.ChatPosition;
@@ -63,6 +62,7 @@ import org.diorite.event.player.PlayerQuitEvent;
 import org.diorite.inventory.Inventory;
 import org.diorite.utils.math.DioriteRandom;
 import org.diorite.utils.math.DioriteRandomUtils;
+import org.diorite.utils.math.geometry.LookupShape;
 
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntCollection;

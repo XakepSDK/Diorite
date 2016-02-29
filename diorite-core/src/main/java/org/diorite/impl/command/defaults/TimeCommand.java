@@ -124,11 +124,11 @@ public class TimeCommand extends SystemCommandImpl
                     long newTime = world.getTime() + timeDelta;
                     if (newTime > 24000)
                     {
-                        newTime =- 24000;
+                        newTime = - 24000;
                     }
                     else if (newTime < 0)
                     {
-                        newTime =+ 24000;
+                        newTime = + 24000;
                     }
 
                     world.setTime(newTime);

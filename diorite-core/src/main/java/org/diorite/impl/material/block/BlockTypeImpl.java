@@ -52,6 +52,7 @@ public abstract class BlockTypeImpl implements BlockType
     private float  blastResistace;
     private BlockSounds sounds = BlockSounds.DEFAULTS;
     private PossibleDrops drops;
+    private boolean       solid;
 
     private LiquidSettings    liquidSettings    = LiquidSettingsImpl.NOT_LIQUID;
     private LightSettings     lightSettings     = LightSettingsImpl.NO_LIGHT;
@@ -128,6 +129,17 @@ public abstract class BlockTypeImpl implements BlockType
     }
 
     @Override
+    public boolean isSolid()
+    {
+        return this.solid;
+    }
+
+    public void setSolid(final boolean solid)
+    {
+        this.solid = solid;
+    }
+
+    @Override
     public PossibleDrops getDrops()
     {
         return this.drops;
@@ -175,6 +187,14 @@ public abstract class BlockTypeImpl implements BlockType
     {
         this.hardness = hardness;
         this.blastResistace = blastResistace;
+        return this;
+    }
+
+    public BlockTypeImpl setHardnessAndResistance(final float hardness, final float blastResistace, final boolean solid)
+    {
+        this.hardness = hardness;
+        this.blastResistace = blastResistace;
+        this.solid = solid;
         return this;
     }
 

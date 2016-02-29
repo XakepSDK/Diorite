@@ -35,7 +35,7 @@ public final class BlocksInit
 
     public static void init()
     {
-        Blocks.registerBlock(new SimpleBlockType(0, "minecraft:air").setHardnessAndResistance(0F, 0F));
+        Blocks.registerBlock(new SimpleBlockType(0, "minecraft:air").setHardnessAndResistance(0F, 0F, false));
         Blocks.registerBlock(new SimpleBlockType(1, "minecraft:stone").setHardnessAndResistance(1.5F, 30F));
         Blocks.registerBlock(new SimpleBlockType(2, "minecraft:grass").setHardnessAndResistance(0.6F, 3F));
         Blocks.registerBlock(new SimpleBlockType(3, "minecraft:dirt").setHardnessAndResistance(0.5F, 2.5F));

@@ -445,6 +445,7 @@ public class DioriteCore implements Core
     {
         return new ItemStackImpl(type, amount);
     }
+
     @Override
     public ItemStack newItem(final ItemStack itemStack)
     {
