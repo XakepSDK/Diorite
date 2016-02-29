@@ -22,41 +22,24 @@
  * SOFTWARE.
  */
 
-package org.diorite.material.item;
+package org.diorite.material.data.drops;
 
-import java.util.Map;
+import java.util.Set;
 
-import org.diorite.utils.SimpleEnum;
-import org.diorite.utils.collections.maps.CaseInsensitiveMap;
+import org.diorite.entity.Entity;
+import org.diorite.inventory.item.ItemStack;
+import org.diorite.utils.math.DioriteRandom;
+import org.diorite.world.Block;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-/**
- * Items register class
- */
-public final class Items
+public class PossibleNoDrop extends AbstractPossibleDrop
 {
-    private static final Int2ObjectMap<ItemType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-    private static final Map<String, ItemType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-
-    private Items()
+    public PossibleNoDrop()
     {
+        super(null);
     }
 
-    public static ItemType getItemType(final int id)
+    @Override
+    public void simulateDrop(final Entity entity, final DioriteRandom rand, final Set<ItemStack> drops, final ItemStack usedTool, final Block block)
     {
-        return byId.get(id);
-    }
-
-    public static ItemType getItemType(final String id)
-    {
-        return byStringId.get(id);
-    }
-
-    public static void registerItem(final ItemType itemType)
-    {
-        byId.put(itemType.getId(), itemType);
-        byStringId.put(itemType.getMinecraftId(), itemType);
     }
 }

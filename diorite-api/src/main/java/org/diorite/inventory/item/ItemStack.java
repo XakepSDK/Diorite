@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material_old.Material;
+import org.diorite.material.item.ItemType;
 
 public interface ItemStack extends Cloneable
 {
@@ -40,14 +40,14 @@ public interface ItemStack extends Cloneable
     /**
      * @return material of itemstack.
      */
-    Material getMaterial();
+    ItemType getMaterial();
 
     /**
      * Change material of itemstack.
      *
      * @param material new material.
      */
-    void setMaterial(Material material);
+    void setMaterial(ItemType material);
 
     /**
      * ItemMeta contains data like name, lore, enchantments of item.

@@ -22,41 +22,51 @@
  * SOFTWARE.
  */
 
-package org.diorite.material.item;
+package org.diorite.material.block;
 
-import java.util.Map;
-
-import org.diorite.utils.SimpleEnum;
-import org.diorite.utils.collections.maps.CaseInsensitiveMap;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import org.diorite.material.AnySubtype;
 
 /**
- * Items register class
+ * Represent block subtype.
  */
-public final class Items
+public interface BlockSubtype extends BlockType, AnySubtype
 {
-    private static final Int2ObjectMap<ItemType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-    private static final Map<String, ItemType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+    /**
+     * Returns sub-id of block, like 3 for stone:diorite.
+     *
+     * @return sub-id of block, like 3 for stone:diorite.
+     *
+     * @see #getProxySubtypeId()
+     */
+    @Override
+    int getSubtypeId();
 
-    private Items()
+    /**
+     * Returns sub-id of block used in packets.
+     *
+     * @return sub-id of block used in packets.
+     */
+    @Override
+    default int getProxySubtypeId()
     {
+        return this.getSubtypeId();
     }
 
-    public static ItemType getItemType(final int id)
-    {
-        return byId.get(id);
-    }
+    /**
+     * Returns string id for this subtype, like "diorite" for "minecraft:stone:diorite" (not supported by vanilla clients, used by diorite commands etc.)
+     *
+     * @return string id for this subtype, like "diorite" for "minecraft:stone:diorite" (not supported by vanilla clients, used by diorite commands etc.)
+     */
+    @Override
+    String getSubtypeStringId();
 
-    public static ItemType getItemType(final String id)
+    /**
+     * Returns id of type and subtype as one int.
+     *
+     * @return id of type and subtype as one int.
+     */
+    default int getTypeAndSubtypeId() // (id << 4) | subId
     {
-        return byStringId.get(id);
-    }
-
-    public static void registerItem(final ItemType itemType)
-    {
-        byId.put(itemType.getId(), itemType);
-        byStringId.put(itemType.getMinecraftId(), itemType);
+        return (this.getId() << 4) | this.getSubtypeId();
     }
 }

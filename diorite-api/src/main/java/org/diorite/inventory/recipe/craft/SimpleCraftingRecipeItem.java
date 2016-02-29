@@ -114,7 +114,7 @@ public class SimpleCraftingRecipeItem implements CraftingRecipeItem
         {
             return null;
         }
-        final boolean valid = (this.ignoreData ? this.item.getMaterial().isThisSameID(item.getMaterial()) : this.item.getMaterial().equals(item.getMaterial())) && (this.item.getAmount() <= item.getAmount());
+        final boolean valid = (this.ignoreData ? this.item.getMaterial().equals(item.getMaterial()) : this.item.getMaterial().equals(item.getMaterial())) && (this.item.getAmount() <= item.getAmount());
         if (! valid)
         {
             return null;

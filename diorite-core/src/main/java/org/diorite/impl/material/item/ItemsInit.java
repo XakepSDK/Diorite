@@ -1,0 +1,385 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2016. Diorite (by Bartłomiej Mazur (aka GotoFinal))
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package org.diorite.impl.material.item;
+
+import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
+import org.diorite.material.item.ItemType;
+import org.diorite.material.item.Items;
+
+@SuppressWarnings("MagicNumber")
+public class ItemsInit
+{
+    public static ItemType fromBlock(final BlockType type)
+    {
+        return new BlockItemTypeImpl(type);
+    }
+
+    public static void init()
+    {
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:grass")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:dirt")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:cobblestone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:planks")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sapling")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:bedrock")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sand")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:gravel")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:gold_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:iron_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:coal_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:log")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:leaves")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sponge")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:glass")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:lapis_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:lapis_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:dispenser")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sandstone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:noteblock")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:golden_rail")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:detector_rail")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sticky_piston")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:web")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:tallgrass")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:deadbush")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:piston")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:wool")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:yellow_flower")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:red_flower")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:brown_mushroom")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:red_mushroom")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:gold_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:iron_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone_slab")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:brick_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:tnt")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:bookshelf")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:mossy_cobblestone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:obsidian")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:mob_spawner")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:oak_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:chest")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:diamond_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:diamond_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:crafting_table")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:farmland")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:furnace")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:lit_furnace")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:ladder")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:rail")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:lever")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone_pressure_plate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:wooden_pressure_plate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:redstone_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone_button")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:snow_layer")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:ice")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:snow")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:cactus")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:clay")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:jukebox")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:fence")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:pumpkin")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:netherrack")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:soul_sand")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:glowstone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:portal")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:lit_pumpkin")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stained_glass")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:trapdoor")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:monster_egg")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stonebrick")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:brown_mushroom_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:red_mushroom_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:iron_bars")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:glass_pane")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:melon_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:vine")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:fence_gate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:brick_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone_brick_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:mycelium")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:waterlily")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:nether_brick")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:nether_brick_fence")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:nether_brick_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:enchanting_table")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:end_portal_frame")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:end_stone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:dragon_egg")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:redstone_lamp")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:wooden_slab")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:cocoa")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sandstone_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:emerald_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:ender_chest")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:tripwire_hook")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:emerald_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:spruce_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:birch_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:jungle_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:command_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:beacon")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:cobblestone_wall")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:wooden_button")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:anvil")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:trapped_chest")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:light_weighted_pressure_plate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:heavy_weighted_pressure_plate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:daylight_detector")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:redstone_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:quartz_ore")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:hopper")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:quartz_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:quartz_brick_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:activator_rail")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:dropper")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stained_hardened_clay")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stained_glass_pane")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:leaves2")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:log2")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:acacia_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:dark_oak_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:slime")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:barrier")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:iron_trapdoor")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:prismarine")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:sea_lantern")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:hay_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:carpet")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:hardened_clay")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:coal_block")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:packet_ice")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:double_plant")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:red_sandstone")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:red_sandstone_stairs")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:stone_slab2")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:spruce_fence_gate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:brich_fence_gate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:jungle_fence_gate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:fark_oak_fence_gate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:acacia_fence_gate")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:spruce_fence")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:birch_fence")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:jungle_fence")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:dark_oak_fence")));
+        Items.registerItem(fromBlock(Blocks.getBlockType("minecraft:acacia_fence")));
+        Items.registerItem(new ItemTypeImpl(256, "minecraft:iron_Shovel", 1));
+        Items.registerItem(new ItemTypeImpl(257, "minecraft:iron_Pickaxe", 1));
+        Items.registerItem(new ItemTypeImpl(258, "minecraft:iron_Axe", 1));
+        Items.registerItem(new ItemTypeImpl(259, "minecraft:flint_and_steel", 1));
+        Items.registerItem(new ItemTypeImpl(260, "minecraft:apple"));
+        Items.registerItem(new ItemTypeImpl(261, "minecraft:bow", 1));
+        Items.registerItem(new ItemTypeImpl(262, "minecraft:arrow"));
+        Items.registerItem(new ItemTypeImpl(263, "minecraft:coal"));
+        Items.registerItem(new ItemTypeImpl(264, "minecraft:diamond"));
+        Items.registerItem(new ItemTypeImpl(265, "minecraft:iron_ingot"));
+        Items.registerItem(new ItemTypeImpl(266, "minecraft:gold_ingot"));
+        Items.registerItem(new ItemTypeImpl(267, "minecraft:iron_Sword", 1));
+        Items.registerItem(new ItemTypeImpl(268, "minecraft:wooden_Sword", 1));
+        Items.registerItem(new ItemTypeImpl(269, "minecraft:wooden_Shovel", 1));
+        Items.registerItem(new ItemTypeImpl(270, "minecraft:wooden_Pickaxe", 1));
+        Items.registerItem(new ItemTypeImpl(271, "minecraft:wooden_axe", 1));
+        Items.registerItem(new ItemTypeImpl(272, "minecraft:stone_Sword", 1));
+        Items.registerItem(new ItemTypeImpl(273, "minecraft:stone_Shovel", 1));
+        Items.registerItem(new ItemTypeImpl(274, "minecraft:stone_Pickaxe", 1));
+        Items.registerItem(new ItemTypeImpl(275, "minecraft:stone_Axe", 1));
+        Items.registerItem(new ItemTypeImpl(276, "minecraft:diamond_Sword", 1));
+        Items.registerItem(new ItemTypeImpl(277, "minecraft:diamond_Shovel", 1));
+        Items.registerItem(new ItemTypeImpl(278, "minecraft:diamond_Pickaxe", 1));
+        Items.registerItem(new ItemTypeImpl(279, "minecraft:diamond_Axe", 1));
+        Items.registerItem(new ItemTypeImpl(280, "minecraft:stick"));
+        Items.registerItem(new ItemTypeImpl(281, "minecraft:bowl"));
+        Items.registerItem(new ItemTypeImpl(282, "minecraft:mushroom_stew", 1));
+        Items.registerItem(new ItemTypeImpl(283, "minecraft:golden_Sword", 1));
+        Items.registerItem(new ItemTypeImpl(284, "minecraft:golden_Shovel", 1));
+        Items.registerItem(new ItemTypeImpl(285, "minecraft:golden_Pickaxe", 1));
+        Items.registerItem(new ItemTypeImpl(286, "minecraft:golden_Axe", 1));
+        Items.registerItem(new ItemTypeImpl(287, "minecraft:string"));
+        Items.registerItem(new ItemTypeImpl(288, "minecraft:feather"));
+        Items.registerItem(new ItemTypeImpl(289, "minecraft:gunpowder"));
+        Items.registerItem(new ItemTypeImpl(290, "minecraft:wooden_Hoe", 1));
+        Items.registerItem(new ItemTypeImpl(291, "minecraft:stone_Hoe", 1));
+        Items.registerItem(new ItemTypeImpl(292, "minecraft:iron_Hoe", 1));
+        Items.registerItem(new ItemTypeImpl(293, "minecraft:diamond_Hoe", 1));
+        Items.registerItem(new ItemTypeImpl(294, "minecraft:golden_Hoe", 1));
+        Items.registerItem(new ItemTypeImpl(295, "minecraft:wheat_seeds"));
+        Items.registerItem(new ItemTypeImpl(296, "minecraft:wheat"));
+        Items.registerItem(new ItemTypeImpl(297, "minecraft:bread"));
+        Items.registerItem(new ItemTypeImpl(298, "minecraft:leather_helmet", 1));
+        Items.registerItem(new ItemTypeImpl(299, "minecraft:leather_chestplate", 1));
+        Items.registerItem(new ItemTypeImpl(300, "minecraft:leather_leggings", 1));
+        Items.registerItem(new ItemTypeImpl(301, "minecraft:leather_boots", 1));
+        Items.registerItem(new ItemTypeImpl(302, "minecraft:chainmail_helmet", 1));
+        Items.registerItem(new ItemTypeImpl(303, "minecraft:chainmail_chestplate", 1));
+        Items.registerItem(new ItemTypeImpl(304, "minecraft:chainmail_leggings", 1));
+        Items.registerItem(new ItemTypeImpl(305, "minecraft:chainmail_boots", 1));
+        Items.registerItem(new ItemTypeImpl(306, "minecraft:iron_helmet", 1));
+        Items.registerItem(new ItemTypeImpl(307, "minecraft:iron_chestplate", 1));
+        Items.registerItem(new ItemTypeImpl(308, "minecraft:iron_leggings", 1));
+        Items.registerItem(new ItemTypeImpl(309, "minecraft:iron_boots", 1));
+        Items.registerItem(new ItemTypeImpl(310, "minecraft:diamond_helmet", 1));
+        Items.registerItem(new ItemTypeImpl(311, "minecraft:diamond_chestplate", 1));
+        Items.registerItem(new ItemTypeImpl(312, "minecraft:diamond_leggings", 1));
+        Items.registerItem(new ItemTypeImpl(313, "minecraft:diamond_boots", 1));
+        Items.registerItem(new ItemTypeImpl(314, "minecraft:gold_helmet", 1));
+        Items.registerItem(new ItemTypeImpl(315, "minecraft:gold_chestplate", 1));
+        Items.registerItem(new ItemTypeImpl(316, "minecraft:gold_leggings", 1));
+        Items.registerItem(new ItemTypeImpl(317, "minecraft:gold_boots", 1));
+        Items.registerItem(new ItemTypeImpl(318, "minecraft:flint"));
+        Items.registerItem(new ItemTypeImpl(319, "minecraft:porkchop"));
+        Items.registerItem(new ItemTypeImpl(320, "minecraft:cooked_porkchop"));
+        Items.registerItem(new ItemTypeImpl(321, "minecraft:painting"));
+        Items.registerItem(new ItemTypeImpl(322, "minecraft:golden_apple"));
+        Items.registerItem(new ItemTypeImpl(323, "minecraft:sign", 16));
+        Items.registerItem(new ItemTypeImpl(324, "minecraft:wooden_door"));
+        Items.registerItem(new ItemTypeImpl(325, "minecraft:bucket", 16));
+        Items.registerItem(new ItemTypeImpl(326, "minecraft:water_bucket", 1));
+        Items.registerItem(new ItemTypeImpl(327, "minecraft:lava_bucket", 1));
+        Items.registerItem(new ItemTypeImpl(328, "minecraft:minecraft", 1));
+        Items.registerItem(new ItemTypeImpl(329, "minecraft:saddle", 1));
+        Items.registerItem(new ItemTypeImpl(330, "minecraft:iron_door"));
+        Items.registerItem(new ItemTypeImpl(331, "minecraft:redstone"));
+        Items.registerItem(new ItemTypeImpl(332, "minecraft:snowball"));
+        Items.registerItem(new ItemTypeImpl(333, "minecraft:boat", 1));
+        Items.registerItem(new ItemTypeImpl(334, "minecraft:leather"));
+        Items.registerItem(new ItemTypeImpl(335, "minecraft:milk_bucket", 1));
+        Items.registerItem(new ItemTypeImpl(336, "minecraft:brick"));
+        Items.registerItem(new ItemTypeImpl(337, "minecraft:clay_ball"));
+        Items.registerItem(new ItemTypeImpl(338, "minecraft:reeds"));
+        Items.registerItem(new ItemTypeImpl(339, "minecraft:paper"));
+        Items.registerItem(new ItemTypeImpl(340, "minecraft:book"));
+        Items.registerItem(new ItemTypeImpl(341, "minecraft:slime_ball"));
+        Items.registerItem(new ItemTypeImpl(342, "minecraft:chest_minecart", 1));
+        Items.registerItem(new ItemTypeImpl(343, "minecraft:furnace_minecart", 1));
+        Items.registerItem(new ItemTypeImpl(344, "minecraft:egg", 16));
+        Items.registerItem(new ItemTypeImpl(345, "minecraft:compass"));
+        Items.registerItem(new ItemTypeImpl(346, "minecraft:fishing_rod", 1));
+        Items.registerItem(new ItemTypeImpl(347, "minecraft:clock"));
+        Items.registerItem(new ItemTypeImpl(348, "minecraft:glowstone_dust"));
+        Items.registerItem(new ItemTypeImpl(349, "minecraft:fish"));
+        Items.registerItem(new ItemTypeImpl(350, "minecraft:cooked_fish"));
+        Items.registerItem(new ItemTypeImpl(351, "minecraft:dye"));
+        Items.registerItem(new ItemTypeImpl(352, "minecraft:bone"));
+        Items.registerItem(new ItemTypeImpl(353, "minecraft:sugar"));
+        Items.registerItem(new ItemTypeImpl(354, "minecraft:cake", 1));
+        Items.registerItem(new ItemTypeImpl(355, "minecraft:bed", 1));
+        Items.registerItem(new ItemTypeImpl(356, "minecraft:repeater"));
+        Items.registerItem(new ItemTypeImpl(357, "minecraft:cookie"));
+        Items.registerItem(new ItemTypeImpl(358, "minecraft:filled_map"));
+        Items.registerItem(new ItemTypeImpl(359, "minecraft:shears", 1));
+        Items.registerItem(new ItemTypeImpl(360, "minecraft:melon"));
+        Items.registerItem(new ItemTypeImpl(361, "minecraft:pumpkin_seeds"));
+        Items.registerItem(new ItemTypeImpl(362, "minecraft:melon_seeds"));
+        Items.registerItem(new ItemTypeImpl(363, "minecraft:beef"));
+        Items.registerItem(new ItemTypeImpl(364, "minecraft:cooked_beef"));
+        Items.registerItem(new ItemTypeImpl(365, "minecraft:chicked"));
+        Items.registerItem(new ItemTypeImpl(366, "minecraft:cooked_chicken"));
+        Items.registerItem(new ItemTypeImpl(367, "minecraft:rotten_flesh"));
+        Items.registerItem(new ItemTypeImpl(368, "minecraft:ender_pearl", 16));
+        Items.registerItem(new ItemTypeImpl(369, "minecraft:blaze_rod"));
+        Items.registerItem(new ItemTypeImpl(370, "minecraft:ghast_tear"));
+        Items.registerItem(new ItemTypeImpl(371, "minecraft:gold_nugget"));
+        Items.registerItem(new ItemTypeImpl(372, "minecraft:nether_wart"));
+        Items.registerItem(new ItemTypeImpl(373, "minecraft:potion", 1));
+        Items.registerItem(new ItemTypeImpl(374, "minecraft:glass_bottle"));
+        Items.registerItem(new ItemTypeImpl(375, "minecraft:spider_eye"));
+        Items.registerItem(new ItemTypeImpl(376, "minecraft:fermented_spider_eye"));
+        Items.registerItem(new ItemTypeImpl(377, "minecraft:blaze_powder"));
+        Items.registerItem(new ItemTypeImpl(378, "minecraft:magma_cream"));
+        Items.registerItem(new ItemTypeImpl(379, "minecraft:brewing_stand"));
+        Items.registerItem(new ItemTypeImpl(380, "minecraft:cauldron"));
+        Items.registerItem(new ItemTypeImpl(381, "minecraft:ender_eye"));
+        Items.registerItem(new ItemTypeImpl(382, "minecraft:speckled_melon"));
+        Items.registerItem(new ItemTypeImpl(383, "minecraft:spawn_egg"));
+        Items.registerItem(new ItemTypeImpl(384, "minecraft:experience_bottle"));
+        Items.registerItem(new ItemTypeImpl(385, "minecraft:fire_charge"));
+        Items.registerItem(new ItemTypeImpl(386, "minecraft:writable_book", 1));
+        Items.registerItem(new ItemTypeImpl(387, "minecraft:written_book", 16));
+        Items.registerItem(new ItemTypeImpl(388, "minecraft:emerald"));
+        Items.registerItem(new ItemTypeImpl(389, "minecraft:item_frame"));
+        Items.registerItem(new ItemTypeImpl(390, "minecraft:flower_pot"));
+        Items.registerItem(new ItemTypeImpl(391, "minecraft:carrot"));
+        Items.registerItem(new ItemTypeImpl(392, "minecraft:potato"));
+        Items.registerItem(new ItemTypeImpl(393, "minecraft:baked_potato"));
+        Items.registerItem(new ItemTypeImpl(394, "minecraft:poisounous_potato"));
+        Items.registerItem(new ItemTypeImpl(395, "minecraft:map"));
+        Items.registerItem(new ItemTypeImpl(396, "minecraft:golden_carrot"));
+        Items.registerItem(new ItemTypeImpl(397, "minecraft:skull"));
+        Items.registerItem(new ItemTypeImpl(398, "minecraft:carrot_on_a_stick", 1));
+        Items.registerItem(new ItemTypeImpl(399, "minecraft:nether_star"));
+        Items.registerItem(new ItemTypeImpl(400, "minecraft:pumpkin_pie"));
+        Items.registerItem(new ItemTypeImpl(401, "minecraft:fireworks"));
+        Items.registerItem(new ItemTypeImpl(402, "minecraft:firework_charge"));
+        Items.registerItem(new ItemTypeImpl(403, "minecraft:enchanted_book", 1));
+        Items.registerItem(new ItemTypeImpl(404, "minecraft:comparator"));
+        Items.registerItem(new ItemTypeImpl(405, "minecraft:netherbrick"));
+        Items.registerItem(new ItemTypeImpl(406, "minecraft:quartz"));
+        Items.registerItem(new ItemTypeImpl(407, "minecraft:tnt_minecart", 1));
+        Items.registerItem(new ItemTypeImpl(408, "minecraft:hopper_minecart", 1));
+        Items.registerItem(new ItemTypeImpl(409, "minecraft:prismarine_shard"));
+        Items.registerItem(new ItemTypeImpl(410, "minecraft:prismarine_crystals"));
+        Items.registerItem(new ItemTypeImpl(411, "minecraft:rabbit"));
+        Items.registerItem(new ItemTypeImpl(412, "minecraft:cooked_rabbit"));
+        Items.registerItem(new ItemTypeImpl(413, "minecraft:rabbit_stew"));
+        Items.registerItem(new ItemTypeImpl(414, "minecraft:rabbit_foot"));
+        Items.registerItem(new ItemTypeImpl(415, "minecraft:rabbit_hide"));
+        Items.registerItem(new ItemTypeImpl(416, "minecraft:armor_stand", 16));
+        Items.registerItem(new ItemTypeImpl(417, "minecraft:iron_horse_armor", 1));
+        Items.registerItem(new ItemTypeImpl(418, "minecraft:golden_horse_armor", 1));
+        Items.registerItem(new ItemTypeImpl(419, "minecraft:diamond_horse_armor", 1));
+        Items.registerItem(new ItemTypeImpl(420, "minecraft:lead"));
+        Items.registerItem(new ItemTypeImpl(421, "minecraft:name_tag"));
+        Items.registerItem(new ItemTypeImpl(422, "minecraft:command_block_minecart", 1));
+        Items.registerItem(new ItemTypeImpl(423, "minecraft:mutton"));
+        Items.registerItem(new ItemTypeImpl(424, "minecraft:cooked_mutton"));
+        Items.registerItem(new ItemTypeImpl(425, "minecraft:banner", 16));
+        Items.registerItem(new ItemTypeImpl(427, "minecraft:spruce_door"));
+        Items.registerItem(new ItemTypeImpl(428, "minecraft:birch_door"));
+        Items.registerItem(new ItemTypeImpl(429, "minecraft:jungle_door"));
+        Items.registerItem(new ItemTypeImpl(430, "minecraft:acacia_door"));
+        Items.registerItem(new ItemTypeImpl(431, "minecraft:dark_oak_door"));
+        Items.registerItem(new ItemTypeImpl(444, "minecraft:spruce_boat", 1));
+        Items.registerItem(new ItemTypeImpl(445, "minecraft:birch_boat", 1));
+        Items.registerItem(new ItemTypeImpl(446, "minecraft:jungle_boat", 1));
+        Items.registerItem(new ItemTypeImpl(447, "minecraft:acacia_boat", 1));
+        Items.registerItem(new ItemTypeImpl(448, "minecraft:dark_oak_boat", 1));
+        Items.registerItem(new ItemTypeImpl(2256, "minecraft:record_13", 1));
+        Items.registerItem(new ItemTypeImpl(2257, "minecraft:record_cat", 1));
+        Items.registerItem(new ItemTypeImpl(2258, "minecraft:record_blocks", 1));
+        Items.registerItem(new ItemTypeImpl(2259, "minecraft:record_chrip", 1));
+        Items.registerItem(new ItemTypeImpl(2260, "minecraft:record_far", 1));
+        Items.registerItem(new ItemTypeImpl(2261, "minecraft:record_mall", 1));
+        Items.registerItem(new ItemTypeImpl(2262, "minecraft:record_mellohi", 1));
+        Items.registerItem(new ItemTypeImpl(2263, "minecraft:record_stal", 1));
+        Items.registerItem(new ItemTypeImpl(2264, "minecraft:record_strad", 1));
+        Items.registerItem(new ItemTypeImpl(2265, "minecraft:record_ward", 1));
+        Items.registerItem(new ItemTypeImpl(2266, "minecraft:record_11", 1));
+        Items.registerItem(new ItemTypeImpl(2267, "minecraft:record_wait", 1));
+    }
+}

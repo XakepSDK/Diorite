@@ -22,41 +22,7 @@
  * SOFTWARE.
  */
 
-package org.diorite.material.item;
-
-import java.util.Map;
-
-import org.diorite.utils.SimpleEnum;
-import org.diorite.utils.collections.maps.CaseInsensitiveMap;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 /**
- * Items register class
+ * Package with helper material classes, like drops.
  */
-public final class Items
-{
-    private static final Int2ObjectMap<ItemType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-    private static final Map<String, ItemType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-
-    private Items()
-    {
-    }
-
-    public static ItemType getItemType(final int id)
-    {
-        return byId.get(id);
-    }
-
-    public static ItemType getItemType(final String id)
-    {
-        return byStringId.get(id);
-    }
-
-    public static void registerItem(final ItemType itemType)
-    {
-        byId.put(itemType.getId(), itemType);
-        byStringId.put(itemType.getMinecraftId(), itemType);
-    }
-}
+package org.diorite.material.data;

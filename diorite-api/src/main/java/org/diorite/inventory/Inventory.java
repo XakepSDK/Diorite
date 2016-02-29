@@ -36,6 +36,7 @@ import org.diorite.entity.Player;
 import org.diorite.inventory.item.BaseItemStack;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.slot.Slot;
+import org.diorite.material.item.ItemType;
 import org.diorite.material_old.Material;
 
 /**
@@ -772,7 +773,7 @@ public interface Inventory extends Iterable<ItemStack>
      *
      * @return true if an ItemStack is found with the given Material
      */
-    default boolean contains(final Material material)
+    default boolean contains(final ItemType material)
     {
         return this.contains(material, false);
     }
@@ -786,7 +787,7 @@ public interface Inventory extends Iterable<ItemStack>
      *
      * @return true if an ItemStack is found with the given Material
      */
-    default boolean contains(final Material material, final boolean ignoreType)
+    default boolean contains(final ItemType material, final boolean ignoreType)
     {
         for (final ItemStack item : this)
         {
@@ -794,7 +795,7 @@ public interface Inventory extends Iterable<ItemStack>
             {
                 if (ignoreType)
                 {
-                    if (item.getMaterial().isThisSameID(material))
+                    if (item.getMaterial().isThisSameType(material))
                     {
                         return true;
                     }
@@ -846,7 +847,7 @@ public interface Inventory extends Iterable<ItemStack>
      * @return true if amount is less than 1, true if enough ItemStacks were
      * found to add to the given amount
      */
-    default boolean contains(final Material material, int amount)
+    default boolean contains(final ItemType material, int amount)
     {
         if (amount <= 0)
         {

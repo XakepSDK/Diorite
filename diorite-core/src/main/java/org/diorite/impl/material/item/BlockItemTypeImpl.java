@@ -22,41 +22,35 @@
  * SOFTWARE.
  */
 
-package org.diorite.material.item;
+package org.diorite.impl.material.item;
 
-import java.util.Map;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.utils.SimpleEnum;
-import org.diorite.utils.collections.maps.CaseInsensitiveMap;
+import org.diorite.material.block.BlockType;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-/**
- * Items register class
- */
-public final class Items
+public class BlockItemTypeImpl extends ItemTypeImpl
 {
-    private static final Int2ObjectMap<ItemType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-    private static final Map<String, ItemType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+    private BlockType blockType;
 
-    private Items()
+    public BlockItemTypeImpl(final BlockType type)
     {
+        super(type.getId(), type.getMinecraftId());
     }
 
-    public static ItemType getItemType(final int id)
+    public BlockType getBlockType()
     {
-        return byId.get(id);
+        return this.blockType;
     }
 
-    public static ItemType getItemType(final String id)
+    public void setBlockType(final BlockType blockType)
     {
-        return byStringId.get(id);
+        this.blockType = blockType;
     }
 
-    public static void registerItem(final ItemType itemType)
+    @Override
+    public String toString()
     {
-        byId.put(itemType.getId(), itemType);
-        byStringId.put(itemType.getMinecraftId(), itemType);
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("blockType", this.blockType).toString();
     }
 }

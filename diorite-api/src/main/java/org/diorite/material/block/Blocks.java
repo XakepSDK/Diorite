@@ -24,6 +24,56 @@
 
 package org.diorite.material.block;
 
-public class Blocks
+import java.util.Map;
+
+import org.diorite.utils.SimpleEnum;
+import org.diorite.utils.collections.maps.CaseInsensitiveMap;
+
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+/**
+ * Blocks register class.
+ */
+public final class Blocks
 {
+    private static final Int2ObjectMap<BlockType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+    private static final Map<String, BlockType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+
+    private static final Int2ObjectMap<BlockSubtype> sybtypeById = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+
+    private Blocks()
+    {
+    }
+
+    public static BlockSubtype getBlockSubtype(final int id, final int meta)
+    {
+        return sybtypeById.get((id << 4) | meta);
+    }
+
+    public static BlockSubtype getBlockSubtypeByIdAndMeta(final int id)
+    {
+        return sybtypeById.get(id);
+    }
+
+    public static BlockType getBlockType(final int id)
+    {
+        return byId.get(id);
+    }
+
+    public static BlockType getBlockType(final String id)
+    {
+        return byStringId.get(id);
+    }
+
+    public static void registerBlock(final BlockType blockType)
+    {
+        byId.put(blockType.getId(), blockType);
+        byStringId.put(blockType.getMinecraftId(), blockType);
+
+        for (final BlockSubtype blockSubtype : blockType.getSubtypes())
+        {
+            sybtypeById.put(blockSubtype.getTypeAndSubtypeId(), blockSubtype);
+        }
+    }
 }

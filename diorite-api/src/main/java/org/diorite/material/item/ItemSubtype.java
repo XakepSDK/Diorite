@@ -24,39 +24,36 @@
 
 package org.diorite.material.item;
 
-import java.util.Map;
+import org.diorite.material.AnySubtype;
 
-import org.diorite.utils.SimpleEnum;
-import org.diorite.utils.collections.maps.CaseInsensitiveMap;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
-/**
- * Items register class
- */
-public final class Items
+public interface ItemSubtype extends ItemType, AnySubtype
 {
-    private static final Int2ObjectMap<ItemType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-    private static final Map<String, ItemType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+    /**
+     * Returns sub-id of item, like 3 for stone:diorite.
+     *
+     * @return sub-id of item, like 3 for stone:diorite.
+     *
+     * @see #getProxySubtypeId()
+     */
+    @Override
+    int getSubtypeId();
 
-    private Items()
+    /**
+     * Returns sub-id of item used in packets.
+     *
+     * @return sub-id of item used in packets.
+     */
+    @Override
+    default int getProxySubtypeId()
     {
+        return this.getSubtypeId();
     }
 
-    public static ItemType getItemType(final int id)
-    {
-        return byId.get(id);
-    }
-
-    public static ItemType getItemType(final String id)
-    {
-        return byStringId.get(id);
-    }
-
-    public static void registerItem(final ItemType itemType)
-    {
-        byId.put(itemType.getId(), itemType);
-        byStringId.put(itemType.getMinecraftId(), itemType);
-    }
+    /**
+     * Returns string id for this subtype, like "diorite" for "minecraft:stone:diorite" (not supported by vanilla clients, used by diorite commands etc.)
+     *
+     * @return string id for this subtype, like "diorite" for "minecraft:stone:diorite" (not supported by vanilla clients, used by diorite commands etc.)
+     */
+    @Override
+    String getSubtypeStringId();
 }

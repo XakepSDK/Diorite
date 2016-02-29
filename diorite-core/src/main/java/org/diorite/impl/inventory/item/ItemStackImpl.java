@@ -28,45 +28,55 @@ import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.inventory.item.BaseItemStack;
+import org.diorite.entity.Item;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
+import org.diorite.material.item.ItemType;
 import org.diorite.material_old.Material;
 import org.diorite.utils.others.Dirtable;
 
 public class ItemStackImpl implements Dirtable, ItemStack
 {
-    private final ItemStack wrapped;
+    protected ItemType material;
+    protected int      amount;
+    protected ItemMeta itemMeta;
     private       boolean   dirty;
 
-    protected ItemStackImpl(final ItemStack wrapped)
+    public ItemStackImpl(final ItemType material, final int amount)
     {
-        Validate.isTrue(! (wrapped instanceof ItemStackImpl), "Can't wrap wrapper");
-        this.wrapped = wrapped;
+        Validate.notNull(material, "Material can't be null.");
+        this.amount = (this.material == null) ? 0 : amount;
         this.setDirty();
-    }
-
-    public ItemStack getWrapped()
-    {
-        return this.wrapped;
     }
 
     @Override
     public boolean isSimilar(final ItemStack b)
     {
-        return this.wrapped.isSimilar(b);
-    }
-
-    @Override
-    public boolean isValid()
-    {
-        return this.wrapped.isValid();
+        if (b == null)
+        {
+            return amount == 0;
+        }
+        if (! this.material.equals(b.getMaterial()))
+        {
+            return false;
+        }
+        if (this.itemMeta == null)
+        {
+            return b.getItemMeta().isEmpty();
+        }
+        return this.itemMeta.equals(b.getItemMeta());
     }
 
     @Override
     public boolean isAir()
     {
-        return this.wrapped.isAir();
+        return (this.material == null) || this.material.simpleEquals(Material.AIR);
+    }
+
+    @Override
+    public boolean isValid()
+    {
+        return this.amount <= this.material.getMaxStack();
     }
 
 //    @Override
@@ -136,20 +146,19 @@ public class ItemStackImpl implements Dirtable, ItemStack
     }
 
     @Override
-    public BaseItemStack split(final int size)
+    public ItemStack split(final int size)
     {
         if (size > this.getAmount())
         {
             throw new IllegalArgumentException();
         }
 
-        final BaseItemStack temp = new BaseItemStack(this);
+        final ItemStack temp = new ItemStackImpl(this);
 
         this.wrapped.setAmount(this.wrapped.getAmount() - size);
         if (this.getAmount() == 0)
         {
             this.wrapped.setItemMeta(null);
-            this.wrapped.setMaterial(Material.AIR);
         }
         this.setDirty();
         temp.setAmount(size);
@@ -185,27 +194,6 @@ public class ItemStackImpl implements Dirtable, ItemStack
     public ItemStackImpl clone()
     {
         return new ItemStackImpl(this.wrapped.clone());
-    }
-
-    public static ItemStackImpl wrap(final ItemStack item)
-    {
-        if (item == null)
-        {
-            return null;
-        }
-        if (item instanceof ItemStackImpl)
-        {
-            return (ItemStackImpl) item;
-        }
-        return new ItemStackImpl(item);
-    }
-
-    public static void validate(final ItemStack excepted)
-    {
-        if ((excepted != null) && ! (excepted instanceof ItemStackImpl))
-        {
-            throw new IllegalArgumentException("ItemStackImpl must be a type of excepted item");
-        }
     }
 
     @Override

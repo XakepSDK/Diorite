@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.diorite.inventory.item;
+package org.diorite.impl.inventory;
 
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,7 +30,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.Diorite;
 import org.diorite.ItemFactory;
+import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
+import org.diorite.material.item.ItemType;
 import org.diorite.material_old.Material;
 
 /**
@@ -38,19 +40,17 @@ import org.diorite.material_old.Material;
  */
 public class BaseItemStack implements ItemStack
 {
-    protected Material material;
+    protected ItemType material;
     protected int      amount;
     protected ItemMeta itemMeta;
 
-    public BaseItemStack(final Material material, final int amount)
+    public BaseItemStack(final ItemType material, final int amount)
     {
-        Validate.notNull(material, "Material can't be null.");
-        this.material = material.ensureValidInventoryItem();
         Validate.notNull(material, "Material can't be null.");
         this.amount = (this.material == null) ? 0 : amount;
     }
 
-    public BaseItemStack(final Material material)
+    public BaseItemStack(final ItemType material)
     {
         this(material, 1);
     }
@@ -62,20 +62,16 @@ public class BaseItemStack implements ItemStack
     }
 
     @Override
-    public Material getMaterial()
+    public ItemType getMaterial()
     {
         return this.material;
     }
 
     @Override
-    public void setMaterial(final Material material)
+    public void setMaterial(final ItemType material)
     {
-        this.material = material.ensureValidInventoryItem();
-        if (this.material == null)
-        {
-            this.amount = 0;
-            this.itemMeta = null;
-        }
+        Validate.notNull(material, "Material can't be null.");
+        this.material = material;
     }
 
     @Override

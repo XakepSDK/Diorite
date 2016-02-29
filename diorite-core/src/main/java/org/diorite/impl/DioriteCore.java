@@ -70,9 +70,12 @@ import org.diorite.impl.connection.packets.play.clientbound.PacketPlayClientboun
 import org.diorite.impl.entity.IPlayer;
 import org.diorite.impl.input.ConsoleReaderThread;
 import org.diorite.impl.input.InputThread;
+import org.diorite.impl.inventory.item.ItemStackImpl;
 import org.diorite.impl.log.ForwardLogHandler;
 import org.diorite.impl.log.LoggerOutputStream;
 import org.diorite.impl.log.TerminalConsoleWriterThread;
+import org.diorite.impl.material.block.BlocksInit;
+import org.diorite.impl.material.item.ItemsInit;
 import org.diorite.impl.metrics.Metrics;
 import org.diorite.impl.pipelines.event.chunk.ChunkGeneratePipelineImpl;
 import org.diorite.impl.pipelines.event.chunk.ChunkLoadPipelineImpl;
@@ -136,6 +139,8 @@ import org.diorite.event.player.PlayerInteractEvent;
 import org.diorite.event.player.PlayerInventoryClickEvent;
 import org.diorite.event.player.PlayerJoinEvent;
 import org.diorite.event.player.PlayerQuitEvent;
+import org.diorite.inventory.item.ItemStack;
+import org.diorite.material.item.ItemType;
 import org.diorite.plugin.DioritePlugin;
 import org.diorite.plugin.PluginException;
 import org.diorite.plugin.PluginManager;
@@ -433,6 +438,17 @@ public class DioriteCore implements Core
     public ItemFactory getItemFactory()
     {
         return this.itemFactory;
+    }
+
+    @Override
+    public ItemStack newItem(final ItemType type, final int amount)
+    {
+        return new ItemStackImpl(type, amount);
+    }
+    @Override
+    public ItemStack newItem(final ItemStack itemStack)
+    {
+        return new ItemStackImpl(itemStack);
     }
 
     @Override
@@ -1145,6 +1161,8 @@ public class DioriteCore implements Core
                     s.config.setOnlineMode(mode);
                 }
             }
+            BlocksInit.init();
+            ItemsInit.init();
         });
         initPipeline.addLast("DioriteCore|registerTemplateElements", (s, p, d) -> TemplateElements.getElements().addAfter(Locale.class.getName(), BaseComponent.class.getName(), BaseComponentTemplateElement.INSTANCE));
         initPipeline.addLast("DioriteCore|registerEvents", (s, p, d) -> s.registerEvents());

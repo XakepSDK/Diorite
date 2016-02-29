@@ -44,6 +44,8 @@ import org.diorite.command.CommandMap;
 import org.diorite.command.PluginCommandBuilder;
 import org.diorite.command.sender.ConsoleCommandSender;
 import org.diorite.entity.Player;
+import org.diorite.inventory.item.ItemStack;
+import org.diorite.material.item.ItemType;
 import org.diorite.plugin.DioritePlugin;
 import org.diorite.plugin.PluginManager;
 import org.diorite.scheduler.Scheduler;
@@ -156,6 +158,28 @@ public interface Core extends Synchronizable
      * @return instance of item factory that allows to create instances of item meta.
      */
     ItemFactory getItemFactory();
+
+    /**
+     * Create instance of itemstack.
+     *
+     * @param type type of item.
+     *
+     * @return created instance of itemstack.
+     */
+    default ItemStack newItem(final ItemType type)
+    {
+        return this.newItem(type, 1);
+    }
+
+    /**
+     * Create instance of itemstack.
+     *
+     * @param type   type of item.
+     * @param amount amount of item.
+     *
+     * @return created instance of itemstack.
+     */
+    ItemStack newItem(ItemType type, int amount);
 
     /**
      * Returns list of player nicknames that starts with given prefix.
