@@ -71,7 +71,7 @@ import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.BookMeta;
 import org.diorite.inventory.item.meta.ItemMeta;
 import org.diorite.inventory.item.meta.SkullMeta;
-import org.diorite.material.item.ItemType;
+import org.diorite.material.item.Items;
 import org.diorite.permissions.PermissionLevel;
 import org.diorite.permissions.PermissionsGroup;
 import org.diorite.permissions.PermissionsManager;
@@ -249,7 +249,7 @@ public class DevCmd extends SystemCommandImpl
                 }
                 case "bookmeta":
                 {//TODO: test with new system
-                    final ItemStack item = new ItemStackImpl(ItemType.WRITTEN_BOOK);
+                    final ItemStack item = new ItemStackImpl(Items.WRITTEN_BOOK);
                     final BookMeta meta = (BookMeta) item.getItemMeta();
                     meta.setAuthor("Lel");
                     meta.setPages("ugh");
@@ -258,7 +258,7 @@ public class DevCmd extends SystemCommandImpl
                 }
                 case "gib":
                 {//TODO: test with new system
-                    final ItemStack item = new ItemStackImpl(ItemType.APPLE);
+                    final ItemStack item = new ItemStackImpl(Items.APPLE);
                     item.setAmount(args.has(0) ? args.asInt(0, 1) : 1);
                     final ItemMeta meta = item.getItemMeta();
                     meta.setDisplayName("Diorite");
@@ -291,7 +291,7 @@ public class DevCmd extends SystemCommandImpl
                 }
                 case "skullmeta":
                 {//TODO: test with new system
-                    final ItemStack item = new ItemStackImpl(ItemType.SKULL);
+                    final ItemStack item = new ItemStackImpl(Items.SKULL);
                     System.out.println(item.getItemMeta());
                     final SkullMeta meta = (SkullMeta) item.getItemMeta();
                     meta.setOwner(args.asString(0));
@@ -301,7 +301,7 @@ public class DevCmd extends SystemCommandImpl
                 }
                 case "itemmeta":
                 {//TODO: test with new system
-                    final ItemStack item = new ItemStackImpl(ItemType.STONE);
+                    final ItemStack item = new ItemStackImpl(Items.STONE);
                     final ItemMeta meta = item.getItemMeta();
                     meta.setDisplayName("Custom name!");
                     meta.setLore(Arrays.asList("North to", "gupi nup"));

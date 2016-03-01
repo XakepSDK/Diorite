@@ -31,7 +31,7 @@ import org.diorite.event.pipelines.event.player.BlockPlacePipeline;
 import org.diorite.event.player.PlayerBlockPlaceEvent;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.material.block.BlockSubtype;
-import org.diorite.material.block.Blocks;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.utils.pipeline.SimpleEventPipeline;
 
 public class BlockPlacePipelineImpl extends SimpleEventPipeline<PlayerBlockPlaceEvent> implements BlockPlacePipeline
@@ -53,7 +53,7 @@ public class BlockPlacePipelineImpl extends SimpleEventPipeline<PlayerBlockPlace
 
             // TODO: block place handler
 
-            final BlockSubtype blockSubtype = Blocks.getBlockSubtype(item.getType().getId(), item.getType().getSubtypeId());
+            final BlockSubtype blockSubtype = BlockRegistry.getBlockSubtype(item.getType().getId(), item.getType().getSubtypeId());
             if (blockSubtype == null) // TODO check if itemSubtype can be placed
             {
                 return;

@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ToolMeta;
 import org.diorite.material.block.BlockType;
-import org.diorite.material.block.Blocks;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.nbt.NbtTagCompound;
 import org.diorite.nbt.NbtTagList;
 import org.diorite.nbt.NbtTagString;
@@ -79,7 +79,7 @@ public class ToolMetaImpl extends RepairableMetaImpl implements ToolMeta
         {
             return null;
         }
-        return list.getTags(NbtTagString.class).stream().map(s -> Blocks.getBlockType(s.getValue())).filter(m -> m != null).map(m -> m).collect(Collectors.toSet());
+        return list.getTags(NbtTagString.class).stream().map(s -> BlockRegistry.getBlockType(s.getValue())).filter(m -> m != null).map(m -> m).collect(Collectors.toSet());
     }
 
     @Override

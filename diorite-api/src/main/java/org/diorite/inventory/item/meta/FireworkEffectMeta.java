@@ -25,10 +25,11 @@
 package org.diorite.inventory.item.meta;
 
 import org.diorite.firework.FireworkEffect;
+import org.diorite.material.item.Items;
 
 /**
  * Represents a meta that can store a single FireworkEffect. An example
- * includes {@link org.diorite.material.item.ItemType#FIREWORK_CHARGE}.
+ * includes {@link Items#FIREWORK_CHARGE}.
  */
 public interface FireworkEffectMeta extends ItemMeta
 {

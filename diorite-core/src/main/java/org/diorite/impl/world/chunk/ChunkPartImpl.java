@@ -32,6 +32,7 @@ import org.diorite.impl.world.chunk.palette.Palette;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.utils.collections.arrays.NibbleArray;
 import org.diorite.world.chunk.Chunk;
 
@@ -148,7 +149,7 @@ public class ChunkPartImpl // part of chunk 16x16x16
     public BlockSubtype rawSetBlock(final int x, final int y, final int z, final int id, final int meta)
     {
         final BlockSubtype type = this.chunkBlockData.getAndSet(toArrayIndex(x, y, z), this.palette.put(id, (byte) meta), this.palette);
-        return (type == null) ? BlockType.AIR.asSubtype() : type;
+        return (type == null) ? Blocks.AIR.asSubtype() : type;
     }
 
     public BlockSubtype setBlock(final int x, final int y, final int z, final BlockType type)
@@ -160,7 +161,7 @@ public class ChunkPartImpl // part of chunk 16x16x16
     public BlockSubtype getBlockType(final int x, final int y, final int z)
     {
         final BlockSubtype type = this.chunkBlockData.get(toArrayIndex(x, y, z), this.palette);
-        return (type == null) ? BlockType.AIR.asSubtype() : type;
+        return (type == null) ? Blocks.AIR.asSubtype() : type;
     }
 //
 //    public AtomicShortArray getBlocks()
@@ -180,7 +181,7 @@ public class ChunkPartImpl // part of chunk 16x16x16
         for (int i = 0; i < CHUNK_DATA_SIZE; i++)
         {
             final BlockSubtype type = this.chunkBlockData.get(i, this.palette);
-            if ((type != null) && ! type.isThisSameType(BlockType.AIR))
+            if ((type != null) && ! type.isThisSameType(Blocks.AIR))
             {
                 this.nonEmptyBlockCount++;
             }

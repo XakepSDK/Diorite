@@ -62,6 +62,7 @@ import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
 import org.diorite.material.AnySubtype;
 import org.diorite.material.item.ItemType;
+import org.diorite.material.item.ItemRegistry;
 import org.diorite.material.item.Items;
 import org.diorite.nbt.NbtInputStream;
 import org.diorite.nbt.NbtLimiter;
@@ -111,7 +112,7 @@ public class PacketDataSerializer extends ByteBuf
         {
             final byte amount = this.readByte();
             final short damage = this.readShort();
-            ItemType mat = Items.getItemType(id);
+            ItemType mat = ItemRegistry.getItemType(id);
             if (mat != null)
             {
                 final ItemType cpy = mat;
@@ -123,7 +124,7 @@ public class PacketDataSerializer extends ByteBuf
                     // TODO remove
                 }
             }
-            itemstack = new ItemStackImpl((mat == null) ? ItemType.STONE : mat, amount);
+            itemstack = new ItemStackImpl((mat == null) ? Items.STONE : mat, amount);
             itemstack.getItemMeta().setNbtData(this.readNbtTagCompound());
         }
         return itemstack;

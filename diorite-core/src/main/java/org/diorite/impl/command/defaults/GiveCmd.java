@@ -35,7 +35,7 @@ import org.diorite.command.sender.CommandSender;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.material.item.ItemSubtype;
-import org.diorite.material.item.Items;
+import org.diorite.material.item.ItemRegistry;
 
 public class GiveCmd extends SystemCommandImpl
 {
@@ -57,7 +57,7 @@ public class GiveCmd extends SystemCommandImpl
             return;
         }
         final ItemSubtype mat;
-        if (! args.has(param) || ((((mat = Items.matchItemType(args.asString(param++))))) == null))
+        if (! args.has(param) || ((((mat = ItemRegistry.matchItemType(args.asString(param++))))) == null))
         {
             DioriteMessages.sendMessage(DioriteMessages.MSG_CMD_NO_MATERIAL, sender);
             return;

@@ -31,6 +31,7 @@ import org.diorite.impl.CoreMain;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.Blocks;
 import org.diorite.utils.math.DioriteMathUtils;
 
@@ -44,7 +45,7 @@ public class ArrayPaletteImpl implements PaletteData
     public ArrayPaletteImpl()
     {
         this.pattern = new BlockSubtype[SIZE];
-        this.pattern[0] = BlockType.AIR.asSubtype();
+        this.pattern[0] = Blocks.AIR.asSubtype();
     }
 
     private ArrayPaletteImpl(final BlockSubtype[] pattern)
@@ -95,13 +96,13 @@ public class ArrayPaletteImpl implements PaletteData
         {
             return - 1;
         }
-        BlockSubtype mat = Blocks.getBlockSubtype(minecraftIDandData >> 4, minecraftIDandData & 15);
+        BlockSubtype mat = BlockRegistry.getBlockSubtype(minecraftIDandData >> 4, minecraftIDandData & 15);
         if (mat == null)
         {
-            mat = Blocks.getBlockSubtype(minecraftIDandData >> 4);
+            mat = BlockRegistry.getBlockSubtype(minecraftIDandData >> 4);
             if (mat == null)
             {
-                mat = BlockType.AIR.asSubtype();
+                mat = Blocks.AIR.asSubtype();
 //                throw new IllegalArgumentException("Unknown itemSubtype: " + minecraftIDandData + " (" + (minecraftIDandData >> 4) + ":" + (minecraftIDandData & 15) + ")");
             }
         }
@@ -127,7 +128,7 @@ public class ArrayPaletteImpl implements PaletteData
         final BlockSubtype mat = this.pattern[sectionID];
         if (mat == null)
         {
-            return BlockType.AIR.asSubtype();
+            return Blocks.AIR.asSubtype();
         }
         return mat;
     }
@@ -195,7 +196,7 @@ public class ArrayPaletteImpl implements PaletteData
         for (int i = 0; i < size; i++)
         {
             final int id = data.readVarInt();
-            final BlockSubtype mat = Blocks.getBlockSubtype(id >> 4, id & 15);
+            final BlockSubtype mat = BlockRegistry.getBlockSubtype(id >> 4, id & 15);
             if (mat == null)
             {
                 throw new IllegalArgumentException("Unknown itemSubtype: " + id + " (" + (id >> 4) + ":" + (id & 15) + ")");

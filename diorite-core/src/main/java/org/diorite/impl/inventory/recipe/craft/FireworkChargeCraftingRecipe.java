@@ -35,12 +35,12 @@ import org.diorite.inventory.GridInventory;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.recipe.craft.CraftingRecipe;
 import org.diorite.inventory.recipe.craft.CraftingRecipeCheckResult;
-import org.diorite.material.item.ItemType;
+import org.diorite.material.item.Items;
 
 public class FireworkChargeCraftingRecipe implements CraftingRecipe
 {
     protected final long priority;
-    protected final List<ItemStack> result = Collections.singletonList(new ItemStackImpl(ItemType.FIREWORK_CHARGE));
+    protected final List<ItemStack> result = Collections.singletonList(new ItemStackImpl(Items.FIREWORK_CHARGE));
 
     public FireworkChargeCraftingRecipe(final long priority)
     {

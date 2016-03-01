@@ -28,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.material.block.BlockSubtype;
-import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.world.Biome;
 import org.diorite.world.World;
 import org.diorite.world.chunk.Chunk;
@@ -263,7 +263,7 @@ public class ChunkSnapshotImpl implements ChunkSnapshot
         @Override
         public BlockSubtype getBlockType(final int x, final int y, final int z)
         {
-            return BlockType.AIR.asSubtype();
+            return Blocks.AIR.asSubtype();
         }
     }
 

@@ -35,20 +35,21 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.diorite.BlockLocation;
 import org.diorite.material.WoodType;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.world.chunk.ChunkPos;
 import org.diorite.world.generator.structures.Structure;
 
 public abstract class TreeStructure implements Structure
 {
-    protected static final Set<BlockType> FLOOR_MATS = Sets.newHashSet(BlockType.GRASS, BlockType.DIRT);
+    protected static final Set<BlockType> FLOOR_MATS = Sets.newHashSet(Blocks.GRASS, Blocks.DIRT);
 
     protected final BlockType logMat;
     protected final BlockType leavesMat;
 
     public TreeStructure(final WoodType type)
     {
-        this.logMat = BlockType.LOG;
-        this.leavesMat = BlockType.LEAVES;
+        this.logMat = Blocks.LOG;
+        this.leavesMat = Blocks.LEAVES;
 //        this(LogMat.getLog(type, RotateAxisMat.UP_DOWN), LeavesMat.getLeaves(type, false, true)); TODO
     }
 

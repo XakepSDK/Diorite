@@ -29,7 +29,7 @@ import java.util.Random;
 
 import org.diorite.BlockLocation;
 import org.diorite.material.block.BlockSubtype;
-import org.diorite.material.block.Blocks;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.world.chunk.ChunkPos;
 import org.diorite.world.generator.structures.Structure;
 
@@ -39,7 +39,7 @@ public class TestStructure implements Structure
     private final BlockSubtype[] values;
 
     {
-        final Collection<? extends BlockSubtype> blockTypes = Blocks.getAllBlockSubtypes();
+        final Collection<? extends BlockSubtype> blockTypes = BlockRegistry.getAllBlockSubtypes();
         this.values = blockTypes.toArray(new BlockSubtype[blockTypes.size()]);
     }
 

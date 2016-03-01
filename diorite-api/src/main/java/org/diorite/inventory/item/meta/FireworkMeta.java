@@ -28,9 +28,10 @@ import java.util.Collection;
 import java.util.List;
 
 import org.diorite.firework.FireworkEffect;
+import org.diorite.material.item.Items;
 
 /**
- * Represents a {@link org.diorite.material.item.ItemType#FIREWORKS} and its effects.
+ * Represents a {@link Items#FIREWORKS} and its effects.
  */
 public interface FireworkMeta extends ItemMeta
 {

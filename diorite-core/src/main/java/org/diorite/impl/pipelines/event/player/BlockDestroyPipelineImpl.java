@@ -32,7 +32,7 @@ import org.diorite.event.pipelines.event.player.BlockDestroyPipeline;
 import org.diorite.event.player.PlayerBlockDestroyEvent;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.material.block.BlockSubtype;
-import org.diorite.material.block.BlockType;
+import org.diorite.material.block.Blocks;
 import org.diorite.utils.pipeline.SimpleEventPipeline;
 import org.diorite.world.Block;
 
@@ -47,8 +47,8 @@ public class BlockDestroyPipelineImpl extends SimpleEventPipeline<PlayerBlockDes
             {
                 return;
             }
-            evt.getWorld().setBlock(evt.getLocation(), BlockType.AIR);
-            DioriteCore.getInstance().getPlayersManager().forEach(p -> p.getWorld().equals(evt.getWorld()), new PacketPlayClientboundBlockChange(evt.getLocation(), BlockType.AIR.asSubtype()));
+            evt.getWorld().setBlock(evt.getLocation(), Blocks.AIR);
+            DioriteCore.getInstance().getPlayersManager().forEach(p -> p.getWorld().equals(evt.getWorld()), new PacketPlayClientboundBlockChange(evt.getLocation(), Blocks.AIR.asSubtype()));
         });
 
         /*this.addAfter(EventPriority.NORMAL, "Diorite|AddToEq", (evt, pipeline) ->

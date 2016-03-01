@@ -39,7 +39,7 @@ import org.diorite.impl.entity.meta.entry.EntityMetadataStringEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataUUIDEntry;
 import org.diorite.impl.entity.meta.entry.EntityMetadataVector3FEntry;
 import org.diorite.BlockLocation;
-import org.diorite.material.block.Blocks;
+import org.diorite.material.block.BlockRegistry;
 
 public enum EntityMetadataType
 {
@@ -199,7 +199,7 @@ public enum EntityMetadataType
                 public EntityMetadataBlockTypeEntry read(final int index, final PacketDataSerializer data)
                 {
                     final int k = data.readVarInt();
-                    return new EntityMetadataBlockTypeEntry(index, Blocks.getBlockSubtypeByIdAndMeta(k));
+                    return new EntityMetadataBlockTypeEntry(index, BlockRegistry.getBlockSubtypeByIdAndMeta(k));
                 }
             };
 

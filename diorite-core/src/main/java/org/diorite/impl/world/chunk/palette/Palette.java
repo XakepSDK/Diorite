@@ -27,6 +27,7 @@ package org.diorite.impl.world.chunk.palette;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.Blocks;
 
 public interface Palette
@@ -53,10 +54,10 @@ public interface Palette
     default BlockSubtype get(final int sectionID)
     {
         final int data = this.getAsInt(sectionID);
-        final BlockSubtype mat = Blocks.getBlockSubtype(data >> 4, data & 15);
+        final BlockSubtype mat = BlockRegistry.getBlockSubtype(data >> 4, data & 15);
         if (mat == null)
         {
-            return BlockType.AIR.asSubtype();
+            return Blocks.AIR.asSubtype();
         }
         return mat;
     }

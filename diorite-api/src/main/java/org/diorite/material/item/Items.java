@@ -24,159 +24,355 @@
 
 package org.diorite.material.item;
 
-import java.util.Map;
-
-import org.apache.commons.lang3.StringUtils;
-
-import org.diorite.utils.SimpleEnum;
-import org.diorite.utils.collections.maps.CaseInsensitiveMap;
-import org.diorite.utils.math.DioriteMathUtils;
-
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-
 /**
- * Items register class
+ * Contains all vanilla items.
  */
 public final class Items
 {
-    private static final Int2ObjectMap<ItemType> byId       = new Int2ObjectOpenHashMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
-    private static final Map<String, ItemType>   byStringId = new CaseInsensitiveMap<>(300, SimpleEnum.SMALL_LOAD_FACTOR);
+    public static final ItemType STONE                    = ItemRegistry.getItemType("minecraft:stone");
+    public static final ItemType GRASS                    = ItemRegistry.getItemType("minecraft:grass");
+    public static final ItemType DIRT                     = ItemRegistry.getItemType("minecraft:dirt");
+    public static final ItemType COBBLESTONE              = ItemRegistry.getItemType("minecraft:cobblestone");
+    public static final ItemType PLANKS                   = ItemRegistry.getItemType("minecraft:planks");
+    public static final ItemType SAPLING                  = ItemRegistry.getItemType("minecraft:sapling");
+    public static final ItemType BEDROCK                  = ItemRegistry.getItemType("minecraft:bedrock");
+    public static final ItemType SAND                     = ItemRegistry.getItemType("minecraft:sand");
+    public static final ItemType GRAVEL                   = ItemRegistry.getItemType("minecraft:gravel");
+    public static final ItemType GOLD_ORE                 = ItemRegistry.getItemType("minecraft:gold_ore");
+    public static final ItemType IRON_ORE                 = ItemRegistry.getItemType("minecraft:iron_ore");
+    public static final ItemType COAL_ORE                 = ItemRegistry.getItemType("minecraft:coal_ore");
+    public static final ItemType LOG                      = ItemRegistry.getItemType("minecraft:log");
+    public static final ItemType LEAVES                   = ItemRegistry.getItemType("minecraft:leaves");
+    public static final ItemType SPONGE                   = ItemRegistry.getItemType("minecraft:sponge");
+    public static final ItemType GLASS                    = ItemRegistry.getItemType("minecraft:glass");
+    public static final ItemType LAPIS_ORE                = ItemRegistry.getItemType("minecraft:lapis_ore");
+    public static final ItemType LAPIS_BLOCK              = ItemRegistry.getItemType("minecraft:lapis_block");
+    public static final ItemType DISPENSER                = ItemRegistry.getItemType("minecraft:dispenser");
+    public static final ItemType SANDSTONE                = ItemRegistry.getItemType("minecraft:sandstone");
+    public static final ItemType NOTEBLOCK                = ItemRegistry.getItemType("minecraft:noteblock");
+    public static final ItemType POWERED_RAIL             = ItemRegistry.getItemType("minecraft:golden_rail");
+    public static final ItemType DETECTOR_RAIL            = ItemRegistry.getItemType("minecraft:detector_rail");
+    public static final ItemType PISTON_STICKY            = ItemRegistry.getItemType("minecraft:sticky_piston");
+    public static final ItemType COBWEB                   = ItemRegistry.getItemType("minecraft:web");
+    public static final ItemType TALL_GRASS               = ItemRegistry.getItemType("minecraft:tallgrass");
+    public static final ItemType DEAD_BUSH                = ItemRegistry.getItemType("minecraft:deadbush");
+    public static final ItemType PISTON                   = ItemRegistry.getItemType("minecraft:piston");
+    public static final ItemType WOOL                     = ItemRegistry.getItemType("minecraft:wool");
+    public static final ItemType DANDELION                = ItemRegistry.getItemType("minecraft:yellow_flower");
+    public static final ItemType FLOWERS                  = ItemRegistry.getItemType("minecraft:red_flower");
+    public static final ItemType BROWN_MUSHROOM           = ItemRegistry.getItemType("minecraft:brown_mushroom");
+    public static final ItemType RED_MUSHROOM             = ItemRegistry.getItemType("minecraft:red_mushroom");
+    public static final ItemType GOLD_BLOCK               = ItemRegistry.getItemType("minecraft:gold_block");
+    public static final ItemType IRON_BLOCK               = ItemRegistry.getItemType("minecraft:iron_block");
+    public static final ItemType STONE_SLAB               = ItemRegistry.getItemType("minecraft:stone_slab");
+    public static final ItemType BRICK_BLOCK              = ItemRegistry.getItemType("minecraft:brick_block");
+    public static final ItemType TNT                      = ItemRegistry.getItemType("minecraft:tnt");
+    public static final ItemType BOOKSHELF                = ItemRegistry.getItemType("minecraft:bookshelf");
+    public static final ItemType MOSSY_COBBLESTONE        = ItemRegistry.getItemType("minecraft:mossy_cobblestone");
+    public static final ItemType OBSIDIAN                 = ItemRegistry.getItemType("minecraft:obsidian");
+    public static final ItemType MOB_SPAWNER              = ItemRegistry.getItemType("minecraft:mob_spawner");
+    public static final ItemType OAK_STAIRS               = ItemRegistry.getItemType("minecraft:oak_stairs");
+    public static final ItemType CHEST                    = ItemRegistry.getItemType("minecraft:chest");
+    public static final ItemType DIAMOND_ORE              = ItemRegistry.getItemType("minecraft:diamond_ore");
+    public static final ItemType DIAMOND_BLOCK            = ItemRegistry.getItemType("minecraft:diamond_block");
+    public static final ItemType CRAFTING_TABLE           = ItemRegistry.getItemType("minecraft:crafting_table");
+    public static final ItemType FARMLAND                 = ItemRegistry.getItemType("minecraft:farmland");
+    public static final ItemType FURNACE                  = ItemRegistry.getItemType("minecraft:furnace");
+    public static final ItemType BURNING_FURNACE          = ItemRegistry.getItemType("minecraft:lit_furnace");
+    public static final ItemType LADDER                   = ItemRegistry.getItemType("minecraft:ladder");
+    public static final ItemType RAIL                     = ItemRegistry.getItemType("minecraft:rail");
+    public static final ItemType COBBLESTONE_STAIRS       = ItemRegistry.getItemType("minecraft:stone_stairs");
+    public static final ItemType LEVER                    = ItemRegistry.getItemType("minecraft:lever");
+    public static final ItemType STONE_PRESSURE_PLATE     = ItemRegistry.getItemType("minecraft:stone_pressure_plate");
+    public static final ItemType WOODEN_PRESSURE_PLATE    = ItemRegistry.getItemType("minecraft:wooden_pressure_plate");
+    public static final ItemType REDSTONE_ORE             = ItemRegistry.getItemType("minecraft:redstone_ore");
+    public static final ItemType STONE_BUTTON             = ItemRegistry.getItemType("minecraft:stone_button");
+    public static final ItemType SNOW_LAYER_1             = ItemRegistry.getItemType("minecraft:snow_layer");
+    public static final ItemType ICE                      = ItemRegistry.getItemType("minecraft:ice");
+    public static final ItemType SNOW_BLOCK               = ItemRegistry.getItemType("minecraft:snow");
+    public static final ItemType CACTUS                   = ItemRegistry.getItemType("minecraft:cactus");
+    public static final ItemType CLAY_BLOCK               = ItemRegistry.getItemType("minecraft:clay");
+    public static final ItemType JUKEBOX                  = ItemRegistry.getItemType("minecraft:jukebox");
+    public static final ItemType OAK_FENCE                = ItemRegistry.getItemType("minecraft:fence");
+    public static final ItemType PUMPKIN                  = ItemRegistry.getItemType("minecraft:pumpkin");
+    public static final ItemType NETHERRACK               = ItemRegistry.getItemType("minecraft:netherrack");
+    public static final ItemType SOUL_SAND                = ItemRegistry.getItemType("minecraft:soul_sand");
+    public static final ItemType GLOWSTONE                = ItemRegistry.getItemType("minecraft:glowstone");
+    public static final ItemType NETHER_PORTAL            = ItemRegistry.getItemType("minecraft:portal");
+    public static final ItemType PUMPKIN_LANTERN          = ItemRegistry.getItemType("minecraft:lit_pumpkin");
+    public static final ItemType STAINED_GLASS            = ItemRegistry.getItemType("minecraft:stained_glass");
+    public static final ItemType WOODEN_TRAPDOOR          = ItemRegistry.getItemType("minecraft:trapdoor");
+    public static final ItemType MONSTER_EGG_TRAP         = ItemRegistry.getItemType("minecraft:monster_egg");
+    public static final ItemType STONE_BRICK              = ItemRegistry.getItemType("minecraft:stonebrick");
+    public static final ItemType BROWN_MUSHROOM_BLOCK     = ItemRegistry.getItemType("minecraft:brown_mushroom_block");
+    public static final ItemType RED_MUSHROOM_BLOCK       = ItemRegistry.getItemType("minecraft:red_mushroom_block");
+    public static final ItemType IRON_BARS                = ItemRegistry.getItemType("minecraft:iron_bars");
+    public static final ItemType GLASS_PANE               = ItemRegistry.getItemType("minecraft:glass_pane");
+    public static final ItemType MELON_BLOCK              = ItemRegistry.getItemType("minecraft:melon_block");
+    public static final ItemType VINE                     = ItemRegistry.getItemType("minecraft:vine");
+    public static final ItemType OAK_FENCE_GATE           = ItemRegistry.getItemType("minecraft:fence_gate");
+    public static final ItemType BRICK_STAIRS             = ItemRegistry.getItemType("minecraft:brick_stairs");
+    public static final ItemType STONE_BRICK_STAIRS       = ItemRegistry.getItemType("minecraft:stone_brick_stairs");
+    public static final ItemType MYCELIUM                 = ItemRegistry.getItemType("minecraft:mycelium");
+    public static final ItemType WATER_LILY               = ItemRegistry.getItemType("minecraft:waterlily");
+    public static final ItemType NETHER_BRICK             = ItemRegistry.getItemType("minecraft:nether_brick");
+    public static final ItemType NETHER_BRICK_FENCE       = ItemRegistry.getItemType("minecraft:nether_brick_fence");
+    public static final ItemType NETHER_BRICK_STAIRS      = ItemRegistry.getItemType("minecraft:nether_brick_stairs");
+    public static final ItemType ENCHANTING_TABLE         = ItemRegistry.getItemType("minecraft:enchanting_table");
+    public static final ItemType END_PORTAL_FRAME         = ItemRegistry.getItemType("minecraft:end_portal_frame");
+    public static final ItemType END_STONE                = ItemRegistry.getItemType("minecraft:end_stone");
+    public static final ItemType DRAGON_EGG               = ItemRegistry.getItemType("minecraft:dragon_egg");
+    public static final ItemType REDSTONE_LAMP_OFF        = ItemRegistry.getItemType("minecraft:redstone_lamp");
+    public static final ItemType WOODEN_SLAB              = ItemRegistry.getItemType("minecraft:wooden_slab");
+    public static final ItemType COCOA_NORTH_0            = ItemRegistry.getItemType("minecraft:cocoa");
+    public static final ItemType SANDSTONE_STAIRS         = ItemRegistry.getItemType("minecraft:sandstone_stairs");
+    public static final ItemType EMERALD_ORE              = ItemRegistry.getItemType("minecraft:emerald_ore");
+    public static final ItemType ENDER_CHEST              = ItemRegistry.getItemType("minecraft:ender_chest");
+    public static final ItemType TRIPWIRE_HOOK            = ItemRegistry.getItemType("minecraft:tripwire_hook");
+    public static final ItemType EMERALD_BLOCK            = ItemRegistry.getItemType("minecraft:emerald_block");
+    public static final ItemType SPRUCE_STAIRS            = ItemRegistry.getItemType("minecraft:spruce_stairs");
+    public static final ItemType BIRCH_STAIRS             = ItemRegistry.getItemType("minecraft:birch_stairs");
+    public static final ItemType JUNGLE_STAIRS            = ItemRegistry.getItemType("minecraft:jungle_stairs");
+    public static final ItemType COMMAND_BLOCK            = ItemRegistry.getItemType("minecraft:command_block");
+    public static final ItemType BEACON                   = ItemRegistry.getItemType("minecraft:beacon");
+    public static final ItemType COBBLESTONE_WALL         = ItemRegistry.getItemType("minecraft:cobblestone_wall");
+    public static final ItemType WOODEN_BUTTON            = ItemRegistry.getItemType("minecraft:wooden_button");
+    public static final ItemType ANVIL                    = ItemRegistry.getItemType("minecraft:anvil");
+    public static final ItemType TRAPPED_CHEST            = ItemRegistry.getItemType("minecraft:trapped_chest");
+    public static final ItemType GOLDEN_PRESSURE_PLATE    = ItemRegistry.getItemType("minecraft:light_weighted_pressure_plate");
+    public static final ItemType IRON_PRESSURE_PLATE      = ItemRegistry.getItemType("minecraft:heavy_weighted_pressure_plate");
+    public static final ItemType DAYLIGHT_DETECTOR        = ItemRegistry.getItemType("minecraft:daylight_detector");
+    public static final ItemType REDSTONE_BLOCK           = ItemRegistry.getItemType("minecraft:redstone_block");
+    public static final ItemType QUARTZ_ORE               = ItemRegistry.getItemType("minecraft:quartz_ore");
+    public static final ItemType HOPPER                   = ItemRegistry.getItemType("minecraft:hopper");
+    public static final ItemType QUARTZ_BLOCK             = ItemRegistry.getItemType("minecraft:quartz_block");
+    public static final ItemType QUARTZ_STAIRS            = ItemRegistry.getItemType("minecraft:quartz_brick_stairs");
+    public static final ItemType ACTIVATOR_RAIL           = ItemRegistry.getItemType("minecraft:activator_rail");
+    public static final ItemType DROPPER                  = ItemRegistry.getItemType("minecraft:dropper");
+    public static final ItemType STAINED_HARDENED_CLAY    = ItemRegistry.getItemType("minecraft:stained_hardened_clay");
+    public static final ItemType STAINED_GLASS_PANE       = ItemRegistry.getItemType("minecraft:stained_glass_pane");
+    public static final ItemType LEAVES2                  = ItemRegistry.getItemType("minecraft:leaves2");
+    public static final ItemType LOG2                     = ItemRegistry.getItemType("minecraft:log2");
+    public static final ItemType ACACIA_STAIRS            = ItemRegistry.getItemType("minecraft:acacia_stairs");
+    public static final ItemType DARK_OAK_STAIRS          = ItemRegistry.getItemType("minecraft:dark_oak_stairs");
+    public static final ItemType SLIME_BLOCK              = ItemRegistry.getItemType("minecraft:slime");
+    public static final ItemType BARRIER                  = ItemRegistry.getItemType("minecraft:barrier");
+    public static final ItemType IRON_TRAPDOOR            = ItemRegistry.getItemType("minecraft:iron_trapdoor");
+    public static final ItemType PRISMARINE               = ItemRegistry.getItemType("minecraft:prismarine");
+    public static final ItemType SEA_LANTERN              = ItemRegistry.getItemType("minecraft:sea_lantern");
+    public static final ItemType HAY_BLOCK                = ItemRegistry.getItemType("minecraft:hay_block");
+    public static final ItemType CARPET                   = ItemRegistry.getItemType("minecraft:carpet");
+    public static final ItemType HARDENED_CLAY            = ItemRegistry.getItemType("minecraft:hardened_clay");
+    public static final ItemType COAL_BLOCK               = ItemRegistry.getItemType("minecraft:coal_block");
+    public static final ItemType PACKED_ICE               = ItemRegistry.getItemType("minecraft:packet_ice");
+    public static final ItemType DOUBLE_FLOWERS           = ItemRegistry.getItemType("minecraft:double_plant");
+    public static final ItemType RED_SANDSTONE            = ItemRegistry.getItemType("minecraft:red_sandstone");
+    public static final ItemType RED_SANDSTONE_STAIRS     = ItemRegistry.getItemType("minecraft:red_sandstone_stairs");
+    public static final ItemType STONE_SLAB2              = ItemRegistry.getItemType("minecraft:stone_slab2");
+    public static final ItemType SPRUCE_FENCE_GATE        = ItemRegistry.getItemType("minecraft:spruce_fence_gate");
+    public static final ItemType BIRCH_FENCE_GATE         = ItemRegistry.getItemType("minecraft:brich_fence_gate");
+    public static final ItemType JUNGLE_FENCE_GATE        = ItemRegistry.getItemType("minecraft:jungle_fence_gate");
+    public static final ItemType DARK_OAK_FENCE_GATE      = ItemRegistry.getItemType("minecraft:fark_oak_fence_gate");
+    public static final ItemType ACACIA_FENCE_GATE        = ItemRegistry.getItemType("minecraft:acacia_fence_gate");
+    public static final ItemType SPRUCE_FENCE             = ItemRegistry.getItemType("minecraft:spruce_fence");
+    public static final ItemType BIRCH_FENCE              = ItemRegistry.getItemType("minecraft:birch_fence");
+    public static final ItemType JUNGLE_FENCE             = ItemRegistry.getItemType("minecraft:jungle_fence");
+    public static final ItemType DARK_OAK_FENCE           = ItemRegistry.getItemType("minecraft:dark_oak_fence");
+    public static final ItemType ACACIA_FENCE             = ItemRegistry.getItemType("minecraft:acacia_fence");
+    public static final ItemType IRON_SHOVEL              = ItemRegistry.getItemType("minecraft:iron_Shovel");
+    public static final ItemType IRON_PICKAXE             = ItemRegistry.getItemType("minecraft:iron_Pickaxe");
+    public static final ItemType IRON_AXE                 = ItemRegistry.getItemType("minecraft:iron_Axe");
+    public static final ItemType FLINT_AND_STEEL          = ItemRegistry.getItemType("minecraft:flint_and_steel");
+    public static final ItemType APPLE                    = ItemRegistry.getItemType("minecraft:apple");
+    public static final ItemType BOW                      = ItemRegistry.getItemType("minecraft:bow");
+    public static final ItemType ARROW                    = ItemRegistry.getItemType("minecraft:arrow");
+    public static final ItemType COAL                     = ItemRegistry.getItemType("minecraft:coal");
+    public static final ItemType DIAMOND                  = ItemRegistry.getItemType("minecraft:diamond");
+    public static final ItemType IRON_INGOT               = ItemRegistry.getItemType("minecraft:iron_ingot");
+    public static final ItemType GOLD_INGOT               = ItemRegistry.getItemType("minecraft:gold_ingot");
+    public static final ItemType IRON_SWORD               = ItemRegistry.getItemType("minecraft:iron_Sword");
+    public static final ItemType WOODEN_SWORD             = ItemRegistry.getItemType("minecraft:wooden_Sword");
+    public static final ItemType WOODEN_SHOVEL            = ItemRegistry.getItemType("minecraft:wooden_Shovel");
+    public static final ItemType WOODEN_PICKAXE           = ItemRegistry.getItemType("minecraft:wooden_Pickaxe");
+    public static final ItemType WOODEN_AXE               = ItemRegistry.getItemType("minecraft:wooden_axe");
+    public static final ItemType STONE_SWORD              = ItemRegistry.getItemType("minecraft:stone_Sword");
+    public static final ItemType STONE_SHOVEL             = ItemRegistry.getItemType("minecraft:stone_Shovel");
+    public static final ItemType STONE_PICKAXE            = ItemRegistry.getItemType("minecraft:stone_Pickaxe");
+    public static final ItemType STONE_AXE                = ItemRegistry.getItemType("minecraft:stone_Axe");
+    public static final ItemType DIAMOND_SWORD            = ItemRegistry.getItemType("minecraft:diamond_Sword");
+    public static final ItemType DIAMOND_SHOVEL           = ItemRegistry.getItemType("minecraft:diamond_Shovel");
+    public static final ItemType DIAMOND_PICKAXE          = ItemRegistry.getItemType("minecraft:diamond_Pickaxe");
+    public static final ItemType DIAMOND_AXE              = ItemRegistry.getItemType("minecraft:diamond_Axe");
+    public static final ItemType STICK                    = ItemRegistry.getItemType("minecraft:stick");
+    public static final ItemType BOWL                     = ItemRegistry.getItemType("minecraft:bowl");
+    public static final ItemType MUSHROOM_STEW            = ItemRegistry.getItemType("minecraft:mushroom_stew");
+    public static final ItemType GOLDEN_SWORD             = ItemRegistry.getItemType("minecraft:golden_Sword");
+    public static final ItemType GOLDEN_SHOVEL            = ItemRegistry.getItemType("minecraft:golden_Shovel");
+    public static final ItemType GOLDEN_PICKAXE           = ItemRegistry.getItemType("minecraft:golden_Pickaxe");
+    public static final ItemType GOLDEN_AXE               = ItemRegistry.getItemType("minecraft:golden_Axe");
+    public static final ItemType STRING                   = ItemRegistry.getItemType("minecraft:string");
+    public static final ItemType FEATHER                  = ItemRegistry.getItemType("minecraft:feather");
+    public static final ItemType GUNPOWDER                = ItemRegistry.getItemType("minecraft:gunpowder");
+    public static final ItemType WOODEN_HOE               = ItemRegistry.getItemType("minecraft:wooden_Hoe");
+    public static final ItemType STONE_HOE                = ItemRegistry.getItemType("minecraft:stone_Hoe");
+    public static final ItemType IRON_HOE                 = ItemRegistry.getItemType("minecraft:iron_Hoe");
+    public static final ItemType DIAMOND_HOE              = ItemRegistry.getItemType("minecraft:diamond_Hoe");
+    public static final ItemType GOLDEN_HOE               = ItemRegistry.getItemType("minecraft:golden_Hoe");
+    public static final ItemType WHEAT_SEEDS              = ItemRegistry.getItemType("minecraft:wheat_seeds");
+    public static final ItemType WHEAT                    = ItemRegistry.getItemType("minecraft:wheat");
+    public static final ItemType BREAD                    = ItemRegistry.getItemType("minecraft:bread");
+    public static final ItemType LEATHER_HELMET           = ItemRegistry.getItemType("minecraft:leather_helmet");
+    public static final ItemType LEATHER_CHESTPLATE       = ItemRegistry.getItemType("minecraft:leather_chestplate");
+    public static final ItemType LEATHER_LEGGINGS         = ItemRegistry.getItemType("minecraft:leather_leggings");
+    public static final ItemType LEATHER_BOOTS            = ItemRegistry.getItemType("minecraft:leather_boots");
+    public static final ItemType CHAINMAIL_HELMET         = ItemRegistry.getItemType("minecraft:chainmail_helmet");
+    public static final ItemType CHAINMAIL_CHESTPLATE     = ItemRegistry.getItemType("minecraft:chainmail_chestplate");
+    public static final ItemType CHAINMAIL_LEGGINGS       = ItemRegistry.getItemType("minecraft:chainmail_leggings");
+    public static final ItemType CHAINMAIL_BOOTS          = ItemRegistry.getItemType("minecraft:chainmail_boots");
+    public static final ItemType IRON_HELMET              = ItemRegistry.getItemType("minecraft:iron_helmet");
+    public static final ItemType IRON_CHESTPLATE          = ItemRegistry.getItemType("minecraft:iron_chestplate");
+    public static final ItemType IRON_LEGGINGS            = ItemRegistry.getItemType("minecraft:iron_leggings");
+    public static final ItemType IRON_BOOTS               = ItemRegistry.getItemType("minecraft:iron_boots");
+    public static final ItemType DIAMOND_HELMET           = ItemRegistry.getItemType("minecraft:diamond_helmet");
+    public static final ItemType DIAMOND_CHESTPLATE       = ItemRegistry.getItemType("minecraft:diamond_chestplate");
+    public static final ItemType DIAMOND_LEGGINGS         = ItemRegistry.getItemType("minecraft:diamond_leggings");
+    public static final ItemType DIAMOND_BOOTS            = ItemRegistry.getItemType("minecraft:diamond_boots");
+    public static final ItemType GOLD_HELMET              = ItemRegistry.getItemType("minecraft:gold_helmet");
+    public static final ItemType GOLD_CHESTPLATE          = ItemRegistry.getItemType("minecraft:gold_chestplate");
+    public static final ItemType GOLD_LEGGINGS            = ItemRegistry.getItemType("minecraft:gold_leggings");
+    public static final ItemType GOLD_BOOTS               = ItemRegistry.getItemType("minecraft:gold_boots");
+    public static final ItemType FLINT                    = ItemRegistry.getItemType("minecraft:flint");
+    public static final ItemType PORKCHOP                 = ItemRegistry.getItemType("minecraft:porkchop");
+    public static final ItemType COOKED_PORKCHOP          = ItemRegistry.getItemType("minecraft:cooked_porkchop");
+    public static final ItemType PAINTING                 = ItemRegistry.getItemType("minecraft:painting");
+    public static final ItemType GOLDEN_APPLE             = ItemRegistry.getItemType("minecraft:golden_apple");
+    public static final ItemType SIGN                     = ItemRegistry.getItemType("minecraft:sign");
+    public static final ItemType OAK_DOOR_ITEM            = ItemRegistry.getItemType("minecraft:wooden_door");
+    public static final ItemType BUCKET                   = ItemRegistry.getItemType("minecraft:bucket");
+    public static final ItemType WATER_BUCKET             = ItemRegistry.getItemType("minecraft:water_bucket");
+    public static final ItemType LAVA_BUCKET              = ItemRegistry.getItemType("minecraft:lava_bucket");
+    public static final ItemType MINECART                 = ItemRegistry.getItemType("minecraft:minecraft");
+    public static final ItemType SADDLE                   = ItemRegistry.getItemType("minecraft:saddle");
+    public static final ItemType IRON_DOOR_ITEM           = ItemRegistry.getItemType("minecraft:iron_door");
+    public static final ItemType REDSTONE                 = ItemRegistry.getItemType("minecraft:redstone");
+    public static final ItemType SNOWBALL                 = ItemRegistry.getItemType("minecraft:snowball");
+    public static final ItemType OAK_BOAT                 = ItemRegistry.getItemType("minecraft:boat");
+    public static final ItemType LEATHER                  = ItemRegistry.getItemType("minecraft:leather");
+    public static final ItemType MILK_BUCKET              = ItemRegistry.getItemType("minecraft:milk_bucket");
+    public static final ItemType BRICK                    = ItemRegistry.getItemType("minecraft:brick");
+    public static final ItemType CLAY_BALL                = ItemRegistry.getItemType("minecraft:clay_ball");
+    public static final ItemType REEDS                    = ItemRegistry.getItemType("minecraft:reeds");
+    public static final ItemType PAPER                    = ItemRegistry.getItemType("minecraft:paper");
+    public static final ItemType BOOK                     = ItemRegistry.getItemType("minecraft:book");
+    public static final ItemType SLIMEBALL                = ItemRegistry.getItemType("minecraft:slime_ball");
+    public static final ItemType CHEST_MINECART           = ItemRegistry.getItemType("minecraft:chest_minecart");
+    public static final ItemType FURNACE_MINECART         = ItemRegistry.getItemType("minecraft:furnace_minecart");
+    public static final ItemType EGG                      = ItemRegistry.getItemType("minecraft:egg");
+    public static final ItemType COMPASS                  = ItemRegistry.getItemType("minecraft:compass");
+    public static final ItemType FISHING_ROD              = ItemRegistry.getItemType("minecraft:fishing_rod");
+    public static final ItemType CLOCK                    = ItemRegistry.getItemType("minecraft:clock");
+    public static final ItemType GLOWSTONE_DUST           = ItemRegistry.getItemType("minecraft:glowstone_dust");
+    public static final ItemType FISH                     = ItemRegistry.getItemType("minecraft:fish");
+    public static final ItemType COOKED_FISH              = ItemRegistry.getItemType("minecraft:cooked_fish");
+    public static final ItemType DYE                      = ItemRegistry.getItemType("minecraft:dye");
+    public static final ItemType BONE                     = ItemRegistry.getItemType("minecraft:bone");
+    public static final ItemType SUGAR                    = ItemRegistry.getItemType("minecraft:sugar");
+    public static final ItemType CAKE                     = ItemRegistry.getItemType("minecraft:cake");
+    public static final ItemType BED                      = ItemRegistry.getItemType("minecraft:bed");
+    public static final ItemType REDSTONE_REPEATER_ITEM   = ItemRegistry.getItemType("minecraft:repeater");
+    public static final ItemType COOKIE                   = ItemRegistry.getItemType("minecraft:cookie");
+    public static final ItemType FILLED_MAP               = ItemRegistry.getItemType("minecraft:filled_map");
+    public static final ItemType SHEARS                   = ItemRegistry.getItemType("minecraft:shears");
+    public static final ItemType MELON                    = ItemRegistry.getItemType("minecraft:melon");
+    public static final ItemType PUMPKIN_SEEDS            = ItemRegistry.getItemType("minecraft:pumpkin_seeds");
+    public static final ItemType MELON_SEEDS              = ItemRegistry.getItemType("minecraft:melon_seeds");
+    public static final ItemType BEEF                     = ItemRegistry.getItemType("minecraft:beef");
+    public static final ItemType COOKED_BEEF              = ItemRegistry.getItemType("minecraft:cooked_beef");
+    public static final ItemType CHICKEN                  = ItemRegistry.getItemType("minecraft:chicked");
+    public static final ItemType COOKED_CHICKEN           = ItemRegistry.getItemType("minecraft:cooked_chicken");
+    public static final ItemType ROTTEN_FLESH             = ItemRegistry.getItemType("minecraft:rotten_flesh");
+    public static final ItemType ENDER_PEARL              = ItemRegistry.getItemType("minecraft:ender_pearl");
+    public static final ItemType BLAZE_ROD                = ItemRegistry.getItemType("minecraft:blaze_rod");
+    public static final ItemType GHAST_TEAR               = ItemRegistry.getItemType("minecraft:ghast_tear");
+    public static final ItemType GOLD_NUGGET              = ItemRegistry.getItemType("minecraft:gold_nugget");
+    public static final ItemType NETHER_WART              = ItemRegistry.getItemType("minecraft:nether_wart");
+    public static final ItemType POTION                   = ItemRegistry.getItemType("minecraft:potion");
+    public static final ItemType GLASS_BOTTLE             = ItemRegistry.getItemType("minecraft:glass_bottle");
+    public static final ItemType SPIDER_EYE               = ItemRegistry.getItemType("minecraft:spider_eye");
+    public static final ItemType FERMENTED_SPIDER_EYE     = ItemRegistry.getItemType("minecraft:fermented_spider_eye");
+    public static final ItemType BLAZE_POWDER             = ItemRegistry.getItemType("minecraft:blaze_powder");
+    public static final ItemType MAGMA_CREAM              = ItemRegistry.getItemType("minecraft:magma_cream");
+    public static final ItemType BREWING_STAND            = ItemRegistry.getItemType("minecraft:brewing_stand");
+    public static final ItemType CAULDRON                 = ItemRegistry.getItemType("minecraft:cauldron");
+    public static final ItemType ENDER_EYE                = ItemRegistry.getItemType("minecraft:ender_eye");
+    public static final ItemType SPECKLED_MELON           = ItemRegistry.getItemType("minecraft:speckled_melon");
+    public static final ItemType SPAWN_EGG_CREEPER        = ItemRegistry.getItemType("minecraft:spawn_egg");
+    public static final ItemType EXPERIENCE_BOTTLE        = ItemRegistry.getItemType("minecraft:experience_bottle");
+    public static final ItemType FIRE_CHARGE              = ItemRegistry.getItemType("minecraft:fire_charge");
+    public static final ItemType WRITABLE_BOOK            = ItemRegistry.getItemType("minecraft:writable_book");
+    public static final ItemType WRITTEN_BOOK             = ItemRegistry.getItemType("minecraft:written_book");
+    public static final ItemType EMERALD                  = ItemRegistry.getItemType("minecraft:emerald");
+    public static final ItemType ITEM_FRAME               = ItemRegistry.getItemType("minecraft:item_frame");
+    public static final ItemType FLOWER_POT               = ItemRegistry.getItemType("minecraft:flower_pot");
+    public static final ItemType CARROT                   = ItemRegistry.getItemType("minecraft:carrot");
+    public static final ItemType POTATO                   = ItemRegistry.getItemType("minecraft:potato");
+    public static final ItemType BAKED_POTATO             = ItemRegistry.getItemType("minecraft:baked_potato");
+    public static final ItemType POISONOUS_POTATO         = ItemRegistry.getItemType("minecraft:poisounous_potato");
+    public static final ItemType MAP                      = ItemRegistry.getItemType("minecraft:map");
+    public static final ItemType GOLDEN_CARROT            = ItemRegistry.getItemType("minecraft:golden_carrot");
+    public static final ItemType SKULL                    = ItemRegistry.getItemType("minecraft:skull");
+    public static final ItemType CARROT_ON_A_STICK        = ItemRegistry.getItemType("minecraft:carrot_on_a_stick");
+    public static final ItemType NETHER_STAR              = ItemRegistry.getItemType("minecraft:nether_star");
+    public static final ItemType PUMPKIN_PIE              = ItemRegistry.getItemType("minecraft:pumpkin_pie");
+    public static final ItemType FIREWORKS                = ItemRegistry.getItemType("minecraft:fireworks");
+    public static final ItemType FIREWORK_CHARGE          = ItemRegistry.getItemType("minecraft:firework_charge");
+    public static final ItemType ENCHANTED_BOOK           = ItemRegistry.getItemType("minecraft:enchanted_book");
+    public static final ItemType REDSTONE_COMPARATOR_ITEM = ItemRegistry.getItemType("minecraft:comparator");
+    public static final ItemType NETHER_BRICK_ITEM        = ItemRegistry.getItemType("minecraft:netherbrick");
+    public static final ItemType QUARTZ                   = ItemRegistry.getItemType("minecraft:quartz");
+    public static final ItemType TNT_MINECART             = ItemRegistry.getItemType("minecraft:tnt_minecart");
+    public static final ItemType HOPPER_MINECART          = ItemRegistry.getItemType("minecraft:hopper_minecart");
+    public static final ItemType PRISMARINE_SHARD         = ItemRegistry.getItemType("minecraft:prismarine_shard");
+    public static final ItemType PRISMARINE_CRYSTALS      = ItemRegistry.getItemType("minecraft:prismarine_crystals");
+    public static final ItemType RABBIT                   = ItemRegistry.getItemType("minecraft:rabbit");
+    public static final ItemType COOKED_RABBIT            = ItemRegistry.getItemType("minecraft:cooked_rabbit");
+    public static final ItemType RABBIT_STEW              = ItemRegistry.getItemType("minecraft:rabbit_stew");
+    public static final ItemType RABBIT_FOOT              = ItemRegistry.getItemType("minecraft:rabbit_foot");
+    public static final ItemType RABBIT_HIDE              = ItemRegistry.getItemType("minecraft:rabbit_hide");
+    public static final ItemType ARMOR_STAND              = ItemRegistry.getItemType("minecraft:armor_stand");
+    public static final ItemType IRON_HORSE_ARMOR         = ItemRegistry.getItemType("minecraft:iron_horse_armor");
+    public static final ItemType GOLDEN_HORSE_ARMOR       = ItemRegistry.getItemType("minecraft:golden_horse_armor");
+    public static final ItemType DIAMOND_HORSE_ARMOR      = ItemRegistry.getItemType("minecraft:diamond_horse_armor");
+    public static final ItemType LEAD                     = ItemRegistry.getItemType("minecraft:lead");
+    public static final ItemType NAME_TAG                 = ItemRegistry.getItemType("minecraft:name_tag");
+    public static final ItemType COMMAND_BLOCK_MINECART   = ItemRegistry.getItemType("minecraft:command_block_minecart");
+    public static final ItemType MUTTON                   = ItemRegistry.getItemType("minecraft:mutton");
+    public static final ItemType COOKED_MUTTON            = ItemRegistry.getItemType("minecraft:cooked_mutton");
+    public static final ItemType BANNER                   = ItemRegistry.getItemType("minecraft:banner");
+    public static final ItemType SPRUCE_DOOR_ITEM         = ItemRegistry.getItemType("minecraft:spruce_door");
+    public static final ItemType BIRCH_DOOR_ITEM          = ItemRegistry.getItemType("minecraft:birch_door");
+    public static final ItemType JUNGLE_DOOR_ITEM         = ItemRegistry.getItemType("minecraft:jungle_door");
+    public static final ItemType ACACIA_DOOR_ITEM         = ItemRegistry.getItemType("minecraft:acacia_door");
+    public static final ItemType DARK_OAK_DOOR_ITEM       = ItemRegistry.getItemType("minecraft:dark_oak_door");
+    public static final ItemType SPRUCE_BOAT              = ItemRegistry.getItemType("minecraft:spruce_boat");
+    public static final ItemType BIRCH_BOAT               = ItemRegistry.getItemType("minecraft:birch_boat");
+    public static final ItemType JUNGLE_BOAT              = ItemRegistry.getItemType("minecraft:jungle_boat");
+    public static final ItemType ACACIA_BOAT              = ItemRegistry.getItemType("minecraft:acacia_boat");
+    public static final ItemType DARK_OAK_BOAT            = ItemRegistry.getItemType("minecraft:dark_oak_boat");
+    public static final ItemType RECORD_13                = ItemRegistry.getItemType("minecraft:record_13");
+    public static final ItemType RECORD_CAT               = ItemRegistry.getItemType("minecraft:record_cat");
+    public static final ItemType RECORD_BLOCKS            = ItemRegistry.getItemType("minecraft:record_blocks");
+    public static final ItemType RECORD_CHRIP             = ItemRegistry.getItemType("minecraft:record_chrip");
+    public static final ItemType RECORD_FAR               = ItemRegistry.getItemType("minecraft:record_far");
+    public static final ItemType RECORD_MALL              = ItemRegistry.getItemType("minecraft:record_mall");
+    public static final ItemType RECORD_MELLOHI           = ItemRegistry.getItemType("minecraft:record_mellohi");
+    public static final ItemType RECORD_STAL              = ItemRegistry.getItemType("minecraft:record_stal");
+    public static final ItemType RECORD_STRAD             = ItemRegistry.getItemType("minecraft:record_strad");
+    public static final ItemType RECORD_WARD              = ItemRegistry.getItemType("minecraft:record_ward");
+    public static final ItemType RECORD_11                = ItemRegistry.getItemType("minecraft:record_11");
+    public static final ItemType RECORD_WAIT              = ItemRegistry.getItemType("minecraft:record_wait");
 
     private Items()
     {
-    }
-
-    public static ItemSubtype getItemSubtype(final int id, final int meta)
-    {
-        final ItemType itemType = byId.get(id);
-        return (itemType == null) ? null : itemType.getSubtype(meta);
-    }
-
-    public static ItemSubtype getItemSubtype(final int id, final String meta)
-    {
-        final ItemType itemType = byId.get(id);
-        return (itemType == null) ? null : itemType.getSubtype(meta);
-    }
-
-    public static ItemType getItemType(final int id)
-    {
-        return byId.get(id);
-    }
-
-    public static ItemType getItemType(final String id)
-    {
-        return byStringId.get(id);
-    }
-
-    public static ItemSubtype getItemSubtype(final int id)
-    {
-        final ItemType itemType = byId.get(id);
-        return (itemType == null) ? null : itemType.asSubtype();
-    }
-
-    public static ItemSubtype getItemSubtype(final String id)
-    {
-        final ItemType itemType = byStringId.get(id);
-        return (itemType == null) ? null : itemType.asSubtype();
-    }
-
-    public static ItemSubtype getItemSubtype(final String id, final int meta)
-    {
-        final ItemType itemType = byStringId.get(id);
-        return (itemType == null) ? null : itemType.getSubtype(meta);
-    }
-
-    public static ItemSubtype getItemSubtype(final String id, final String meta)
-    {
-        final ItemType itemType = byStringId.get(id);
-        return (itemType == null) ? null : itemType.getSubtype(meta);
-    }
-
-    public static void registerItem(final ItemType itemType)
-    {
-        byId.put(itemType.getId(), itemType);
-        byStringId.put(itemType.getMinecraftId(), itemType);
-    }
-
-    /**
-     * Method will try to find itemType by given name, converting it to any possible type of id: <br>
-     * <ul>
-     * <li>{numericId} {@literal ->} like "1" for stone</li>
-     * <li>{minecraftStringId} {@literal ->} like "minecraft:stone"</li>
-     * <li>minecraft:{shortMinecraftStringId} {@literal ->} like "stone"</li>
-     * <li>{numericId}:{numericMeta} {@literal ->} like "1:0"</li>
-     * <li>{numericId}:{stringMeta} {@literal ->} like "1:diorite"</li>
-     * <li>{minecraftStringId}:{numericMeta} {@literal ->} like "minecraft:stone:diorite"</li>
-     * <li>minecraft:{shortMinecraftStringId}:{stringMeta} {@literal ->} like "stone:diorite"</li>
-     * </ul>
-     * With extended mode it will also scan all itemType and looks for sub-itemType with name equals to given string
-     * multiple types may have this same sub-itemType name, so may not return valid itemType for types like that.
-     *
-     * @param string item type name/id to find.
-     *
-     * @return item type or null if it didn't find any.
-     */
-    public static ItemSubtype matchItemType(String string)
-    {
-        string = StringUtils.replace(string, " ", "_");
-
-        // using simple id
-        final Integer i = DioriteMathUtils.asInt(string);
-        if (i != null)
-        {
-            return getItemSubtype(i);
-        }
-
-        // find in enum by whole string
-        ItemSubtype result = getItemSubtype(string);
-        if ((result != null) || (((result = getItemSubtype("minecraft:" + string))) != null))
-        {
-            return result;
-        }
-
-        // split to [id, meta], where meta can't contains any ":"
-        final int index = string.lastIndexOf(':');
-        if (index == - 1)
-        {
-            for (final ItemType m : byId.values())
-            {
-                result = m.getSubtype(string);
-                if (result != null)
-                {
-                    return result;
-                }
-            }
-
-            // :<
-            return null;
-        }
-        final String idPart = string.substring(0, index);
-        final String metaPart = string.substring(index + 1);
-        final Integer id = DioriteMathUtils.asInt(idPart);
-        final Integer meta = DioriteMathUtils.asInt(metaPart);
-
-        // by numeric id, and numeric or text meta.
-        if (id != null)
-        {
-            return (meta != null) ? getItemSubtype(id, meta) : getItemSubtype(id, metaPart);
-        }
-
-        if (meta != null)
-        {
-            result = getItemSubtype(idPart, meta);
-            if ((result != null) || (((result = getItemSubtype("minecraft:" + idPart, meta))) != null))
-            {
-                return result;
-            }
-        }
-        result = getItemSubtype(idPart, metaPart);
-        if ((result != null) || (((result = getItemSubtype("minecraft:" + idPart, metaPart))) != null))
-        {
-            return result;
-        }
-
-        // :<
-        return null;
     }
 }

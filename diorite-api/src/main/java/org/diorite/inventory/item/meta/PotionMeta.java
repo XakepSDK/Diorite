@@ -29,9 +29,10 @@ import java.util.List;
 
 import org.diorite.effect.StatusEffect;
 import org.diorite.effect.StatusEffectType;
+import org.diorite.material.item.Items;
 
 /**
- * Represents a potion ({@link org.diorite.material.item.ItemType#POTION}) that can have custom potion effects.
+ * Represents a potion ({@link Items#POTION}) that can have custom potion effects.
  */
 public interface PotionMeta extends ItemMeta
 {

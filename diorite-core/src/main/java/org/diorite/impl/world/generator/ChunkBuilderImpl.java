@@ -33,6 +33,7 @@ import org.diorite.impl.world.chunk.ChunkPartImpl;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.Blocks;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.generator.BiomeGrid;
@@ -112,7 +113,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
         final ChunkPartBuilder chunkPart = this.chunkParts[chunkPosY];
         if (chunkPart == null)
         {
-            return BlockType.AIR.asSubtype();
+            return Blocks.AIR.asSubtype();
         }
         return chunkPart.getBlockType(x, y % Chunk.CHUNK_PART_HEIGHT, z);
     }
@@ -179,10 +180,10 @@ public class ChunkBuilderImpl implements ChunkBuilder
         private BlockSubtype getBlockType(final int x, final int y, final int z)
         {
             final int data = this.blockData.getAsInt(this.toArrayIndex(x, y, z), this.palette);
-            final BlockSubtype blockSubtype = Blocks.getBlockSubtype(data >> 4, data & 15);
+            final BlockSubtype blockSubtype = BlockRegistry.getBlockSubtype(data >> 4, data & 15);
             if (blockSubtype == null)
             {
-                return BlockType.AIR.asSubtype();
+                return Blocks.AIR.asSubtype();
             }
             return blockSubtype;
         }
@@ -206,7 +207,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
             for (int i = 0; i < CHUNK_DATA_SIZE; i++)
             {
                 final BlockSubtype type = this.blockData.get(i, this.palette);
-                if ((type != null) && ! type.isThisSameType(BlockType.AIR))
+                if ((type != null) && ! type.isThisSameType(Blocks.AIR))
                 {
                     this.nonEmptyBlockCount++;
                 }

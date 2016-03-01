@@ -35,7 +35,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.diorite.Diorite;
 import org.diorite.entity.Player;
 import org.diorite.inventory.item.ItemStack;
-import org.diorite.material.item.ItemType;
+import org.diorite.material.item.Items;
 
 /**
  * Represent recipe item that can be any item in grid, only validators must match for them.
@@ -74,7 +74,7 @@ public class AnyCraftingRecipeItem implements CraftingRecipeItem
      */
     public AnyCraftingRecipeItem(final ItemStack item, final BiFunction<Player, CraftingGrid, ItemStack> replacementFunc, final ItemStack replacement, final Collection<BiPredicate<Player, ItemStack>> validators)
     {
-        this.item = (item == null) ? Diorite.newItem(ItemType.BEDROCK) : item.clone();
+        this.item = (item == null) ? Diorite.newItem(Items.BEDROCK) : item.clone();
         this.validators = (validators == null) ? null : new ArrayList<>(validators);
         this.replacement = replacement;
         this.replacementFunc = replacementFunc;
@@ -88,7 +88,7 @@ public class AnyCraftingRecipeItem implements CraftingRecipeItem
      */
     public AnyCraftingRecipeItem(final ItemStack item, final Collection<BiPredicate<Player, ItemStack>> validators)
     {
-        this.item = (item == null) ? Diorite.newItem(ItemType.BEDROCK) : item.clone();
+        this.item = (item == null) ? Diorite.newItem(Items.BEDROCK) : item.clone();
         this.validators = (validators == null) ? null : new ArrayList<>(validators);
         this.replacement = null;
         this.replacementFunc = null;
