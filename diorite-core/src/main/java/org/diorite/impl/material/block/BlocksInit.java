@@ -36,13 +36,13 @@ public final class BlocksInit
     public static void init()
     {
         BlockRegistry.registerBlock(new SimpleBlockType(0, "minecraft:air").setHardnessAndResistance(0F, 0F, false));
-        BlockRegistry.registerBlock(new SimpleBlockType(1, "minecraft:stone").setHardnessAndResistance(1.5F, 30F));
-        BlockRegistry.registerBlock(new SimpleBlockType(2, "minecraft:grass").setHardnessAndResistance(0.6F, 3F));
+        BlockRegistry.registerBlock(new SimpleBlockType(1, "minecraft:stone").setHardnessAndResistance(1.5F, 30F).setVariants("stone", "granite", "polished_granite", "diorite", "polished_diorite", "andesite", "polished_andesite"));
+        BlockRegistry.registerBlock(new SimpleBlockType(2, "minecraft:grass").setHardnessAndResistance(0.6F, 3F).setVariants("dirt", "coarse", "podzol"));
         BlockRegistry.registerBlock(new SimpleBlockType(3, "minecraft:dirt").setHardnessAndResistance(0.5F, 2.5F));
         BlockRegistry.registerBlock(new SimpleBlockType(4, "minecraft:cobblestone").setHardnessAndResistance(2F, 30F));
         BlockRegistry.registerBlock(new SimpleBlockType(5, "minecraft:planks").setHardnessAndResistance(2F, 15F));
         BlockRegistry.registerBlock(new SimpleBlockType(6, "minecraft:sapling").setHardnessAndResistance(0F, 0F));
-        BlockRegistry.registerBlock(new SimpleBlockType(7, "minecraft:bedrock").setHardnessAndResistance(-1F, 18000000F));
+        BlockRegistry.registerBlock(new SimpleBlockType(7, "minecraft:bedrock").setHardnessAndResistance(- 1F, 18000000F));
         BlockRegistry.registerBlock(new SimpleBlockType(8, "minecraft:water").setHardnessAndResistance(100F, 500F));
         BlockRegistry.registerBlock(new SimpleBlockType(9, "minecraft:flowing_water").setHardnessAndResistance(100F, 500F));
         BlockRegistry.registerBlock(new SimpleBlockType(10, "minecraft:lava").setHardnessAndResistance(100F, 0F));
@@ -125,7 +125,7 @@ public final class BlocksInit
         BlockRegistry.registerBlock(new SimpleBlockType(87, "minecraft:netherrack").setHardnessAndResistance(0.4F, 2F));
         BlockRegistry.registerBlock(new SimpleBlockType(88, "minecraft:soul_sand").setHardnessAndResistance(0.5F, 2.5F));
         BlockRegistry.registerBlock(new SimpleBlockType(89, "minecraft:glowstone").setHardnessAndResistance(0.3F, 1.5F));
-        BlockRegistry.registerBlock(new SimpleBlockType(90, "minecraft:portal").setHardnessAndResistance(-1F, 18000000F));
+        BlockRegistry.registerBlock(new SimpleBlockType(90, "minecraft:portal").setHardnessAndResistance(- 1F, 18000000F));
         BlockRegistry.registerBlock(new SimpleBlockType(91, "minecraft:lit_pumpkin").setHardnessAndResistance(1F, 5F));
         BlockRegistry.registerBlock(new SimpleBlockType(92, "minecraft:cake").setHardnessAndResistance(0.5F, 2.5F));
         BlockRegistry.registerBlock(new SimpleBlockType(93, "minecraft:unpowered_repeater").setHardnessAndResistance(0F, 0F));
@@ -154,8 +154,8 @@ public final class BlocksInit
         BlockRegistry.registerBlock(new SimpleBlockType(116, "minecraft:enchanting_table").setHardnessAndResistance(5F, 6000F));
         BlockRegistry.registerBlock(new SimpleBlockType(117, "minecraft:brewing_stand").setHardnessAndResistance(0.5F, 2.5F));
         BlockRegistry.registerBlock(new SimpleBlockType(118, "minecraft:cauldron").setHardnessAndResistance(2F, 10F));
-        BlockRegistry.registerBlock(new SimpleBlockType(119, "minecraft:end_portal").setHardnessAndResistance(-1F, 18000000F));
-        BlockRegistry.registerBlock(new SimpleBlockType(120, "minecraft:end_portal_frame").setHardnessAndResistance(-1F, 18000000F));
+        BlockRegistry.registerBlock(new SimpleBlockType(119, "minecraft:end_portal").setHardnessAndResistance(- 1F, 18000000F));
+        BlockRegistry.registerBlock(new SimpleBlockType(120, "minecraft:end_portal_frame").setHardnessAndResistance(- 1F, 18000000F));
         BlockRegistry.registerBlock(new SimpleBlockType(121, "minecraft:end_stone").setHardnessAndResistance(3F, 45F));
         BlockRegistry.registerBlock(new SimpleBlockType(122, "minecraft:dragon_egg").setHardnessAndResistance(3F, 45F));
         BlockRegistry.registerBlock(new SimpleBlockType(123, "minecraft:redstone_lamp").setHardnessAndResistance(0.3F, 1.5F));
@@ -172,7 +172,7 @@ public final class BlocksInit
         BlockRegistry.registerBlock(new SimpleBlockType(134, "minecraft:spruce_stairs").setHardnessAndResistance(2F, 15F));
         BlockRegistry.registerBlock(new SimpleBlockType(135, "minecraft:birch_stairs").setHardnessAndResistance(2F, 15F));
         BlockRegistry.registerBlock(new SimpleBlockType(136, "minecraft:jungle_stairs").setHardnessAndResistance(2F, 15F));
-        BlockRegistry.registerBlock(new SimpleBlockType(137, "minecraft:command_block").setHardnessAndResistance(-1F, 18000000F));
+        BlockRegistry.registerBlock(new SimpleBlockType(137, "minecraft:command_block").setHardnessAndResistance(- 1F, 18000000F));
         BlockRegistry.registerBlock(new SimpleBlockType(138, "minecraft:beacon").setHardnessAndResistance(3F, 15F));
         BlockRegistry.registerBlock(new SimpleBlockType(139, "minecraft:cobblestone_wall").setHardnessAndResistance(2F, 30F));
         BlockRegistry.registerBlock(new SimpleBlockType(140, "minecraft:flower_pot").setHardnessAndResistance(0F, 0F));
@@ -200,7 +200,7 @@ public final class BlocksInit
         BlockRegistry.registerBlock(new SimpleBlockType(163, "minecraft:acacia_stairs").setHardnessAndResistance(2F, 15F));
         BlockRegistry.registerBlock(new SimpleBlockType(164, "minecraft:dark_oak_stairs").setHardnessAndResistance(2F, 15F));
         BlockRegistry.registerBlock(new SimpleBlockType(165, "minecraft:slime").setHardnessAndResistance(0F, 0F));
-        BlockRegistry.registerBlock(new SimpleBlockType(166, "minecraft:barrier").setHardnessAndResistance(-1F, 18000004F));
+        BlockRegistry.registerBlock(new SimpleBlockType(166, "minecraft:barrier").setHardnessAndResistance(- 1F, 18000004F));
         BlockRegistry.registerBlock(new SimpleBlockType(167, "minecraft:iron_trapdoor").setHardnessAndResistance(5F, 25F));
         BlockRegistry.registerBlock(new SimpleBlockType(168, "minecraft:prismarine").setHardnessAndResistance(1.5F, 30F));
         BlockRegistry.registerBlock(new SimpleBlockType(169, "minecraft:sea_lantern").setHardnessAndResistance(0.3F, 1.5F));

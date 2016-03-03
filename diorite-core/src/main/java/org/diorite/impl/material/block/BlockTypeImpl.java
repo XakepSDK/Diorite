@@ -24,8 +24,13 @@
 
 package org.diorite.impl.material.block;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -38,25 +43,37 @@ import org.diorite.material.block.BlockType;
 import org.diorite.material.block.FlameableSettings;
 import org.diorite.material.block.LightSettings;
 import org.diorite.material.block.LiquidSettings;
+import org.diorite.material.block.state.BlockState;
+import org.diorite.material.block.state.BlockStateEntry;
 import org.diorite.material.data.drops.PossibleDrops;
 import org.diorite.material.item.ItemType;
+import org.diorite.utils.collections.maps.CaseInsensitiveMap;
 
-public abstract class BlockTypeImpl implements BlockType
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
+public class BlockTypeImpl implements BlockType
 {
-    private int    id;
-    private String minecraftId;
-    private int    fakeId;
-    private String fakeMinecraftId;
-    private String displayNameKey;
-    private float  hardness;
-    private float  blastResistace;
-    private BlockSounds sounds = BlockSounds.DEFAULTS;
-    private PossibleDrops drops;
-    private boolean       solid;
+    protected int    id;
+    protected String minecraftId;
+    protected int    fakeId;
+    protected String fakeMinecraftId;
+    protected String displayNameKey;
+    protected float  hardness;
+    protected float  blastResistace;
+    protected BlockSounds sounds = BlockSounds.DEFAULTS;
+    protected PossibleDrops drops;
+    protected boolean       solid;
 
-    private LiquidSettings    liquidSettings    = LiquidSettingsImpl.NOT_LIQUID;
-    private LightSettings     lightSettings     = LightSettingsImpl.NO_LIGHT;
-    private FlameableSettings flameableSettings = FlameableSettingsImpl.NOT_FLAMEABLE;
+    protected LiquidSettings    liquidSettings    = LiquidSettingsImpl.NOT_LIQUID;
+    protected LightSettings     lightSettings     = LightSettingsImpl.NO_LIGHT;
+    protected FlameableSettings flameableSettings = FlameableSettingsImpl.NOT_FLAMEABLE;
+
+    protected BlockSubtype defaultSubtype;
+    protected final Int2ObjectOpenHashMap<BlockSubtype> subtypesById   = new Int2ObjectOpenHashMap<>(1);
+    protected final Map<String, BlockSubtype>           subtypesByName = new CaseInsensitiveMap<>(1);
+
+    protected final Collection<BlockState<?>>                         supportedStates = Collections.newSetFromMap(new IdentityHashMap<>(2));
+    protected final Map<Collection<BlockStateEntry<?>>, BlockSubtype> stateMap        = new HashMap<>(1);
 
     public BlockTypeImpl(final int id, final String minecraftId)
     {
@@ -65,6 +82,7 @@ public abstract class BlockTypeImpl implements BlockType
         this.fakeId = id;
         this.fakeMinecraftId = minecraftId;
         this.displayNameKey = minecraftId.substring(minecraftId.indexOf(':') + 1);
+        this.defaultSubtype = new DelegatedBlockSubtypeImpl(this, 0, this.displayNameKey);
 //        this.drops = BasicPossibleDrops.createEmpty();
     }
 
@@ -153,23 +171,121 @@ public abstract class BlockTypeImpl implements BlockType
     @Override
     public BlockSubtype getSubtype(final int id)
     {
-        return null;
+        return this.subtypesById.get(id);
     }
 
     @Override
     public BlockSubtype getSubtype(final String id)
     {
-        return null;
+        return this.subtypesByName.get(id);
+    }
+
+    @Override
+    public <T> BlockSubtype getSubtype(final BlockState<T> state, final T value)
+    {
+        if (! this.supportedStates.contains(state))
+        {
+            return this.defaultSubtype;
+        }
+        final BlockSubtype subtype = this.stateMap.get(Collections.singleton(new BlockStateEntry<>(state, value)));
+        return (subtype == null) ? this.defaultSubtype : subtype;
+    }
+
+    @Override
+    public BlockSubtype getSubtype(final BlockStateEntry<?>... states)
+    {
+        if ((states == null) || (states.length == 0))
+        {
+            return this.defaultSubtype;
+        }
+        final Collection<BlockStateEntry<?>> result = new HashSet<>(states.length);
+        for (final BlockStateEntry<?> entry : states)
+        {
+            if (this.supportedStates.contains(entry.getKey()))
+            {
+                result.add(entry);
+            }
+        }
+        if (result.isEmpty())
+        {
+            return this.defaultSubtype;
+        }
+        final BlockSubtype subtype = this.stateMap.get(result);
+        return (subtype == null) ? this.defaultSubtype : subtype;
+    }
+
+    public BlockType addVariants(int start, final String... names)
+    {
+        for (final String name : names)
+        {
+            this.addVariant(start++, name);
+        }
+        return this;
+    }
+
+    public BlockType setVariants(final VariantEntry... entries)
+    {
+        int id = 0;
+        for (final VariantEntry entry : entries)
+        {
+            final ArrayList<BlockStateEntry<?>> states = entry.getStates();
+            states.trimToSize();
+            final DelegatedBlockSubtypeImpl subtype = new DelegatedBlockSubtypeImpl(this, id, entry.getName());
+            this.stateMap.put(states, subtype);
+            id++;
+        }
+        return this;
+    }
+
+    public BlockType setVariants(final String... names)
+    {
+        this.subtypesByName.clear();
+        this.subtypesById.clear();
+        int i = 0;
+        for (final String name : names)
+        {
+            this.addVariant(i++, name);
+        }
+        return this;
+    }
+
+    public BlockSubtype addVariant(final int id, final String name)
+    {
+        final BlockSubtype subtype = new DelegatedBlockSubtypeImpl(this, id, name);
+        this.addSubtype(subtype);
+        return subtype;
+    }
+
+    @Override
+    public void addSubtype(final BlockSubtype subtype)
+    {
+        this.subtypesByName.put(subtype.getSubtypeStringId(), subtype);
+        this.subtypesById.put(subtype.getSubtypeId(), subtype);
     }
 
     @Override
     public Collection<BlockSubtype> getSubtypes()
     {
-        return Collections.emptyList();
+        return Collections.unmodifiableCollection(this.subtypesByName.values());
     }
 
     @Override
-    public abstract BlockSubtype asSubtype();
+    public BlockSubtype getDefaultSubtype()
+    {
+        return this.defaultSubtype;
+    }
+
+    @Override
+    public void setDefaultSubtype(final BlockSubtype defaultSubtype)
+    {
+        this.defaultSubtype = defaultSubtype;
+    }
+
+    @Override
+    public BlockSubtype asSubtype()
+    {
+        return this.defaultSubtype;
+    }
 
     @Override
     public double getHardness()

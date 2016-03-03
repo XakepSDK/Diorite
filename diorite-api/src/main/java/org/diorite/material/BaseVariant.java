@@ -25,40 +25,30 @@
 package org.diorite.material;
 
 /**
- * Enum with possible rotate axis.
+ * enum with some common types (variants) of blocks.
+ * Block supporting variant may (and mostly it will) support only few of them.
+ * If block don't support given variant, {@link #CLASSIC} should be ussed instead.
  */
-public enum RotateAxisMat
+public enum BaseVariant
 {
     /**
-     * Y axis
+     * Default variant.
      */
-    UP_DOWN(0b0000),
+    CLASSIC,
     /**
-     * X axis
+     * Smooth, polished, variant.
      */
-    EAST_WEST(0b0100),
+    SMOOTH,
     /**
-     * Z axis
+     * Chiseled variant.
      */
-    NORTH_SOUTH(0b1000),
+    CHISELED,
     /**
-     * No axis
+     * Mossy variant.
      */
-    NONE(0b1100);
-
-    private final byte flag;
-
-    RotateAxisMat(final int flag)
-    {
-        this.flag = (byte) flag;
-    }
-
+    MOSSY,
     /**
-     * @return byte flag used by some blocks to get sub-type of it.
+     * Cracked variant.
      */
-    public byte getFlag()
-    {
-        return this.flag;
-    }
-
+    CRACKED
 }
