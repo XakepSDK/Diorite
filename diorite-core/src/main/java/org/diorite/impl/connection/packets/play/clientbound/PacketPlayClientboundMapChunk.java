@@ -41,7 +41,7 @@ import org.diorite.utils.math.DioriteMathUtils;
 import io.netty.buffer.Unpooled;
 
 @SuppressWarnings("MagicNumber")
-@PacketClass(id = 0x20, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 590276)
+@PacketClass(id = 0x20, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 65536)
 public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
 {
     public static final int MASK = 0xffff;
@@ -115,7 +115,6 @@ public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
         data.writeBoolean(this.fullChunk);
         data.writeVarInt(this.mask);
         data.writeByteWord(this.data);
-        System.out.println("Packet data size: " + data.readableBytes() + "/" + data.capacity() + ", wasted: " + (data.capacity() - data.readableBytes()));
     }
 
     @Override
@@ -176,14 +175,13 @@ public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
                 {
                     data.writeBytes(section.getSkyLight().getRawData());
                 }
-            }
+             }
         }
 
         if (full)
         {
             data.writeBytes(chunk.getBiomes());
         }
-
         return size;
     }
 
@@ -196,7 +194,8 @@ public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
             final ChunkPartImpl section = sections[i];
             if ((section != null) && (! full || ! section.isEmpty()) && ((mask & (1 << i)) != 0))
             {
-                bytes += 1 + section.getPalette().byteSize() + DioriteMathUtils.varintSize(i) + (section.getBlockData().size() * 8);
+                final long[] dataArray = section.getBlockData().getDataArray();
+                bytes += 1 + section.getPalette().byteSize() + DioriteMathUtils.varintSize(dataArray.length) + (dataArray.length * 8);
                 bytes += section.getBlockLight().byteSize();
                 if (skyLight)
                 {

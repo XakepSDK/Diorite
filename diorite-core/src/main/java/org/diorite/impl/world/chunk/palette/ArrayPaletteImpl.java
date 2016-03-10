@@ -29,9 +29,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.impl.CoreMain;
 import org.diorite.impl.connection.packets.PacketDataSerializer;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
-import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.Blocks;
 import org.diorite.utils.math.DioriteMathUtils;
 
@@ -149,9 +149,9 @@ public class ArrayPaletteImpl implements PaletteData
     public int byteSize()
     {
         int bytes = DioriteMathUtils.varintSize(this.lastIndex);
-        for (int var2 = 0; var2 < this.lastIndex; ++ var2)
+        for (int i = 0; i < this.lastIndex; ++ i)
         {
-            bytes += DioriteMathUtils.varintSize(getIdAndMeta(this.pattern[var2]));
+            bytes += DioriteMathUtils.varintSize(getIdAndMeta(this.pattern[i]));
         }
         return bytes;
     }
