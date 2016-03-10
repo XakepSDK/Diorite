@@ -22,20 +22,18 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
-public enum LiquidType
+public enum RailType
 {
-    NORMAL,
-    STILL;
-
-    public boolean isStill()
-    {
-        return this == STILL;
-    }
-
-    public boolean isNormal()
-    {
-        return this == NORMAL;
-    }
+    FLAT_NORTH_SOUTH,
+    FLAT_WEST_EAST,
+    ASCENDING_EAST,
+    ASCENDING_WEST,
+    ASCENDING_NORTH,
+    ASCENDING_SOUTH,
+    CURVED_SOUTH_EAST,
+    CURVED_SOUTH_WEST,
+    CURVED_NORTH_WEST,
+    CURVED_NORTH_EAST,
 }

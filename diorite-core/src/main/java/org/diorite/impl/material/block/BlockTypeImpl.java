@@ -32,6 +32,8 @@ import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.Map;
 
+import com.google.common.collect.Sets;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -43,8 +45,8 @@ import org.diorite.material.block.BlockType;
 import org.diorite.material.block.FlameableSettings;
 import org.diorite.material.block.LightSettings;
 import org.diorite.material.block.LiquidSettings;
-import org.diorite.material.block.state.BlockState;
-import org.diorite.material.block.state.BlockStateEntry;
+import org.diorite.material.state.State;
+import org.diorite.material.state.StateEntry;
 import org.diorite.material.data.drops.PossibleDrops;
 import org.diorite.material.item.ItemType;
 import org.diorite.utils.collections.maps.CaseInsensitiveMap;
@@ -72,8 +74,11 @@ public class BlockTypeImpl implements BlockType
     protected final Int2ObjectOpenHashMap<BlockSubtype> subtypesById   = new Int2ObjectOpenHashMap<>(1);
     protected final Map<String, BlockSubtype>           subtypesByName = new CaseInsensitiveMap<>(1);
 
-    protected final Collection<BlockState<?>>                         supportedStates = Collections.newSetFromMap(new IdentityHashMap<>(2));
-    protected final Map<Collection<BlockStateEntry<?>>, BlockSubtype> stateMap        = new HashMap<>(1);
+    protected final Collection<State<?>>                         supportedStates = Collections.newSetFromMap(new IdentityHashMap<>(2));
+    protected final Map<Collection<StateEntry<?>>, BlockSubtype> stateMap        = new HashMap<>(1);
+
+    protected final Collection<BlockSubtype> allSubtypes            = new HashSet<>(1);
+    private final   Collection<BlockSubtype> unmodifableAllSubtypes = Collections.unmodifiableCollection(this.allSubtypes);
 
     public BlockTypeImpl(final int id, final String minecraftId)
     {
@@ -181,37 +186,63 @@ public class BlockTypeImpl implements BlockType
     }
 
     @Override
-    public <T> BlockSubtype getSubtype(final BlockState<T> state, final T value)
+    public BlockSubtype getSubtype(BlockSubtype def, final StateEntry<?>... states)
     {
-        if (! this.supportedStates.contains(state))
+        if (def == null)
         {
-            return this.defaultSubtype;
+            def = this.defaultSubtype;
         }
-        final BlockSubtype subtype = this.stateMap.get(Collections.singleton(new BlockStateEntry<>(state, value)));
-        return (subtype == null) ? this.defaultSubtype : subtype;
-    }
-
-    @Override
-    public BlockSubtype getSubtype(final BlockStateEntry<?>... states)
-    {
         if ((states == null) || (states.length == 0))
         {
-            return this.defaultSubtype;
+            return def;
         }
-        final Collection<BlockStateEntry<?>> result = new HashSet<>(states.length);
-        for (final BlockStateEntry<?> entry : states)
+        final Collection<StateEntry<?>> statesSet = Sets.newHashSet(states);
+
+        final Collection<StateEntry<?>> defStates = def.getStates();
+        final Collection<StateEntry<?>> blockStates = new HashSet<>(defStates.size() + states.length);
+        blockStates.addAll(defStates);
+        Collections.addAll(blockStates, states);
+
+        int defStateMatches = 0;
+        for (final StateEntry<?> blockState : blockStates)
         {
-            if (this.supportedStates.contains(entry.getKey()))
+            if (statesSet.isEmpty())
             {
-                result.add(entry);
+                break;
+            }
+            if (statesSet.remove(blockState))
+            {
+                defStateMatches++;
             }
         }
-        if (result.isEmpty())
+
+        BlockSubtype selected = def;
+        int selectedMatches = defStateMatches;
+
+        for (final BlockSubtype subtype : this.subtypesByName.values())
         {
-            return this.defaultSubtype;
+            final Collection<StateEntry<?>> subtypeStates = subtype.getStates();
+            final int maxSize = subtypeStates.size();
+            int stateMatches = 0;
+            for (final StateEntry<?> blockState : blockStates)
+            {
+                if (stateMatches == maxSize)
+                {
+                    break;
+                }
+                if (subtypeStates.contains(blockState))
+                {
+                    stateMatches++;
+                }
+            }
+            if (stateMatches > selectedMatches)
+            {
+                selected = subtype;
+                selectedMatches = stateMatches;
+            }
         }
-        final BlockSubtype subtype = this.stateMap.get(result);
-        return (subtype == null) ? this.defaultSubtype : subtype;
+
+        return selected;
     }
 
     public BlockType addVariants(int start, final String... names)
@@ -225,14 +256,18 @@ public class BlockTypeImpl implements BlockType
 
     public BlockType setVariants(final VariantEntry... entries)
     {
-        int id = 0;
+        int id = - 1;
         for (final VariantEntry entry : entries)
         {
-            final ArrayList<BlockStateEntry<?>> states = entry.getStates();
+            ++ id;
+            if (entry == null)
+            {
+                continue;
+            }
+            final ArrayList<StateEntry<?>> states = entry.getStates();
             states.trimToSize();
             final DelegatedBlockSubtypeImpl subtype = new DelegatedBlockSubtypeImpl(this, id, entry.getName());
             this.stateMap.put(states, subtype);
-            id++;
         }
         return this;
     }
@@ -256,17 +291,24 @@ public class BlockTypeImpl implements BlockType
         return subtype;
     }
 
+    public BlockTypeImpl addDelegatedSubtype(final BlockSubtype subtype)
+    {
+        this.allSubtypes.add(subtype);
+        return this;
+    }
+
     @Override
     public void addSubtype(final BlockSubtype subtype)
     {
         this.subtypesByName.put(subtype.getSubtypeStringId(), subtype);
         this.subtypesById.put(subtype.getSubtypeId(), subtype);
+        this.allSubtypes.add(subtype);
     }
 
     @Override
     public Collection<BlockSubtype> getSubtypes()
     {
-        return Collections.unmodifiableCollection(this.subtypesByName.values());
+        return this.unmodifableAllSubtypes;
     }
 
     @Override

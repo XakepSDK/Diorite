@@ -22,18 +22,10 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
-/**
- * Represent possible types of stone.
- */
-public enum StoneVariant
+public enum DoorPart
 {
-    STONE,
-    GRANITE,
-    POLISHED_GRANITE,
-    DIORITE,
-    POLISHED_DIORITE,
-    ANDESITE,
-    POLISHED_ANDESITE
+    TOP,
+    BOTTOM
 }

@@ -22,19 +22,45 @@
  * SOFTWARE.
  */
 
-package org.diorite.material.block.state;
+package org.diorite.material.state;
 
 /**
- * Represent possible states of some block.
- *
- * @param <T> type of block state data.
+ * enum will all stone type slabs
  */
-public interface BlockState<T>
+public enum StoneSlabVariant
 {
+    STONE(0x00, false),
+    SANDSTONE(0x01, false),
+    WOODEN(0x02, false),
+    COBBLESTONE(0x03, false),
+    BRICKS(0x04, false),
+    STONE_BRICKS(0x05, false),
+    NETHER_BRICKS(0x06, false),
+    QUARTZ(0x07, false),
+    RED_SANDSTONE(0x00, true);
+
+    private final byte    flag;
+    private final boolean isSecondStoneSlabID;
+
+    StoneSlabVariant(final int flag, final boolean isFirstId)
+    {
+        this.isSecondStoneSlabID = isFirstId;
+        this.flag = (byte) flag;
+    }
+
     /**
-     * Returns type of BlockState data.
-     *
-     * @return type of BlockState data.
+     * @return sub-id flag for that type.
      */
-    Class<T> getType();
+    public byte getFlag()
+    {
+        return this.flag;
+    }
+
+    /**
+     * @return is this type is on second slab it.
+     */
+    public boolean isSecondStoneSlabID()
+    {
+        return this.isSecondStoneSlabID;
+    }
 }

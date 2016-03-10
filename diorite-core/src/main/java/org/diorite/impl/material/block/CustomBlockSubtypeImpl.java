@@ -24,11 +24,14 @@
 
 package org.diorite.impl.material.block;
 
+import java.util.Collection;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.state.StateEntry;
 
 public class CustomBlockSubtypeImpl extends BlockTypeImpl implements BlockSubtype
 {
@@ -62,6 +65,12 @@ public class CustomBlockSubtypeImpl extends BlockTypeImpl implements BlockSubtyp
     public String getSubtypeStringId()
     {
         return this.subtypeStringId;
+    }
+
+    @Override
+    public Collection<StateEntry<?>> getStates()
+    {
+        return null;// TODO
     }
 
     public void setSubtypeId(final int subtypeId)

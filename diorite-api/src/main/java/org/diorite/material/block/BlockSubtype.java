@@ -24,7 +24,10 @@
 
 package org.diorite.material.block;
 
+import java.util.Collection;
+
 import org.diorite.material.AnySubtype;
+import org.diorite.material.state.StateEntry;
 
 /**
  * Represent block subtype.
@@ -71,9 +74,16 @@ public interface BlockSubtype extends BlockType, AnySubtype
     }
 
     /**
+     * Returns state data of this subtype.
+     * @return state data of this subtype.
+     */
+    Collection<StateEntry<?>> getStates();
+
+    /**
      * Returns normal/full type of this block subtype.
      *
      * @return normal/full type of this block subtype.
      */
+    @Override
     BlockType getFullType();
 }

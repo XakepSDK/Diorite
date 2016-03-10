@@ -22,14 +22,10 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
-/**
- * Represent possible pillars variants.
- */
-public enum PillarVariant
+public enum BedPart
 {
-    PILLAR_VERTICAL,
-    PILLAR_NORTH_SOUTH,
-    PILLAR_EAST_WEST,
+    HEAD,
+    FOOT
 }

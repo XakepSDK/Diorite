@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
 /**
- * enum with some common types (variants) of blocks.
+ * enum with some types (variants) of blocks.
  * Block supporting variant may (and mostly it will) support only few of them.
  * If block don't support given variant, {@link #CLASSIC} should be ussed instead.
  */

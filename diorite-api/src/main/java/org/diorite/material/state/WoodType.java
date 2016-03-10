@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
 import org.diorite.utils.SimpleEnum.ASimpleEnum;
 

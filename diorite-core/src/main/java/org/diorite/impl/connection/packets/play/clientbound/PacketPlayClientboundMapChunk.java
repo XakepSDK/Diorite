@@ -41,7 +41,7 @@ import org.diorite.utils.math.DioriteMathUtils;
 import io.netty.buffer.Unpooled;
 
 @SuppressWarnings("MagicNumber")
-@PacketClass(id = 0x20, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 90000)
+@PacketClass(id = 0x20, protocol = EnumProtocol.PLAY, direction = EnumProtocolDirection.CLIENTBOUND, size = 590276)
 public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
 {
     public static final int MASK = 0xffff;
@@ -65,6 +65,7 @@ public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
         this.mask = chunk.getMask(); // '\uFFFF';
         this.skyLight = chunk.getWorld().hasSkyLight();
         this.data = new byte[calcSize(chunk, fullChunk, this.skyLight, this.mask)];
+        final int pre = this.data.length;
         final PacketDataSerializer chunkSer = new PacketDataSerializer(Unpooled.wrappedBuffer(this.data));
         chunkSer.writerIndex(0);
         write(chunkSer, chunk, fullChunk, this.skyLight, this.mask);
@@ -114,6 +115,7 @@ public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
         data.writeBoolean(this.fullChunk);
         data.writeVarInt(this.mask);
         data.writeByteWord(this.data);
+        System.out.println("Packet data size: " + data.readableBytes() + "/" + data.capacity() + ", wasted: " + (data.capacity() - data.readableBytes()));
     }
 
     @Override

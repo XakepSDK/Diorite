@@ -39,6 +39,7 @@ import org.diorite.material.block.BlockType;
 import org.diorite.material.block.FlameableSettings;
 import org.diorite.material.block.LightSettings;
 import org.diorite.material.block.LiquidSettings;
+import org.diorite.material.state.StateEntry;
 import org.diorite.material.data.drops.PossibleDrops;
 import org.diorite.material.item.ItemType;
 
@@ -73,6 +74,12 @@ public class DelegatedBlockSubtypeImpl implements BlockSubtype
     public String getSubtypeStringId()
     {
         return this.subtypeStringId;
+    }
+
+    @Override
+    public Collection<StateEntry<?>> getStates()
+    {
+        return null;
     }
 
     public void setSubtypeId(final int subtypeId)
@@ -136,6 +143,12 @@ public class DelegatedBlockSubtypeImpl implements BlockSubtype
     public BlockSubtype getSubtype(final String id)
     {
         return this.blockType.getSubtype(id);
+    }
+
+    @Override
+    public BlockSubtype getSubtype(final BlockSubtype def, final StateEntry<?>... entires)
+    {
+        return null;
     }
 
     @Override

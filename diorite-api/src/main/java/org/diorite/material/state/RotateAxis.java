@@ -22,45 +22,43 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
 /**
- * enum will all stone type slabs
+ * Enum with possible rotate axis.
  */
-public enum StoneSlabVariant
+public enum RotateAxis
 {
-    STONE(0x00, false),
-    SANDSTONE(0x01, false),
-    WOODEN(0x02, false),
-    COBBLESTONE(0x03, false),
-    BRICKS(0x04, false),
-    STONE_BRICKS(0x05, false),
-    NETHER_BRICKS(0x06, false),
-    QUARTZ(0x07, false),
-    RED_SANDSTONE(0x00, true);
+    /**
+     * Y axis
+     */
+    UP_DOWN(0b0000),
+    /**
+     * X axis
+     */
+    EAST_WEST(0b0100),
+    /**
+     * Z axis
+     */
+    NORTH_SOUTH(0b1000),
+    /**
+     * No axis
+     */
+    NONE(0b1100);
 
-    private final byte    flag;
-    private final boolean isSecondStoneSlabID;
+    private final byte flag;
 
-    StoneSlabVariant(final int flag, final boolean isFirstId)
+    RotateAxis(final int flag)
     {
-        this.isSecondStoneSlabID = isFirstId;
         this.flag = (byte) flag;
     }
 
     /**
-     * @return sub-id flag for that type.
+     * @return byte flag used by some blocks to get sub-type of it.
      */
     public byte getFlag()
     {
         return this.flag;
     }
 
-    /**
-     * @return is this type is on second slab it.
-     */
-    public boolean isSecondStoneSlabID()
-    {
-        return this.isSecondStoneSlabID;
-    }
 }

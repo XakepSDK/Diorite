@@ -29,8 +29,8 @@ import java.util.Collection;
 import org.diorite.BlockLocation;
 import org.diorite.entity.Entity;
 import org.diorite.material.AnyType;
-import org.diorite.material.block.state.BlockState;
-import org.diorite.material.block.state.BlockStateEntry;
+import org.diorite.material.state.State;
+import org.diorite.material.state.StateEntry;
 import org.diorite.material.data.drops.PossibleDrops;
 import org.diorite.material.item.ItemType;
 
@@ -109,7 +109,7 @@ public interface BlockType extends AnyType
 
     /**
      * Get subtype of block by BlockState and value of it. <br>
-     * If state isn't supported by this object, or value isn't in valid range, {@link #getDefaultSubtype()} will be returned.
+     * If state isn't supported by this object, or value isn't in valid range, current subtype or {@link #getDefaultSubtype()} will be returned.
      *
      * @param state state of block.
      * @param value value of block state.
@@ -117,21 +117,52 @@ public interface BlockType extends AnyType
      *
      * @return some subtype of block.
      */
-    default <T> BlockSubtype getSubtype(BlockState<T> state, T value)
+    default <T> BlockSubtype getSubtype(final State<T> state, final T value)
     {
-        return this.getSubtype(new BlockStateEntry<>(state, value));
+        return this.getSubtype(this.getDefaultSubtype(), new StateEntry<>(state, value));
     }
 
     /**
      * Get subtype of block by BlockState and value of it. <br>
-     * If state isn't supported by this object, or value isn't in valid range, {@link #getDefaultSubtype()} will be returned.
+     * If state isn't supported by this object, or value isn't in valid range, current subtype or {@link #getDefaultSubtype()} will be returned.
      *
      * @param entires block states of subtype.
      * @param <T>     type of BlockState value.
      *
      * @return some subtype of block.
      */
-    BlockSubtype getSubtype(BlockStateEntry<?>... entires);
+    default BlockSubtype getSubtype(final StateEntry<?>... entires)
+    {
+        return this.getSubtype(this.getDefaultSubtype(), entires);
+    }
+
+    /**
+     * Get subtype of block by BlockState and value of it. <br>
+     * If state isn't supported by this object, or value isn't in valid range, default subtype will be returned.
+     *
+     * @param state state of block.
+     * @param value value of block state.
+     * @param def   default subtype to return.
+     * @param <T>   type of BlockState value.
+     *
+     * @return some subtype of block.
+     */
+    default <T> BlockSubtype getSubtype(final State<T> state, final T value, final BlockSubtype def)
+    {
+        return this.getSubtype(new StateEntry<>(state, value));
+    }
+
+    /**
+     * Get subtype of block by BlockState and value of it. <br>
+     * If state isn't supported by this object, or value isn't in valid range, default subtype will be returned.
+     *
+     * @param def     default subtype to return.
+     * @param entires block states of subtype.
+     * @param <T>     type of BlockState value.
+     *
+     * @return some subtype of block.
+     */
+    BlockSubtype getSubtype(final BlockSubtype def, StateEntry<?>... entires);
 
     /**
      * Adds new subtype to this block.

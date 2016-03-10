@@ -24,23 +24,40 @@
 
 package org.diorite.impl.material.block;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
+import org.diorite.material.state.State;
+import org.diorite.material.state.StateEntry;
 
 public class SimpleBlockType extends BlockTypeImpl implements BlockSubtype
 {
-    private String subtypeStringId;
-    private int subtypeId      = 0;
-    private int proxySubtypeId = 0;
+    protected String subtypeStringId;
+    protected int subtypeId      = 0;
+    protected int proxySubtypeId = 0;
+
+    protected final Map<State<?>, Object> states = new IdentityHashMap<>(2);
 
     public SimpleBlockType(final int id, final String minecraftId)
     {
         super(id, minecraftId);
         final int i = minecraftId.indexOf(':');
         this.subtypeStringId = (i == - 1) ? minecraftId : minecraftId.substring(i + 1, minecraftId.length());
+    }
+
+    public <T> SimpleBlockType registerState(final State<T> state, final T value)
+    {
+        this.states.put(state, value);
+        return this;
     }
 
     @Override
@@ -86,6 +103,30 @@ public class SimpleBlockType extends BlockTypeImpl implements BlockSubtype
     public BlockType getFullType()
     {
         return this;
+    }
+
+    @Override
+    public <T> BlockSubtype getSubtype(final State<T> state, final T value)
+    {
+        return super.getSubtype(state, value, this);
+    }
+
+    @Override
+    public BlockSubtype getSubtype(final StateEntry<?>... states)
+    {
+        return super.getSubtype(this, states);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @Override
+    public Collection<StateEntry<?>> getStates()
+    {
+        final Collection<StateEntry<?>> entires = new HashSet<>(this.states.size());
+        for (final Entry<State<?>, Object> stateObjectEntry : this.states.entrySet())
+        {
+            entires.add(new StateEntry(stateObjectEntry.getKey(), stateObjectEntry.getValue()));
+        }
+        return Collections.unmodifiableCollection(entires);
     }
 
     @Override

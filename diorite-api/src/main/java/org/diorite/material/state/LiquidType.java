@@ -22,43 +22,20 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
-/**
- * Enum with possible rotate axis.
- */
-public enum RotateAxis
+public enum LiquidType
 {
-    /**
-     * Y axis
-     */
-    UP_DOWN(0b0000),
-    /**
-     * X axis
-     */
-    EAST_WEST(0b0100),
-    /**
-     * Z axis
-     */
-    NORTH_SOUTH(0b1000),
-    /**
-     * No axis
-     */
-    NONE(0b1100);
+    FLOWING,
+    STILL;
 
-    private final byte flag;
-
-    RotateAxis(final int flag)
+    public boolean isStill()
     {
-        this.flag = (byte) flag;
+        return this == STILL;
     }
 
-    /**
-     * @return byte flag used by some blocks to get sub-type of it.
-     */
-    public byte getFlag()
+    public boolean isFlowing()
     {
-        return this.flag;
+        return this == FLOWING;
     }
-
 }

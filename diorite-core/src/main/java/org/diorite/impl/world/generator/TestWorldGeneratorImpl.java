@@ -30,7 +30,7 @@ import java.util.Random;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import org.diorite.material.WoodType;
+import org.diorite.material.state.WoodType;
 import org.diorite.material.block.Blocks;
 import org.diorite.utils.math.DioriteRandomUtils;
 import org.diorite.utils.math.noise.NoiseGenerator;

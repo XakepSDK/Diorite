@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.diorite.material.block.state;
+package org.diorite.material.state;
 
 import java.util.Map.Entry;
 
@@ -34,10 +34,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  * @param <T> type of BlockState value.
  */
-public class BlockStateEntry<T> implements Entry<BlockState<T>, T>
+public class StateEntry<T> implements Entry<State<T>, T>
 {
-    private final BlockState<T> state;
-    private       T             value;
+    private final State<T> state;
+    private       T        value;
 
     /**
      * Construct new entry for given state and value.
@@ -45,14 +45,14 @@ public class BlockStateEntry<T> implements Entry<BlockState<T>, T>
      * @param state block state of entry.
      * @param value value of block state and entry.
      */
-    public BlockStateEntry(final BlockState<T> state, final T value)
+    public StateEntry(final State<T> state, final T value)
     {
         this.state = state;
         this.value = value;
     }
 
     @Override
-    public BlockState<T> getKey()
+    public State<T> getKey()
     {
         return this.state;
     }
@@ -78,12 +78,12 @@ public class BlockStateEntry<T> implements Entry<BlockState<T>, T>
         {
             return true;
         }
-        if (! (o instanceof BlockStateEntry))
+        if (! (o instanceof StateEntry))
         {
             return false;
         }
 
-        final BlockStateEntry<?> that = (BlockStateEntry<?>) o;
+        final StateEntry<?> that = (StateEntry<?>) o;
         return this.state.equals(that.state) && this.value.equals(that.value);
     }
 

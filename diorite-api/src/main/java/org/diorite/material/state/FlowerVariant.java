@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.diorite.material;
+package org.diorite.material.state;
 
 import org.diorite.material_old.blocks.DandelionMat;
 import org.diorite.material_old.blocks.DeadBushMat;
