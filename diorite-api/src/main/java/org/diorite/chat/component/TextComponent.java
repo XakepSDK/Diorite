@@ -278,7 +278,7 @@ public class TextComponent extends BaseComponent
                     case STRIKETHROUGH:
                         component.setStrikethrough(true);
                         break;
-                    case MAGIC:
+                    case OBFUSCATED:
                         component.setObfuscated(true);
                         break;
                     case RESET:

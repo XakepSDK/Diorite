@@ -1,0 +1,553 @@
+{
+  "Id": 44,
+  "MinecraftId": "minecraft:stone_slab",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "stone",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.stone",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "STONE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "sandstone",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.sandstone",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "SANDSTONE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "wooden",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.wooden",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "WOODEN"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "cobblestone",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.cobblestone",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "COBBLESTONE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "bricks",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.bricks",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "BRICKS"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "stone_bricks",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.stone_bricks",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "STONE_BRICKS"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "nether_bricks",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.nether_bricks",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "NETHER_BRICKS"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "quartz",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.quartz",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "QUARTZ"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "stone_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.stone_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "STONE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "sandstone_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.sandstone_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "SANDSTONE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "wooden_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.wooden_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "WOODEN"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "cobblestone_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.cobblestone_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "COBBLESTONE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "bricks_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.bricks_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "BRICKS"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "stone_bricks_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.stone_bricks_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "STONE_BRICKS"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "nether_bricks_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.nether_bricks_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "NETHER_BRICKS"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "quartz_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_slab.quartz_upper",
+      "States": [
+        {
+          "Name": "stone_slab_variant",
+          "Type": "org.diorite.material.state.StoneSlabVariant",
+          "Value": "QUARTZ"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "stone"
+}
+e": "stone"
+}

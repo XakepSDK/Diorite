@@ -24,6 +24,9 @@
 
 package org.diorite.impl.material.item;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -33,13 +36,16 @@ import org.diorite.material.item.ItemType;
 public class SimpleItemType extends ItemTypeImpl implements ItemSubtype
 {
     private String subtypeStringId;
-    private int subtypeId      = 0;
-    private int proxySubtypeId = 0;
+    private int subtypeId = 0;
+    private String displayNameKey;
+
+    protected List<ItemSubtype> proxyTypes = new ArrayList<>(1);
 
     public SimpleItemType(final int id, final String minecraftId, final int maxStack)
     {
         super(id, minecraftId, maxStack);
         final int i = minecraftId.indexOf(':');
+        this.displayNameKey = minecraftId.substring(minecraftId.indexOf(':') + 1);
         this.subtypeStringId = (i == - 1) ? minecraftId : minecraftId.substring(i + 1, minecraftId.length());
     }
 
@@ -66,14 +72,27 @@ public class SimpleItemType extends ItemTypeImpl implements ItemSubtype
     }
 
     @Override
-    public int getProxySubtypeId()
+    public String getDisplayNameKey()
     {
-        return this.proxySubtypeId;
+        return this.displayNameKey;
     }
 
-    public void setProxySubtypeId(final int proxySubtypeId)
+    public ItemTypeImpl setDisplayNameKey(final String displayNameKey)
     {
-        this.proxySubtypeId = proxySubtypeId;
+        this.displayNameKey = displayNameKey;
+        return this;
+    }
+
+    @Override
+    public List<? extends ItemSubtype> getProxySubtypes()
+    {
+        return this.proxyTypes;
+    }
+
+    public void setProxySubtypes(final List<? extends ItemSubtype> list)
+    {
+        this.proxyTypes.clear();
+        this.proxyTypes.addAll(list);
     }
 
     @Override

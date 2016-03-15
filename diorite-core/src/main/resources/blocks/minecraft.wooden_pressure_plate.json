@@ -1,0 +1,31 @@
+{
+  "Id": 72,
+  "MinecraftId": "minecraft:wooden_pressure_plate",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "wooden_pressure_plate",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_pressure_plate.wooden_pressure_plate",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "wooden_pressure_plate"
+}
+

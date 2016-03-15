@@ -1,0 +1,31 @@
+{
+  "Id": 166,
+  "MinecraftId": "minecraft:barrier",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "barrier",
+      "Hardness": -1.0,
+      "BlastResistance": 1.8000004E7,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "barrier.barrier",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "barrier"
+}
+

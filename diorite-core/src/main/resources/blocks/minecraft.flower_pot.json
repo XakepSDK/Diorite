@@ -1,0 +1,31 @@
+{
+  "Id": 140,
+  "MinecraftId": "minecraft:flower_pot",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "flower_pot",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "flower_pot.flower_pot",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "flower_pot"
+}
+

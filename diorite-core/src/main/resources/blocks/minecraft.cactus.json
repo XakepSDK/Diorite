@@ -1,0 +1,473 @@
+{
+  "Id": 81,
+  "MinecraftId": "minecraft:cactus",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "cactus",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 0
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "cactus_1",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_1",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 1
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "cactus_2",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_2",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 2
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "cactus_3",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_3",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 3
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "cactus_4",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_4",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 4
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "cactus_5",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_5",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 5
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "cactus_6",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_6",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 6
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "cactus_7",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_7",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 7
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "cactus_8",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_8",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 8
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "cactus_9",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_9",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 9
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "cactus_10",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_10",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 10
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "cactus_11",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_11",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 11
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "cactus_12",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_12",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 12
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "cactus_13",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_13",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 13
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "cactus_14",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus_14",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 14
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "cactus",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cactus.cactus",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 16
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "cactus"
+}
+": "cactus"
+}

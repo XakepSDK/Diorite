@@ -1,0 +1,31 @@
+{
+  "Id": 101,
+  "MinecraftId": "minecraft:iron_bars",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "iron_bars",
+      "Hardness": 5.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_bars.iron_bars",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "iron_bars"
+}
+

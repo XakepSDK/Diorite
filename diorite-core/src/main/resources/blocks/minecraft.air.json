@@ -1,0 +1,30 @@
+{
+  "Id": 0,
+  "MinecraftId": "minecraft:air",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "air",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "air.air",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "air"
+}

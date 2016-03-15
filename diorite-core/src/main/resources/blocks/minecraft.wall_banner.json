@@ -1,0 +1,125 @@
+{
+  "Id": 177,
+  "MinecraftId": "minecraft:wall_banner",
+  "Subtypes": [
+    {
+      "Id": 2,
+      "StringId": "north",
+      "Hardness": 1.0,
+      "BlastResistance": 5.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wall_banner.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "south",
+      "Hardness": 1.0,
+      "BlastResistance": 5.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wall_banner.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "west",
+      "Hardness": 1.0,
+      "BlastResistance": 5.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wall_banner.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "east",
+      "Hardness": 1.0,
+      "BlastResistance": 5.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wall_banner.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "north"
+}
+
+}

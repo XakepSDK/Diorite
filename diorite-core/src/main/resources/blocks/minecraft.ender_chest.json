@@ -1,0 +1,125 @@
+{
+  "Id": 130,
+  "MinecraftId": "minecraft:ender_chest",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "north",
+      "Hardness": 22.5,
+      "BlastResistance": 3000.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "ender_chest.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "south",
+      "Hardness": 22.5,
+      "BlastResistance": 3000.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "ender_chest.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "west",
+      "Hardness": 22.5,
+      "BlastResistance": 3000.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "ender_chest.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "east",
+      "Hardness": 22.5,
+      "BlastResistance": 3000.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "ender_chest.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "north"
+}
+
+}

@@ -1,0 +1,31 @@
+{
+  "Id": 103,
+  "MinecraftId": "minecraft:melon_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "melon_block",
+      "Hardness": 1.0,
+      "BlastResistance": 5.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "melon_block.melon_block",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "melon_block"
+}
+

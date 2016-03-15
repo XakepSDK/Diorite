@@ -1,0 +1,241 @@
+{
+  "Id": 78,
+  "MinecraftId": "minecraft:snow_layer",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "layer_1",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_1",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 0
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "layer_2",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_2",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 1
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "layer_3",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_3",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 2
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "layer_4",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_4",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 3
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "layer_5",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_5",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 4
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "layer_6",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_6",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 5
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "layer_7",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_7",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 6
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "layer_8",
+      "Hardness": 0.10000000149011612,
+      "BlastResistance": 0.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow_layer.layer_8",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 8
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "layer_1"
+}
+_1"
+}

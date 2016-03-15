@@ -1,0 +1,31 @@
+{
+  "Id": 42,
+  "MinecraftId": "minecraft:iron_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "iron_block",
+      "Hardness": 5.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_block.iron_block",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "iron_block"
+}
+

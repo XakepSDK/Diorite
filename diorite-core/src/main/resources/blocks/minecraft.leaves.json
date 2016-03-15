@@ -1,0 +1,747 @@
+{
+  "Id": 18,
+  "MinecraftId": "minecraft:leaves",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "oak",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "spruce",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.spruce",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "birch",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "jungle",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "oak_nondecayable",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.oak_nondecayable",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "spruce_nondecayable",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.spruce_nondecayable",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "birch_nondecayable",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.birch_nondecayable",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "jungle_nondecayable",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.jungle_nondecayable",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "oak_no_check",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.oak_no_check",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "spruce_no_check",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.spruce_no_check",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "birch_no_check",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.birch_no_check",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "jungle_no_check",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.jungle_no_check",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "oak_static",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.oak_static",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "spruce_static",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.spruce_static",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "birch_static",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.birch_static",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "jungle_static",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.jungle_static",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "oak"
+}
+ype": "oak"
+}
+e": "SPRUCE",
+            "ordinal": 1
+          }
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "birch_static",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.birch_static",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": false,
+            "logFlag": 2,
+            "planksMeta": 2,
+            "enumName": "BIRCH",
+            "ordinal": 2
+          }
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "jungle_static",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "leaves.jungle_static",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": false,
+            "logFlag": 3,
+            "planksMeta": 3,
+            "enumName": "JUNGLE",
+            "ordinal": 3
+          }
+        },
+        {
+          "Name": "decayable",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "check_decay",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "oak"
+}

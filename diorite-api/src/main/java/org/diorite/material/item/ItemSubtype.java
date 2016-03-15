@@ -24,7 +24,11 @@
 
 package org.diorite.material.item;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.diorite.material.AnySubtype;
+import org.diorite.utils.math.DioriteRandomUtils;
 
 public interface ItemSubtype extends ItemType, AnySubtype
 {
@@ -39,14 +43,29 @@ public interface ItemSubtype extends ItemType, AnySubtype
     int getSubtypeId();
 
     /**
-     * Returns sub-id of item used in packets.
+     * Returns display name of item.
      *
-     * @return sub-id of item used in packets.
+     * @return display name of item.
      */
     @Override
-    default int getProxySubtypeId()
+    String getDisplayNameKey();
+
+    @Override
+    default List<? extends ItemSubtype> getProxySubtypes()
     {
-        return this.getSubtypeId();
+        return Collections.emptyList();
+    }
+
+    @Override
+    default ItemSubtype getProxySubtype()
+    {
+        final List<? extends ItemSubtype> proxySubtypes = this.getProxySubtypes();
+        if (proxySubtypes.isEmpty())
+        {
+            return this;
+        }
+        final int size = proxySubtypes.size();
+        return (size == 1) ? proxySubtypes.get(0) : proxySubtypes.get(DioriteRandomUtils.nextInt(size));
     }
 
     /**
@@ -62,5 +81,6 @@ public interface ItemSubtype extends ItemType, AnySubtype
      *
      * @return normal/full type of this item subtype.
      */
+    @Override
     ItemType getFullType();
 }

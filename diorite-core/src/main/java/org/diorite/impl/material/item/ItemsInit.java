@@ -112,8 +112,8 @@ public class ItemsInit
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:lit_pumpkin")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:stained_glass")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:trapdoor")));
-        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:monster_egg")));
-        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:stonebrick")));
+//        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:monster_egg")));
+//        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:stonebrick")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:brown_mushroom_block")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:red_mushroom_block")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:iron_bars")));
@@ -182,13 +182,16 @@ public class ItemsInit
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:spruce_fence_gate")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:brich_fence_gate")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:jungle_fence_gate")));
-        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:fark_oak_fence_gate")));
+        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:dark_oak_fence_gate")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:acacia_fence_gate")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:spruce_fence")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:birch_fence")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:jungle_fence")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:dark_oak_fence")));
         ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:acacia_fence")));
+
+        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:repeating_command_block")));
+        ItemRegistry.registerItem(fromBlock(BlockRegistry.getBlockType("minecraft:chain_command_block")));
         ItemRegistry.registerItem(new SimpleItemType(256, "minecraft:iron_Shovel", 1));
         ItemRegistry.registerItem(new SimpleItemType(257, "minecraft:iron_Pickaxe", 1));
         ItemRegistry.registerItem(new SimpleItemType(258, "minecraft:iron_Axe", 1));

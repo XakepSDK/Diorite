@@ -1,0 +1,154 @@
+{
+  "Id": 155,
+  "MinecraftId": "minecraft:quartz_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "classic",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "quartz_block.classic",
+      "States": [
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "chiseled",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "quartz_block.chiseled",
+      "States": [
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CHISELED"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "pillar_vertical",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "quartz_block.pillar_vertical",
+      "States": [
+        {
+          "Name": "pillar_variant",
+          "Type": "org.diorite.material.state.PillarVariant",
+          "Value": "VERTICAL"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "pillar_north_south",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "quartz_block.pillar_north_south",
+      "States": [
+        {
+          "Name": "pillar_variant",
+          "Type": "org.diorite.material.state.PillarVariant",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "pillar_east_west",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "quartz_block.pillar_east_west",
+      "States": [
+        {
+          "Name": "pillar_variant",
+          "Type": "org.diorite.material.state.PillarVariant",
+          "Value": "EAST_WEST"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "classic"
+}
+
+}

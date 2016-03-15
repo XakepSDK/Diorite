@@ -1,0 +1,31 @@
+{
+  "Id": 13,
+  "MinecraftId": "minecraft:gravel",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "gravel",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "gravel.gravel",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "gravel"
+}
+

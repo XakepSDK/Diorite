@@ -1,0 +1,553 @@
+{
+  "Id": 151,
+  "MinecraftId": "minecraft:daylight_detector",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "off",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.off",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 0
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "power_1",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_1",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 1
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "power_2",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_2",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 2
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "power_3",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_3",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 3
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "power_4",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_4",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 4
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "power_5",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_5",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 5
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "power_6",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_6",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 6
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "power_7",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_7",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 7
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "power_8",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_8",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 8
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "power_9",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_9",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 9
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "power_10",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_10",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 10
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "power_11",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_11",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 11
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "power_12",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_12",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 12
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "power_13",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_13",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 13
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "power_14",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_14",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 14
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "power_15",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "daylight_detector.power_15",
+      "States": [
+        {
+          "Name": "power",
+          "Type": "int",
+          "Value": 15
+        },
+        {
+          "Name": "daylight_detector_mode",
+          "Type": "org.diorite.material.state.DaylightDetectorMode",
+          "Value": "NORMAL"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "off"
+}
+ype": "off"
+}

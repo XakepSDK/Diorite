@@ -1,0 +1,281 @@
+{
+  "Id": 108,
+  "MinecraftId": "minecraft:brick_stairs",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "east",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "west",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "south",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "north",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "east_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.east_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "west_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.west_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "south_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.south_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "north_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_stairs.north_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "east"
+}
+st"
+}

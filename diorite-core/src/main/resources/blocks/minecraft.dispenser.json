@@ -1,0 +1,422 @@
+{
+  "Id": 23,
+  "MinecraftId": "minecraft:dispenser",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "down",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "DOWN"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "up",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.up",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "UP"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "north",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "south",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "west",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "east",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "down_activated",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.down_activated",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "DOWN"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "up",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.up",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "UP"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "north_activated",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.north_activated",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "south_activated",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.south_activated",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "west_activated",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.west_activated",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "eas_activatedt",
+      "Hardness": 3.5,
+      "BlastResistance": 17.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dispenser.eas_activatedt",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "down"
+}
+ "down"
+}

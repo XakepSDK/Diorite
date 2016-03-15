@@ -617,7 +617,7 @@ public abstract class BaseComponent extends ReplacableComponent
         }
         if (this.isObfuscated())
         {
-            builder.append(ChatColor.MAGIC);
+            builder.append(ChatColor.OBFUSCATED);
         }
     }
 

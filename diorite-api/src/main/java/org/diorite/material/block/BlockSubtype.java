@@ -25,9 +25,15 @@
 package org.diorite.material.block;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import org.diorite.material.AnySubtype;
+import org.diorite.material.data.drops.PossibleDrops;
+import org.diorite.material.item.ItemSubtype;
 import org.diorite.material.state.StateEntry;
+import org.diorite.utils.math.DioriteRandomUtils;
+import org.diorite.world.TileEntity;
 
 /**
  * Represent block subtype.
@@ -45,14 +51,29 @@ public interface BlockSubtype extends BlockType, AnySubtype
     int getSubtypeId();
 
     /**
-     * Returns sub-id of block used in packets.
+     * Returns display name of block.
      *
-     * @return sub-id of block used in packets.
+     * @return display name of block.
      */
     @Override
-    default int getProxySubtypeId()
+    String getDisplayNameKey();
+
+    @Override
+    default List<? extends BlockSubtype> getProxySubtypes()
     {
-        return this.getSubtypeId();
+        return Collections.emptyList();
+    }
+
+    @Override
+    default BlockSubtype getProxySubtype()
+    {
+        final List<? extends BlockSubtype> proxySubtypes = this.getProxySubtypes();
+        if (proxySubtypes.isEmpty())
+        {
+            return this;
+        }
+        final int size = proxySubtypes.size();
+        return (size == 1) ? proxySubtypes.get(0) : proxySubtypes.get(DioriteRandomUtils.nextInt(size));
     }
 
     /**
@@ -75,9 +96,108 @@ public interface BlockSubtype extends BlockType, AnySubtype
 
     /**
      * Returns state data of this subtype.
+     *
      * @return state data of this subtype.
      */
     Collection<StateEntry<?>> getStates();
+
+    /**
+     * Returns item for this block if exists.
+     *
+     * @return item for this block if exists.
+     */
+    ItemSubtype getItem();
+
+    /**
+     * Returns possible drops of this block.
+     *
+     * @return possible drops of this block.
+     */
+    PossibleDrops getDrops();
+
+    /**
+     * Returns sounds pack for this block.
+     *
+     * @return sounds pack for this block.
+     */
+    BlockSounds getSounds();
+
+    /**
+     * Returns hardness of block.
+     *
+     * @return hardness of block.
+     */
+    double getHardness();
+
+    /**
+     * Returns hardness of block.
+     *
+     * @return hardness of block.
+     */
+    double getBlastResistance();
+
+    /**
+     * Returns true if this block is solid.
+     *
+     * @return true if this block is solid.
+     */
+    boolean isSolid();
+
+    /**
+     * Retruns liquid related block parameters.
+     *
+     * @return liquid related block parameters.
+     */
+    LiquidSettings getLiquidSettings();
+
+//    /**
+//     * Override block {@link LiquidSettings}.
+//     *
+//     * @param settings new parameters to use.
+//     */
+//    void setLiquidSettings(LiquidSettings settings);
+
+    /**
+     * Retruns light related block parameters.
+     *
+     * @return light related block parameters.
+     */
+    LightSettings getLightSettings();
+
+//    /**
+//     * Override block {@link LightSettings}.
+//     *
+//     * @param settings new parameters to use.
+//     */
+//    void setLightSettings(LightSettings settings);
+
+    /**
+     * Retruns fire related block parameters.
+     *
+     * @return fire related block parameters.
+     */
+    FlameableSettings getFlameableSettings();
+
+//    /**
+//     * Override block {@link FlameableSettings}.
+//     *
+//     * @param settings new parameters to use.
+//     */
+//    void setFlameableSettings(FlameableSettings settings);
+
+    /**
+     * Returns interact handler.
+     *
+     * @return interact handler.
+     */
+    BlockInteractHandler getInteractHandler();
+
+    /**
+     * Returns true if this block is tile entity.
+     *
+     * @return true if this block is tile entity.
+     */
+    boolean isTileEntity();
 
     /**
      * Returns normal/full type of this block subtype.
@@ -86,4 +206,11 @@ public interface BlockSubtype extends BlockType, AnySubtype
      */
     @Override
     BlockType getFullType();
+
+    /**
+     * Returns type of tile entity, returns null if block isn't tile entity.
+     *
+     * @return type of tile entity, returns null if block isn't tile entity.
+     */
+    Class<? extends TileEntity> getTileEntityClass();
 }

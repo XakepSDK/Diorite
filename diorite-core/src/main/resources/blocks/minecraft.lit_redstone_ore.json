@@ -1,0 +1,31 @@
+{
+  "Id": 74,
+  "MinecraftId": "minecraft:lit_redstone_ore",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "lit_redstone_ore",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "lit_redstone_ore.lit_redstone_ore",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "lit_redstone_ore"
+}
+

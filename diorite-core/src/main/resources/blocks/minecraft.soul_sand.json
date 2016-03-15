@@ -1,0 +1,31 @@
+{
+  "Id": 88,
+  "MinecraftId": "minecraft:soul_sand",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "soul_sand",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "soul_sand.soul_sand",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "soul_sand"
+}
+

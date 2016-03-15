@@ -37,9 +37,6 @@ public abstract class ItemTypeImpl implements ItemType
 {
     private int    id;
     private String minecraftId;
-    private int    fakeId;
-    private String fakeMinecraftId;
-    private String displayNameKey;
     private int                       maxStack = 64;
     private Class<? extends ItemMeta> metaType = ItemMeta.class;
 
@@ -53,9 +50,6 @@ public abstract class ItemTypeImpl implements ItemType
     {
         this.id = id;
         this.minecraftId = minecraftId;
-        this.fakeId = id;
-        this.fakeMinecraftId = minecraftId;
-        this.displayNameKey = minecraftId.substring(minecraftId.indexOf(':') + 1);
     }
 
     @Override
@@ -83,30 +77,6 @@ public abstract class ItemTypeImpl implements ItemType
     }
 
     @Override
-    public int getProxyId()
-    {
-        return this.fakeId;
-    }
-
-    public ItemTypeImpl setProxyId(final int id)
-    {
-        this.fakeId = id;
-        return this;
-    }
-
-    @Override
-    public String getProxyMinecraftId()
-    {
-        return this.fakeMinecraftId;
-    }
-
-    public ItemTypeImpl setProxyId(final String id)
-    {
-        this.fakeMinecraftId = id;
-        return this;
-    }
-
-    @Override
     public int getMaxStack()
     {
         return this.maxStack;
@@ -115,18 +85,6 @@ public abstract class ItemTypeImpl implements ItemType
     public void setMaxStack(final int maxStack)
     {
         this.maxStack = maxStack;
-    }
-
-    @Override
-    public String getDisplayNameKey()
-    {
-        return this.displayNameKey;
-    }
-
-    public ItemTypeImpl setDisplayNameKey(final String displayNameKey)
-    {
-        this.displayNameKey = displayNameKey;
-        return this;
     }
 
     @Override

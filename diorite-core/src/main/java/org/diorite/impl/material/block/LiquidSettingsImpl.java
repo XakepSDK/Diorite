@@ -24,28 +24,43 @@
 
 package org.diorite.impl.material.block;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.material.block.LiquidSettings;
+import org.diorite.world.Dimension;
 import org.diorite.world.World;
 
-public abstract class LiquidSettingsImpl implements LiquidSettings
+import it.unimi.dsi.fastutil.objects.Object2ByteMap;
+import it.unimi.dsi.fastutil.objects.Object2ByteMaps;
+import it.unimi.dsi.fastutil.objects.Object2ByteOpenHashMap;
+
+public class LiquidSettingsImpl implements LiquidSettings
 {
-    public static final LiquidSettingsImpl NOT_LIQUID = new LiquidSettingsImpl(false)
+    public static final LiquidSettings NOT_LIQUID = new LiquidSettingsImpl(false, null);
+
+    private static final Set<LiquidSettings> cache = new HashSet<>(10);
+
+    static
     {
-        @Override
-        public int getSpillRadius(final World world)
-        {
-            return 0;
-        }
-    };
+        cache.add(NOT_LIQUID);
+    }
 
-    private boolean liquid;
+    protected final boolean liquid;
+    protected final Object2ByteMap<Dimension> spillRadius = new Object2ByteOpenHashMap<>(5);
 
-    public LiquidSettingsImpl(final boolean liquid)
+    private LiquidSettingsImpl(final boolean liquid, final Map<? extends Dimension, ? extends Byte> spillRadius)
     {
         this.liquid = liquid;
+        this.spillRadius.defaultReturnValue((byte) 0);
+        if (spillRadius != null)
+        {
+            this.spillRadius.putAll(spillRadius);
+        }
     }
 
     @Override
@@ -54,13 +69,16 @@ public abstract class LiquidSettingsImpl implements LiquidSettings
         return this.liquid;
     }
 
-    public void setLiquid(final boolean liquid)
+    @Override
+    public int getSpillRadius(final World world)
     {
-        this.liquid = liquid;
+        return this.spillRadius.getByte(world.getDimension());
     }
 
-    @Override
-    public abstract int getSpillRadius(World world);
+    public Object2ByteMap<Dimension> getSpillRadius()
+    {
+        return Object2ByteMaps.unmodifiable(this.spillRadius);
+    }
 
     @Override
     public boolean equals(final Object o)
@@ -89,5 +107,19 @@ public abstract class LiquidSettingsImpl implements LiquidSettings
     public String toString()
     {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("liquid", this.liquid).toString();
+    }
+
+    public static LiquidSettings createLiquidSettings(final boolean liquid, final Map<? extends Dimension, ? extends Byte> spillRadius)
+    {
+        final LiquidSettings liquidSettings = new LiquidSettingsImpl(liquid, spillRadius);
+        for (final LiquidSettings settings : cache)
+        {
+            if (settings.equals(liquidSettings))
+            {
+                return settings;
+            }
+        }
+        cache.add(liquidSettings);
+        return liquidSettings;
     }
 }

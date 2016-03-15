@@ -1,0 +1,473 @@
+{
+  "Id": 51,
+  "MinecraftId": "minecraft:fire",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "fire",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 0
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "fire_1",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_1",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 1
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "fire_2",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_2",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 2
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "fire_3",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_3",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 3
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "fire_4",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_4",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 4
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "fire_5",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_5",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 5
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "fire_6",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_6",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 6
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "fire_7",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_7",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 7
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "fire_8",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_8",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 8
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "fire_9",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_9",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 9
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "fire_10",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_10",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 10
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "fire_11",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_11",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 11
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "fire_12",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_12",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 12
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "fire_13",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_13",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 13
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "fire_14",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire_14",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 14
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "fire",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fire.fire",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 16
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "fire"
+}
+pe": "fire"
+}

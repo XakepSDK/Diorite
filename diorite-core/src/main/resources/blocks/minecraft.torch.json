@@ -1,0 +1,183 @@
+{
+  "Id": 50,
+  "MinecraftId": "minecraft:torch",
+  "Subtypes": [
+    {
+      "Id": 1,
+      "StringId": "east",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "torch.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "west",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "torch.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "east",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "torch.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "south",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "torch.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "north",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "torch.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "up",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "torch.up",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "UP"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "east"
+}
+"
+}

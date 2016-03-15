@@ -1,0 +1,633 @@
+{
+  "Id": 26,
+  "MinecraftId": "minecraft:bed",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "foot_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_south",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "foot_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_west",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "foot_north",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_north",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "foot_east",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_east",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "foot_south_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_south_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "foot_west_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_west_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "foot_north_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_north_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "foot_east_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.foot_east_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "FOOT"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "head_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_south",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "head_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_west",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "head_north",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_north",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "head_east",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_east",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "head_south_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_south_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "head_west_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_west_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "head_north_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_north_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "head_east_occupied",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bed.head_east_occupied",
+      "States": [
+        {
+          "Name": "bed_part",
+          "Type": "org.diorite.material.state.BedPart",
+          "Value": "HEAD"
+        },
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "occupied",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "foot_south"
+}
+foot_south"
+}

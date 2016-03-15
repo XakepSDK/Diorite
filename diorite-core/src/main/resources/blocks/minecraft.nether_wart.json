@@ -1,0 +1,125 @@
+{
+  "Id": 115,
+  "MinecraftId": "minecraft:nether_wart",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "planted",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "nether_wart.planted",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 0
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "stage_1",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "nether_wart.stage_1",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 1
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "stage_2",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "nether_wart.stage_2",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 2
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "ripe",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "nether_wart.ripe",
+      "States": [
+        {
+          "Name": "age",
+          "Type": "int",
+          "Value": 4
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "planted"
+}
+
+}

@@ -1,0 +1,31 @@
+{
+  "Id": 41,
+  "MinecraftId": "minecraft:gold_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "gold_block",
+      "Hardness": 3.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "gold_block.gold_block",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "gold_block"
+}
+

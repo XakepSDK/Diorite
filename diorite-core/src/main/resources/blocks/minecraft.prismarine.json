@@ -1,0 +1,95 @@
+{
+  "Id": 168,
+  "MinecraftId": "minecraft:prismarine",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "normal",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "prismarine.normal",
+      "States": [
+        {
+          "Name": "prismarine_variant",
+          "Type": "org.diorite.material.state.PrismarineVariant",
+          "Value": "NORMAL"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "bricks",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "prismarine.bricks",
+      "States": [
+        {
+          "Name": "prismarine_variant",
+          "Type": "org.diorite.material.state.PrismarineVariant",
+          "Value": "BRICKS"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "dark",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "prismarine.dark",
+      "States": [
+        {
+          "Name": "prismarine_variant",
+          "Type": "org.diorite.material.state.PrismarineVariant",
+          "Value": "DARK"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "normal"
+}
+}

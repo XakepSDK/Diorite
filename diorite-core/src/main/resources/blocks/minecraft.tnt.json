@@ -1,0 +1,31 @@
+{
+  "Id": 46,
+  "MinecraftId": "minecraft:tnt",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "tnt",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tnt.tnt",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "tnt"
+}
+

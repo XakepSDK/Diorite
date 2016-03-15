@@ -1,0 +1,71 @@
+{
+  "Id": 19,
+  "MinecraftId": "minecraft:sponge",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "sponge",
+      "Hardness": 0.6000000238418579,
+      "BlastResistance": 3.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sponge.sponge",
+      "States": [
+        {
+          "Name": "wet",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "wet",
+      "Hardness": 0.6000000238418579,
+      "BlastResistance": 3.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sponge.wet",
+      "States": [
+        {
+          "Name": "wet",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "sponge"
+}
+

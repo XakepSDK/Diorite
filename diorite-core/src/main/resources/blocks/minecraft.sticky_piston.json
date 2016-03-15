@@ -1,0 +1,472 @@
+{
+  "Id": 29,
+  "MinecraftId": "minecraft:sticky_piston",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "down",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "DOWN"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "up",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.up",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "UP"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "north",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "south",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "west",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "east",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "down_extended",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.down_extended",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "DOWN"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "up_extended",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.up_extended",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "UP"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "north_extended",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.north_extended",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "south_extended",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.south_extended",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "west_extended",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.west_extended",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "sticky",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "east_extended",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sticky_piston.east_extended",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "extended",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "down"
+}
+ "down"
+}

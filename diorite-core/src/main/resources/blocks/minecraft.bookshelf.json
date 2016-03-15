@@ -1,0 +1,31 @@
+{
+  "Id": 47,
+  "MinecraftId": "minecraft:bookshelf",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "bookshelf",
+      "Hardness": 1.5,
+      "BlastResistance": 7.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bookshelf.bookshelf",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "bookshelf"
+}
+

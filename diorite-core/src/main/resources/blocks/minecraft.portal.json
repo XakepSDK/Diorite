@@ -1,0 +1,66 @@
+{
+  "Id": 90,
+  "MinecraftId": "minecraft:portal",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "east_west",
+      "Hardness": -1.0,
+      "BlastResistance": 1.8E7,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "portal.east_west",
+      "States": [
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "EAST_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "north_south",
+      "Hardness": -1.0,
+      "BlastResistance": 1.8E7,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "portal.north_south",
+      "States": [
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "east_west"
+}
+

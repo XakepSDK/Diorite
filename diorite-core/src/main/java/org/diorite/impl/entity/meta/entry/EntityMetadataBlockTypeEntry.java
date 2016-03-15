@@ -44,6 +44,7 @@ public class EntityMetadataBlockTypeEntry extends EntityMetadataObjectEntry<Bloc
     @Override
     public void write(final PacketDataSerializer data)
     {
-        data.writeVarInt((this.data.getProxyId() << 4) | this.data.getProxySubtypeId());
+        final BlockSubtype proxySubtype = this.data.getProxySubtype();
+        data.writeVarInt((proxySubtype.getId() << 4) | proxySubtype.getSubtypeId());
     }
 }

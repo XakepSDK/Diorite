@@ -1,0 +1,377 @@
+{
+  "Id": 183,
+  "MinecraftId": "minecraft:spruce_fence_gate",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "south",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "west",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "north",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "east",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "south_open",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.south_open",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "west_open",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.west_open",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "north_open",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.north_open",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "east_open",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.east_open",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "south"
+}
+th"
+}
+ag": 1,
+            "planksMeta": 1,
+            "enumName": "SPRUCE",
+            "ordinal": 1
+          }
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "east_open",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_fence_gate.east_open",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": false,
+            "logFlag": 1,
+            "planksMeta": 1,
+            "enumName": "SPRUCE",
+            "ordinal": 1
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "south"
+}

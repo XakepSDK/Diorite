@@ -1,0 +1,31 @@
+{
+  "Id": 112,
+  "MinecraftId": "minecraft:nether_brick",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "nether_brick",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "nether_brick.nether_brick",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "nether_brick"
+}
+

@@ -31,7 +31,6 @@ import java.util.Collection;
  */
 public interface AnyType
 {
-
     /**
      * Returns numeric id used (not always, sometimes {@link #getMinecraftId()} is used) in save files, packets, etc.
      *
@@ -42,31 +41,11 @@ public interface AnyType
     int getId();
 
     /**
-     * Returns id used in packets, used for adding fake types.
-     *
-     * @return id used in packets, used for adding fake types.
-     */
-    default int getProxyId()
-    {
-        return this.getId();
-    }
-
-    /**
      * Returns minecraft string id of types.
      *
      * @return minecraft string id of types.
      */
     String getMinecraftId();
-
-    /**
-     * Returns minecraft string id of type used in packets, used for adding fake types.
-     *
-     * @return minecraft string id of type used in packets, used for adding fake types.
-     */
-    default String getProxyMinecraftId()
-    {
-        return this.getMinecraftId();
-    }
 
     /**
      * Returns subtype by given id.
@@ -92,13 +71,6 @@ public interface AnyType
      * @return collection of subtypes for this type.
      */
     Collection<? extends AnySubtype> getSubtypes();
-
-    /**
-     * Returns display name of type.
-     *
-     * @return display name of type.
-     */
-    String getDisplayNameKey();
 
     /**
      * Returns default subtype.

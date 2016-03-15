@@ -1,0 +1,286 @@
+{
+  "Id": 8,
+  "MinecraftId": "minecraft:water",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "source",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.source",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "SOURCE"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "stage_1",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_1",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_1"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "stage_2",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_2",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_2"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "stage_3",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_3",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_3"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "stage_4",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_4",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_4"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "stage_5",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_5",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_5"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "stage_6",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_6",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_6"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "stage_7",
+      "Hardness": 100.0,
+      "BlastResistance": 500.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "water.stage_7",
+      "States": [
+        {
+          "Name": "liquid_type",
+          "Type": "org.diorite.material.state.LiquidType",
+          "Value": "STILL"
+        },
+        {
+          "Name": "stage",
+          "Type": "org.diorite.material.state.LiquidStage",
+          "Value": "STAGE_7"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "source"
+}
+ce"
+}

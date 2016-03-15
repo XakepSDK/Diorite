@@ -29,7 +29,7 @@ package org.diorite.material.state;
  */
 public enum PillarVariant
 {
-    PILLAR_VERTICAL,
-    PILLAR_NORTH_SOUTH,
-    PILLAR_EAST_WEST,
+    VERTICAL,
+    NORTH_SOUTH,
+    EAST_WEST,
 }

@@ -24,6 +24,9 @@
 
 package org.diorite.impl.material.block;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -31,17 +34,28 @@ import org.diorite.material.block.FlameableSettings;
 
 public class FlameableSettingsImpl implements FlameableSettings
 {
-    public static final FlameableSettingsImpl NO_FIRE       = new FlameableSettingsImpl(false);
-    public static final FlameableSettingsImpl NOT_FLAMEABLE = new FlameableSettingsImpl(0, 0);
-    public static final FlameableSettingsImpl WOODEN        = new FlameableSettingsImpl(5, 20);
-    public static final FlameableSettingsImpl STRONG        = new FlameableSettingsImpl(5, 5);
-    public static final FlameableSettingsImpl PLANTS        = new FlameableSettingsImpl(60, 100);
+    public static final FlameableSettings NO_FIRE       = new FlameableSettingsImpl(false);
+    public static final FlameableSettings NOT_FLAMEABLE = new FlameableSettingsImpl(0, 0);
+    public static final FlameableSettings WOODEN        = new FlameableSettingsImpl(5, 20);
+    public static final FlameableSettings STRONG        = new FlameableSettingsImpl(5, 5);
+    public static final FlameableSettings PLANTS        = new FlameableSettingsImpl(60, 100);
 
-    private boolean canBeSetOnFire;
-    private float   flameChances;
-    private float   burnChances;
+    private static final Set<FlameableSettings> cache = new HashSet<>(10);
 
-    public FlameableSettingsImpl(final boolean canBeSetOnFire, final float flameChances, final float burnChances)
+    static
+    {
+        cache.add(NO_FIRE);
+        cache.add(NOT_FLAMEABLE);
+        cache.add(WOODEN);
+        cache.add(STRONG);
+        cache.add(PLANTS);
+    }
+
+    private final boolean canBeSetOnFire;
+    private final float   flameChances;
+    private final float   burnChances;
+
+    private FlameableSettingsImpl(final boolean canBeSetOnFire, final float flameChances, final float burnChances)
     {
         this.canBeSetOnFire = canBeSetOnFire;
 //        this.flameable = flameable;
@@ -50,12 +64,14 @@ public class FlameableSettingsImpl implements FlameableSettings
         this.burnChances = burnChances;
     }
 
-    public FlameableSettingsImpl(final boolean canBeSetOnFire)
+    private FlameableSettingsImpl(final boolean canBeSetOnFire)
     {
         this.canBeSetOnFire = canBeSetOnFire;
+        this.flameChances = 0F;
+        this.burnChances = 0F;
     }
 
-    public FlameableSettingsImpl(final float flameChances, final float burnChances)
+    private FlameableSettingsImpl(final float flameChances, final float burnChances)
     {
         this.canBeSetOnFire = true;
 //        this.flameable = true;
@@ -64,11 +80,12 @@ public class FlameableSettingsImpl implements FlameableSettings
         this.burnChances = burnChances;
     }
 
-    public FlameableSettingsImpl(final float flameChances)
+    private FlameableSettingsImpl(final float flameChances)
     {
         this.canBeSetOnFire = true;
 //        this.flameable = true;
         this.flameChances = flameChances;
+        this.burnChances = 0F;
     }
 
     @Override
@@ -101,21 +118,6 @@ public class FlameableSettingsImpl implements FlameableSettings
         return this.burnChances;
     }
 
-    public void setCanBeSetOnFire(final boolean canBeSetOnFire)
-    {
-        this.canBeSetOnFire = canBeSetOnFire;
-    }
-
-    public void setFlameChances(final float flameChances)
-    {
-        this.flameChances = flameChances;
-    }
-
-    public void setBurnChances(final float burnChances)
-    {
-        this.burnChances = burnChances;
-    }
-
     @Override
     public boolean equals(final Object o)
     {
@@ -146,5 +148,61 @@ public class FlameableSettingsImpl implements FlameableSettings
     public String toString()
     {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("canBeSetOnFire", this.canBeSetOnFire).append("flameChances", this.flameChances).append("burnChances", this.burnChances).toString();
+    }
+
+    public static FlameableSettings createFlameableSettings(final boolean canBeSetOnFire, final float flameChances, final float burnChances)
+    {
+        final FlameableSettings flameableSettings = new FlameableSettingsImpl(canBeSetOnFire, flameChances, burnChances);
+        for (final FlameableSettings settings : cache)
+        {
+            if (settings.equals(flameableSettings))
+            {
+                return settings;
+            }
+        }
+        cache.add(flameableSettings);
+        return flameableSettings;
+    }
+
+    public static FlameableSettings createFlameableSettings(final boolean canBeSetOnFire)
+    {
+        final FlameableSettings flameableSettings = new FlameableSettingsImpl(canBeSetOnFire);
+        for (final FlameableSettings settings : cache)
+        {
+            if (settings.equals(flameableSettings))
+            {
+                return settings;
+            }
+        }
+        cache.add(flameableSettings);
+        return flameableSettings;
+    }
+
+    public static FlameableSettings createFlameableSettings(final float flameChances, final float burnChances)
+    {
+        final FlameableSettings flameableSettings = new FlameableSettingsImpl(flameChances, burnChances);
+        for (final FlameableSettings settings : cache)
+        {
+            if (settings.equals(flameableSettings))
+            {
+                return settings;
+            }
+        }
+        cache.add(flameableSettings);
+        return flameableSettings;
+    }
+
+    public static FlameableSettings createFlameableSettings(final float flameChances)
+    {
+        final FlameableSettings flameableSettings = new FlameableSettingsImpl(flameChances);
+        for (final FlameableSettings settings : cache)
+        {
+            if (settings.equals(flameableSettings))
+            {
+                return settings;
+            }
+        }
+        cache.add(flameableSettings);
+        return flameableSettings;
     }
 }

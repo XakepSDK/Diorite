@@ -1,0 +1,188 @@
+{
+  "Id": 1,
+  "MinecraftId": "minecraft:stone",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "stone",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone.stone",
+      "States": [
+        {
+          "Name": "stone_variant",
+          "Type": "org.diorite.material.state.StoneVariant",
+          "Value": "STONE"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "granite",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone.granite",
+      "States": [
+        {
+          "Name": "stone_variant",
+          "Type": "org.diorite.material.state.StoneVariant",
+          "Value": "GRANITE"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "polished_granite",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone.polished_granite",
+      "States": [
+        {
+          "Name": "stone_variant",
+          "Type": "org.diorite.material.state.StoneVariant",
+          "Value": "POLISHED_GRANITE"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "polished_diorite",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone.polished_diorite",
+      "States": [
+        {
+          "Name": "stone_variant",
+          "Type": "org.diorite.material.state.StoneVariant",
+          "Value": "POLISHED_DIORITE"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "andesite",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone.andesite",
+      "States": [
+        {
+          "Name": "stone_variant",
+          "Type": "org.diorite.material.state.StoneVariant",
+          "Value": "ANDESITE"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "polished_andesite",
+      "Hardness": 1.5,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone.polished_andesite",
+      "States": [
+        {
+          "Name": "stone_variant",
+          "Type": "org.diorite.material.state.StoneVariant",
+          "Value": "POLISHED_ANDESITE"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "stone"
+}
+"
+}

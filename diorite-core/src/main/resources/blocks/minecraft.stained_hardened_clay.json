@@ -1,0 +1,724 @@
+{
+  "Id": 159,
+  "MinecraftId": "minecraft:stained_hardened_clay",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "white",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.white",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "WHITE"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "orange",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.orange",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "ORANGE"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "magenta",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.magenta",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "MAGENTA"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "light_blue",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.light_blue",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "LIGHT_BLUE"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "yellow",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.yellow",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "YELLOW"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "lime",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.lime",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "LIME"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "pink",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.pink",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "PINK"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "gray",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.gray",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "GRAY"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "light_gray",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.light_gray",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "LIGHT_GRAY"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "cyan",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.cyan",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "CYAN"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "purple",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.purple",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "PURPLE"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "blue",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.blue",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "BLUE"
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "brown",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.brown",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "BROWN"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "green",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.green",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "GREEN"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "red",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.red",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "RED"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "black",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.black",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": "BLACK"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "white"
+}
+e": "white"
+}
+nFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.purple",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": {
+            "blockFlag": 10,
+            "itemFlag": 5,
+            "color": {
+              "red": 127,
+              "green": 63,
+              "blue": -78
+            },
+            "fireworkColor": {
+              "red": 123,
+              "green": 47,
+              "blue": -66
+            },
+            "enumName": "PURPLE",
+            "ordinal": 10
+          }
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "blue",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.blue",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": {
+            "blockFlag": 11,
+            "itemFlag": 4,
+            "color": {
+              "red": 51,
+              "green": 76,
+              "blue": -78
+            },
+            "fireworkColor": {
+              "red": 37,
+              "green": 49,
+              "blue": -110
+            },
+            "enumName": "BLUE",
+            "ordinal": 11
+          }
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "brown",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.brown",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": {
+            "blockFlag": 12,
+            "itemFlag": 3,
+            "color": {
+              "red": 102,
+              "green": 76,
+              "blue": 51
+            },
+            "fireworkColor": {
+              "red": 81,
+              "green": 48,
+              "blue": 26
+            },
+            "enumName": "BROWN",
+            "ordinal": 12
+          }
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "green",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.green",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": {
+            "blockFlag": 13,
+            "itemFlag": 2,
+            "color": {
+              "red": 102,
+              "green": 127,
+              "blue": 51
+            },
+            "fireworkColor": {
+              "red": 59,
+              "green": 81,
+              "blue": 26
+            },
+            "enumName": "GREEN",
+            "ordinal": 13
+          }
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "red",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.red",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": {
+            "blockFlag": 14,
+            "itemFlag": 1,
+            "color": {
+              "red": -103,
+              "green": 51,
+              "blue": 51
+            },
+            "fireworkColor": {
+              "red": -77,
+              "green": 49,
+              "blue": 44
+            },
+            "enumName": "RED",
+            "ordinal": 14
+          }
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "black",
+      "Hardness": 1.25,
+      "BlastResistance": 30.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stained_hardened_clay.black",
+      "States": [
+        {
+          "Name": "color",
+          "Type": "org.diorite.DyeColor",
+          "Value": {
+            "blockFlag": 15,
+            "itemFlag": 0,
+            "color": {
+              "red": 25,
+              "green": 25,
+              "blue": 25
+            },
+            "fireworkColor": {
+              "red": 30,
+              "green": 27,
+              "blue": 27
+            },
+            "enumName": "BLACK",
+            "ordinal": 15
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "white"
+}

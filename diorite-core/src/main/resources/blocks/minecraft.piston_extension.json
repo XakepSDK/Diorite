@@ -1,0 +1,31 @@
+{
+  "Id": 36,
+  "MinecraftId": "minecraft:piston_extension",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "piston_extension",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "piston_extension.piston_extension",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "piston_extension"
+}
+

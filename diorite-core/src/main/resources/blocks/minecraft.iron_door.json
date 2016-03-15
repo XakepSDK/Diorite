@@ -1,0 +1,417 @@
+{
+  "Id": 71,
+  "MinecraftId": "minecraft:iron_door",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "bottom_east",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "bottom_south",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "bottom_west",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "bottom_north",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "bottom_open_east",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_open_east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "bottom_open_south",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_open_south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "bottom_open_west",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_open_west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "bottom_open_north",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.bottom_open_north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "top_left",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.top_left",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "top_right",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.top_right",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "top_left_powered",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.top_left_powered",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "top_right_powered",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_door.top_right_powered",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "bottom_east"
+}
+m_east"
+}

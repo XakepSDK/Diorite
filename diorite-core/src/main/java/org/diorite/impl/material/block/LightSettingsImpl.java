@@ -24,6 +24,9 @@
 
 package org.diorite.impl.material.block;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -31,20 +34,23 @@ import org.diorite.material.block.LightSettings;
 
 public class LightSettingsImpl implements LightSettings
 {
-    public static final LightSettingsImpl NO_LIGHT     = new LightSettingsImpl(15, 0);
-    public static final LightSettingsImpl TRANSPARENT  = new LightSettingsImpl(0, 0);
-    public static final LightSettingsImpl LIGHT_SOURCE = new LightSettingsImpl(0, 15);
+    public static final LightSettings NO_LIGHT     = new LightSettingsImpl(15, 0);
+    public static final LightSettings TRANSPARENT  = new LightSettingsImpl(0, 0);
+    public static final LightSettings LIGHT_SOURCE = new LightSettingsImpl(0, 15);
 
-    private byte filterLight;
-    private byte emitLight;
+    private static final Set<LightSettings> cache = new HashSet<>(10);
 
-    public LightSettingsImpl(final byte filterLight, final byte emitLight)
+    static
     {
-        this.filterLight = filterLight;
-        this.emitLight = emitLight;
+        cache.add(NO_LIGHT);
+        cache.add(TRANSPARENT);
+        cache.add(LIGHT_SOURCE);
     }
 
-    public LightSettingsImpl(final int filterLight, final int emitLight)
+    private final byte filterLight;
+    private final byte emitLight;
+
+    private LightSettingsImpl(final int filterLight, final int emitLight)
     {
         this.filterLight = (byte) filterLight;
         this.emitLight = (byte) emitLight;
@@ -56,20 +62,10 @@ public class LightSettingsImpl implements LightSettings
         return this.filterLight;
     }
 
-    public void setFilterLight(final byte filterLight)
-    {
-        this.filterLight = filterLight;
-    }
-
     @Override
     public int getEmitLight()
     {
         return this.emitLight;
-    }
-
-    public void setEmitLight(final byte emitLight)
-    {
-        this.emitLight = emitLight;
     }
 
     @Override
@@ -87,7 +83,6 @@ public class LightSettingsImpl implements LightSettings
         final LightSettingsImpl that = (LightSettingsImpl) o;
 
         return (this.filterLight == that.filterLight) && (this.emitLight == that.emitLight);
-
     }
 
     @Override
@@ -102,5 +97,19 @@ public class LightSettingsImpl implements LightSettings
     public String toString()
     {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("filterLight", this.filterLight).append("emitLight", this.emitLight).toString();
+    }
+
+    public static LightSettings createLightSettings(final int filterLight, final int emitLight)
+    {
+        final LightSettings lightSettings = new LightSettingsImpl(filterLight, emitLight);
+        for (final LightSettings settings : cache)
+        {
+            if (settings.equals(lightSettings))
+            {
+                return settings;
+            }
+        }
+        cache.add(lightSettings);
+        return lightSettings;
     }
 }

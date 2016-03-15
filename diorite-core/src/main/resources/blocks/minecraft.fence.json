@@ -1,0 +1,47 @@
+{
+  "Id": 85,
+  "MinecraftId": "minecraft:fence",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "oak",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "fence.oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "oak"
+}
+
+       "planksMeta": 0,
+            "enumName": "OAK",
+            "ordinal": 0
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "oak"
+}

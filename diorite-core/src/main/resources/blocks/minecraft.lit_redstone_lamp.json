@@ -1,0 +1,31 @@
+{
+  "Id": 124,
+  "MinecraftId": "minecraft:lit_redstone_lamp",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "lit_redstone_lamp",
+      "Hardness": 0.30000001192092896,
+      "BlastResistance": 1.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "lit_redstone_lamp.lit_redstone_lamp",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "lit_redstone_lamp"
+}
+

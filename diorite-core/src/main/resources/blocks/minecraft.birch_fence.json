@@ -1,0 +1,47 @@
+{
+  "Id": 189,
+  "MinecraftId": "minecraft:birch_fence",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "fence",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "birch_fence.fence",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "fence"
+}
+
+   "planksMeta": 2,
+            "enumName": "BIRCH",
+            "ordinal": 2
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "fence"
+}

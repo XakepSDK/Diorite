@@ -1,0 +1,540 @@
+{
+  "Id": 106,
+  "MinecraftId": "minecraft:vine",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "none",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.none",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": []
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "SOUTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "WEST"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "south_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.south_west",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "SOUTH",
+            "WEST"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "north",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "NORTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "north_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.north_south",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "NORTH",
+            "SOUTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "north_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.north_west",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "NORTH",
+            "WEST"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "north_west_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.north_west_south",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "NORTH",
+            "WEST",
+            "SOUTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "east",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "east_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_south",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "SOUTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "east_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_west",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "WEST"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "east_west_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_west_south",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "WEST",
+            "SOUTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "east_north",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_north",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "NORTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "east_north_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_north_south",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "NORTH",
+            "SOUTH"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "east_north_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_north_west",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "NORTH",
+            "WEST"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "east_north_west_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "vine.east_north_west_south",
+      "States": [
+        {
+          "Name": "faces",
+          "Type": "[Lorg.diorite.BlockFace;",
+          "Value": [
+            "EAST",
+            "NORTH",
+            "WEST",
+            "SOUTH"
+          ]
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "none"
+}
+pe": "none"
+}

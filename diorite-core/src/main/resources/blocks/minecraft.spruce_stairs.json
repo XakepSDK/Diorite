@@ -1,0 +1,376 @@
+{
+  "Id": 134,
+  "MinecraftId": "minecraft:spruce_stairs",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "east",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "west",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "south",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "north",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "east_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.east_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "west_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.west_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "south_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.south_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "north_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.north_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "east"
+}
+st"
+}
+   "planksMeta": 1,
+            "enumName": "SPRUCE",
+            "ordinal": 1
+          }
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "north_upside_down",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "spruce_stairs.north_upside_down",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "upsideDown",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": false,
+            "logFlag": 1,
+            "planksMeta": 1,
+            "enumName": "SPRUCE",
+            "ordinal": 1
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "east"
+}

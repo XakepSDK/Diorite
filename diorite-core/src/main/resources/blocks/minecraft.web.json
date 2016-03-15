@@ -1,0 +1,31 @@
+{
+  "Id": 30,
+  "MinecraftId": "minecraft:web",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "web",
+      "Hardness": 4.0,
+      "BlastResistance": 20.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "web.web",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "web"
+}
+

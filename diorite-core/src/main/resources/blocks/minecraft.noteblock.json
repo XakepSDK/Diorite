@@ -1,0 +1,31 @@
+{
+  "Id": 25,
+  "MinecraftId": "minecraft:noteblock",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "noteblock",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "noteblock.noteblock",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "noteblock"
+}
+

@@ -1,0 +1,299 @@
+{
+  "Id": 66,
+  "MinecraftId": "minecraft:rail",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "flat_north_south",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.flat_north_south",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "FLAT_NORTH_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "flat_west_east",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.flat_west_east",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "FLAT_WEST_EAST"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "ascending_east",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.ascending_east",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "ASCENDING_EAST"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "ascending_west",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.ascending_west",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "ASCENDING_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "ascending_north",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.ascending_north",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "ASCENDING_NORTH"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "ascending_south",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.ascending_south",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "ASCENDING_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "curved_south_east",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.curved_south_east",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "CURVED_SOUTH_EAST"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "curved_south_west",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.curved_south_west",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "CURVED_SOUTH_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "curved_north_west",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.curved_north_west",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "CURVED_NORTH_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "curved_north_east",
+      "Hardness": 0.699999988079071,
+      "BlastResistance": 3.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "rail.curved_north_east",
+      "States": [
+        {
+          "Name": "rail_type",
+          "Type": "org.diorite.material.state.RailType",
+          "Value": "CURVED_NORTH_EAST"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "flat_north_south"
+}
+outh"
+}

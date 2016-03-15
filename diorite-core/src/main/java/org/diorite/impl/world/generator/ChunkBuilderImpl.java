@@ -31,9 +31,9 @@ import org.diorite.impl.world.chunk.ChunkBlockData;
 import org.diorite.impl.world.chunk.ChunkImpl;
 import org.diorite.impl.world.chunk.ChunkPartImpl;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
-import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.Blocks;
 import org.diorite.world.chunk.Chunk;
 import org.diorite.world.generator.BiomeGrid;
@@ -93,18 +93,18 @@ public class ChunkBuilderImpl implements ChunkBuilder
         chunkPart.setBlock(x, y % Chunk.CHUNK_PART_HEIGHT, z, materialData);
     }
 
-    @Override
-    public void setBlock(final int x, final int y, final int z, final int id, final int meta)
-    {
-        final byte chunkPosY = (byte) (y >> 4);
-        ChunkPartBuilder chunkPart = this.chunkParts[chunkPosY];
-        if (chunkPart == null)
-        {
-            chunkPart = new ChunkPartBuilder(this, chunkPosY);
-            this.chunkParts[chunkPosY] = chunkPart;
-        }
-        chunkPart.setBlock(x, y % Chunk.CHUNK_PART_HEIGHT, z, id, meta);
-    }
+//    @Override
+//    public void setBlock(final int x, final int y, final int z, final int id, final int meta)
+//    {
+//        final byte chunkPosY = (byte) (y >> 4);
+//        ChunkPartBuilder chunkPart = this.chunkParts[chunkPosY];
+//        if (chunkPart == null)
+//        {
+//            chunkPart = new ChunkPartBuilder(this, chunkPosY);
+//            this.chunkParts[chunkPosY] = chunkPart;
+//        }
+//        chunkPart.setBlock(x, y % Chunk.CHUNK_PART_HEIGHT, z, id, meta);
+//    }
 
     @Override
     public BlockSubtype getBlockType(final int x, final int y, final int z)
@@ -131,7 +131,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
             {
                 continue;
             }
-            chunkParts[i] = new ChunkPartImpl(chunkPart.blockData, chunkPart.palette, (byte) i, chunk.getWorld().getDimension().hasSkyLight(), chunkPart.nonEmptyBlockCount);
+            chunkParts[i] = new ChunkPartImpl(chunkPart.blockData, chunkPart.blockDataProxy, chunkPart.palette, (byte) i, chunk.getWorld().getDimension().hasSkyLight(), chunkPart.nonEmptyBlockCount);
 //            chunkParts[i].recalculateBlockCount();
         }
         chunk.setChunkParts(chunkParts);
@@ -146,6 +146,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
         private final ChunkBuilderImpl chunk;
         private final PaletteImpl      palette;
         private final ChunkBlockData   blockData;
+        private       ChunkBlockData   blockDataProxy;
         private final byte             yPos; // from 0 to 15
         private       int              nonEmptyBlockCount;
 
@@ -157,29 +158,46 @@ public class ChunkBuilderImpl implements ChunkBuilder
             this.blockData = new ChunkBlockData(this.palette.bitsPerBlock(), CHUNK_DATA_SIZE);
         }
 
-        private void setBlock(final int x, final int y, final int z, final int id, final int meta)
+        @SuppressWarnings("ObjectEquality")
+        private void setBlock(final int x, final int y, final int z, final BlockType type)
         {
-            final BlockSubtype old = this.blockData.getAndSet(this.toArrayIndex(x, y, z), this.palette.put(id, (byte) meta), this.palette);
-            if ((old.getId() == 0) && (id != 0))
+            final BlockSubtype blockSubtype = type.asSubtype();
+            final BlockSubtype proxySubtype = blockSubtype.getProxySubtype();
+            final BlockSubtype old = this.getBlockType(x, y, z);
+            final int realId = blockSubtype.getId();
+            final int realMeta = blockSubtype.getSubtypeId();
+            if ((realId == old.getId()) && (realMeta == old.getSubtypeId()))
+            {
+                return;
+            }
+            if ((old.getId() == 0) && (realId != 0))
             {
                 this.nonEmptyBlockCount++;
             }
-            else if ((old.getId() != 0) && (id == 0))
+            else if ((old.getId() != 0) && (realId == 0))
             {
                 this.nonEmptyBlockCount--;
             }
-        }
-
-        private void setBlock(final int x, final int y, final int z, final BlockType material)
-        {
-            final BlockSubtype subtype = material.asSubtype();
-            this.setBlock(x, y, z, material.getId(), subtype.getSubtypeId());
+            final int realRawData = this.palette.put(realId, (byte) realMeta);
+            this.blockData.set(toArrayIndex(x, y, z), realRawData);
+            if (blockSubtype == proxySubtype)
+            {
+                return;
+            }
+            if (this.blockDataProxy == null)
+            {
+                this.blockDataProxy = this.blockData.clone();
+            }
+            final int proxyId = proxySubtype.getId();
+            final int proxyMeta = proxySubtype.getSubtypeId();
+            final int proxyRawData = this.palette.put(proxyId, (byte) proxyMeta);
+            this.blockDataProxy.set(toArrayIndex(x, y, z), realRawData);
         }
 
         @SuppressWarnings("MagicNumber")
         private BlockSubtype getBlockType(final int x, final int y, final int z)
         {
-            final int data = this.blockData.getAsInt(this.toArrayIndex(x, y, z), this.palette);
+            final int data = this.blockData.getAsInt(toArrayIndex(x, y, z), this.palette);
             final BlockSubtype blockSubtype = BlockRegistry.getBlockSubtype(data >> 4, data & 15);
             if (blockSubtype == null)
             {
@@ -189,7 +207,7 @@ public class ChunkBuilderImpl implements ChunkBuilder
         }
 
         @SuppressWarnings("MagicNumber")
-        private int toArrayIndex(final int x, final int y, final int z)
+        private static int toArrayIndex(final int x, final int y, final int z)
         {
             return ((y & 0xf) << 8) | (z << 4) | x;
         }

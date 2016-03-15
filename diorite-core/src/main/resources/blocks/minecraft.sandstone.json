@@ -1,0 +1,110 @@
+{
+  "Id": 24,
+  "MinecraftId": "minecraft:sandstone",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "sandstone",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sandstone.sandstone",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "NORMAL"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "chiseled_sandstone",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sandstone.chiseled_sandstone",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "NORMAL"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CHISELED"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "smooth_sandstone",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sandstone.smooth_sandstone",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "NORMAL"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "SMOOTH"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "sandstone"
+}
+}

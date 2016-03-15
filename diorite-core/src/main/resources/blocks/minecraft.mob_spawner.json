@@ -1,0 +1,31 @@
+{
+  "Id": 52,
+  "MinecraftId": "minecraft:mob_spawner",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "mob_spawner",
+      "Hardness": 5.0,
+      "BlastResistance": 25.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "mob_spawner.mob_spawner",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "mob_spawner"
+}
+

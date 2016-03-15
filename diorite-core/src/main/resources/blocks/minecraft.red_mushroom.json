@@ -1,0 +1,269 @@
+{
+  "Id": 40,
+  "MinecraftId": "minecraft:red_mushroom",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "red_mushroom",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.red_mushroom",
+      "States": []
+    },
+    {
+      "Id": 1,
+      "StringId": "grass",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.grass",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "GRASS"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "allium",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.allium",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "ALLIUM"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "azure_bluet",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.azure_bluet",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "AZURE_BLUET"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "red_tulip",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.red_tulip",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_TULIP"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "orange_tulip",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.orange_tulip",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "ORANGE_TULIP"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "white_tulip",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.white_tulip",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "WHITE_TULIP"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "pink_tulip",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.pink_tulip",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "PINK_TULIP"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "oxeye_daisy",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom.oxeye_daisy",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "OXEYE_DAISY"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "red_mushroom"
+}
+oom"
+}

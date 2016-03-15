@@ -1,0 +1,494 @@
+{
+  "Id": 126,
+  "MinecraftId": "minecraft:wooden_slab",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "oak",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "spruce",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.spruce",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "birch",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "jungle",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "acacia",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.acacia",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "ACACIA"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "dark_oak",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.dark_oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "BOTTOM"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "oak_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.oak_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "OAK"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "spruce_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.spruce_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "SPRUCE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "birch_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.birch_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "jungle_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.jungle_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "acacia_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.acacia_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "ACACIA"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "dark_oak_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.dark_oak_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "oak"
+}
+: "oak"
+}
+EntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.acacia_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": true,
+            "logFlag": 0,
+            "planksMeta": 4,
+            "enumName": "ACACIA",
+            "ordinal": 4
+          }
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "dark_oak_upper",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "wooden_slab.dark_oak_upper",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": true,
+            "logFlag": 1,
+            "planksMeta": 5,
+            "enumName": "DARK_OAK",
+            "ordinal": 5
+          }
+        },
+        {
+          "Name": "slab_type",
+          "Type": "org.diorite.material.state.SlabType",
+          "Value": "UPPER"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "oak"
+}

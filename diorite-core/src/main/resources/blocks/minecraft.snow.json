@@ -1,0 +1,31 @@
+{
+  "Id": 80,
+  "MinecraftId": "minecraft:snow",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "snow",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "snow.snow",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "snow"
+}
+

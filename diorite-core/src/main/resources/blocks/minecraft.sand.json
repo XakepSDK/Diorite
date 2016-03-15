@@ -1,0 +1,71 @@
+{
+  "Id": 12,
+  "MinecraftId": "minecraft:sand",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "sand",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sand.sand",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "NORMAL"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "red",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "sand.red",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "RED"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "sand"
+}
+

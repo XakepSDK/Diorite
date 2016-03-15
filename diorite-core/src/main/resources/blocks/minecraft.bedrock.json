@@ -1,0 +1,31 @@
+{
+  "Id": 7,
+  "MinecraftId": "minecraft:bedrock",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "bedrock",
+      "Hardness": -1.0,
+      "BlastResistance": 1.8E7,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "bedrock.bedrock",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "bedrock"
+}
+

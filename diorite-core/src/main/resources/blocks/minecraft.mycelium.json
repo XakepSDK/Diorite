@@ -1,0 +1,31 @@
+{
+  "Id": 110,
+  "MinecraftId": "minecraft:mycelium",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "mycelium",
+      "Hardness": 0.6000000238418579,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "mycelium.mycelium",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "mycelium"
+}
+

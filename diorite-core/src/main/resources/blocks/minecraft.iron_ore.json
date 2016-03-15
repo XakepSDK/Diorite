@@ -1,0 +1,31 @@
+{
+  "Id": 15,
+  "MinecraftId": "minecraft:iron_ore",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "iron_ore",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "iron_ore.iron_ore",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "iron_ore"
+}
+

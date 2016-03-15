@@ -1,0 +1,125 @@
+{
+  "Id": 118,
+  "MinecraftId": "minecraft:cauldron",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "empty",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cauldron.empty",
+      "States": [
+        {
+          "Name": "size",
+          "Type": "int",
+          "Value": 0
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "1of3",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cauldron.1of3",
+      "States": [
+        {
+          "Name": "size",
+          "Type": "int",
+          "Value": 1
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "2od3",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cauldron.2od3",
+      "States": [
+        {
+          "Name": "size",
+          "Type": "int",
+          "Value": 2
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "full",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "cauldron.full",
+      "States": [
+        {
+          "Name": "size",
+          "Type": "int",
+          "Value": 3
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "empty"
+}
+
+}

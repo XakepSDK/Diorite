@@ -1,0 +1,31 @@
+{
+  "Id": 48,
+  "MinecraftId": "minecraft:mossy_cobblestone",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "mossy_cobblestone",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "mossy_cobblestone.mossy_cobblestone",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "mossy_cobblestone"
+}
+

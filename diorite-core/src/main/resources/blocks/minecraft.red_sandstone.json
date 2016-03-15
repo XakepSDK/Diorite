@@ -1,0 +1,110 @@
+{
+  "Id": 179,
+  "MinecraftId": "minecraft:red_sandstone",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "red_sandstone",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_sandstone.red_sandstone",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "RED"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "chiseled_red_sandstone",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_sandstone.chiseled_red_sandstone",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "RED"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CHISELED"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "smooth_red_sandstone",
+      "Hardness": 0.800000011920929,
+      "BlastResistance": 4.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_sandstone.smooth_red_sandstone",
+      "States": [
+        {
+          "Name": "snad_variant",
+          "Type": "org.diorite.material.state.SandVariant",
+          "Value": "RED"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "SMOOTH"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "red_sandstone"
+}
+}

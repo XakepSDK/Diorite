@@ -1,0 +1,95 @@
+{
+  "Id": 170,
+  "MinecraftId": "minecraft:hay_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "up_down",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "hay_block.up_down",
+      "States": [
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "UP_DOWN"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "east_west",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "hay_block.east_west",
+      "States": [
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "EAST_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "north_south",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "hay_block.north_south",
+      "States": [
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "up_down"
+}
+}

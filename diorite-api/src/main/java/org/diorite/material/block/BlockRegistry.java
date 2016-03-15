@@ -50,6 +50,16 @@ public final class BlockRegistry
     {
     }
 
+    public static int getProxySubtypeId(final int idAndMeta)
+    {
+        final BlockSubtype subtype = sybtypeById.get(idAndMeta);
+        if (subtype == null)
+        {
+            return idAndMeta;
+        }
+        return subtype.getProxySubtype().getTypeAndSubtypeId();
+    }
+
     public static BlockSubtype getBlockSubtypeByIdAndMeta(final int id)
     {
         return sybtypeById.get(id);

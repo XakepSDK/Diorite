@@ -1,0 +1,31 @@
+{
+  "Id": 58,
+  "MinecraftId": "minecraft:crafting_table",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "crafting_table",
+      "Hardness": 2.5,
+      "BlastResistance": 12.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "crafting_table.crafting_table",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "crafting_table"
+}
+

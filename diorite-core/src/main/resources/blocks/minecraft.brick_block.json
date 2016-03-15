@@ -1,0 +1,31 @@
+{
+  "Id": 45,
+  "MinecraftId": "minecraft:brick_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "brick_block",
+      "Hardness": 2.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brick_block.brick_block",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "brick_block"
+}
+

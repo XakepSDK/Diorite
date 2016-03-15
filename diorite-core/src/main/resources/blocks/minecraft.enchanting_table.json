@@ -1,0 +1,31 @@
+{
+  "Id": 116,
+  "MinecraftId": "minecraft:enchanting_table",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "enchanting_table",
+      "Hardness": 5.0,
+      "BlastResistance": 6000.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "enchanting_table.enchanting_table",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "enchanting_table"
+}
+

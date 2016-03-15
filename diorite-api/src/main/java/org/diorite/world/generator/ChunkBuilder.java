@@ -40,7 +40,7 @@ public interface ChunkBuilder
 
     void setBlock(int x, int y, int z, BlockType type);
 
-    void setBlock(int x, int y, int z, int id, int meta);
+//    void setBlock(int x, int y, int z, int id, int meta);
 
     BlockType getBlockType(int x, int y, int z);
 

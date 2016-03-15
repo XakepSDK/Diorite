@@ -1,0 +1,633 @@
+{
+  "Id": 149,
+  "MinecraftId": "minecraft:unpowered_comparator",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "north",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "east",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "south",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "west",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "north_subtract",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.north_subtract",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "east_subtract",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.east_subtract",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "south_subtract",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.south_subtract",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "west_subtract",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.west_subtract",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "north_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.north_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "east_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.east_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "south_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.south_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "west_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.west_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "ADD"
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "north_subtract_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.north_subtract_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "east_subtract_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.east_subtract_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "south_subtract_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.south_subtract_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "west_subtract_powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unpowered_comparator.west_subtract_powered",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "activated",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "comparator_mode",
+          "Type": "org.diorite.material.state.ComparatorMode",
+          "Value": "SUBTRACT"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "north"
+}
+e": "north"
+}

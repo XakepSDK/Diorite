@@ -60,9 +60,9 @@ import org.diorite.entity.attrib.AttributeType;
 import org.diorite.entity.attrib.ModifierOperation;
 import org.diorite.inventory.item.ItemStack;
 import org.diorite.inventory.item.meta.ItemMeta;
-import org.diorite.material.AnySubtype;
-import org.diorite.material.item.ItemType;
 import org.diorite.material.item.ItemRegistry;
+import org.diorite.material.item.ItemSubtype;
+import org.diorite.material.item.ItemType;
 import org.diorite.material.item.Items;
 import org.diorite.nbt.NbtInputStream;
 import org.diorite.nbt.NbtLimiter;
@@ -155,10 +155,10 @@ public class PacketDataSerializer extends ByteBuf
             this.writeShort(- 1);
             return;
         }
-        final ItemType mat = itemStack.getType();
-        this.writeShort(mat.getProxyId());
+        final ItemSubtype mat = itemStack.getType().getProxySubtype();
+        this.writeShort(mat.getId());
         this.writeByte(itemStack.getAmount());
-        this.writeShort((mat instanceof AnySubtype) ? ((AnySubtype) mat).getProxySubtypeId() : 0);
+        this.writeShort(mat.getSubtypeId());
         final ItemMeta meta = itemStack.getItemMeta();
         this.writeNbtTagCompound((meta == null) ? null : ((meta instanceof ItemMetaImpl) ? meta.getRawNbtData() : meta.getNbtData()));
     }

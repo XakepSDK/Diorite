@@ -1,0 +1,31 @@
+{
+  "Id": 56,
+  "MinecraftId": "minecraft:diamond_ore",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "diamond_ore",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "diamond_ore.diamond_ore",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "diamond_ore"
+}
+

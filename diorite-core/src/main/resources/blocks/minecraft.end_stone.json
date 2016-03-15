@@ -1,0 +1,31 @@
+{
+  "Id": 121,
+  "MinecraftId": "minecraft:end_stone",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "end_stone",
+      "Hardness": 3.0,
+      "BlastResistance": 45.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "end_stone.end_stone",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "end_stone"
+}
+

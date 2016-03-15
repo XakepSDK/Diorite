@@ -1,0 +1,451 @@
+{
+  "Id": 100,
+  "MinecraftId": "minecraft:red_mushroom_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "pores_full",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.pores_full",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "PORES_FULL"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "cap_north_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_north_west",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_NORTH_WEST"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "cap_north",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_north",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_NORTH"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "cap_north_east",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_north_east",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_NORTH_EAST"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "cap_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_west",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_WEST"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "cap",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "cap_east",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_east",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_EAST"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "cap_south_west",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_south_west",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_SOUTH_WEST"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "cap_south",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_south",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_SOUTH"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "cap_south_east",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_south_east",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_SOUTH_EAST"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "steam",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.steam",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "STEAM"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "cap_full",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.cap_full",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "CAP_FULL"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "steam_full",
+      "Hardness": 0.20000000298023224,
+      "BlastResistance": 1.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "red_mushroom_block.steam_full",
+      "States": [
+        {
+          "Name": "mushroom_type",
+          "Type": "org.diorite.material.state.MushroomBlockType",
+          "Value": "STEAM_FULL"
+        },
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "RED_MUSHROOM"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "pores_full"
+}
+es_full"
+}

@@ -1,0 +1,212 @@
+{
+  "Id": 175,
+  "MinecraftId": "minecraft:double_plant",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "sunflower",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.sunflower",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "SUNFLOWER"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "lilac",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.lilac",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "LILAC"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "tall_grass",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.tall_grass",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "TALL_GRASS"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "tall_fern",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.tall_fern",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "TALL_FERN"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "rose_bush",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.rose_bush",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "ROSE_BUSH"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "peony",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.peony",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "PEONY"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "double_top",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "double_plant.double_top",
+      "States": [
+        {
+          "Name": "plant_variant",
+          "Type": "org.diorite.material.state.PlantVariant",
+          "Value": "DOUBLE_TOP"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "sunflower"
+}
+r"
+}

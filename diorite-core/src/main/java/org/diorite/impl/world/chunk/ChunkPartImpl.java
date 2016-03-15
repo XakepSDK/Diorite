@@ -42,6 +42,7 @@ public class ChunkPartImpl // part of chunk 16x16x16
     private final byte           yPos; // from 0 to 15
     private final PaletteImpl    palette;
     private final ChunkBlockData chunkBlockData;
+    private       ChunkBlockData chunkBlockDataProxy;
     private       NibbleArray    skyLight;
     private       NibbleArray    blockLight;
     private       int            nonEmptyBlockCount;
@@ -61,10 +62,11 @@ public class ChunkPartImpl // part of chunk 16x16x16
         this.blockLight.fill((byte) 0x0);
     }
 
-    public ChunkPartImpl(final ChunkBlockData blocks, final PaletteImpl palette, final byte yPos, final boolean hasSkyLight, final int nonNull)
+    public ChunkPartImpl(final ChunkBlockData blocks, final ChunkBlockData proxyBlocks, final PaletteImpl palette, final byte yPos, final boolean hasSkyLight, final int nonNull)
     {
         this.palette = palette;
         this.chunkBlockData = blocks;
+        this.chunkBlockDataProxy = proxyBlocks;
         this.blockLight = new NibbleArray(CHUNK_DATA_SIZE);
         this.yPos = yPos;
         if (hasSkyLight)
@@ -84,10 +86,11 @@ public class ChunkPartImpl // part of chunk 16x16x16
         }
     }
 
-    public ChunkPartImpl(final ChunkBlockData blocks, final PaletteImpl palette, final NibbleArray skyLight, final NibbleArray blockLight, final byte yPos)
+    public ChunkPartImpl(final ChunkBlockData blocks, final ChunkBlockData proxyBlocks, final PaletteImpl palette, final NibbleArray skyLight, final NibbleArray blockLight, final byte yPos)
     {
         this.palette = palette;
         this.chunkBlockData = blocks;
+        this.chunkBlockDataProxy = proxyBlocks;
         this.skyLight = skyLight;
         this.blockLight = blockLight;
         this.yPos = yPos;
@@ -97,7 +100,7 @@ public class ChunkPartImpl // part of chunk 16x16x16
     {
         final Palette palette = this.palette;
         palette.write(data);
-        final long[] longs = this.chunkBlockData.getDataArray();
+        final long[] longs = this.getBlockDataToSand().getDataArray();
         data.writeVarInt(longs.length);
         for (final long aLong : longs)
         {
@@ -115,6 +118,11 @@ public class ChunkPartImpl // part of chunk 16x16x16
         return this.chunkBlockData;
     }
 
+    public ChunkBlockData getBlockDataToSand()
+    {
+        return (this.chunkBlockDataProxy == null) ? this.chunkBlockData : this.chunkBlockDataProxy;
+    }
+
     /**
      * Take a snapshot of this section which will not reflect future changes.
      *
@@ -122,28 +130,7 @@ public class ChunkPartImpl // part of chunk 16x16x16
      */
     public ChunkPartImpl snapshot()
     {
-        return new ChunkPartImpl(this.chunkBlockData.clone(), this.palette.clone(), this.skyLight.snapshot(), this.blockLight.snapshot(), this.yPos);
-    }
-
-    public BlockSubtype setBlock(final int x, final int y, final int z, final int id, final int meta)
-    {
-        final BlockSubtype old = this.getBlockType(x, y, z);
-        if ((id == old.getId()) && (meta == old.getSubtypeId()))
-        {
-            return old;
-        }
-        this.chunkBlockData.set(toArrayIndex(x, y, z), this.palette.put(id, (byte) meta));
-
-        if ((old.getId() == 0) && (id != 0))
-        {
-            this.nonEmptyBlockCount++;
-        }
-        else if ((old.getId() != 0) && (id == 0))
-        {
-            this.nonEmptyBlockCount--;
-        }
-
-        return old;
+        return new ChunkPartImpl(this.chunkBlockData.clone(), (this.chunkBlockDataProxy == null) ? null : this.chunkBlockDataProxy.clone(), this.palette.clone(), this.skyLight.snapshot(), this.blockLight.snapshot(), this.yPos);
     }
 
     public BlockSubtype rawSetBlock(final int x, final int y, final int z, final int id, final int meta)
@@ -152,10 +139,41 @@ public class ChunkPartImpl // part of chunk 16x16x16
         return (type == null) ? Blocks.AIR.asSubtype() : type;
     }
 
+    @SuppressWarnings("ObjectEquality")
     public BlockSubtype setBlock(final int x, final int y, final int z, final BlockType type)
     {
         final BlockSubtype blockSubtype = type.asSubtype();
-        return this.setBlock(x, y, z, blockSubtype.getId(), blockSubtype.getSubtypeId());
+        final BlockSubtype proxySubtype = blockSubtype.getProxySubtype();
+        final BlockSubtype old = this.getBlockType(x, y, z);
+        final int realId = blockSubtype.getId();
+        final int realMeta = blockSubtype.getSubtypeId();
+        if ((realId == old.getId()) && (realMeta == old.getSubtypeId()))
+        {
+            return old;
+        }
+        if ((old.getId() == 0) && (realId != 0))
+        {
+            this.nonEmptyBlockCount++;
+        }
+        else if ((old.getId() != 0) && (realId == 0))
+        {
+            this.nonEmptyBlockCount--;
+        }
+        final int realRawData = this.palette.put(realId, (byte) realMeta);
+        this.chunkBlockData.set(toArrayIndex(x, y, z), realRawData);
+        if (blockSubtype == proxySubtype)
+        {
+            return old;
+        }
+        if (this.chunkBlockDataProxy == null)
+        {
+            this.chunkBlockDataProxy = this.chunkBlockData.clone();
+        }
+        final int proxyId = proxySubtype.getId();
+        final int proxyMeta = proxySubtype.getSubtypeId();
+        final int proxyRawData = this.palette.put(proxyId, (byte) proxyMeta);
+        this.chunkBlockDataProxy.set(toArrayIndex(x, y, z), realRawData);
+        return old;
     }
 
     public BlockSubtype getBlockType(final int x, final int y, final int z)

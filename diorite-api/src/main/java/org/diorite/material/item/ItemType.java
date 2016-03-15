@@ -50,17 +50,6 @@ public interface ItemType extends AnyType
     int getId();
 
     /**
-     * Returns id used in packets, used for adding fake items.
-     *
-     * @return id used in packets, used for adding fake items.
-     */
-    @Override
-    default int getProxyId()
-    {
-        return this.getId();
-    }
-
-    /**
      * Returns minecraft string id of item.
      *
      * @return minecraft string id of item.
@@ -69,30 +58,11 @@ public interface ItemType extends AnyType
     String getMinecraftId();
 
     /**
-     * Returns minecraft string id of item used in packets, used for adding fake items.
-     *
-     * @return minecraft string id of item used in packets, used for adding fake items.
-     */
-    @Override
-    default String getProxyMinecraftId()
-    {
-        return this.getMinecraftId();
-    }
-
-    /**
      * Returns max size of single itemstack of this item, vanilla clinets can handle values only in byte range.
      *
      * @return max size of single itemstack of this item, vanilla clinets can handle values only in byte range.
      */
     int getMaxStack();
-
-    /**
-     * Returns display name of item.
-     *
-     * @return display name of item.
-     */
-    @Override
-    String getDisplayNameKey();
 
     /**
      * Returns subtype by given id.

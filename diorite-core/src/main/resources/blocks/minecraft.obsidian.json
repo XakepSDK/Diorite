@@ -1,0 +1,31 @@
+{
+  "Id": 49,
+  "MinecraftId": "minecraft:obsidian",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "obsidian",
+      "Hardness": 50.0,
+      "BlastResistance": 6000.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "obsidian.obsidian",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "obsidian"
+}
+

@@ -25,6 +25,7 @@
 package org.diorite.impl.world.chunk;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -38,9 +39,9 @@ import org.diorite.impl.world.WorldImpl;
 import org.diorite.impl.world.chunk.palette.PaletteImpl;
 import org.diorite.event.EventType;
 import org.diorite.event.chunk.ChunkUnloadEvent;
+import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
-import org.diorite.material.block.BlockRegistry;
 import org.diorite.material.block.Blocks;
 import org.diorite.nbt.NbtTag;
 import org.diorite.nbt.NbtTagCompound;
@@ -267,17 +268,18 @@ public class ChunkImpl implements Chunk
         }
     }
 
-    public BlockSubtype setBlock(final int x, final int y, final int z, final BlockType materialData)
+    public BlockSubtype setBlock(final int x, final int y, final int z, final BlockType blockType)
     {
+        final BlockSubtype type = blockType.asSubtype();
         final short sy = (short) y;
 
         final ChunkPartImpl chunkPart = this.getPart(sy);
-        final BlockSubtype prev = chunkPart.setBlock(x, sy % Chunk.CHUNK_PART_HEIGHT, z, materialData);
+        final BlockSubtype prev = chunkPart.setBlock(x, sy % Chunk.CHUNK_PART_HEIGHT, z, type);
 
         final short hy = this.heightMap[((z << 4) | x)];
         if (sy >= hy)
         {
-            if (materialData.isSolid())
+            if (type.isSolid())
             {
                 this.heightMap[((z << 4) | x)] = sy;
             }
@@ -420,6 +422,7 @@ public class ChunkImpl implements Chunk
 
             final PaletteImpl palette = new PaletteImpl();
             final int[] loading = new int[rawTypes.length];
+            int[] proxyType = null;
             for (int i = 0; i < rawTypes.length; i++)
             {
                 int k = ((((extTypes == null) ? 0 : extTypes.get(i)) << 12) | ((rawTypes[i] & 0xff) << 4) | data.get(i));
@@ -429,6 +432,16 @@ public class ChunkImpl implements Chunk
                     k = (subtype == null) ? 0 : ((subtype.getId() << 4) | subtype.getSubtypeId());
 //                    throw new IllegalArgumentException("Unknown itemSubtype: " + k + " (" + (k >> 4) + ":" + (k & 15) + ")");
                 }
+                final int proxy = BlockRegistry.getProxySubtypeId(k);
+                if (k != proxy)
+                {
+                    if (proxyType == null)
+                    {
+                        proxyType = new int[rawTypes.length];
+                        Arrays.fill(proxyType, - 1);
+                    }
+                    proxyType[i] = proxy;
+                }
                 loading[i] = k;
             }
             final ChunkBlockData cd = new ChunkBlockData(palette.bitsPerBlock(), ChunkPartImpl.CHUNK_DATA_SIZE);
@@ -437,7 +450,20 @@ public class ChunkImpl implements Chunk
             {
                 cd.set(k++, palette.put(i));
             }
-            final ChunkPartImpl part = new ChunkPartImpl(cd, palette, skyLight, blockLight, y);
+            final ChunkBlockData proxyCd = (proxyType == null) ? null : cd.clone();
+            if (proxyType != null)
+            {
+                k = 0;
+                for (final int i : proxyType)
+                {
+                    if (i != - 1)
+                    {
+                        proxyCd.set(k, palette.put(i));
+                    }
+                    k++;
+                }
+            }
+            final ChunkPartImpl part = new ChunkPartImpl(cd, proxyCd, palette, skyLight, blockLight, y);
             sections[y] = part;
         }
         this.chunkParts = sections;

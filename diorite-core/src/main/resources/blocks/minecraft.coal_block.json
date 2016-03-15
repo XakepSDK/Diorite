@@ -1,0 +1,31 @@
+{
+  "Id": 173,
+  "MinecraftId": "minecraft:coal_block",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "coal_block",
+      "Hardness": 5.0,
+      "BlastResistance": 30.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "coal_block.coal_block",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "coal_block"
+}
+

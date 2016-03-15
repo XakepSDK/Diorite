@@ -194,7 +194,7 @@ public class PacketPlayClientboundMapChunk extends PacketPlayClientbound
             final ChunkPartImpl section = sections[i];
             if ((section != null) && (! full || ! section.isEmpty()) && ((mask & (1 << i)) != 0))
             {
-                final long[] dataArray = section.getBlockData().getDataArray();
+                final long[] dataArray = section.getBlockDataToSand().getDataArray();
                 bytes += 1 + section.getPalette().byteSize() + DioriteMathUtils.varintSize(dataArray.length) + (dataArray.length * 8);
                 bytes += section.getBlockLight().byteSize();
                 if (skyLight)

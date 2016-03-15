@@ -49,11 +49,12 @@ public class PacketPlayClientboundBlockChange extends PacketPlayClientbound
     {
     }
 
-    public PacketPlayClientboundBlockChange(final BlockLocation location, final BlockSubtype type)
+    public PacketPlayClientboundBlockChange(final BlockLocation location,  BlockSubtype type)
     {
+        type = type.getProxySubtype();
         this.location = location;
-        this.rawID = type.getProxyId();
-        this.rawType = (byte) type.getProxySubtypeId();
+        this.rawID = type.getId();
+        this.rawType = (byte) type.getSubtypeId();
         this.copy = type;
     }
 
@@ -98,8 +99,8 @@ public class PacketPlayClientboundBlockChange extends PacketPlayClientbound
 
     public void setType(final BlockSubtype type)
     {
-        this.rawID = type.getProxyId();
-        this.rawType = (byte) type.getProxySubtypeId();
+        this.rawID = type.getId();
+        this.rawType = (byte) type.getSubtypeId();
         this.copy = type;
     }
 

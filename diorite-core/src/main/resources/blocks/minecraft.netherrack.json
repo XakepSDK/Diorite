@@ -1,0 +1,31 @@
+{
+  "Id": 87,
+  "MinecraftId": "minecraft:netherrack",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "netherrack",
+      "Hardness": 0.4000000059604645,
+      "BlastResistance": 2.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "netherrack.netherrack",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "netherrack"
+}
+

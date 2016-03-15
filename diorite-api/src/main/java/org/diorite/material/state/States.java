@@ -33,6 +33,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import org.diorite.BlockFace;
 import org.diorite.DyeColor;
+import org.diorite.material.block.BlockSubtype;
 
 /**
  * Basic collection of block states used by vanilla blocks.
@@ -42,39 +43,51 @@ public final class States
     private static final Map<StateKey, State<?>> states      = new HashMap<>(20);
     private static final Map<StateKey, State<?>> statesUnmod = Collections.unmodifiableMap(states);
 
-    public static final State<StoneSlabVariant> STONE_SLAB_VARIANT = registerState("stone_slab_variant", StoneSlabVariant.class);
-    public static final State<FlowerVariant>    FLOWER_VARIANT     = registerState("flower_variant", FlowerVariant.class);
-    public static final State<PillarVariant>    PILLAR_TYPE        = registerState("pillar_variant", PillarVariant.class);
-    public static final State<StoneVariant>     STONE_TYPE         = registerState("stone_variant", StoneVariant.class);
-    public static final State<BaseVariant>      BASE_VARIANT       = registerState("variant", BaseVariant.class);
-    public static final State<LiquidStage>      LIQUID_STAGE       = registerState("stage", LiquidStage.class);
-    public static final State<DirtVariant>      DIRT_TYPE          = registerState("dirt_variant", DirtVariant.class);
-    public static final State<SandVariant>      SAND_TYPE          = registerState("snad_variant", SandVariant.class);
-    public static final State<RotateAxis>       ROTATE_AXIS        = registerState("axis", RotateAxis.class);
-    public static final State<LiquidType>       LIQUID_TYPE        = registerState("liquid_type", LiquidType.class);
-    public static final State<BlockFace>        FACE               = registerState("facing", BlockFace.class);
-    public static final State<WoodType>         WOOD_TYPE          = registerState("wood", WoodType.class);
-    public static final State<SlabType>         SLAB_TYPE          = registerState("slab_type", SlabType.class);
-    public static final State<RailType>         RAIL_TYPE          = registerState("rail_type", RailType.class);
-    public static final State<DyeColor>         COLOR              = registerState("color", DyeColor.class);
-    public static final State<BedPart>          BED_PART           = registerState("bed_part", BedPart.class);
-    public static final State<DoorPart>         DOOR_PART          = registerState("door_part", DoorPart.class);
-    public static final State<Integer>          MOISTURE           = registerState("moisture", int.class);
-    public static final State<Integer>          AGE                = registerState("age", int.class);
-    public static final State<Integer>          SIZE               = registerState("size", int.class);
-    public static final State<Integer>          POWER              = registerState("power", int.class);
-    public static final State<Boolean>          CHECK_DECAY        = registerState("check_decay", boolean.class);
-    public static final State<Boolean>          DECAYABLE          = registerState("decayable", boolean.class);
-    public static final State<Boolean>          OLDER              = registerState("older", boolean.class);
-    public static final State<Boolean>          WET                = registerState("wet", boolean.class);
-    public static final State<Boolean>          ACTIVATED          = registerState("activated", boolean.class);
-    public static final State<Boolean>          POWERED            = registerState("powered", boolean.class);
-    public static final State<Boolean>          OPEN               = registerState("open", ACTIVATED);
-    public static final State<Boolean>          TRIGGERED          = registerState("triggered", ACTIVATED);
-    public static final State<Boolean>          EXTENDED           = registerState("extended", ACTIVATED);
-    public static final State<Boolean>          STICKY             = registerState("sticky", boolean.class);
-    public static final State<Boolean>          UPSIDE_DOWN        = registerState("upsideDown", boolean.class);
-    public static final State<Boolean>          OCCUPIED           = registerState("occupied", boolean.class);
+    public static final State<StoneSlabVariant>     STONE_SLAB_VARIANT     = registerState("stone_slab_variant", StoneSlabVariant.class);
+    public static final State<PlantVariant>         PLANT_VARIANT          = registerState("plant_variant", PlantVariant.class);
+    public static final State<PillarVariant>        PILLAR_VARIANT         = registerState("pillar_variant", PillarVariant.class);
+    public static final State<StoneVariant>         STONE_VARIANT          = registerState("stone_variant", StoneVariant.class);
+    public static final State<BaseVariant>          BASE_VARIANT           = registerState("variant", BaseVariant.class);
+    public static final State<LiquidStage>          LIQUID_STAGE           = registerState("stage", LiquidStage.class);
+    public static final State<DirtVariant>          DIRT_VARIANT           = registerState("dirt_variant", DirtVariant.class);
+    public static final State<SandVariant>          SAND_VARIANT           = registerState("snad_variant", SandVariant.class);
+    public static final State<RotateAxis>           ROTATE_AXIS            = registerState("axis", RotateAxis.class);
+    public static final State<LiquidType>           LIQUID_TYPE            = registerState("liquid_type", LiquidType.class);
+    public static final State<BlockFace>            FACE                   = registerState("facing", BlockFace.class);
+    public static final State<BlockFace[]>          FACES                  = registerState("faces", BlockFace[].class);
+    public static final State<boolean[]>            USED_SLOTS             = registerState("used_slots", boolean[].class);
+    public static final State<WoodType>             WOOD_TYPE              = registerState("wood", WoodType.class);
+    public static final State<SlabType>             SLAB_TYPE              = registerState("slab_type", SlabType.class);
+    public static final State<RailType>             RAIL_TYPE              = registerState("rail_type", RailType.class);
+    public static final State<DyeColor>             COLOR                  = registerState("color", DyeColor.class);
+    public static final State<BedPart>              BED_PART               = registerState("bed_part", BedPart.class);
+    public static final State<DoorPart>             DOOR_PART              = registerState("door_part", DoorPart.class);
+    public static final State<Integer>              MOISTURE               = registerState("moisture", int.class);
+    public static final State<BlockSubtype>         BLOCK_TYPE             = registerState("block_type", BlockSubtype.class);
+    public static final State<MushroomBlockType>    MUSHROOM_TYPE          = registerState("mushroom_type", MushroomBlockType.class);
+    public static final State<ComparatorMode>       COMPARATOR_MODE        = registerState("comparator_mode", ComparatorMode.class);
+    public static final State<PrismarineVariant>    PRISMARINE_VARIANT     = registerState("prismarine_variant", PrismarineVariant.class);
+    public static final State<DaylightDetectorMode> DAYLIGHT_DETECTOR_MODE = registerState("daylight_detector_mode", DaylightDetectorMode.class);
+    public static final State<Integer>              AGE                    = registerState("age", int.class);
+    public static final State<Integer>              SIZE                   = registerState("size", int.class);
+    public static final State<Integer>              POWER                  = registerState("power", int.class);
+    public static final State<Integer>              DELAY                  = registerState("delay", int.class);
+    public static final State<Boolean>              CHECK_DECAY            = registerState("check_decay", boolean.class);
+    public static final State<Boolean>              DECAYABLE              = registerState("decayable", boolean.class);
+    public static final State<Boolean>              OLDER                  = registerState("older", boolean.class);
+    public static final State<Boolean>              WET                    = registerState("wet", boolean.class);
+    public static final State<Boolean>              ACTIVATED              = registerState("activated", boolean.class);
+    public static final State<Boolean>              POWERED                = registerState("powered", boolean.class);
+    public static final State<Boolean>              OPEN                   = registerState("open", ACTIVATED);
+    public static final State<Boolean>              EYE                    = registerState("eye", ACTIVATED);
+    public static final State<Boolean>              TRIGGERED              = registerState("triggered", ACTIVATED);
+    public static final State<Boolean>              EXTENDED               = registerState("extended", ACTIVATED);
+    public static final State<Boolean>              STICKY                 = registerState("sticky", boolean.class);
+    public static final State<Boolean>              UPSIDE_DOWN            = registerState("upsideDown", boolean.class);
+    public static final State<Boolean>              OCCUPIED               = registerState("occupied", boolean.class);
+    public static final State<Boolean>              DISARMED               = registerState("disarmed", boolean.class);
+    public static final State<Boolean>              ATTACHED               = registerState("attached", boolean.class);
+    public static final State<Boolean>              CONDICTIONAL           = registerState("conditional", boolean.class);
 
     private States()
     {

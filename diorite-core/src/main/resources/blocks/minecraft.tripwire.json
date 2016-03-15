@@ -1,0 +1,321 @@
+{
+  "Id": 132,
+  "MinecraftId": "minecraft:tripwire",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "raw",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.raw",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "powered",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.powered",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "valid",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.valid",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "powered_valid",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.powered_valid",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "disarmed",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.disarmed",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "powered_disarmed",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.powered_disarmed",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": false
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "valid_disarmed",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.valid_disarmed",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "powered_valid_disarmed",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "tripwire.powered_valid_disarmed",
+      "States": [
+        {
+          "Name": "disarmed",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "triggered",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "attached",
+          "Type": "boolean",
+          "Value": true
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "raw"
+}
+aw"
+}

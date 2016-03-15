@@ -31,8 +31,6 @@ import org.diorite.entity.Entity;
 import org.diorite.material.AnyType;
 import org.diorite.material.state.State;
 import org.diorite.material.state.StateEntry;
-import org.diorite.material.data.drops.PossibleDrops;
-import org.diorite.material.item.ItemType;
 
 /**
  * Represent block data
@@ -50,42 +48,12 @@ public interface BlockType extends AnyType
     int getId();
 
     /**
-     * Returns id used in packets, used for adding fake blocks.
-     *
-     * @return id used in packets, used for adding fake blocks.
-     */
-    @Override
-    default int getProxyId()
-    {
-        return this.getId();
-    }
-
-    /**
      * Returns minecraft string id of block.
      *
      * @return minecraft string id of block.
      */
     @Override
     String getMinecraftId();
-
-    /**
-     * Returns minecraft string id of block used in packets, used for adding fake blocks.
-     *
-     * @return minecraft string id of block used in packets, used for adding fake blocks.
-     */
-    @Override
-    default String getProxyMinecraftId()
-    {
-        return this.getMinecraftId();
-    }
-
-    /**
-     * Returns display name of block.
-     *
-     * @return display name of block.
-     */
-    @Override
-    String getDisplayNameKey();
 
     /**
      * Returns subtype by given id.
@@ -202,34 +170,6 @@ public interface BlockType extends AnyType
     BlockSubtype asSubtype();
 
     /**
-     * Returns hardness of block.
-     *
-     * @return hardness of block.
-     */
-    double getHardness();
-
-    /**
-     * Returns hardness of block.
-     *
-     * @return hardness of block.
-     */
-    double getBlastResistance();
-
-    /**
-     * Returns true if this block is solid.
-     *
-     * @return true if this block is solid.
-     */
-    boolean isSolid();
-
-    /**
-     * Returns sounds pack for this block.
-     *
-     * @return sounds pack for this block.
-     */
-    BlockSounds getSounds();
-
-    /**
      * Returns true if given entity is colliding with block at given position.
      *
      * @param blockLocation location of block.
@@ -253,74 +193,4 @@ public interface BlockType extends AnyType
      * @return true if given entity is colliding with block at given position.
      */
     boolean isCollidingWith(int x, int y, int z, Entity entity);
-
-    /**
-     * Returns true if this block is tile entity.
-     *
-     * @return true if this block is tile entity.
-     */
-    boolean isTileEntity();
-
-    /**
-     * Returns item for this block if exists.
-     *
-     * @return item for this block if exists.
-     */
-    ItemType getItem();
-
-    /**
-     * Returns possible drops of this block.
-     *
-     * @return possible drops of this block.
-     */
-    PossibleDrops getDrops();
-
-    /**
-     * Retruns liquid related block parameters.
-     *
-     * @return liquid related block parameters.
-     */
-    LiquidSettings getLiquidSettings();
-
-    /**
-     * Override block {@link LiquidSettings}.
-     *
-     * @param settings new parameters to use.
-     */
-    void setLiquidSettings(LiquidSettings settings);
-
-    /**
-     * Retruns light related block parameters.
-     *
-     * @return light related block parameters.
-     */
-    LightSettings getLightSettings();
-
-    /**
-     * Override block {@link LightSettings}.
-     *
-     * @param settings new parameters to use.
-     */
-    void setLightSettings(LightSettings settings);
-
-    /**
-     * Retruns fire related block parameters.
-     *
-     * @return fire related block parameters.
-     */
-    FlameableSettings getFlameableSettings();
-
-    /**
-     * Override block {@link FlameableSettings}.
-     *
-     * @param settings new parameters to use.
-     */
-    void setFlameableSettings(FlameableSettings settings);
-
-    /**
-     * Returns interact handler.
-     *
-     * @return interact handler.
-     */
-    BlockInteractHandler getInteractHandler();
 }

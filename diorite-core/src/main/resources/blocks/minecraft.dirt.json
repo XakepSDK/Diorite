@@ -1,0 +1,100 @@
+{
+  "Id": 3,
+  "MinecraftId": "minecraft:dirt",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "dirt",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dirt.dirt",
+      "States": [
+        {
+          "Name": "dirt_variant",
+          "Type": "org.diorite.material.state.DirtVariant",
+          "Value": "NORMAL"
+        },
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "coarse",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dirt.coarse",
+      "States": [
+        {
+          "Name": "dirt_variant",
+          "Type": "org.diorite.material.state.DirtVariant",
+          "Value": "COARSE"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "podzol",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dirt.podzol",
+      "States": [
+        {
+          "Name": "dirt_variant",
+          "Type": "org.diorite.material.state.DirtVariant",
+          "Value": "PODZOL"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "dirt"
+}
+}

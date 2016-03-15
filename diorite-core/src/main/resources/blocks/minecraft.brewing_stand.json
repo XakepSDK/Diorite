@@ -1,0 +1,273 @@
+{
+  "Id": 117,
+  "MinecraftId": "minecraft:brewing_stand",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "empty",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.empty",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "f_e_e",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.f_e_e",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            true,
+            false,
+            false
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "e_f_e",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.e_f_e",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            false,
+            true,
+            false
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "f_f_e",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.f_f_e",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            true,
+            true,
+            false
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "e_e_f",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.e_e_f",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            false,
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "f_e_f",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.f_e_f",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            true,
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "e_f_f",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.e_f_f",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            false,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "full",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "brewing_stand.full",
+      "States": [
+        {
+          "Name": "used_slots",
+          "Type": "[Z",
+          "Value": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "empty"
+}
+ty"
+}

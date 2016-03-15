@@ -1,0 +1,554 @@
+{
+  "Id": 197,
+  "MinecraftId": "minecraft:dark_oak_door",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "bottom_east",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "bottom_south",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "bottom_west",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "bottom_north",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "bottom_open_east",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_open_east",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "EAST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "bottom_open_south",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_open_south",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "SOUTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "bottom_open_west",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_open_west",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "WEST"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "bottom_open_north",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.bottom_open_north",
+      "States": [
+        {
+          "Name": "facing",
+          "Type": "org.diorite.BlockFace",
+          "Value": "NORTH"
+        },
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "BOTTOM"
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "top_left",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.top_left",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "top_right",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.top_right",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": false
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "top_left_powered",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.top_left_powered",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "top_right_powered",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.top_right_powered",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "bottom_east"
+}
+m_east"
+}
+ "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.top_left_powered",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": true,
+            "logFlag": 1,
+            "planksMeta": 5,
+            "enumName": "DARK_OAK",
+            "ordinal": 5
+          }
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "top_right_powered",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_door.top_right_powered",
+      "States": [
+        {
+          "Name": "door_part",
+          "Type": "org.diorite.material.state.DoorPart",
+          "Value": "TOP"
+        },
+        {
+          "Name": "open",
+          "Type": "boolean",
+          "Value": true
+        },
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": true,
+            "logFlag": 1,
+            "planksMeta": 5,
+            "enumName": "DARK_OAK",
+            "ordinal": 5
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "bottom_east"
+}

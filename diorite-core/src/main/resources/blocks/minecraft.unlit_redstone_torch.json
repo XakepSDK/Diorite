@@ -1,0 +1,31 @@
+{
+  "Id": 75,
+  "MinecraftId": "minecraft:unlit_redstone_torch",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "unlit_redstone_torch",
+      "Hardness": 0.0,
+      "BlastResistance": 0.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "unlit_redstone_torch.unlit_redstone_torch",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "unlit_redstone_torch"
+}
+

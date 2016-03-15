@@ -1,0 +1,658 @@
+{
+  "Id": 162,
+  "MinecraftId": "minecraft:log2",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "acacia",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.acacia",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "ACACIA"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "UP_DOWN"
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "dark_oak",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.dark_oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "UP_DOWN"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "birch",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "UP_DOWN"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "jungle",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "UP_DOWN"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "acacia",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.acacia",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "ACACIA"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "EAST_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "dark_oak",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.dark_oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "EAST_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "StringId": "birch",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "EAST_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "StringId": "jungle",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "EAST_WEST"
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "StringId": "acacia",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.acacia",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "ACACIA"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "StringId": "dark_oak",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.dark_oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 10,
+      "StringId": "birch",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "StringId": "jungle",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NORTH_SOUTH"
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "StringId": "acacia",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.acacia",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "ACACIA"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    },
+    {
+      "Id": 13,
+      "StringId": "dark_oak",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.dark_oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "birch",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "BIRCH"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "jungle",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "JUNGLE"
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "acacia"
+}
+": "acacia"
+}
+es": 0.0
+      },
+      "DisplayNameKey": "log2.dark_oak",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": true,
+            "logFlag": 1,
+            "planksMeta": 5,
+            "enumName": "DARK_OAK",
+            "ordinal": 5
+          }
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "StringId": "birch",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.birch",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": false,
+            "logFlag": 2,
+            "planksMeta": 2,
+            "enumName": "BIRCH",
+            "ordinal": 2
+          }
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    },
+    {
+      "Id": 15,
+      "StringId": "jungle",
+      "Hardness": 2.0,
+      "BlastResistance": 10.0,
+      "isSolid": false,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "log2.jungle",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": {
+            "secondLogID": false,
+            "logFlag": 3,
+            "planksMeta": 3,
+            "enumName": "JUNGLE",
+            "ordinal": 3
+          }
+        },
+        {
+          "Name": "axis",
+          "Type": "org.diorite.material.state.RotateAxis",
+          "Value": "NONE"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "acacia"
+}

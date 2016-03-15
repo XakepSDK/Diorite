@@ -1,0 +1,561 @@
+{
+  "Id": 97,
+  "MinecraftId": "minecraft:monster_egg",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "stone",
+      "Hardness": 0.75,
+      "BlastResistance": 3.75,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "monster_egg.stone",
+      "States": [
+        {
+          "Name": "block_type",
+          "Type": "org.diorite.material.block.BlockSubtype",
+          "Value": {
+            "subtypeId": 0,
+            "subtypeStringId": "stone",
+            "displayNameKey": "stone.stone",
+            "blockType": {
+              "Id": 1,
+              "MinecraftId": "minecraft:stone",
+              "Subtypes": [
+                {
+                  "Id": 0,
+                  "StringId": "stone",
+                  "Hardness": 1.5,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "stone.stone",
+                  "States": [
+                    {
+                      "Name": "stone_variant",
+                      "Type": "org.diorite.material.state.StoneVariant",
+                      "Value": "STONE"
+                    },
+                    {
+                      "Name": "variant",
+                      "Type": "org.diorite.material.state.BaseVariant",
+                      "Value": "CLASSIC"
+                    }
+                  ]
+                },
+                {
+                  "Id": 1,
+                  "StringId": "granite",
+                  "Hardness": 1.5,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "stone.granite",
+                  "States": [
+                    {
+                      "Name": "stone_variant",
+                      "Type": "org.diorite.material.state.StoneVariant",
+                      "Value": "GRANITE"
+                    }
+                  ]
+                },
+                {
+                  "Id": 2,
+                  "StringId": "polished_granite",
+                  "Hardness": 1.5,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "stone.polished_granite",
+                  "States": [
+                    {
+                      "Name": "stone_variant",
+                      "Type": "org.diorite.material.state.StoneVariant",
+                      "Value": "POLISHED_GRANITE"
+                    }
+                  ]
+                },
+                {
+                  "Id": 3,
+                  "StringId": "polished_diorite",
+                  "Hardness": 1.5,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "stone.polished_diorite",
+                  "States": [
+                    {
+                      "Name": "stone_variant",
+                      "Type": "org.diorite.material.state.StoneVariant",
+                      "Value": "POLISHED_DIORITE"
+                    }
+                  ]
+                },
+                {
+                  "Id": 4,
+                  "StringId": "andesite",
+                  "Hardness": 1.5,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "stone.andesite",
+                  "States": [
+                    {
+                      "Name": "stone_variant",
+                      "Type": "org.diorite.material.state.StoneVariant",
+                      "Value": "ANDESITE"
+                    }
+                  ]
+                },
+                {
+                  "Id": 5,
+                  "StringId": "polished_andesite",
+                  "Hardness": 1.5,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "stone.polished_andesite",
+                  "States": [
+                    {
+                      "Name": "stone_variant",
+                      "Type": "org.diorite.material.state.StoneVariant",
+                      "Value": "POLISHED_ANDESITE"
+                    }
+                  ]
+                }
+              ],
+              "DefaultSubtype": "stone"
+            },
+            "itemTypeId": null,
+            "itemType": null,
+            "drops": {
+              "possibleDrops": [
+                {
+                  "itemStack": null
+                }
+              ]
+            },
+            "proxyTypes": [],
+            "stateEntries": [
+              {
+                "Name": "stone_variant",
+                "Type": "org.diorite.material.state.StoneVariant",
+                "Value": "STONE"
+              },
+              {
+                "Name": "variant",
+                "Type": "org.diorite.material.state.BaseVariant",
+                "Value": "CLASSIC"
+              }
+            ],
+            "stateEntriesUnmod": [
+              {
+                "Name": "stone_variant",
+                "Type": "org.diorite.material.state.StoneVariant",
+                "Value": "STONE"
+              },
+              {
+                "Name": "variant",
+                "Type": "org.diorite.material.state.BaseVariant",
+                "Value": "CLASSIC"
+              }
+            ],
+            "hardness": 1.5,
+            "blastResistace": 30.0,
+            "sounds": {
+              "BreakSound": {
+                "SoundName": "block.stone.break",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "FallSound": {
+                "SoundName": "block.stone.fall",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "HitSound": {
+                "SoundName": "block.stone.hit",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "PlaceSound": {
+                "SoundName": "block.stone.place",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "StepSound": {
+                "SoundName": "block.stone.step",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              }
+            },
+            "solid": true,
+            "tileEntityClass": null,
+            "liquidSettings": {
+              "IsLiquid": false,
+              "SpillRadius": {}
+            },
+            "lightSettings": {
+              "EmitLight": 0,
+              "FilterLight": 15
+            },
+            "flameableSettings": {
+              "canBeSetOnFire": true,
+              "BurnChances": 0.0,
+              "FlameChances": 0.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Id": 1,
+      "StringId": "cobblestone",
+      "Hardness": 0.75,
+      "BlastResistance": 3.75,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "monster_egg.cobblestone",
+      "States": [
+        {
+          "Name": "block_type",
+          "Type": "org.diorite.material.block.BlockSubtype",
+          "Value": {
+            "subtypeId": 0,
+            "subtypeStringId": "cobblestone",
+            "displayNameKey": "cobblestone.cobblestone",
+            "blockType": {
+              "Id": 4,
+              "MinecraftId": "minecraft:cobblestone",
+              "Subtypes": [
+                {
+                  "Id": 0,
+                  "StringId": "cobblestone",
+                  "Hardness": 2.0,
+                  "BlastResistance": 30.0,
+                  "isSolid": true,
+                  "TileEntityClass": null,
+                  "LiquidSettings": {
+                    "IsLiquid": false,
+                    "SpillRadius": {}
+                  },
+                  "LightSettings": {
+                    "EmitLight": 0,
+                    "FilterLight": 15
+                  },
+                  "FlameableSettings": {
+                    "canBeSetOnFire": true,
+                    "BurnChances": 0.0,
+                    "FlameChances": 0.0
+                  },
+                  "DisplayNameKey": "cobblestone.cobblestone",
+                  "States": []
+                }
+              ],
+              "DefaultSubtype": "cobblestone"
+            },
+            "itemTypeId": null,
+            "itemType": null,
+            "drops": {
+              "possibleDrops": [
+                {
+                  "itemStack": null
+                }
+              ]
+            },
+            "proxyTypes": [],
+            "stateEntries": [],
+            "stateEntriesUnmod": [],
+            "hardness": 2.0,
+            "blastResistace": 30.0,
+            "sounds": {
+              "BreakSound": {
+                "SoundName": "block.stone.break",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "FallSound": {
+                "SoundName": "block.stone.fall",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "HitSound": {
+                "SoundName": "block.stone.hit",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "PlaceSound": {
+                "SoundName": "block.stone.place",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              },
+              "StepSound": {
+                "SoundName": "block.stone.step",
+                "Pitch": 1.0,
+                "Volume": 1.0
+              }
+            },
+            "solid": true,
+            "tileEntityClass": null,
+            "liquidSettings": {
+              "IsLiquid": false,
+              "SpillRadius": {}
+            },
+            "lightSettings": {
+              "EmitLight": 0,
+              "FilterLight": 15
+            },
+            "flameableSettings": {
+              "canBeSetOnFire": true,
+              "BurnChances": 0.0,
+              "FlameChances": 0.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "StringId": "stone_brick",
+      "Hardness": 0.75,
+      "BlastResistance": 3.75,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "monster_egg.stone_brick",
+      "States": [
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        },
+        {
+          "Name": "block_type",
+          "Type": "org.diorite.material.block.BlockSubtype",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "StringId": "stone_brick",
+      "Hardness": 0.75,
+      "BlastResistance": 3.75,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "monster_egg.stone_brick",
+      "States": [
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        },
+        {
+          "Name": "block_type",
+          "Type": "org.diorite.material.block.BlockSubtype",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "StringId": "stone_brick",
+      "Hardness": 0.75,
+      "BlastResistance": 3.75,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "monster_egg.stone_brick",
+      "States": [
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        },
+        {
+          "Name": "block_type",
+          "Type": "org.diorite.material.block.BlockSubtype",
+          "Value": null
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "StringId": "stone_brick",
+      "Hardness": 0.75,
+      "BlastResistance": 3.75,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "monster_egg.stone_brick",
+      "States": [
+        {
+          "Name": "variant",
+          "Type": "org.diorite.material.state.BaseVariant",
+          "Value": "CLASSIC"
+        },
+        {
+          "Name": "block_type",
+          "Type": "org.diorite.material.block.BlockSubtype",
+          "Value": null
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "stone"
+}
+": "stone"
+}

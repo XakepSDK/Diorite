@@ -24,6 +24,9 @@
 
 package org.diorite.material.block;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -85,6 +88,23 @@ public class BlockSounds
      */
     public static final BlockSounds ANVIL  = new BlockSounds("anvil", 1F, 1F);
 
+    private static final Set<BlockSounds> defs = new HashSet<>(30);
+
+    static
+    {
+        defs.add(STONE);
+        defs.add(WOOD);
+        defs.add(GRAVEL);
+        defs.add(GRASS);
+        defs.add(CLOTH);
+        defs.add(SAND);
+        defs.add(SNOW);
+        defs.add(SLIME);
+        defs.add(METAL);
+        defs.add(LADDER);
+        defs.add(ANVIL);
+    }
+
     /**
      * Represend sound played on block break.
      */
@@ -113,7 +133,7 @@ public class BlockSounds
      * @param volume volume of all sounds.
      * @param pitch  pitch of all sounds.
      */
-    public BlockSounds(String name, final float volume, final float pitch)
+    private BlockSounds(String name, final float volume, final float pitch)
     {
         name = "block." + name + ".";
         this.breakSound = getSound(name + "break", volume, pitch, DEFAULTS.breakSound.getSound());
@@ -140,7 +160,7 @@ public class BlockSounds
      * @param volume     volume of all sounds.
      * @param pitch      pitch of all sounds.
      */
-    public BlockSounds(final Sound breakSound, final Sound fallSound, final Sound hitSound, final Sound placeSound, final Sound stepSound, final float volume, final float pitch)
+    private BlockSounds(final Sound breakSound, final Sound fallSound, final Sound hitSound, final Sound placeSound, final Sound stepSound, final float volume, final float pitch)
     {
         this.breakSound = new SoundEntry(breakSound, volume, pitch);
         this.fallSound = new SoundEntry(fallSound, volume, pitch);
@@ -158,7 +178,7 @@ public class BlockSounds
      * @param placeSound sound played on block place.
      * @param stepSound  sound played when someone walk on block.
      */
-    public BlockSounds(final SoundEntry breakSound, final SoundEntry fallSound, final SoundEntry hitSound, final SoundEntry placeSound, final SoundEntry stepSound)
+    private BlockSounds(final SoundEntry breakSound, final SoundEntry fallSound, final SoundEntry hitSound, final SoundEntry placeSound, final SoundEntry stepSound)
     {
         this.breakSound = breakSound;
         this.fallSound = fallSound;
@@ -218,9 +238,109 @@ public class BlockSounds
     }
 
     @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (! (o instanceof BlockSounds))
+        {
+            return false;
+        }
+
+        final BlockSounds that = (BlockSounds) o;
+
+        return (this.breakSound != null) ? this.breakSound.equals(that.breakSound) : ((that.breakSound == null) && ((this.fallSound != null) ? this.fallSound.equals(that.fallSound) : ((that.fallSound == null) && ((this.hitSound != null) ? this.hitSound.equals(that.hitSound) : ((that.hitSound == null) && ((this.placeSound != null) ? this.placeSound.equals(that.placeSound) : ((that.placeSound == null) && ((this.stepSound != null) ? this.stepSound.equals(that.stepSound) : (that.stepSound == null)))))))));
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int result = (this.breakSound != null) ? this.breakSound.hashCode() : 0;
+        result = (31 * result) + ((this.fallSound != null) ? this.fallSound.hashCode() : 0);
+        result = (31 * result) + ((this.hitSound != null) ? this.hitSound.hashCode() : 0);
+        result = (31 * result) + ((this.placeSound != null) ? this.placeSound.hashCode() : 0);
+        result = (31 * result) + ((this.stepSound != null) ? this.stepSound.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString()
     {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).appendSuper(super.toString()).append("breakSound", this.breakSound).append("fallSound", this.fallSound).append("hitSound", this.hitSound).append("placeSound", this.placeSound).append("stepSound", this.stepSound).toString();
     }
 
+    /**
+     * Full constructor of sounds, allows to mix sounds types and volume/pitch.
+     *
+     * @param breakSound sound played on block break.
+     * @param fallSound  sound played when entity fall on block.
+     * @param hitSound   sound played when someone hit block.
+     * @param placeSound sound played on block place.
+     * @param stepSound  sound played when someone walk on block.
+     *
+     * @return created (or cached) sound object.
+     */
+    public static BlockSounds createBlockSounds(final SoundEntry breakSound, final SoundEntry fallSound, final SoundEntry hitSound, final SoundEntry placeSound, final SoundEntry stepSound)
+    {
+        final BlockSounds sounds = new BlockSounds(breakSound, fallSound, hitSound, placeSound, stepSound);
+        for (final BlockSounds def : defs)
+        {
+            if (def.equals(sounds))
+            {
+                return def;
+            }
+        }
+        defs.add(sounds);
+        return sounds;
+    }
+
+    /**
+     * Full constructor of sounds, allows to mix sounds types.
+     *
+     * @param breakSound sound played on block break.
+     * @param fallSound  sound played when entity fall on block.
+     * @param hitSound   sound played when someone hit block.
+     * @param placeSound sound played on block place.
+     * @param stepSound  sound played when someone walk on block.
+     * @param volume     volume of all sounds.
+     * @param pitch      pitch of all sounds.
+     * @return created (or cached) sound object.
+     */
+    public static BlockSounds createBlockSounds(final Sound breakSound, final Sound fallSound, final Sound hitSound, final Sound placeSound, final Sound stepSound, final float volume, final float pitch)
+    {
+        final BlockSounds sounds = new BlockSounds(breakSound, fallSound, hitSound, placeSound, stepSound, volume, pitch);
+        for (final BlockSounds def : defs)
+        {
+            if (def.equals(sounds))
+            {
+                return def;
+            }
+        }
+        defs.add(sounds);
+        return sounds;
+    }
+
+    /**
+     * Construct new block sounds by name of material, if one of sounds can't be found value from {@link #DEFAULTS} will be used.
+     *
+     * @param name   name of sound.
+     * @param volume volume of all sounds.
+     * @param pitch  pitch of all sounds.
+     * @return created (or cached) sound object.
+     */
+    public static BlockSounds createBlockSounds(final String name, final float volume, final float pitch)
+    {
+        final BlockSounds sounds = new BlockSounds(name, volume, pitch);
+        for (final BlockSounds def : defs)
+        {
+            if (def.equals(sounds))
+            {
+                return def;
+            }
+        }
+        defs.add(sounds);
+        return sounds;
+    }
 }

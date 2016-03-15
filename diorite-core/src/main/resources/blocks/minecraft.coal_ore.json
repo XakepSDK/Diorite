@@ -1,0 +1,31 @@
+{
+  "Id": 16,
+  "MinecraftId": "minecraft:coal_ore",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "coal_ore",
+      "Hardness": 3.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "coal_ore.coal_ore",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "coal_ore"
+}
+

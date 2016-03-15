@@ -31,24 +31,19 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.Map;
+import java.util.TreeSet;
 
 import com.google.common.collect.Sets;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import org.diorite.BlockLocation;
 import org.diorite.entity.Entity;
-import org.diorite.material.block.BlockInteractHandler;
-import org.diorite.material.block.BlockSounds;
 import org.diorite.material.block.BlockSubtype;
 import org.diorite.material.block.BlockType;
-import org.diorite.material.block.FlameableSettings;
-import org.diorite.material.block.LightSettings;
-import org.diorite.material.block.LiquidSettings;
 import org.diorite.material.state.State;
 import org.diorite.material.state.StateEntry;
-import org.diorite.material.data.drops.PossibleDrops;
-import org.diorite.material.item.ItemType;
 import org.diorite.utils.collections.maps.CaseInsensitiveMap;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
@@ -57,18 +52,6 @@ public class BlockTypeImpl implements BlockType
 {
     protected int    id;
     protected String minecraftId;
-    protected int    fakeId;
-    protected String fakeMinecraftId;
-    protected String displayNameKey;
-    protected float  hardness;
-    protected float  blastResistace;
-    protected BlockSounds sounds = BlockSounds.DEFAULTS;
-    protected PossibleDrops drops;
-    protected boolean       solid;
-
-    protected LiquidSettings    liquidSettings    = LiquidSettingsImpl.NOT_LIQUID;
-    protected LightSettings     lightSettings     = LightSettingsImpl.NO_LIGHT;
-    protected FlameableSettings flameableSettings = FlameableSettingsImpl.NOT_FLAMEABLE;
 
     protected BlockSubtype defaultSubtype;
     protected final Int2ObjectOpenHashMap<BlockSubtype> subtypesById   = new Int2ObjectOpenHashMap<>(1);
@@ -77,17 +60,14 @@ public class BlockTypeImpl implements BlockType
     protected final Collection<State<?>>                         supportedStates = Collections.newSetFromMap(new IdentityHashMap<>(2));
     protected final Map<Collection<StateEntry<?>>, BlockSubtype> stateMap        = new HashMap<>(1);
 
-    protected final Collection<BlockSubtype> allSubtypes            = new HashSet<>(1);
+    protected final Collection<BlockSubtype> allSubtypes            = new TreeSet<>((a, b) -> Integer.compare(a.getSubtypeId(), b.getSubtypeId()));
     private final   Collection<BlockSubtype> unmodifableAllSubtypes = Collections.unmodifiableCollection(this.allSubtypes);
 
     public BlockTypeImpl(final int id, final String minecraftId)
     {
         this.id = id;
         this.minecraftId = minecraftId;
-        this.fakeId = id;
-        this.fakeMinecraftId = minecraftId;
-        this.displayNameKey = minecraftId.substring(minecraftId.indexOf(':') + 1);
-        this.defaultSubtype = new DelegatedBlockSubtypeImpl(this, 0, this.displayNameKey);
+//        this.defaultSubtype = new DelegatedBlockSubtypeImpl(this, 0, this.displayNameKey, );
 //        this.drops = BasicPossibleDrops.createEmpty();
     }
 
@@ -113,64 +93,6 @@ public class BlockTypeImpl implements BlockType
     {
         this.minecraftId = minecraftId;
         return this;
-    }
-
-    @Override
-    public int getProxyId()
-    {
-        return this.fakeId;
-    }
-
-    public BlockTypeImpl setProxyId(final int id)
-    {
-        this.fakeId = id;
-        return this;
-    }
-
-    @Override
-    public String getProxyMinecraftId()
-    {
-        return this.fakeMinecraftId;
-    }
-
-    public BlockTypeImpl setProxyMinecraftId(final String id)
-    {
-        this.fakeMinecraftId = id;
-        return this;
-    }
-
-    @Override
-    public String getDisplayNameKey()
-    {
-        return this.displayNameKey;
-    }
-
-    public BlockTypeImpl setDisplayNameKey(final String displayNameKey)
-    {
-        this.displayNameKey = displayNameKey;
-        return this;
-    }
-
-    @Override
-    public boolean isSolid()
-    {
-        return this.solid;
-    }
-
-    public void setSolid(final boolean solid)
-    {
-        this.solid = solid;
-    }
-
-    @Override
-    public PossibleDrops getDrops()
-    {
-        return this.drops;
-    }
-
-    public void setDrops(final PossibleDrops drops)
-    {
-        this.drops = drops;
     }
 
     @Override
@@ -266,7 +188,8 @@ public class BlockTypeImpl implements BlockType
             }
             final ArrayList<StateEntry<?>> states = entry.getStates();
             states.trimToSize();
-            final DelegatedBlockSubtypeImpl subtype = new DelegatedBlockSubtypeImpl(this, id, entry.getName());
+            final BlockSubtypeImpl subtype = new BlockSubtypeImpl(this, id, entry.getName(), states);
+            this.addSubtype(subtype);
             this.stateMap.put(states, subtype);
         }
         return this;
@@ -286,7 +209,7 @@ public class BlockTypeImpl implements BlockType
 
     public BlockSubtype addVariant(final int id, final String name)
     {
-        final BlockSubtype subtype = new DelegatedBlockSubtypeImpl(this, id, name);
+        final BlockSubtype subtype = new BlockSubtypeImpl(this, id, name, Collections.emptyList());
         this.addSubtype(subtype);
         return subtype;
     }
@@ -300,6 +223,10 @@ public class BlockTypeImpl implements BlockType
     @Override
     public void addSubtype(final BlockSubtype subtype)
     {
+        if (this.defaultSubtype == null)
+        {
+            this.defaultSubtype = subtype;
+        }
         this.subtypesByName.put(subtype.getSubtypeStringId(), subtype);
         this.subtypesById.put(subtype.getSubtypeId(), subtype);
         this.allSubtypes.add(subtype);
@@ -330,132 +257,10 @@ public class BlockTypeImpl implements BlockType
     }
 
     @Override
-    public double getHardness()
-    {
-        return this.hardness;
-    }
-
-    public BlockTypeImpl setHardness(final double hardness)
-    {
-        this.hardness = (float) hardness;
-        return this;
-    }
-
-    public BlockTypeImpl setHardnessAndResistance(final float hardness, final float blastResistace)
-    {
-        this.hardness = hardness;
-        this.blastResistace = blastResistace;
-        return this;
-    }
-
-    public BlockTypeImpl setHardnessAndResistance(final float hardness, final float blastResistace, final boolean solid)
-    {
-        this.hardness = hardness;
-        this.blastResistace = blastResistace;
-        this.solid = solid;
-        return this;
-    }
-
-    @Override
-    public double getBlastResistance()
-    {
-        return this.blastResistace;
-    }
-
-    public BlockTypeImpl setBlastResistace(final double blastResistace)
-    {
-        this.blastResistace = (float) blastResistace;
-        return this;
-    }
-
-    @Override
-    public BlockSounds getSounds()
-    {
-        return this.sounds;
-    }
-
-    public BlockTypeImpl setSounds(final BlockSounds sounds)
-    {
-        this.sounds = sounds;
-        return this;
-    }
-
-    @Override
     public boolean isCollidingWith(final int x, final int y, final int z, final Entity entity)
     {
-        return false;
-    }
-
-    @Override
-    public boolean isTileEntity()
-    {
-        return false;
-    }
-
-    @Override
-    public ItemType getItem()
-    {
-        return null;
-    }
-
-    @Override
-    public LiquidSettings getLiquidSettings()
-    {
-        return this.liquidSettings;
-    }
-
-    @Override
-    public void setLiquidSettings(final LiquidSettings settings)
-    {
-        this.liquidSettings = settings;
-    }
-
-    @Override
-    public LightSettings getLightSettings()
-    {
-        return this.lightSettings;
-    }
-
-    @Override
-    public void setLightSettings(final LightSettings lightSettings)
-    {
-        this.lightSettings = lightSettings;
-    }
-
-    @Override
-    public FlameableSettings getFlameableSettings()
-    {
-        return this.flameableSettings;
-    }
-
-    @Override
-    public void setFlameableSettings(final FlameableSettings flameableSettings)
-    {
-        this.flameableSettings = flameableSettings;
-    }
-
-    @Override
-    public BlockInteractHandler getInteractHandler()
-    {
-        return null;
-    }
-
-    public BlockTypeImpl setSettings(final FlameableSettings flameableSettings)
-    {
-        this.flameableSettings = flameableSettings;
-        return this;
-    }
-
-    public BlockTypeImpl setSettings(final LightSettings lightSettings)
-    {
-        this.lightSettings = lightSettings;
-        return this;
-    }
-
-    public BlockTypeImpl setSettings(final LiquidSettings settings)
-    {
-        this.liquidSettings = settings;
-        return this;
+        final BlockLocation blockLocation = entity.getLocation().toBlockLocation();
+        return (blockLocation.getX() == x) && (blockLocation.getY() == y) && (blockLocation.getZ() == z);
     }
 
     @Override

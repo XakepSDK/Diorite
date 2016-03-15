@@ -1,0 +1,47 @@
+{
+  "Id": 191,
+  "MinecraftId": "minecraft:dark_oak_fence",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "fence",
+      "Hardness": 2.0,
+      "BlastResistance": 15.0,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "dark_oak_fence.fence",
+      "States": [
+        {
+          "Name": "wood",
+          "Type": "org.diorite.material.state.WoodType",
+          "Value": "DARK_OAK"
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "fence"
+}
+
+planksMeta": 5,
+            "enumName": "DARK_OAK",
+            "ordinal": 5
+          }
+        }
+      ]
+    }
+  ],
+  "DefaultSubtype": "fence"
+}

@@ -1,0 +1,31 @@
+{
+  "Id": 70,
+  "MinecraftId": "minecraft:stone_pressure_plate",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "stone_pressure_plate",
+      "Hardness": 0.5,
+      "BlastResistance": 2.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "stone_pressure_plate.stone_pressure_plate",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "stone_pressure_plate"
+}
+

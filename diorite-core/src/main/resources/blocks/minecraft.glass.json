@@ -1,0 +1,31 @@
+{
+  "Id": 20,
+  "MinecraftId": "minecraft:glass",
+  "Subtypes": [
+    {
+      "Id": 0,
+      "StringId": "glass",
+      "Hardness": 0.30000001192092896,
+      "BlastResistance": 1.5,
+      "isSolid": true,
+      "TileEntityClass": null,
+      "LiquidSettings": {
+        "IsLiquid": false,
+        "SpillRadius": {}
+      },
+      "LightSettings": {
+        "EmitLight": 0,
+        "FilterLight": 15
+      },
+      "FlameableSettings": {
+        "canBeSetOnFire": true,
+        "BurnChances": 0.0,
+        "FlameChances": 0.0
+      },
+      "DisplayNameKey": "glass.glass",
+      "States": []
+    }
+  ],
+  "DefaultSubtype": "glass"
+}
+
